@@ -20,7 +20,7 @@
     ],
     "paths": {
       "@/*": ["./*"],
-      "@/litebox-lib/*": ["./litebox-lib/*"]
+      "@/litebox-lib/*": ["./libs/litebox-lib/*"]
     }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
