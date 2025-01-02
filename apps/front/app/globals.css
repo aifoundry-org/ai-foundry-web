@@ -2,20 +2,18 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+@font-face {
+  font-family: 'Host Grotesk';
+  src: url("../public/fonts/HostGrotesk-VariableFont_wght.ttf");
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+:root {
+  --sand: #F6EFE4;
+  --orange: #F9A03F;
 }
 
 body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+  color: black;
+  background: var(--sand);
+  font-family: 'Host Grotesk', Arial, Helvetica, sans-serif;
 }
