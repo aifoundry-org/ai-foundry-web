@@ -7,15 +7,7 @@ export default function Home() {
       <div className='flex flex-col gap-y-14 w-full h-full'>
         <div className='w-full h-full'>
           <SVGIconPaperBackground />
-          {/* <div className='absolute w-full h-full'>
-            <SVGIconPaperBackground />
-          </div> */}
-          {/* <div className='absolute w-full h-full'>
-            <p className='uppercase text-[15.9vw] mt-[5.5vw] leading-[0.75] text-center font-black'>
-              An open AI<br/>community<br/>for all
-            </p>
-          </div> */}
-          <div className='absolute w-full h-full top-[14.6rem] lg:top-[15.8rem]'>
+          <div className='absolute w-full h-full top-[13rem] md:top-[14.6rem] lg:top-[15.8rem]'>
             <p className='uppercase text-[15vw] lg:text-[15.35vw] leading-[0.75] text-center font-black'>
               An open AI<br/>community<br/>for all
             </p>
