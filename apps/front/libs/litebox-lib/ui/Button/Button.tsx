@@ -77,7 +77,7 @@ const Button = ({href = '', variant = 'primary', className = '', svg='', label =
   return (
     <div ref={parentRef} {...componentProps} >
       <div ref={containerRef} className={cn('flex lg:gap-2 md:gap-1 gap-0 items-center')}>
-        <div ref={labelRef} className={cn('lg:text-lg md:text-xs text-xs h-fit w-fit')}>
+        <div ref={labelRef} className={cn('lg:text-[1.35vw] md:text-xs text-xs h-fit w-fit')}>
           {label}
         </div>
         {SVGIcon && 

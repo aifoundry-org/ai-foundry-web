@@ -16,7 +16,7 @@ export default function Home() {
             </p>
           </div> */}
           <div className='absolute w-full h-full top-[14.6rem] lg:top-[15.8rem]'>
-            <p className='uppercase text-[15vw] lg:text-[15.9vw] leading-[0.75] text-center font-black'>
+            <p className='uppercase text-[15vw] lg:text-[15.35vw] leading-[0.75] text-center font-black'>
               An open AI<br/>community<br/>for all
             </p>
             <div className='relative left-[63vw] bottom-[19vw] w-[10vw] hidden xl:block lg:block'>
@@ -25,7 +25,7 @@ export default function Home() {
           </div>
         </div>
         <div className='w-full h-full'>
-          <p className='text-center text-[1.65vw] font-normal font-host-grotesk leading-[2.65vw]'>
+          <p className='text-center text-[1.35vw] font-normal font-host-grotesk leading-[2.65vw]'>
             We are a community of practitioners building an open-source<br/>composable AI ecosystem. Our aim is to reduce the complexity of<br/>the AI industry. Join our thriving community and share, collaborate<br/>and innovate with us.
           </p>
         </div>
