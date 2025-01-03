@@ -16,6 +16,10 @@ export default {
         foreground: "var(--black)",
       },
     },
+    fontFamily: {
+      'host-grotesk': ['Host Grotesk'],
+      'dharma-gothic-e': ['dharma-gothic-e'],
+    }
   },
   plugins: [],
 } satisfies Config;
