@@ -14,7 +14,7 @@ export default function Home() {
           <div className='absolute left-[calc(50%+12.5vw)] top-[calc(50%+2.5vw)] w-[21.9vw]'>
             <SVGIconPaperError />
           </div>
-          <div className='absolute right-[calc(25%-7.7vw)] top-[calc(25%+1.6vw)] w-[11vw]'>
+          <div className='absolute right-[calc(25%-9vw)] top-[calc(25%+0.4vw)] w-[11vw]'>
             <SVGIconPaperGraffiti />
           </div>
         </div>
