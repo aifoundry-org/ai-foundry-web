@@ -24,7 +24,7 @@ export default function Header() {
                             </div>
                         </div>
                         <div className='flex basis-[40%] mx-auto justify-center'>
-                            <div className='w-[16.2rem]'>
+                            <div className='w-[15.8rem]'>
                                 <AIFoundryLogoTop />
                             </div>
                         </div>

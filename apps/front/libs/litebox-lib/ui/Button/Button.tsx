@@ -1,6 +1,6 @@
 'use client';
 
-import { FC, ButtonHTMLAttributes, SVGProps, useRef, useEffect } from 'react';
+import { FC, ButtonHTMLAttributes, SVGProps, useRef, useEffect, useCallback } from 'react';
 import { cn } from '../../utils/cn';
 import SVGIconPlus from '@/public/svgs/Plus';
 import SVGIconDiscord from '@/public/svgs/Discord';
@@ -57,27 +57,43 @@ const Button = ({href = '', variant = 'primary', className = '', svg='', label =
     SVGIcon = svgVariants[svg];
   }
 
-  // Hack to remove the "wobble" effect as much as possible when the
-  // button pressing animation is played
-  useEffect(() => {
+  const updateWidth = useCallback(() => {
     const parentElement = parentRef?.current;
     const containerElement = containerRef?.current;
     const labelElement = labelRef?.current;
 
     if (!parentElement || !containerElement || !labelElement) return;
 
+    // get original width
+    parentElement.style.width = 'fit-content';
+    containerElement.style.width = 'fit-content';
+    labelElement.style.width = 'fit-content';
+
+    // calculate the new width without the decimal part
     const parentElementNewWidth = String(Math.floor(parentElement.offsetWidth))+'px';
     const containerElementNewWidth = String(Math.floor(containerElement.offsetWidth))+'px';
     const labelElementNewWidth = String(Math.floor(labelElement.offsetWidth))+'px';
+
+    // assign the new width to the elements
     parentElement.style.width = parentElementNewWidth;
     containerElement.style.width = containerElementNewWidth;
     labelElement.style.width = labelElementNewWidth;
+  }, [parentRef, containerRef, labelRef])
+
+  // Hack to remove the "wobble" effect as much as possible when the
+  // button pressing animation is played
+  useEffect(() => {
+    updateWidth();
+    window.addEventListener('resize', updateWidth);
+    return () => {
+      window.removeEventListener('resize', updateWidth);
+    }
   }, [])
 
   return (
     <div ref={parentRef} {...componentProps} >
       <div ref={containerRef} className={cn('flex lg:gap-2 md:gap-1 gap-0 items-center')}>
-        <div ref={labelRef} className={cn('lg:text-[1.35vw] md:text-xs text-xs h-fit w-fit')}>
+        <div ref={labelRef} className={cn('text-[1.5rem] md:text-[1.7rem] lg:text-[2rem] h-fit w-fit')}>
           {label}
         </div>
         {SVGIcon && 
