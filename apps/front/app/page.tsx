@@ -1,5 +1,6 @@
 import SVGIconPaperBackground from '@/public/svgs/PaperBackground'
 import SVGIconPaperError from '@/public/svgs/PaperError'
+import SVGIconPaperGraffiti from '@/public/svgs/PaperGraffiti'
 
 export default function Home() {
   return (
@@ -10,8 +11,11 @@ export default function Home() {
           <p className='absolute uppercase text-[15vw] lg:text-[15.35vw] leading-[0.75] text-center font-black -bottom-[1.1vw] left-1/2 -translate-x-1/2'>
             An open AI<br/>community<br/>for all
           </p>
-          <div className='absolute left-[calc(50%+12.5vw)] top-[calc(50%+2.5vw)] w-[10vw] hidden xl:block lg:block'>
+          <div className='absolute left-[calc(50%+12.5vw)] top-[calc(50%+2.5vw)] w-[21.9vw]'>
             <SVGIconPaperError />
+          </div>
+          <div className='absolute right-[calc(25%-7.7vw)] top-[calc(25%+1.6vw)] w-[11vw]'>
+            <SVGIconPaperGraffiti />
           </div>
         </div>
         <div className='w-full h-full'>
