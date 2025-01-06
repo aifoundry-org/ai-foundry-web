@@ -9,7 +9,7 @@ export default function Header() {
             <div className='flex flex-col w-full bg-black'>
                 <div className='flex flex-row text-sand justify-center p-4'>
                     <a className='flex' href="#">
-                        <p className='font-host-grotesk mr-2 text-[1.1vw]'>AIFoundry.org is sponsoring the "Low-Level AI Engineering & Hacking" Dev Room at FOSDEM. Find out more!</p>
+                        <p className='font-host-grotesk mr-2 text-xs lg:text-base sm:text-sm'>AIFoundry.org is sponsoring the "Low-Level AI Engineering & Hacking" Dev Room at FOSDEM. Find out more!</p>
                         <SVGIconArrowUpRight fill='#F6EFE4' />
                     </a>
                 </div>

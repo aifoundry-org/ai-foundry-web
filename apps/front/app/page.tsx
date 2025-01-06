@@ -19,7 +19,7 @@ export default function Home() {
           </div>
         </div>
         <div className='w-full h-full'>
-          <p className='text-center text-[1.35vw] font-normal font-host-grotesk leading-[2.65vw]'>
+          <p className='text-center text-xs lg:text-xl sm:text-sm md:text-base font-normal font-host-grotesk'>
             We are a community of practitioners building an open-source<br/>composable AI ecosystem. Our aim is to reduce the complexity of<br/>the AI industry. Join our thriving community and share, collaborate<br/>and innovate with us.
           </p>
         </div>
