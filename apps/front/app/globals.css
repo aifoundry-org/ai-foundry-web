@@ -27,6 +27,8 @@
 :root {
   --sand: #F6EFE4;
   --orange: #F9A03F;
+
+  font-size: 10px;
 }
 
 body {

@@ -16,6 +16,9 @@ export default {
         foreground: "var(--black)",
       },
     },
+    fontSize: {
+      base: '10px',
+    },
     fontFamily: {
       'host-grotesk': ['Host Grotesk'],
       'dharma-gothic-e': ['dharma-gothic-e'],
