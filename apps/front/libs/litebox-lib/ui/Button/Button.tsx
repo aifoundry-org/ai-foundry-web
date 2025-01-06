@@ -42,7 +42,7 @@ const Button = ({href = '', variant = 'primary', className = '', svg='', label =
   const parentRef = useRef<HTMLDivElement>(null)
   const containerRef = useRef<HTMLDivElement>(null)
   const labelRef = useRef<HTMLDivElement>(null)
-  const essentialStyles = `flex items-center justify-between shadow-[4px_4px_0_0_black] w-fit h-[48px] lg:px-5 lg:py-2 md:px-3 md:py-1 px-1 py-0 text-[black] font-bold uppercase border border-2 whitespace-nowrap rounded-md transition-all ease-in-out focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#22D3EE] disabled:opacity-50 disabled:cursor-not-allowed cursor-pointer`;
+  const essentialStyles = `flex items-center justify-between shadow-[4px_4px_0_0_black] w-fit h-fit lg:px-5 lg:py-2 md:px-3 md:py-1 px-1 py-0 text-[black] font-bold uppercase border border-2 whitespace-nowrap rounded-md transition-all ease-in-out focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#22D3EE] disabled:opacity-50 disabled:cursor-not-allowed cursor-pointer`;
   const styles = `${essentialStyles} ${btnVariants[variant]} ${className}`;
 
   const componentProps = {
