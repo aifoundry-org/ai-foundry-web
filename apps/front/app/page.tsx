@@ -4,16 +4,14 @@ import SVGIconPaperError from '@/public/svgs/PaperError'
 export default function Home() {
   return (
     <main>
-      <div className='flex flex-col gap-y-14 w-full h-full'>
-        <div className='w-full h-full'>
+      <div className='flex flex-col gap-y-[6vw] w-full h-full'>
+        <div className='relative w-full h-full'>
           <SVGIconPaperBackground />
-          <div className='absolute w-full h-full top-[13rem] md:top-[14.6rem] lg:top-[15.8rem]'>
-            <p className='uppercase text-[15vw] lg:text-[15.35vw] leading-[0.75] text-center font-black'>
-              An open AI<br/>community<br/>for all
-            </p>
-            <div className='relative left-[63vw] bottom-[19vw] w-[10vw] hidden xl:block lg:block'>
-              <SVGIconPaperError />
-            </div>
+          <p className='absolute uppercase text-[15vw] lg:text-[15.35vw] leading-[0.75] text-center font-black -bottom-[1.1vw] left-1/2 -translate-x-1/2'>
+            An open AI<br/>community<br/>for all
+          </p>
+          <div className='absolute left-[calc(50%+12.5vw)] top-[calc(50%+2.5vw)] w-[10vw] hidden xl:block lg:block'>
+            <SVGIconPaperError />
           </div>
         </div>
         <div className='w-full h-full'>
