@@ -5,12 +5,14 @@ import SVGIconArrowUpRight from '@/public/svgs/ArrowUpRight';
 export default function Header() {
     // #F6EFE4 = sand color
     return (
-        <header>
+        <header className='hidden xs:block'>
             <div className='flex flex-col w-full bg-black'>
                 <div className='flex flex-row text-sand justify-center p-4'>
                     <a className='flex' href="#">
-                        <p className='font-host-grotesk mr-2 text-[1.6rem]'>AIFoundry.org is sponsoring the "Low-Level AI Engineering & Hacking" Dev Room at FOSDEM. Find out more!</p>
-                        <SVGIconArrowUpRight fill='#F6EFE4' />
+                        <p className='font-host-grotesk text-[1.6rem]'>
+                            AIFoundry.org is sponsoring the "Low-Level AI Engineering & Hacking" Dev Room at FOSDEM. Find out more!
+                            <SVGIconArrowUpRight className='inline-block ml-2 w-[24px] h-[24px]' fill='#F6EFE4' />
+                        </p>
                     </a>
                 </div>
                 <div className='flex flex-col bg-sand rounded-t-lg'>
@@ -24,9 +26,7 @@ export default function Header() {
                             </div>
                         </div>
                         <div className='flex basis-[40%] mx-auto justify-center'>
-                            <div className='w-[15.8rem]'>
-                                <AIFoundryLogoTop />
-                            </div>
+                            <AIFoundryLogoTop className='xs:w-[12rem] md:w-[14.8rem] lg:w-[15.8rem] xl:w-[15.8rem]' />
                         </div>
                         <div className='flex basis-[30%] justify-center'>
                             <Button variant='primary' label='Join our discord' svg='discord' />
@@ -34,5 +34,6 @@ export default function Header() {
                     </div>
                 </div>
             </div>
-        </header>)
+        </header>
+    )
 }

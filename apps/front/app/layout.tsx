@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
 import "./globals.css";
 
-import Header from '@/components/Header';
+import HeaderDesktop from '@/components/Desktop/Header';
+import HeaderMobile from '@/components/Mobile/Header';
 
 export const metadata: Metadata = {
   title: "AI Foundry",
@@ -16,7 +17,8 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
-        <Header />
+        <HeaderDesktop />
+        <HeaderMobile />
         {children}
       </body>
     </html>

@@ -15,6 +15,9 @@ export default {
         background: "var(--orange)",
         foreground: "var(--black)",
       },
+      screens: {
+        xs: '376px'
+      }
     },
     fontSize: {
       base: '10px',
@@ -22,7 +25,7 @@ export default {
     fontFamily: {
       'host-grotesk': ['Host Grotesk'],
       'dharma-gothic-e': ['dharma-gothic-e'],
-    }
+    },
   },
   plugins: [],
 } satisfies Config;
