@@ -2,20 +2,37 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+@font-face {
+  font-family: 'Host Grotesk';
+  src: url('../public/fonts/HostGrotesk-VariableFont_wght.ttf');
+}
+@font-face {
+  font-family:'dharma-gothic-e';
+  src:url('https://use.typekit.net/af/0ff71d/00000000000000007735c16a/30/l?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n4&v=3') format('woff2'),url('https://use.typekit.net/af/0ff71d/00000000000000007735c16a/30/d?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n4&v=3') format('woff'),url('https://use.typekit.net/af/0ff71d/00000000000000007735c16a/30/a?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n4&v=3') format('opentype');
+  font-display:auto;font-style:normal;font-weight:400;font-stretch:normal;
+}
+  
+@font-face {
+  font-family:'dharma-gothic-e';
+  src:url('https://use.typekit.net/af/e74541/00000000000000007735c16d/30/l?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n7&v=3') format('woff2'),url('https://use.typekit.net/af/e74541/00000000000000007735c16d/30/d?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n7&v=3') format('woff'),url('https://use.typekit.net/af/e74541/00000000000000007735c16d/30/a?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n7&v=3') format('opentype');
+  font-display:auto;font-style:normal;font-weight:700;font-stretch:normal;
+}
+  
+@font-face {
+  font-family:'dharma-gothic-e';
+  src:url('https://use.typekit.net/af/f02426/00000000000000007735c175/30/l?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n9&v=3') format('woff2'),url('https://use.typekit.net/af/f02426/00000000000000007735c175/30/d?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n9&v=3') format('woff'),url('https://use.typekit.net/af/f02426/00000000000000007735c175/30/a?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n9&v=3') format('opentype');
+  font-display:auto;font-style:normal;font-weight:900;font-stretch:normal;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+:root {
+  --sand: #F6EFE4;
+  --orange: #F9A03F;
+
+  font-size: 10px;
 }
 
 body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+  color: black;
+  background: var(--sand);
+  font-family: 'dharma-gothic-e', 'Host Grotesk', sans-serif;
 }

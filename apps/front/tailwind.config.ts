@@ -10,10 +10,19 @@ export default {
   theme: {
     extend: {
       colors: {
-        background: "var(--background)",
-        foreground: "var(--foreground)",
+        orange: '#F9A03F',
+        sand: '#F6EFE4',
+        background: "var(--orange)",
+        foreground: "var(--black)",
       },
     },
+    fontSize: {
+      base: '10px',
+    },
+    fontFamily: {
+      'host-grotesk': ['Host Grotesk'],
+      'dharma-gothic-e': ['dharma-gothic-e'],
+    }
   },
   plugins: [],
 } satisfies Config;
