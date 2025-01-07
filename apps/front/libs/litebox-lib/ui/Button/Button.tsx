@@ -1,6 +1,6 @@
 'use client';
 
-import { FC, ButtonHTMLAttributes, SVGProps, useRef, useEffect } from 'react';
+import { FC, ButtonHTMLAttributes, SVGProps, useRef, useEffect, useCallback } from 'react';
 import { cn } from '../../utils/cn';
 import SVGIconPlus from '@/public/svgs/Plus';
 import SVGIconDiscord from '@/public/svgs/Discord';
@@ -42,7 +42,7 @@ const Button = ({href = '', variant = 'primary', className = '', svg='', label =
   const parentRef = useRef<HTMLDivElement>(null)
   const containerRef = useRef<HTMLDivElement>(null)
   const labelRef = useRef<HTMLDivElement>(null)
-  const essentialStyles = `flex items-center justify-between shadow-[4px_4px_0_0_black] w-fit h-[48px] px-5 py-2 text-[black] font-host-grotesk font-bold uppercase border border-2 whitespace-nowrap rounded-md transition-all ease-in-out focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#22D3EE] disabled:opacity-50 disabled:cursor-not-allowed cursor-pointer`;
+  const essentialStyles = `flex items-center justify-between shadow-[4px_4px_0_0_black] w-fit h-fit lg:px-5 lg:py-2 md:px-3 md:py-1 px-1 py-0 text-[black] font-bold uppercase border border-2 whitespace-nowrap rounded-md transition-all ease-in-out focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#22D3EE] disabled:opacity-50 disabled:cursor-not-allowed cursor-pointer`;
   const styles = `${essentialStyles} ${btnVariants[variant]} ${className}`;
 
   const componentProps = {
@@ -57,31 +57,47 @@ const Button = ({href = '', variant = 'primary', className = '', svg='', label =
     SVGIcon = svgVariants[svg];
   }
 
-  // Hack to remove the "wobble" effect as much as possible when the
-  // button pressing animation is played
-  useEffect(() => {
+  const updateWidth = useCallback(() => {
     const parentElement = parentRef?.current;
     const containerElement = containerRef?.current;
     const labelElement = labelRef?.current;
 
     if (!parentElement || !containerElement || !labelElement) return;
 
+    // get original width
+    parentElement.style.width = 'fit-content';
+    containerElement.style.width = 'fit-content';
+    labelElement.style.width = 'fit-content';
+
+    // calculate the new width without the decimal part
     const parentElementNewWidth = String(Math.floor(parentElement.offsetWidth))+'px';
     const containerElementNewWidth = String(Math.floor(containerElement.offsetWidth))+'px';
     const labelElementNewWidth = String(Math.floor(labelElement.offsetWidth))+'px';
+
+    // assign the new width to the elements
     parentElement.style.width = parentElementNewWidth;
     containerElement.style.width = containerElementNewWidth;
     labelElement.style.width = labelElementNewWidth;
+  }, [parentRef, containerRef, labelRef])
+
+  // Hack to remove the "wobble" effect as much as possible when the
+  // button pressing animation is played
+  useEffect(() => {
+    updateWidth();
+    window.addEventListener('resize', updateWidth);
+    return () => {
+      window.removeEventListener('resize', updateWidth);
+    }
   }, [])
 
   return (
     <div ref={parentRef} {...componentProps} >
-      <div ref={containerRef} className={cn('flex gap-2 items-center')}>
-        <div ref={labelRef} className={cn('text-sm h-[18px]')}>
+      <div ref={containerRef} className={cn('flex lg:gap-2 md:gap-1 gap-0 items-center')}>
+        <div ref={labelRef} className={cn('text-[1.5rem] md:text-[1.7rem] lg:text-[2rem] h-fit w-fit')}>
           {label}
         </div>
         {SVGIcon && 
-          <div className={cn('h-[24px]')}>
+          <div className={cn('h-fit w-fit')}>
             <SVGIcon />
           </div>
         }
