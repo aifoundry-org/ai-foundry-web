@@ -16,7 +16,7 @@ export default {
         foreground: "var(--black)",
       },
       screens: {
-        xs: '376px'
+        xs: '431px'
       }
     },
     fontSize: {
