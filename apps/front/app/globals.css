@@ -34,5 +34,5 @@
 body {
   color: black;
   background: var(--sand);
-  font-family: 'dharma-gothic-e', 'Host Grotesk', sans-serif;
+  font-family: 'dharma-gothic-e', 'Host Grotesk', Helvetica, sans-serif;
 }
