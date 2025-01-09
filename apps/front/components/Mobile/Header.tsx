@@ -1,4 +1,4 @@
-import SVGIconArrowUpRight from '@/public/svgs/ArrowUpRightMobile';
+import SVGIconArrowUpRight from '@/public/svgs/common/ArrowUpRightMobile';
 
 export default function Header() {
     // #F6EFE4 = sand color

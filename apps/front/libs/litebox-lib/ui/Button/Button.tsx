@@ -2,10 +2,10 @@
 
 import { FC, ButtonHTMLAttributes, SVGProps, useRef, useEffect, useCallback } from 'react';
 import { cn } from '../../utils/cn';
-import SVGIconPlus from '@/public/svgs/Plus';
-import SVGIconDiscord from '@/public/svgs/Discord';
-import SVGIconGithub from '@/public/svgs/Github';
-import SVGIconArrowUpRight from '@/public/svgs/ArrowUpRight';
+import SVGIconPlus from '@/public/svgs/common/Plus';
+import SVGIconDiscord from '@/public/svgs/common/Discord';
+import SVGIconGithub from '@/public/svgs/common/Github';
+import SVGIconArrowUpRight from '@/public/svgs/common/ArrowUpRight';
 
 export interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   variant?: 'primary' | 'secondary';
@@ -92,12 +92,12 @@ const Button = ({href = '', variant = 'primary', className = '', svg='', label =
 
   return (
     <div ref={parentRef} {...componentProps} >
-      <div ref={containerRef} className={cn('flex lg:gap-2 md:gap-1 gap-0 items-center')}>
+      <div ref={containerRef} className={cn('flex lg:gap-2 md:gap-1 gap-0 py-1 px-5 items-center')}>
         <div ref={labelRef} className={cn('text-[1.5rem] md:text-[1.7rem] lg:text-[2rem] h-fit w-fit')}>
           {label}
         </div>
         {SVGIcon && 
-          <div className={cn('h-fit w-fit')}>
+          <div className={cn('h-fit w-fit ml-2')}>
             <SVGIcon />
           </div>
         }

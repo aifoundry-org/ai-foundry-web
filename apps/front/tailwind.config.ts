@@ -25,6 +25,7 @@ export default {
     fontFamily: {
       'host-grotesk': ['Host Grotesk'],
       'dharma-gothic-e': ['dharma-gothic-e'],
+      'helvetica': ['helvetica']
     },
   },
   plugins: [],

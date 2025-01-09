@@ -1,6 +1,6 @@
 import Button from '@/litebox-lib/ui/Button/Button';
-import AIFoundryLogoTop from '@/public/svgs/AIFoundryLogoTop';
-import SVGIconArrowUpRight from '@/public/svgs/ArrowUpRight';
+import AIFoundryLogoTop from '@/public/svgs/common/AIFoundryLogoTop';
+import SVGIconArrowUpRight from '@/public/svgs/common/ArrowUpRight';
 
 export default function Header() {
     // #F6EFE4 = sand color

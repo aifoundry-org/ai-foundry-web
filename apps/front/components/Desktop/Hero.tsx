@@ -1,20 +1,20 @@
-import SVGPaperBackground from '@/public/svgs/PaperBackground'
-import SVGPaperError from '@/public/svgs/PaperError'
-import SVGPaperGraffiti from '@/public/svgs/PaperGraffiti'
+import IMGPaperBackground from '@/public/pngs/hero/PaperBackground.png'
+import SVGPaperError from '@/public/svgs/hero/PaperError'
+import IMGPaperGraffiti from '@/public/pngs/hero/PaperGraffiti.png'
 
 export default function Hero() {
     return (
         <div className='hidden xs:flex xs:flex-col xs:gap-y-[6vw] xs:w-full xs:h-full'>
             <div className='relative w-full h-full'>
-                <SVGPaperBackground />
+                <img src={IMGPaperBackground.src} width="100%" height="100%" />
                 <p className='absolute uppercase text-[15vw] lg:text-[16.15vw] leading-[0.75] text-center font-black -bottom-[1.1vw] left-1/2 -translate-x-1/2'>
                     An open AI<br/>community<br/>for all
                 </p>
                 <div className='absolute left-[calc(50%+12.5vw)] top-[calc(50%+2.5vw)] w-[21.9vw]'>
                     <SVGPaperError />
                 </div>
-                <div className='absolute w-[10vw] right-[calc(25%-6.5vw)] top-[calc(25%+2.7vw)] lg:right-[calc(25%-9vw)] lg:top-[calc(25%+0.4vw)] lg:w-[11vw]'>
-                    <SVGPaperGraffiti />
+                <div className='absolute w-[10vw] right-[calc(25%-6.5vw)] top-[calc(25%+2.7vw)] lg:right-[calc(25%-9vw)] lg:top-[calc(25%+0.4vw)] lg:w-[11vw] mix-blend-multiply'>
+                    <img src={IMGPaperGraffiti.src} width="100%" height="100%" />
                 </div>
             </div>
             <div className='w-full h-full'>
