@@ -82,7 +82,7 @@ export default function FindOutMore() {
             </div>
             <div className='absolute bottom-[5vw] w-full'>
                 <div className='relative w-full flex justify-center'>
-                    <Button svg='discord' variant='secondary' label='Join our discord' />
+                    <Button svg='discord' variant='secondary' content='Join our discord' />
                 </div>
             </div>
         </div>

@@ -6,6 +6,8 @@ import SVGIconPlus from '@/public/svgs/common/Plus';
 import SVGIconDiscord from '@/public/svgs/common/Discord';
 import SVGIconGithub from '@/public/svgs/common/Github';
 import SVGIconArrowUpRight from '@/public/svgs/common/ArrowUpRight';
+import SVGIconScrollArrowLeft from '@/public/svgs/common/ScrollArrowLeftMobile';
+import SVGIconScrollArrowRight from '@/public/svgs/common/ScrollArrowRightMobile';
 
 export interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   variant?: 'primary' | 'secondary';
@@ -24,7 +26,9 @@ const svgVariants : {[key: string]: FC<SVGProps<SVGSVGElement>>} = {
   plus: SVGIconPlus,
   discord: SVGIconDiscord,
   github: SVGIconGithub,
-  'arrow-up-right': SVGIconArrowUpRight
+  'arrow-up-right': SVGIconArrowUpRight,
+  'scroll-left': SVGIconScrollArrowLeft,
+  'scroll-right': SVGIconScrollArrowRight,
 }
 
 /**
@@ -36,13 +40,13 @@ const svgVariants : {[key: string]: FC<SVGProps<SVGSVGElement>>} = {
  * @param className - Additional CSS classes that can be passed to customize the styling of the component.
  * @param href - If the button is rendered as a 'Next.js Link', 'href' can be provided to specify the link's destination.
  * @param svg - Optionally adding a predetermined svg, available svg: 'plus', 'discord', 'github', 'arrow-up-right'
- * @param label - Label of the button
+ * @param content - Content of the button
  */
-const Button = ({href = '', variant = 'primary', className = '', svg='', label = '', ...props }) => {
+const Button = ({href = '', variant = 'primary', className = '', svg = '', content = '', resetContainerPadding = false, ...props }) => {
   const parentRef = useRef<HTMLDivElement>(null)
   const containerRef = useRef<HTMLDivElement>(null)
   const labelRef = useRef<HTMLDivElement>(null)
-  const essentialStyles = `flex items-center justify-between shadow-[4px_4px_0_0_black] w-fit h-fit lg:px-5 lg:py-2 md:px-3 md:py-1 px-1 py-0 text-[black] font-bold uppercase border border-2 whitespace-nowrap rounded-md transition-all ease-in-out focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#22D3EE] disabled:opacity-50 disabled:cursor-not-allowed cursor-pointer`;
+  const essentialStyles = `flex items-center justify-between shadow-[4px_4px_0_0_black] w-fit h-fit mx-2 lg:px-5 lg:py-2 md:px-3 md:py-1 px-1 py-0 text-[black] font-bold uppercase border border-2 whitespace-nowrap rounded-md transition-all ease-in-out focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#22D3EE] disabled:opacity-50 disabled:cursor-not-allowed cursor-pointer`;
   const styles = `${essentialStyles} ${btnVariants[variant]} ${className}`;
 
   const componentProps = {
@@ -62,22 +66,28 @@ const Button = ({href = '', variant = 'primary', className = '', svg='', label =
     const containerElement = containerRef?.current;
     const labelElement = labelRef?.current;
 
-    if (!parentElement || !containerElement || !labelElement) return;
+    // For every ref elements found we:
+    // - get original width
+    // - calculate the new width without the decimal part
+    // - assign the new width to the elements
 
-    // get original width
-    parentElement.style.width = 'fit-content';
-    containerElement.style.width = 'fit-content';
-    labelElement.style.width = 'fit-content';
-
-    // calculate the new width without the decimal part
-    const parentElementNewWidth = String(Math.floor(parentElement.offsetWidth))+'px';
-    const containerElementNewWidth = String(Math.floor(containerElement.offsetWidth))+'px';
-    const labelElementNewWidth = String(Math.floor(labelElement.offsetWidth))+'px';
-
-    // assign the new width to the elements
-    parentElement.style.width = parentElementNewWidth;
-    containerElement.style.width = containerElementNewWidth;
-    labelElement.style.width = labelElementNewWidth;
+    if (parentElement){
+      parentElement.style.width = 'fit-content';
+      const parentElementNewWidth = String(Math.floor(parentElement.offsetWidth))+'px';
+      parentElement.style.width = parentElementNewWidth;
+    }
+    
+    if(containerElement){
+      containerElement.style.width = 'fit-content';
+      const containerElementNewWidth = String(Math.floor(containerElement.offsetWidth))+'px';
+      containerElement.style.width = containerElementNewWidth;
+    } 
+    
+    if(labelElement){
+      labelElement.style.width = 'fit-content';
+      const labelElementNewWidth = String(Math.floor(labelElement.offsetWidth))+'px';
+      labelElement.style.width = labelElementNewWidth;
+    };
   }, [parentRef, containerRef, labelRef])
 
   // Hack to remove the "wobble" effect as much as possible when the
@@ -92,15 +102,11 @@ const Button = ({href = '', variant = 'primary', className = '', svg='', label =
 
   return (
     <div ref={parentRef} {...componentProps} >
-      <div ref={containerRef} className={cn('flex lg:gap-2 md:gap-1 gap-0 py-1 px-5 items-center')}>
-        <div ref={labelRef} className={cn('text-[1.5rem] md:text-[1.7rem] lg:text-[2rem] h-fit w-fit')}>
-          {label}
-        </div>
-        {SVGIcon && 
-          <div className={cn('h-fit w-fit ml-2')}>
-            <SVGIcon />
-          </div>
+      <div ref={containerRef} className={cn(`flex lg:gap-2 md:gap-1 gap-0 ${resetContainerPadding ? 'p-2' : 'py-2 px-5 lg:py-0 xl:py-0 md:py-0'} items-center`)}>
+        {content !== '' && 
+          <div ref={labelRef} className={cn('text-[1.5rem] md:text-[1.7rem] lg:text-[2rem] h-fit w-fit mr-2')} dangerouslySetInnerHTML={{__html: content}} />
         }
+        {SVGIcon && <SVGIcon />}
       </div>
     </div>
   );
