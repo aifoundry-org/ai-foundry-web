@@ -30,7 +30,7 @@ export default function FindOutMore() {
             <SVGTextError className='absolute w-[32.3vw] left-[25vw] top-[47.5vw]' />
             <div className='absolute bottom-[23vw] w-full'>
                 <div className='relative w-full flex justify-center'>
-                    <Button svg='discord' variant='secondary' label='Join our discord' />
+                    <Button svg='discord' variant='secondary' content='Join our discord' />
                 </div>
             </div>
             <div className='absolute w-fit h-fit bg-black text-sand p-[1.5vw] top-[58.5vw] left-[9.5vw] rounded-lg'>

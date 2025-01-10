@@ -29,7 +29,7 @@ export default function Header() {
                             <AIFoundryLogoTop className='xs:w-[12rem] md:w-[14.8rem] lg:w-[15.8rem] xl:w-[15.8rem]' />
                         </div>
                         <div className='flex basis-[30%] justify-center'>
-                            <Button variant='primary' label='Join our discord' svg='discord' />
+                            <Button variant='primary' content='Join our discord' svg='discord' />
                         </div>
                     </div>
                 </div>

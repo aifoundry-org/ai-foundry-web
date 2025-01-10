@@ -36,3 +36,18 @@ body {
   background: var(--sand);
   font-family: 'dharma-gothic-e', 'Host Grotesk', Helvetica, sans-serif;
 }
+
+ul {
+  list-style-type: disc;
+  list-style-position: outside;
+}
+
+@media (min-width: 431px) {
+  ul li {
+    margin-left: 4vw;
+  }
+}
+
+ul li {
+  margin-left: 1.75vw;
+}
