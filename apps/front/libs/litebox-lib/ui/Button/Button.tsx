@@ -42,7 +42,7 @@ const svgVariants : {[key: string]: FC<SVGProps<SVGSVGElement>>} = {
  * @param svg - Optionally adding a predetermined svg, available svg: 'plus', 'discord', 'github', 'arrow-up-right'
  * @param content - Content of the button
  */
-const Button = ({href = '', variant = 'primary', className = '', svg = '', content = '', resetContainerPadding = false, ...props }) => {
+const Button = ({href = '', variant = 'primary', className = '', svg = '', content = '', resetContainerPadding = false, svgProps = {}, ...props }) => {
   const parentRef = useRef<HTMLDivElement>(null)
   const containerRef = useRef<HTMLDivElement>(null)
   const labelRef = useRef<HTMLDivElement>(null)
@@ -106,7 +106,7 @@ const Button = ({href = '', variant = 'primary', className = '', svg = '', conte
         {content !== '' && 
           <div ref={labelRef} className={cn('text-[1.5rem] md:text-[1.7rem] lg:text-[2rem] h-fit w-fit mr-2')} dangerouslySetInnerHTML={{__html: content}} />
         }
-        {SVGIcon && <SVGIcon />}
+        {SVGIcon && <SVGIcon {...svgProps} />}
       </div>
     </div>
   );
