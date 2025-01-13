@@ -7,6 +7,9 @@ import FindOutMoreMobile from '@/components/Mobile/FindOutMore'
 import OpenSourceProjectsDesktop from '@/components/Desktop/OpenSourceProjects'
 import OpenSourceProjectsMobile from '@/components/Mobile/OpenSourceProjects'
 
+import CommunityDesktop from '@/components/Desktop/Community'
+import CommunityMobile from '@/components/Mobile/Community'
+
 export default function Home() {
   return (
     <main>
@@ -18,6 +21,9 @@ export default function Home() {
 
       <OpenSourceProjectsDesktop />
       <OpenSourceProjectsMobile />
+
+      <CommunityDesktop />
+      <CommunityMobile />
     </main>
   );
 }

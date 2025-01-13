@@ -3,7 +3,7 @@
 import Button from '@/litebox-lib/ui/Button/Button';
 import SVGIconArrowUpRight from '@/public/svgs/common/ArrowUpRightMobile';
 
-export default function OpenSourceProjectsCardMobile({title = '', subtitle = '', content = '', link = '', onClickLeft = () => {}, onClickRight = () => {}}) {
+export default function OpenSourceProjectsCard({title = '', subtitle = '', content = '', link = '', onClickLeft = () => {}, onClickRight = () => {}}) {
     return (
         <div className='flex flex-col w-full h-full'>
             <div className='flex flex-row items-center justify-between'>

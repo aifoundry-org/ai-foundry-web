@@ -33,7 +33,7 @@ const cards = [{
 
 export default function OpenSourceProjects() {
     return (
-        <div className='hidden xs:flex xs:flex-col xs:pt-[10.95vw] xs:pb-[7.7vw] xs:relative xs:w-full xs:h-fit xs:px-[5.6vw]'>
+        <div className='hidden xs:flex xs:flex-col xs:pt-[10.95vw] xs:pb-[7.7vw] xs:relative xs:w-full xs:h-fit xs:px-[7.78vw]'>
             <div className='absolute w-full h-fit -top-[1.1vw] left-0 -z-[1]'>
                 <img src={IMGBackground.src} width="100%" height="412" alt="Open Source Projects background" />
             </div>
