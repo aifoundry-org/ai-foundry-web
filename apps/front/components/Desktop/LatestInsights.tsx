@@ -34,7 +34,7 @@ export default function LatestInsights() {
     return (
         <div className='hidden xs:flex xs:flex-col xs:pt-[12vw] xs:pb-[7.7vw] xs:relative xs:w-full xs:h-fit xs:px-[7.78vw]'>
             <div className='absolute w-full h-fit -top-[3.5vw] left-0 -z-[1]'>
-                <img src={IMGBackground.src} width="100%" height="412" alt="Open Source Projects background" />
+                <img src={IMGBackground.src} width="100%" height="412" alt="Latest Insights background" />
             </div>
             <div className='font-black font-dharma-gothic-e text-[7vw] md:text-[4.45vw] xl:text-[4.45vw] 2xl:text-[4.45vw] leading-[3.7vw] uppercase'>
                 Explore Our Latest Insights

@@ -68,7 +68,7 @@ export default function Community() {
                         location={el.location as string}
                         link={el.link as string}
                     />
-                )) : <div className='font-normal font-host-grotesk text-[3.75vw] leading-[5.6vw]'>No events found</div> 
+                )) : <div className='font-normal font-host-grotesk text-[3.75vw] md:text-[2.75vw] xl:text-[2.5vw] 2xl:text-[2.5vw] leading-[5.6vw]'>No events found!</div> 
             }
             </div>
             <div className='flex justify-end'>

@@ -46,7 +46,7 @@ export default function CommunityCard({
                 </div>
             </div>
             <div className='flex pb-[8.55vw]'>
-                <Button href={link} variant='secondary' content='Event page' svg='arrow-up-right' className='mx-0' svgProps={{width: '22', height: '22'}} />
+                <Button href={link} variant='secondary' content='Event page' svg='arrow-up-right' className='ml-0' svgProps={{width: '22', height: '22'}} />
             </div>
             {!isLastElement && <div className='h-[8.55vw] border-t-2 border-black' />}
         </div>

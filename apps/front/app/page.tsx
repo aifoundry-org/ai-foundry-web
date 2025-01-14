@@ -13,6 +13,12 @@ import CommunityMobile from '@/components/Mobile/Community'
 import LatestInsightsDesktop from '@/components/Desktop/LatestInsights'
 import LatestInsightsMobile from '@/components/Mobile/LatestInsights'
 
+import OurCompanyDividerDesktop from '@/components/Desktop/OurCompanyDivider'
+import OurCompanyDividerMobile from '@/components/Mobile/OurCompanyDivider'
+
+import VisionMissionMobile from '@/components/Mobile/VisionMission'
+import VisionMissionDesktop from '@/components/Desktop/VisionMission'
+
 export default function Home() {
   return (
     <main>
@@ -30,6 +36,12 @@ export default function Home() {
 
       <LatestInsightsDesktop />
       <LatestInsightsMobile />
+
+      <OurCompanyDividerDesktop />
+      <OurCompanyDividerMobile />
+
+      <VisionMissionDesktop />
+      <VisionMissionMobile />
     </main>
   );
 }
