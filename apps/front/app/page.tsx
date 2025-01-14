@@ -10,6 +10,9 @@ import OpenSourceProjectsMobile from '@/components/Mobile/OpenSourceProjects'
 import CommunityDesktop from '@/components/Desktop/Community'
 import CommunityMobile from '@/components/Mobile/Community'
 
+import LatestInsightsDesktop from '@/components/Desktop/LatestInsights'
+import LatestInsightsMobile from '@/components/Mobile/LatestInsights'
+
 export default function Home() {
   return (
     <main>
@@ -24,6 +27,9 @@ export default function Home() {
 
       <CommunityDesktop />
       <CommunityMobile />
+
+      <LatestInsightsDesktop />
+      <LatestInsightsMobile />
     </main>
   );
 }
