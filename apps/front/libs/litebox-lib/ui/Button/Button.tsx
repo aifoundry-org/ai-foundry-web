@@ -1,6 +1,6 @@
 'use client';
 
-import { FC, ButtonHTMLAttributes, SVGProps, useRef, useEffect, useCallback } from 'react';
+import { FC, ButtonHTMLAttributes, SVGProps, useRef, useState } from 'react';
 import { cn } from '../../utils/cn';
 import SVGIconPlus from '@/public/svgs/common/Plus';
 import SVGIconDiscord from '@/public/svgs/common/Discord';
@@ -18,8 +18,8 @@ export interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
 }
 
 const btnVariants: {[key: string]: string } = {
-  primary: 'bg-orange border-black hover:shadow-none hover:translate-x-[4px] hover:translate-y-[4px]',
-  secondary: 'bg-sand border-black hover:shadow-none hover:translate-x-[4px] hover:translate-y-[4px]',
+  primary: 'bg-orange border-black',
+  secondary: 'bg-sand border-black',
 };
 
 const svgVariants : {[key: string]: FC<SVGProps<SVGSVGElement>>} = {
@@ -42,12 +42,23 @@ const svgVariants : {[key: string]: FC<SVGProps<SVGSVGElement>>} = {
  * @param svg - Optionally adding a predetermined svg, available svg: 'plus', 'discord', 'github', 'arrow-up-right'
  * @param content - Content of the button
  */
-const Button = ({href = '', variant = 'primary', className = '', svg = '', content = '', resetContainerPadding = false, svgProps = {}, ...props }) => {
+const Button = ({href = '', variant = 'primary', className = '', svg = '', content = '', resetContainerPadding = false, noShadow = false, svgProps = {}, ...props }) => {
+  // #F6EFE4 = sand color
+  const [isPressed, setIsPressed] = useState(false);
   const parentRef = useRef<HTMLDivElement>(null)
   const containerRef = useRef<HTMLDivElement>(null)
   const labelRef = useRef<HTMLDivElement>(null)
-  const essentialStyles = `flex items-center justify-between shadow-[4px_4px_0_0_black] w-fit h-fit mx-2 lg:px-5 lg:py-2 md:px-3 md:py-1 px-1 py-0 text-[black] font-bold uppercase border border-2 whitespace-nowrap rounded-md transition-all ease-in-out focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#22D3EE] disabled:opacity-50 disabled:cursor-not-allowed cursor-pointer`;
-  const styles = `${essentialStyles} ${btnVariants[variant]} ${className}`;
+  const essentialStyles = `flex items-center justify-between ${noShadow ? 'shadow-[4px_4px_0_0_#F6EFE4]' : 'shadow-[4px_4px_0_0_black]'} w-fit h-fit mx-2 lg:px-5 lg:py-2 md:px-3 md:py-1 px-1 py-0 text-[black] font-bold uppercase border border-2 whitespace-nowrap rounded-md transition-all ease-in-out focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#22D3EE] disabled:opacity-50 disabled:cursor-not-allowed cursor-pointer`;
+  const pressedShadowColor = noShadow ? 'shadow-black' : 'shadow-none'
+  const styles = `${essentialStyles} ${btnVariants[variant]} ${className} ${isPressed ? 'translate-x-[4px] translate-y-[4px] '+pressedShadowColor : ''}`;
+
+  const handleMouseDown = () => {
+    setIsPressed(true);
+
+    setTimeout(() => {
+      setIsPressed(false);
+    }, 100);
+  };
 
   const componentProps = {
     ...props,
@@ -61,50 +72,11 @@ const Button = ({href = '', variant = 'primary', className = '', svg = '', conte
     SVGIcon = svgVariants[svg];
   }
 
-  const updateWidth = useCallback(() => {
-    const parentElement = parentRef?.current;
-    const containerElement = containerRef?.current;
-    const labelElement = labelRef?.current;
-
-    // For every ref elements found we:
-    // - get original width
-    // - calculate the new width without the decimal part
-    // - assign the new width to the elements
-
-    if (parentElement){
-      parentElement.style.width = 'fit-content';
-      const parentElementNewWidth = String(Math.floor(parentElement.offsetWidth))+'px';
-      parentElement.style.width = parentElementNewWidth;
-    }
-    
-    if(containerElement){
-      containerElement.style.width = 'fit-content';
-      const containerElementNewWidth = String(Math.floor(containerElement.offsetWidth))+'px';
-      containerElement.style.width = containerElementNewWidth;
-    } 
-    
-    if(labelElement){
-      labelElement.style.width = 'fit-content';
-      const labelElementNewWidth = String(Math.floor(labelElement.offsetWidth))+'px';
-      labelElement.style.width = labelElementNewWidth;
-    };
-  }, [parentRef, containerRef, labelRef])
-
-  // Hack to remove the "wobble" effect as much as possible when the
-  // button pressing animation is played
-  useEffect(() => {
-    updateWidth();
-    window.addEventListener('resize', updateWidth);
-    return () => {
-      window.removeEventListener('resize', updateWidth);
-    }
-  }, [])
-
   return (
-    <div ref={parentRef} {...componentProps} >
+    <div onMouseDown={handleMouseDown} ref={parentRef} {...componentProps} >
       <div ref={containerRef} className={cn(`flex lg:gap-2 md:gap-1 gap-0 ${resetContainerPadding ? 'p-2' : 'py-2 px-5 lg:py-0 xl:py-0 md:py-0'} items-center`)}>
         {content !== '' && 
-          <div ref={labelRef} className={cn(`text-[1.5rem] md:text-[1.7rem] lg:text-[2rem] h-fit w-fit ${SVGIcon && 'mr-2'}`)} dangerouslySetInnerHTML={{__html: content}} />
+          <div ref={labelRef} className={cn(`select-none text-[1.5rem] md:text-[1.7rem] lg:text-[2rem] h-fit w-fit ${SVGIcon && 'mr-2'}`)} dangerouslySetInnerHTML={{__html: content}} />
         }
         {SVGIcon && <SVGIcon {...svgProps} />}
       </div>
