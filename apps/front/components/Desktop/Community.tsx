@@ -40,7 +40,7 @@ export default function Community() {
     const [selectedMonth, setSelectedMonth] = useState(months[0]);
 
     return (
-        <div className='hidden xs:flex xs:flex-col xs:pt-[7.85vw] xs:pb-[7.7vw] xs:relative xs:w-full xs:h-fit xs:px-[7.78vw]'>
+        <div className='hidden xs:flex xs:flex-col xs:pt-[7.85vw] xs:relative xs:w-full xs:h-fit xs:px-[7.78vw]'>
             <div className='absolute w-full top-0 left-0 -z-10'>
                 <img src={IMGBackground.src} alt="Community background" />
             </div>
@@ -71,7 +71,7 @@ export default function Community() {
                 )) : <div className='font-normal font-host-grotesk text-[3.75vw] leading-[5.6vw]'>No events found</div> 
             }
             </div>
-            <div className='flex pb-[8.55vw] justify-end'>
+            <div className='flex justify-end'>
                 <Button href='' variant='primary' content='View full calendar' svg='arrow-up-right' className='mx-0' svgProps={{width: '22', height: '22'}} />
             </div>
         </div>

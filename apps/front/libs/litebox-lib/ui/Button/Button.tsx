@@ -14,7 +14,7 @@ export interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   className?: string;
   href?: string;
   svg?: string;
-  label: string;
+  content: string;
 }
 
 const btnVariants: {[key: string]: string } = {
@@ -104,7 +104,7 @@ const Button = ({href = '', variant = 'primary', className = '', svg = '', conte
     <div ref={parentRef} {...componentProps} >
       <div ref={containerRef} className={cn(`flex lg:gap-2 md:gap-1 gap-0 ${resetContainerPadding ? 'p-2' : 'py-2 px-5 lg:py-0 xl:py-0 md:py-0'} items-center`)}>
         {content !== '' && 
-          <div ref={labelRef} className={cn('text-[1.5rem] md:text-[1.7rem] lg:text-[2rem] h-fit w-fit mr-2')} dangerouslySetInnerHTML={{__html: content}} />
+          <div ref={labelRef} className={cn(`text-[1.5rem] md:text-[1.7rem] lg:text-[2rem] h-fit w-fit ${SVGIcon && 'mr-2'}`)} dangerouslySetInnerHTML={{__html: content}} />
         }
         {SVGIcon && <SVGIcon {...svgProps} />}
       </div>
