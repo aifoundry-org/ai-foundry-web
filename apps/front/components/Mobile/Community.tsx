@@ -69,11 +69,11 @@ export default function Community() {
                         link={el.link as string} 
                         isLastElement={el.id == events[selectedMonth].length}
                     />
-                )) : <div className='font-normal font-host-grotesk text-[3.75vw] leading-[5.6vw]'>No events found</div> 
+                )) : <div className='font-normal font-host-grotesk text-[3.75vw] leading-[5.6vw]'>No events found!</div> 
             }
             </div>
             <div className='flex pb-[8.55vw]'>
-                <Button href='' variant='primary' content='View full calendar' svg='arrow-up-right' className='mx-0' svgProps={{width: '22', height: '22'}} />
+                <Button href='' variant='primary' content='View full calendar' svg='arrow-up-right' className='ml-0' svgProps={{width: '22', height: '22'}} />
             </div>
         </div>
     )
