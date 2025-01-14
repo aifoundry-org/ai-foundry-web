@@ -19,6 +19,9 @@ import OurCompanyDividerMobile from '@/components/Mobile/OurCompanyDivider'
 import VisionMissionMobile from '@/components/Mobile/VisionMission'
 import VisionMissionDesktop from '@/components/Desktop/VisionMission'
 
+import TestimonialsMobile from '@/components/Mobile/Testimonials'
+import TestimonialsDesktop from '@/components/Desktop/Testimonials'
+
 export default function Home() {
   return (
     <main>
@@ -42,6 +45,9 @@ export default function Home() {
 
       <VisionMissionDesktop />
       <VisionMissionMobile />
+
+      <TestimonialsMobile />
+      <TestimonialsDesktop />
     </main>
   );
 }
