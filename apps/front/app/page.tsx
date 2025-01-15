@@ -22,6 +22,9 @@ import VisionMissionDesktop from '@/components/Desktop/VisionMission'
 import TestimonialsMobile from '@/components/Mobile/Testimonials'
 import TestimonialsDesktop from '@/components/Desktop/Testimonials'
 
+import InTheNewsMobile from '@/components/Mobile/InTheNews'
+// import InTheNewsDesktop from '@/components/Desktop/InTheNews'
+
 export default function Home() {
   return (
     <main>
@@ -48,6 +51,8 @@ export default function Home() {
 
       <TestimonialsMobile />
       <TestimonialsDesktop />
+
+      <InTheNewsMobile />
     </main>
   );
 }

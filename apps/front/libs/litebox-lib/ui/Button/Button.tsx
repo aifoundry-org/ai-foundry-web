@@ -18,8 +18,8 @@ export interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
 }
 
 const btnVariants: {[key: string]: string } = {
-  primary: 'bg-orange border-black',
-  secondary: 'bg-sand border-black',
+  primary: 'bg-orange border-black hover:shadow-none hover:translate-x-[4px] hover:translate-y-[4px]',
+  secondary: 'bg-sand border-black hover:shadow-none hover:translate-x-[4px] hover:translate-y-[4px]',
 };
 
 const svgVariants : {[key: string]: FC<SVGProps<SVGSVGElement>>} = {
@@ -44,21 +44,11 @@ const svgVariants : {[key: string]: FC<SVGProps<SVGSVGElement>>} = {
  */
 const Button = ({href = '', variant = 'primary', className = '', svg = '', content = '', resetContainerPadding = false, noShadow = false, svgProps = {}, ...props }) => {
   // #F6EFE4 = sand color
-  const [isPressed, setIsPressed] = useState(false);
   const parentRef = useRef<HTMLDivElement>(null)
   const containerRef = useRef<HTMLDivElement>(null)
   const labelRef = useRef<HTMLDivElement>(null)
-  const essentialStyles = `flex items-center justify-between ${noShadow ? 'shadow-[4px_4px_0_0_#F6EFE4]' : 'shadow-[4px_4px_0_0_black]'} w-fit h-fit mx-2 lg:px-5 lg:py-2 md:px-3 md:py-1 px-1 py-0 text-[black] font-bold uppercase border border-2 whitespace-nowrap rounded-md transition-all ease-in-out focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#22D3EE] disabled:opacity-50 disabled:cursor-not-allowed cursor-pointer`;
-  const pressedShadowColor = noShadow ? 'shadow-black' : 'shadow-none'
-  const styles = `${essentialStyles} ${btnVariants[variant]} ${className} ${isPressed ? 'translate-x-[4px] translate-y-[4px] '+pressedShadowColor : ''}`;
-
-  const handleMouseDown = () => {
-    setIsPressed(true);
-
-    setTimeout(() => {
-      setIsPressed(false);
-    }, 100);
-  };
+  const essentialStyles = `flex items-center justify-between ${noShadow ? 'shadow-[4px_4px_0_0_#F6EFE4]' : 'shadow-[4px_4px_0_0_black]'} w-fit h-fit mx-2 lg:px-5 lg:py-2 md:px-3 md:py-1 px-1 py-0 text-[black] font-bold uppercase border border-2 whitespace-nowrap rounded-md transition-all ease-in-out focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#22D3EE] disabled:opacity-50 disabled:cursor-not-allowed cursor-pointer select-none`;
+  const styles = `${essentialStyles} ${btnVariants[variant]} ${className}`;
 
   const componentProps = {
     ...props,
@@ -73,10 +63,10 @@ const Button = ({href = '', variant = 'primary', className = '', svg = '', conte
   }
 
   return (
-    <div onMouseDown={handleMouseDown} ref={parentRef} {...componentProps} >
+    <div ref={parentRef} {...componentProps} >
       <div ref={containerRef} className={cn(`flex lg:gap-2 md:gap-1 gap-0 ${resetContainerPadding ? 'p-2' : 'py-2 px-5 lg:py-0 xl:py-0 md:py-0'} items-center`)}>
         {content !== '' && 
-          <div ref={labelRef} className={cn(`select-none text-[1.5rem] md:text-[1.7rem] lg:text-[2rem] h-fit w-fit ${SVGIcon && 'mr-2'}`)} dangerouslySetInnerHTML={{__html: content}} />
+          <div ref={labelRef} className={cn(`text-[1.5rem] md:text-[1.7rem] lg:text-[2rem] h-fit w-fit ${SVGIcon && 'mr-2'}`)} dangerouslySetInnerHTML={{__html: content}} />
         }
         {SVGIcon && <SVGIcon {...svgProps} />}
       </div>
