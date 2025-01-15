@@ -7,7 +7,7 @@ export default function OpenSourceProjectsCard({title = '', subtitle = '', conte
             <div className='flex flex-row h-[5rem] md:h-[14.7rem] lg:h-[14.7rem] xl:h-[14.7rem] 2xl:h-[7vw] items-start justify-between border-b-2 border-black'>
                 <p className='font-dharma-gothic-e font-black text-[4rem] 2xl:text-[2.6vw] leading-[3.3rem] uppercase'>{title}</p>
                 <div className='inline-block'>
-                    <SVGIconArrowUpRight width='28' height='28' />
+                    <SVGIconArrowUpRight />
                 </div>
             </div>
             <div className='flex flex-col mt-[3vw] h-full border-b-2 border-black leading-[2.4rem]'>

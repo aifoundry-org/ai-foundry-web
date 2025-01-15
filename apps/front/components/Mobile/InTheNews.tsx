@@ -50,7 +50,7 @@ export default function InTheNews() {
     };
 
     return (
-        <div className='xs:hidden flex flex-col pt-[28vw] pb-[7.7vw] relative w-full h-fit px-[5.6vw]'>
+        <div className='md:hidden flex flex-col pt-[28vw] pb-[7.7vw] relative w-full h-fit px-[5.6vw]'>
             <div className='font-black font-dharma-gothic-e text-[12.8vw] leading-[10.7vw] uppercase'>
                 AI Foundry<br/>in the News
             </div>
@@ -67,7 +67,7 @@ export default function InTheNews() {
                 onClickRight={onClickRight}
             />
             <div className='absolute -bottom-[27.5vw] left-0 w-full -z-10'>
-                <img src={IMGBackground.src} alt="In the News Background" />
+                <img className='w-full' src={IMGBackground.src} alt="In the News Background" />
             </div>
         </div>
     )

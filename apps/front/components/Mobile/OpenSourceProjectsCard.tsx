@@ -8,7 +8,7 @@ export default function OpenSourceProjectsCard({title = '', subtitle = '', conte
         <div className='flex flex-col w-full h-full'>
             <div className='flex flex-row items-center justify-between'>
                 <p className='font-dharma-gothic-e font-black text-[8.6vw] uppercase'>{title}</p>
-                <SVGIconArrowUpRight width='22' height='22' />
+                <SVGIconArrowUpRight />
             </div>
             <div className='flex flex-col border-y-2 border-black mt-[2vw] py-[6.4vw] h-[70vw] leading-[5.6vw]'>
                 <div className='font-host-grotesk font-bold text-[4.3vw]'>{subtitle}</div>
@@ -16,13 +16,13 @@ export default function OpenSourceProjectsCard({title = '', subtitle = '', conte
             </div>
             <div className='flex flex-row'>
                 <div className='flex basis-[10%] mt-8'>
-                    <Button className='ml-0' onClick={onClickLeft} variant='secondary' svg='scroll-left' resetContainerPadding/>
+                    <Button onClick={onClickLeft} variant='secondary' svg='scroll-left' />
                 </div>
                 <div className='flex basis-[80%] justify-center mt-8'>
                     <Button href={link} variant='secondary' content='View repo' svg='github' />
                 </div>
                 <div className='flex basis-[10%] mt-8'>
-                    <Button onClick={onClickRight} variant='secondary' svg='scroll-right' resetContainerPadding/>
+                    <Button onClick={onClickRight} variant='secondary' svg='scroll-right' />
                 </div>
             </div>
         </div>

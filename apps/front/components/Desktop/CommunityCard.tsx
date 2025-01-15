@@ -43,7 +43,7 @@ export default function CommunityCard({
                 </div>
             </div>
             <div className='flex basis-1/4 justify-end'>
-                <Button href={link} variant='secondary' content='Event page' svg='arrow-up-right' className='mx-0' svgProps={{width: '22', height: '22'}} />
+                <Button href={link} variant='secondary' content='Event page' svg='arrow-up-right' />
             </div>
         </div>
         )

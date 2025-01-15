@@ -49,7 +49,7 @@ export default function VisionMission(){
                         We are a community of practitioners building an open-source composable AI ecosystem. By collaborating on standards for everyone, we aim to reduce the complexity of the AI industry. 
                     </div>
                     <div className='w-full h-fit mt-[2.25vw]'>
-                        <Button className='ml-0' variant='secondary' content='Community code of conduct' svg='arrow-up-right' svgProps={{width: '22', height: '22'}} />
+                        <Button variant='secondary' content='Community code of conduct' svg='arrow-up-right' />
                     </div>
                 </div>
             </div>

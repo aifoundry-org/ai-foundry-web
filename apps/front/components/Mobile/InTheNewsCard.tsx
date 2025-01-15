@@ -19,21 +19,17 @@ export default function InTheNewsCard({title = '', subtitle = '', tag = '', sour
                     </div>
                 }
             </div>
-            <div className='flex flex-row items-center justify-between'>
-                <p className='font-dharma-gothic-e font-black text-[8.6vw] leading-[7.16vw] uppercase'>{title}</p>
-            </div>
-            <div className='flex flex-col pt-[4.27vw] h-[10vw] leading-[5.6vw]'>
-                <div className='font-host-grotesk font-normal text-[3.2vw]'>{subtitle}</div>
-            </div>
-            <div className='flex flex-row'>
-                <div className='flex basis-[10%] mt-8'>
-                    <Button className='ml-0' onClick={onClickLeft} variant='secondary' svg='scroll-left' resetContainerPadding/>
+            <p className='font-dharma-gothic-e font-black text-[8.6vw] leading-[7.16vw] uppercase'>{title}</p>
+            <p className='font-host-grotesk font-normal pt-[4.27vw] text-[3.2vw]'>{subtitle}</p>
+            <div className='flex flex-row mt-[9.075vw]'>
+                <div className='flex basis-[10%]'>
+                    <Button onClick={onClickLeft} variant='secondary' svg='scroll-left'/>
                 </div>
-                <div className='flex basis-[80%] justify-center mt-8'>
-                    <Button href={link} variant='secondary' content='Read more' svg='arrow-up-right' svgProps={{width: '22', height: '22'}} />
+                <div className='flex basis-[80%] justify-center'>
+                    <Button href={link} variant='secondary' content='Read more' svg='arrow-up-right' />
                 </div>
-                <div className='flex basis-[10%] mt-8'>
-                    <Button onClick={onClickRight} variant='secondary' svg='scroll-right' resetContainerPadding/>
+                <div className='flex basis-[10%]'>
+                    <Button onClick={onClickRight} variant='secondary' svg='scroll-right'/>
                 </div>
             </div>
         </div>

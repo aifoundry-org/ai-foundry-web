@@ -23,15 +23,15 @@ export default function LatestInsightsCard({title = '', tags = [] as Array<strin
             <div className='flex flex-row font-normal text-[3.2vw] leading-[5.6vw] font-host-grotesk'>
                 {author} | {date}
             </div>
-            <div className='flex flex-row'>
-                <div className='flex basis-[10%] mt-8'>
-                    <Button className='ml-0' onClick={onClickLeft} variant='secondary' svg='scroll-left' resetContainerPadding/>
+            <div className='flex flex-row w-full h-full mt-[6.4vw]'>
+                <div className='flex basis-[10%]'>
+                    <Button onClick={onClickLeft} variant='secondary' svg='scroll-left'/>
                 </div>
-                <div className='flex basis-[80%] justify-center mt-8'>
-                    <Button href={link} variant='secondary' content='Read more' />
+                <div className='flex basis-[80%] justify-center'>
+                    <Button className='h-full' href={link} variant='secondary' content='Read more' />
                 </div>
-                <div className='flex basis-[10%] mt-8'>
-                    <Button className='mr-0' onClick={onClickRight} variant='secondary' svg='scroll-right' resetContainerPadding/>
+                <div className='flex basis-[10%]'>
+                    <Button onClick={onClickRight} variant='secondary' svg='scroll-right'/>
                 </div>
             </div>
         </div>

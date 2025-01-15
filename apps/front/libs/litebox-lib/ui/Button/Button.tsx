@@ -1,7 +1,6 @@
 'use client';
 
-import { FC, ButtonHTMLAttributes, SVGProps, useRef, useState } from 'react';
-import { cn } from '../../utils/cn';
+import { FC, ButtonHTMLAttributes, SVGProps } from 'react';
 import SVGIconPlus from '@/public/svgs/common/Plus';
 import SVGIconDiscord from '@/public/svgs/common/Discord';
 import SVGIconGithub from '@/public/svgs/common/Github';
@@ -42,12 +41,9 @@ const svgVariants : {[key: string]: FC<SVGProps<SVGSVGElement>>} = {
  * @param svg - Optionally adding a predetermined svg, available svg: 'plus', 'discord', 'github', 'arrow-up-right'
  * @param content - Content of the button
  */
-const Button = ({href = '', variant = 'primary', className = '', svg = '', content = '', resetContainerPadding = false, noShadow = false, svgProps = {}, ...props }) => {
+const Button = ({href = '', variant = 'primary', className = '', svg = '', content = '', noShadow = false, containerProps = '', labelProps = '', svgProps = '', ...props }) => {
   // #F6EFE4 = sand color
-  const parentRef = useRef<HTMLDivElement>(null)
-  const containerRef = useRef<HTMLDivElement>(null)
-  const labelRef = useRef<HTMLDivElement>(null)
-  const essentialStyles = `flex items-center justify-between ${noShadow ? 'shadow-[4px_4px_0_0_#F6EFE4]' : 'shadow-[4px_4px_0_0_black]'} w-fit h-fit mx-2 lg:px-5 lg:py-2 md:px-3 md:py-1 px-1 py-0 text-[black] font-bold uppercase border border-2 whitespace-nowrap rounded-md transition-all ease-in-out focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#22D3EE] disabled:opacity-50 disabled:cursor-not-allowed cursor-pointer select-none`;
+  const essentialStyles = `flex items-center align-middle justify-between ${noShadow ? 'shadow-[4px_4px_0_0_#F6EFE4]' : 'shadow-[4px_4px_0_0_black]'} w-fit h-fit text-[black] font-bold uppercase border border-2 whitespace-nowrap rounded-md transition-all ease-in-out focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#22D3EE] disabled:opacity-50 disabled:cursor-not-allowed cursor-pointer select-none px-[2.5vw] py-[1.5vw] md:py-[0.835vw] xl:py-[0.835vw] 2xl:py-[0.835vw] md:px-[1.67vw] xl:px-[1.67vw] 2xl:px-[1.67vw] 2xl:gap-[1vw] xl:gap-[1vw] md:gap-[1vw] xs:gap-[2vw] gap-[3vw] items-center ${containerProps}`;
   const styles = `${essentialStyles} ${btnVariants[variant]} ${className}`;
 
   const componentProps = {
@@ -62,14 +58,13 @@ const Button = ({href = '', variant = 'primary', className = '', svg = '', conte
     SVGIcon = svgVariants[svg];
   }
 
+  const labelStyle = `flex text-[4.8vw] xs:text-[3.2vw] sm:text-[2.5vw] md:text-[2.25vw] xl:text-[1.5vw] 2xl:text-[1.5vw] leading-[1.39vw] ${labelProps}`
+  const SVGStyle = `flex ${svgProps}`
+
   return (
-    <div ref={parentRef} {...componentProps} >
-      <div ref={containerRef} className={cn(`flex lg:gap-2 md:gap-1 gap-0 ${resetContainerPadding ? 'p-2' : 'py-2 px-5 lg:py-0 xl:py-0 md:py-0'} items-center`)}>
-        {content !== '' && 
-          <div ref={labelRef} className={cn(`text-[1.5rem] md:text-[1.7rem] lg:text-[2rem] h-fit w-fit ${SVGIcon && 'mr-2'}`)} dangerouslySetInnerHTML={{__html: content}} />
-        }
-        {SVGIcon && <SVGIcon {...svgProps} />}
-      </div>
+    <div {...componentProps} >
+      {content !== '' &&  <div className={labelStyle} dangerouslySetInnerHTML={{__html: content}} /> }
+      {SVGIcon && <div className={SVGStyle}><SVGIcon /></div>}
     </div>
   );
 };

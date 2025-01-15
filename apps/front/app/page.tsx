@@ -23,7 +23,7 @@ import TestimonialsMobile from '@/components/Mobile/Testimonials'
 import TestimonialsDesktop from '@/components/Desktop/Testimonials'
 
 import InTheNewsMobile from '@/components/Mobile/InTheNews'
-// import InTheNewsDesktop from '@/components/Desktop/InTheNews'
+import InTheNewsDesktop from '@/components/Desktop/InTheNews'
 
 export default function Home() {
   return (
@@ -53,6 +53,7 @@ export default function Home() {
       <TestimonialsDesktop />
 
       <InTheNewsMobile />
+      <InTheNewsDesktop />
     </main>
   );
 }
