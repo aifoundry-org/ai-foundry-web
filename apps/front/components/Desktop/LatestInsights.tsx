@@ -44,7 +44,7 @@ export default function LatestInsights() {
                 access to summaries and video replays of prior AI Hack Labs and Podcasts.
             </div>
             <div className='w-full h-fit mb-[3.335vw]'>
-                <Button variant='primary' content='Visit our blog' />
+                <Button labelProps='!h-[1.5vw]' variant='primary' content='Visit our blog' />
             </div>
             <div className='flex flex-col gap-[6vw] md:flex-row xl:flex-row 2xl:flex-row md:gap-[1vw] xl:gap-[1vw] 2xl:gap-[1vw]'>
                 {cards.map((card, idx) => (
