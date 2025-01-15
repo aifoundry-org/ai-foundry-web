@@ -1,7 +1,7 @@
 'use client'
 
 import Button from '@/litebox-lib/ui/Button/Button'
-import IMGLogoCnn from '@/public/pngs/inTheNews/LogoCnn.png'
+import IMGLogoCnn from '@/public/pngs/inTheNews/logoCnn.png'
 
 export default function InTheNewsCard({title = '', subtitle = '', tag = '', source = '', link = '', onClickLeft = () => {}, onClickRight = () => {}}) {
     let logo = source == 'cnn' ? IMGLogoCnn.src : '';
