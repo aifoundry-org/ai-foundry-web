@@ -1,7 +1,6 @@
 'use client'
 
 import { useState } from 'react'
-import LatestInsightsCard from './LatestInsightsCard'
 import IMGBackground from '@/public/pngs/latestInsights/backgroundMobile.png'
 import IMGLLamaEvent from '@/public/pngs/latestInsights/llamaEvent.png'
 import IMGPodcast from '@/public/pngs/latestInsights/podcast.png'
