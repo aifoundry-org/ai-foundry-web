@@ -65,7 +65,7 @@ export default function LatestInsights() {
                 Podcasts.
             </div>
             <div className='w-full h-fit mb-[8.55vw]'>
-                <Button variant='primary' content='Visit our blog' />
+                <Button labelProps='h-[5vw]' variant='primary' content='Visit our blog' />
             </div>
             <LatestInsightsCard 
                 title={cards[cardIndex].title}
