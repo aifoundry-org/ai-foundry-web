@@ -58,7 +58,11 @@ const Button = ({href = '', variant = 'primary', className = '', svg = '', conte
     SVGIcon = svgVariants[svg];
   }
 
+<<<<<<< HEAD
   const labelStyle = `flex text-[4.8vw] xs:text-[3.2vw] sm:text-[2.5vw] md:text-[2.25vw] xl:text-[1.5vw] 2xl:text-[1.5vw] leading-[1.39vw] items-center justify-center ${labelProps}`
+=======
+  const labelStyle = `flex text-[4.8vw] xs:text-[3.2vw] sm:text-[2.5vw] md:text-[2.25vw] xl:text-[1.5vw] 2xl:text-[1.5vw] leading-[1.39vw] ${labelProps}`
+>>>>>>> develop
   const SVGStyle = `flex ${svgProps}`
 
   return (
