@@ -26,7 +26,7 @@ import InTheNewsMobile from '@/components/Mobile/InTheNews'
 import InTheNewsDesktop from '@/components/Desktop/InTheNews'
 
 import JoinTheAiRevolutionMobile from '@/components/Mobile/JoinTheAiRevolution'
-// import JoinTheAiRevolutionDesktop from '@/components/Desktop/JoinTheAiRevolution'
+import JoinTheAiRevolutionDesktop from '@/components/Desktop/JoinTheAiRevolution'
 
 export default function Home() {
   return (
@@ -52,12 +52,13 @@ export default function Home() {
       <VisionMissionDesktop />
       <VisionMissionMobile />
 
-      <TestimonialsMobile />
       <TestimonialsDesktop />
+      <TestimonialsMobile />
 
-      <InTheNewsMobile />
       <InTheNewsDesktop />
+      <InTheNewsMobile />
 
+      <JoinTheAiRevolutionDesktop />
       <JoinTheAiRevolutionMobile />
     </main>
   );
