@@ -100,7 +100,7 @@ export default function Testimonials() {
                     </div>
                     <div className='flex flex-row z-10'>
                         <div className='flex basis-[10%]'>
-                            <Button className='ml-0' onClick={onClickLeft} variant='secondary' svg='scroll-left' resetContainerPadding noShadow/>
+                            <Button onClick={onClickLeft} variant='secondary' svg='scroll-left' noShadow/>
                         </div>
                         <div className='flex basis-[80%] justify-center items-center gap-[3.2vw]'>
                             {[...Array(totalCards)].map((i, idx) => (
@@ -108,7 +108,7 @@ export default function Testimonials() {
                             ))}
                         </div>
                         <div className='flex basis-[10%]'>
-                            <Button onClick={onClickRight} variant='secondary' svg='scroll-right' resetContainerPadding noShadow/>
+                            <Button onClick={onClickRight} variant='secondary' svg='scroll-right' noShadow/>
                         </div>
                     </div>
                 </div>

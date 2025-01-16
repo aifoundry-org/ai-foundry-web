@@ -1,4 +1,4 @@
-import SVGIconArrowUpRight from '@/public/svgs/common/ArrowUpRightMobile';
+import IMGHeaderIconArrowUpRight from '@/public/pngs/common/HeaderArrowUpRight.png';
 
 export default function Header() {
     // #F6EFE4 = sand color
@@ -8,7 +8,7 @@ export default function Header() {
                 <a className='' href="#">
                     <p className='font-host-grotesk text-center my-2 text-[1.4rem]'>
                         AIFoundry.org is sponsoring the "Low-Level AI Engineering & Hacking" Dev Room at FOSDEM. Find out more!
-                        <SVGIconArrowUpRight className='inline-block ml-2 w-[14px] h-[14px]' fill='#F6EFE4' />
+                        <img src={IMGHeaderIconArrowUpRight.src} className='inline-block ml-[0.5vw] w-[14px]' />
                     </p>
                 </a>
             </div>

@@ -24,7 +24,7 @@ export default function LatestInsightsCard({title = '', tags = [] as Array<strin
                 {author} | {date}
             </div>
             <div className='flex flex-row basis-[80%] justify-start mt-8'>
-                <Button className='ml-0' href={link} variant='secondary' content='Read more' />
+                <Button href={link} variant='secondary' content='Read more' />
             </div>
         </div>
         )
