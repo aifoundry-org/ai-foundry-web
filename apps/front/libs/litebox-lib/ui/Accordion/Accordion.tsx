@@ -8,6 +8,7 @@ interface AccordionProps {
   title: React.ReactNode;
   content: React.ReactNode;
   isOpen?: boolean;
+  isDesktop?: boolean;
   className?: string;
 }
 
@@ -19,24 +20,25 @@ interface AccordionProps {
  * @param title - The title element that will be always displayed at the top of the accordion.
  * @param content - The content that will be displayed when the accordion is open.
  * @param isOpen - Determine whether the accordion is opened or not
+ * @param isDesktop - Determine whether the accordion is for mobile or not
  * @param className - Additional CSS classes that can be passed to customize the styling of the component.
  */
-const Accordion = ({ title, isOpen = false, content, className }: AccordionProps) => {
+const Accordion = ({ title, isOpen = false, isDesktop = false, content, className }: AccordionProps) => {
   const [open, setOpen] = useState(isOpen)
 
   return (
     <div className={cn('flex flex-col border-t-[2px] border-black', className)}>
-      <div className='flex flex-row items-center' onClick={() => setOpen(!open)}>
-        <label className='font-host-grotesk justify-between pl-0 pr-[2vw] py-[3vw] cursor-pointer text-[4.8vw] font-bold'>
+      <div className={`flex flex-row items-center ${isDesktop && 'justify-between'} `} onClick={() => setOpen(!open)}>
+        <label className={`font-host-grotesk justify-between pl-0 pr-[2vw] ${isDesktop ? 'py-[2.4rem]' : 'py-[1.67vw]'} cursor-pointer ${isDesktop ? 'text-[2.4rem]' : 'text-[4.82vw]'} font-bold`} >
           {title}
         </label>
-        <img src={IMGChevron.src} className={`w-[6.4vw] transform transition-transform duration-200 ${open && 'rotate-180'} pointer-events-none`} />
+        <img src={IMGChevron.src} className={`${isDesktop ? 'w-[2.3rem]' : 'w-[6.4vw]'} transform transition-transform duration-200 ${open && 'rotate-180'} pointer-events-none`} />
       </div>
      <div
         className={cn(
           `max-h-0 overflow-hidden transition-all duration-500 ${open && 'max-h-screen'}`
         )}>
-        <div className='font-normal text-[3.75vw] font-host-grotesk pb-[5vw]'>{content}</div>
+        <div className={`font-normal ${isDesktop ? 'text-[1.6rem] pb-[2.4rem]' : 'text-[3.75vw] pb-[5vw]'} font-host-grotesk`} >{content}</div>
       </div>
     </div>
   );

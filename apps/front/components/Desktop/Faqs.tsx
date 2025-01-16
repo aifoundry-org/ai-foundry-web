@@ -1,7 +1,7 @@
 'use client'
 
 import Accordion from '@/libs/litebox-lib/ui/Accordion/Accordion'
-import IMGBanner from '@/public/pngs/faqs/bannerMobile.png'
+import IMGBanner from '@/public/pngs/faqs/banner.png'
 import Button from '@/libs/litebox-lib/ui/Button/Button'
 
 const questions = [{
@@ -23,25 +23,25 @@ const questions = [{
 
 export default function Faqs() {
     return (
-        <div className='md:hidden flex flex-col pt-[21.35vw] pb-[7.7vw] relative w-full h-fit px-[5.6vw]'>
-            <div className='font-black font-dharma-gothic-e text-[12.8vw] leading-[10.7vw] uppercase'>
+        <div className='hidden md:flex md:flex-col md:pt-[21.35vw] md:pb-[7.7vw] md:relative md:w-full md:h-fit md:px-[5.6vw]'>
+            <div className='font-black font-dharma-gothic-e text-[6.4rem] leading-[5.3rem] uppercase'>
                 Faqs
             </div>
-            <div className='font-normal font-host-grotesk text-[3.75vw] leading-[5.6vw] pt-[4.3vw] pb-[8.55vw]'>
+            <div className='font-normal font-host-grotesk text-[1.6rem] leading-[2.4rem] pt-[1.6rem] pb-[4rem]'>
                 Find answers to your questions about AI Foundry<br/>and our community-driven projects.
             </div>
             {questions.map((el,idx) => (
-                <Accordion key={idx} title={el.title} content={el.content} />
+                <Accordion isDesktop key={idx} title={el.title} content={el.content} />
             ))}
-            <div className='relative flex w-[87.2vw] h-[72.55vw] mt-[10.67vw] border-2 border-black rounded-[4px]'>
+            <div className='relative flex flex-row justify-between items-center w-full h-[9.45vw] mt-[2.778vw] border-2 border-black rounded-[4px]'>
                 <div className='absolute left-0 top-0 w-full h-full'>
                     <img src={IMGBanner.src} />
                 </div>
-                <div className='flex flex-col p-[6.4vw]'>
-                    <p className='flex uppercase font-black text-[12.8vw] leading-[10.7vw]'>Still have<br/>questions?</p>
-                    <p className='flex font-normal text-[4.27vw] leading-[6vw] mt-[2.15vw]'>We're here to help!</p>
-                    <Button className='mt-[9.6vw]' labelProps='w-[20.87vw] h-[6.875vw]' variant='primary' content='contact us' />
+                <div className='flex flex-col pl-[2.78vw]'>
+                    <p className='flex uppercase font-black text-[3.335vw] leading-[2.8vw]'>Still have questions?</p>
+                    <p className='flex font-host-grotesk font-normal text-[1.115vw] leading-[1.67vw] mt-[0.56vw]'>We're here to help!</p>
                 </div>
+                <Button className='mr-[2.78vw]' labelProps='w-[4.44vw] h-[1.4vw]' variant='primary' content='contact us' />
             </div>
         </div>
     )
