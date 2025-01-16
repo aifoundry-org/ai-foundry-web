@@ -28,6 +28,8 @@ import InTheNewsDesktop from '@/components/Desktop/InTheNews'
 import JoinTheAiRevolutionMobile from '@/components/Mobile/JoinTheAiRevolution'
 import JoinTheAiRevolutionDesktop from '@/components/Desktop/JoinTheAiRevolution'
 
+import FaqsMobile from '@/components/Mobile/Faqs'
+
 export default function Home() {
   return (
     <main>
@@ -60,6 +62,8 @@ export default function Home() {
 
       <JoinTheAiRevolutionDesktop />
       <JoinTheAiRevolutionMobile />
+
+      <FaqsMobile />
     </main>
   );
 }
