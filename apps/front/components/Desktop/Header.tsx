@@ -1,6 +1,6 @@
 import Button from '@/litebox-lib/ui/Button/Button';
 import AIFoundryLogoTop from '@/public/svgs/common/AIFoundryLogoTop';
-import SVGIconArrowUpRight from '@/public/svgs/common/ArrowUpRight';
+import IMGHeaderIconArrowUpRight from '@/public/pngs/common/HeaderArrowUpRight.png';
 
 export default function Header() {
     // #F6EFE4 = sand color
@@ -11,7 +11,7 @@ export default function Header() {
                     <a className='flex' href="#">
                         <p className='font-host-grotesk text-[1.6rem]'>
                             AIFoundry.org is sponsoring the "Low-Level AI Engineering & Hacking" Dev Room at FOSDEM. Find out more!
-                            <SVGIconArrowUpRight className='inline-block ml-2 w-[24px] h-[24px]' fill='#F6EFE4' />
+                            <img src={IMGHeaderIconArrowUpRight.src} className='inline-block ml-[0.5vw] w-[22px]' />
                         </p>
                     </a>
                 </div>

@@ -73,7 +73,7 @@ export default function Community() {
             }
             </div>
             <div className='flex pb-[8.55vw]'>
-                <Button href='' variant='primary' content='View full calendar' svg='arrow-up-right' className='ml-0' svgProps={{width: '22', height: '22'}} />
+                <Button href='' variant='primary' content='View full calendar' svg='arrow-up-right' />
             </div>
         </div>
     )

@@ -77,7 +77,7 @@ export default function Testimonials() {
                 </div>
                 <div className='flex flex-row w-full h-full px-[6.4vw] items-center'>
                     <div className='flex basis-[10%]'>
-                        <Button className='ml-0' onClick={onClickLeft} variant='secondary' svg='scroll-left' resetContainerPadding noShadow/>
+                        <Button className='!w-[3.34vw] !h-[3.34vw]' containerProps='!px-[0.75vw]' onClick={onClickLeft} variant='secondary' svg='scroll-left' noShadow/>
                     </div>
                     <div className='flex flex-col basis-[80%] px-[6vw] items-center'>
                         <div className='flex flex-row w-full justify-start pb-[2.225vw] gap-[0.15vw]'>
@@ -109,7 +109,7 @@ export default function Testimonials() {
                         </div>
                     </div>
                     <div className='flex basis-[10%]'>
-                        <Button onClick={onClickRight} variant='secondary' svg='scroll-right' resetContainerPadding noShadow/>
+                        <Button className='!w-[3.34vw] !h-[3.34vw]' containerProps='!px-[0.75vw]' onClick={onClickRight} variant='secondary' svg='scroll-right' noShadow/>
                     </div>
                 </div>
                 <div className='absolute w-[25.91vw] -bottom-[10.75vw] right-[4.45vw]'>
