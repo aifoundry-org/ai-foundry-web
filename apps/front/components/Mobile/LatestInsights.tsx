@@ -1,12 +1,12 @@
 'use client'
 
 import { useState } from 'react'
-import LatestInsightsCard from './LatestInsightsCard'
 import IMGBackground from '@/public/pngs/latestInsights/backgroundMobile.png'
 import IMGLLamaEvent from '@/public/pngs/latestInsights/llamaEvent.png'
 import IMGPodcast from '@/public/pngs/latestInsights/podcast.png'
 import IMGProductionStack from '@/public/pngs/latestInsights/productionStack.png'
 import Button from '@/libs/litebox-lib/ui/Button/Button'
+import LatestInsightsCard from './LatestInsightsCard'
 
 const cards = [{
     title: "Llama Shaving Podcast: Is Data Truly a Moat for an Enterprise?",
