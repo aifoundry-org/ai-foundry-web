@@ -16,17 +16,20 @@ import LatestInsightsMobile from '@/components/Mobile/LatestInsights'
 import OurCompanyDividerDesktop from '@/components/Desktop/OurCompanyDivider'
 import OurCompanyDividerMobile from '@/components/Mobile/OurCompanyDivider'
 
-import VisionMissionMobile from '@/components/Mobile/VisionMission'
 import VisionMissionDesktop from '@/components/Desktop/VisionMission'
+import VisionMissionMobile from '@/components/Mobile/VisionMission'
 
-import TestimonialsMobile from '@/components/Mobile/Testimonials'
 import TestimonialsDesktop from '@/components/Desktop/Testimonials'
+import TestimonialsMobile from '@/components/Mobile/Testimonials'
 
-import InTheNewsMobile from '@/components/Mobile/InTheNews'
 import InTheNewsDesktop from '@/components/Desktop/InTheNews'
+import InTheNewsMobile from '@/components/Mobile/InTheNews'
 
-import JoinTheAiRevolutionMobile from '@/components/Mobile/JoinTheAiRevolution'
 import JoinTheAiRevolutionDesktop from '@/components/Desktop/JoinTheAiRevolution'
+import JoinTheAiRevolutionMobile from '@/components/Mobile/JoinTheAiRevolution'
+
+import FaqsDesktop from '@/components/Desktop/Faqs'
+import FaqsMobile from '@/components/Mobile/Faqs'
 
 export default function Home() {
   return (
@@ -60,6 +63,9 @@ export default function Home() {
 
       <JoinTheAiRevolutionDesktop />
       <JoinTheAiRevolutionMobile />
+
+      <FaqsDesktop />
+      <FaqsMobile />
     </main>
   );
 }

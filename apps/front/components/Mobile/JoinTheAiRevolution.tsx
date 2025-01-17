@@ -5,8 +5,8 @@ import IMGComputer from '@/public/pngs/joinTheAiRevolution/computer.png'
 
 export default function JoinTheAiRevolution(){
     return (
-        <div className='md:hidden flex flex-col relative w-full h-fit px-[5.6vw]'>
-            <div className='absolute w-full h-fit top-[27.5vw] left-0'>
+        <div className='md:hidden flex flex-col relative w-full h-[160vw] px-[5.6vw] mt-[5.6vw] mb-[7.0vw]'>
+            <div className='absolute w-full h-fit top-[22vw] left-0'>
                 <img src={IMGBackground.src} width="100%" alt="Vision & Mission Section" />
             </div>
             <div className='absolute w-fit font-dharma-gothic-e font-black text-sand text-[16vw] leading-[12.55vw] uppercase top-[40vw] left-[17.075vw]'>
