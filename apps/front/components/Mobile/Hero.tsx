@@ -1,5 +1,5 @@
 import SVGIconHamburger from '@/public/svgs/common/Hamburger';
-import AIFoundryLogoTop from '@/public/svgs/common/AIFoundryLogoTop';
+import AIFoundryLogoTop from '@/public/pngs/common/AIFoundryLogoTopMobile.png';
 import SVGPaperBackgroundMobile from '@/public/svgs/hero/PaperBackgroundMobile';
 
 export default function Hero() {
@@ -12,8 +12,8 @@ export default function Hero() {
                     </div>
                     <div className='absolute w-full flex flex-row items-center pt-10 pb-4 px-[2.4rem]'>
                         <div className='flex basis-[50%] w-full mx-auto justify-start'>
-                            <div className='w-[42.3vw]'>
-                                <AIFoundryLogoTop />
+                            <div className='w-[40.3vw]'>
+                                <img src={AIFoundryLogoTop.src} />
                             </div>
                         </div>
                         <div className='flex basis-[50%] w-full justify-end'>

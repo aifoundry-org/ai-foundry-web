@@ -1,8 +1,28 @@
+'use client';
+
+import { useState, useEffect } from 'react';
 import Button from '@/litebox-lib/ui/Button/Button';
-import AIFoundryLogoTop from '@/public/svgs/common/AIFoundryLogoTop';
+import AIFoundryLogoTop from '@/public/pngs/common/AIFoundryLogoTop.png';
+import AIFoundryLogoTopSticky from '@/public/pngs/common/AIFoundryLogoTopSticky.png';
 import IMGHeaderIconArrowUpRight from '@/public/pngs/common/HeaderArrowUpRight.png';
 
 export default function Header() {
+    const [isSticky, setIsSticky] = useState(false);
+
+    const checkIfSticky = () => {
+        const hero = document.querySelector('.hero');
+        if(hero){
+            setIsSticky(hero.getBoundingClientRect().y <= 0);   
+        }
+    }
+
+    useEffect(() => {
+        window.addEventListener('scroll', checkIfSticky);
+        return () => {
+            window.removeEventListener('scroll', checkIfSticky);
+        };
+    },[])
+    
     // #F6EFE4 = sand color
     return (
         <header className='hidden xs:block'>
@@ -15,20 +35,20 @@ export default function Header() {
                         </p>
                     </a>
                 </div>
-                <div className='flex flex-col bg-sand rounded-t-lg'>
-                    <div className='flex flex-row items-center pt-10 pb-4'>
-                        <div className='flex basis-[30%] justify-center text-center'>
-                            <div className='flex text-nowrap flex-wrap flex-row ml-10 font-medium gap-x-[4rem] text-[2rem]'>
+                <div className={`flex flex-col bg-sand rounded-t-lg ${isSticky ? 'fixed w-[66.81vw] z-20 top-[2.225vw] left-[16.6vw] border-[1px] border-black' : ''}`}>
+                    <div className={`flex flex-row items-center ${isSticky ? 'px-[2.8vw] py-[0.625vw]' : 'pt-[2.225vw] px-[5vw] pb-[0.7vw]'} `} >
+                        <div className='flex justify-center text-center'>
+                            <div className={`flex text-nowrap flex-wrap flex-row font-medium ${isSticky ? 'gap-x-[1.67vw]' : 'gap-x-[2.78vw]'} text-[1.4vw] leading-[1.4vw]`}>
                                 <a className='uppercase' href=''>Projects</a>
                                 <a className='uppercase' href=''>Events</a>
                                 <a className='uppercase' href=''>Blog</a>
                                 <a className='uppercase' href=''>Our Values</a>
                             </div>
                         </div>
-                        <div className='flex basis-[40%] mx-auto justify-center'>
-                            <AIFoundryLogoTop className='xs:w-[12rem] md:w-[14.8rem] lg:w-[15.8rem] xl:w-[15.8rem]' />
+                        <div className='flex basis-1/6 mx-auto justify-center'>
+                            <img src={isSticky ? AIFoundryLogoTopSticky.src : AIFoundryLogoTop.src} className={isSticky ? 'w-[4.87vw]' : 'w-[11vw]'} />
                         </div>
-                        <div className='flex basis-[30%] justify-center'>
+                        <div className='flex justify-center'>
                             <Button variant='primary' content='Join our discord' svg='discord' />
                         </div>
                     </div>
