@@ -5,6 +5,7 @@ import HeaderDesktop from '@/components/Desktop/Header';
 import HeaderMobile from '@/components/Mobile/Header';
 
 import FooterMobile from '@/components/Mobile/Footer';
+import FooterDesktop from '@/components/Desktop/Footer';
 
 export const metadata: Metadata = {
   title: "AI Foundry",
@@ -23,6 +24,7 @@ export default function RootLayout({
         <HeaderMobile />
         {children}
         <FooterMobile />
+        <FooterDesktop />
       </body>
     </html>
   );
