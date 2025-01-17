@@ -23,7 +23,7 @@ const questions = [{
 
 export default function Faqs() {
     return (
-        <div className='md:hidden flex flex-col pt-[21.35vw] pb-[7.7vw] relative w-full h-fit px-[5.6vw]'>
+        <div className='md:hidden flex flex-col pt-[21.35vw] pb-[30.7vw] relative w-full h-fit px-[5.6vw]'>
             <div className='font-black font-dharma-gothic-e text-[12.8vw] leading-[10.7vw] uppercase'>
                 Faqs
             </div>
