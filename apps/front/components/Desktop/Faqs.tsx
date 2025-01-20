@@ -34,8 +34,8 @@ export default function Faqs() {
                 <Accordion isDesktop key={idx} title={el.title} content={el.content} />
             ))}
             <div className='relative flex flex-row justify-between items-center w-full h-[9.45vw] mt-[2.778vw] border-2 border-black rounded-[4px]'>
-                <div className='absolute left-0 top-0 w-full h-full'>
-                    <img src={IMGBanner.src} />
+                <div className='absolute left-0 top-0 w-full h-full -z-10'>
+                    <img className='w-full h-full' src={IMGBanner.src} />
                 </div>
                 <div className='flex flex-col pl-[2.78vw]'>
                     <p className='flex uppercase font-black text-[3.335vw] leading-[2.8vw]'>Still have questions?</p>
