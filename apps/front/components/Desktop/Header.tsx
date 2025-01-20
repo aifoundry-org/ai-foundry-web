@@ -4,9 +4,9 @@ import { useState, useEffect } from 'react';
 import Link from "next/link";
 import { motion } from "motion/react"
 import Button from '@/litebox-lib/ui/Button/Button';
-import AIFoundryLogoTop from '@/public/pngs/common/AIFoundryLogoTop.png';
-import AIFoundryLogoTopSticky from '@/public/pngs/common/AIFoundryLogoTopSticky.png';
-import IMGHeaderIconArrowUpRight from '@/public/pngs/common/HeaderArrowUpRight.png';
+import IMGAIFoundryLogoTop from '@/public/pngs/common/AIFoundryLogoTop.png';
+import IMGAIFoundryLogoTopSticky from '@/public/pngs/common/AIFoundryLogoTopSticky.png';
+import IMGHeaderIconArrowUpRight from '@/public/pngs/common/headerArrowUpRight.png';
 
 export default function Header() {
     const [isSticky, setIsSticky] = useState(false);
@@ -75,17 +75,20 @@ export default function Header() {
                             </div>
                             <div className="flex w-full justify-center items-center relative">
                                 <motion.img
-                                    src={AIFoundryLogoTop.src}
+                                    src={IMGAIFoundryLogoTop.src}
                                     className="absolute w-[11vw]"
-                                    animate={{ opacity: isSticky ? 0 : 1 }}
-                                    initial={{ opacity: 1 }}
+                                    animate={{ opacity: isSticky ? 0 : 1, zIndex: isSticky ? 0 : 1 }}
+                                    initial={{ opacity: 1, zIndex: 10 }}
                                     transition={{ ease: "easeInOut", duration: 0.5 }}
                                 />
                                 <motion.img
-                                    src={AIFoundryLogoTopSticky.src}
-                                    className="absolute w-[4.87vw]"
-                                    animate={{ opacity: isSticky ? 1 : 0 }}
-                                    initial={{ opacity: 0 }}
+                                    onClick={() => {
+                                        window.scrollTo(0, 0);
+                                    }}
+                                    src={IMGAIFoundryLogoTopSticky.src}
+                                    className="absolute w-[4.87vw] cursor-pointer"
+                                    animate={{ opacity: isSticky ? 1 : 0, zIndex: isSticky ? 1 : 0 }}
+                                    initial={{ opacity: 0, zIndex: 0 }}
                                     transition={{ ease: "easeInOut", duration: 0.5 }}
                                 />
                             </div>
