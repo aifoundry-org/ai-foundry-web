@@ -1,7 +1,7 @@
 'use client';
 
-import { motion } from "motion/react"
 import { useState, useEffect } from 'react';
+import { motion } from "motion/react"
 import Button from '@/litebox-lib/ui/Button/Button';
 import AIFoundryLogoTop from '@/public/pngs/common/AIFoundryLogoTop.png';
 import AIFoundryLogoTopSticky from '@/public/pngs/common/AIFoundryLogoTopSticky.png';
@@ -15,13 +15,13 @@ export default function Header() {
     }
 
     useEffect(() => {
+        checkIfSticky();
         window.addEventListener('scroll', checkIfSticky);
         return () => {
             window.removeEventListener('scroll', checkIfSticky);
         };
     },[])
     
-    // ${isSticky ? 'px-[4vw]' : 'px-[5vw] pt-[2.225vw] pb-[0.5vw]'}
     // #F6EFE4 = sand color
     return (
         <header className='hidden xs:block'>
@@ -34,12 +34,12 @@ export default function Header() {
                         </p>
                     </a>
                 </div>
-                <div className={`flex items-center w-full h-[5.56vw] px-[5vw] pt-[2.225vw] pb-[0.5vw] bg-sand`}>
+                <div className={`flex items-center w-full h-[5.56vw] pt-[2.225vw] pb-[0.5vw] bg-sand`}>
                     <motion.nav
                         className={`flex flex-col bg-sand ${
                             isSticky
                             ? 'fixed z-20 top-[2.8vw] px-[2.78vw] py-[0.63vw] border-2 border-black'
-                            : 'rounded-t-lg relative mx-auto'
+                            : 'rounded-t-lg relative px-[2.78vw] mx-auto'
                         }`}
                         style={{
                             ...(isSticky && {
@@ -47,9 +47,9 @@ export default function Header() {
                             transform: 'translateX(-50%)',
                             }),
                         }}
-                        initial={{ width: '100%' }}
-                        animate={{ width: isSticky ? '66.81vw' : '100%' }}
-                        transition={{ ease: "easeInOut", duration: 2 }}
+                        initial={{ width: '95vw' }}
+                        animate={{ width: isSticky ? '66.81vw' : '95vw' }}
+                        transition={{ ease: "easeInOut", duration: 0.5 }}
                         >
                         <div className={`flex flex-row items-center`}>
                             <div className="flex w-full justify-start">
@@ -57,7 +57,7 @@ export default function Header() {
                                     className='flex text-nowrap flex-wrap flex-row font-medium text-[1.4vw] leading-[1.4vw]'
                                     initial={{ columnGap: '2.78vw'}}
                                     animate={{ columnGap: isSticky ? '1.67vw' : '2.78vw' }}
-                                    transition={{ ease: "easeInOut", duration: 2 }}
+                                    transition={{ ease: "easeInOut", duration: 0.5 }}
                                 >
                                     <a className="uppercase" href="">
                                         Projects
@@ -79,14 +79,14 @@ export default function Header() {
                                     className="absolute w-[11vw]"
                                     animate={{ opacity: isSticky ? 0 : 1 }}
                                     initial={{ opacity: 1 }}
-                                    transition={{ ease: "easeInOut", duration: 2 }}
+                                    transition={{ ease: "easeInOut", duration: 0.5 }}
                                 />
                                 <motion.img
                                     src={AIFoundryLogoTopSticky.src}
                                     className="absolute w-[4.87vw]"
                                     animate={{ opacity: isSticky ? 1 : 0 }}
                                     initial={{ opacity: 0 }}
-                                    transition={{ ease: "easeInOut", duration: 2 }}
+                                    transition={{ ease: "easeInOut", duration: 0.5 }}
                                 />
                             </div>
                             <div className="flex w-full justify-end">
