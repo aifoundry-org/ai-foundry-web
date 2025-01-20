@@ -1,8 +1,10 @@
 'use client'
 
+import { useState } from 'react';
 import Accordion from '@/libs/litebox-lib/ui/Accordion/Accordion'
 import IMGBanner from '@/public/pngs/faqs/banner.png'
 import Button from '@/libs/litebox-lib/ui/Button/Button'
+import FaqsModal from './FaqsModal'
 
 const questions = [{
     title: 'Why is AIFoundry.org focusing on machine learning engineer & developer collaboration?',
@@ -22,6 +24,8 @@ const questions = [{
 }]
 
 export default function Faqs() {
+    const [isModalOpen, setIsModalOpen] = useState(false);
+
     return (
         <div className='hidden md:flex md:flex-col md:pt-[21.35vw] md:pb-[7.7vw] md:relative md:w-full md:h-fit md:px-[5.6vw]'>
             <div className='font-black font-dharma-gothic-e text-[6.4rem] leading-[5.3rem] uppercase'>
@@ -41,8 +45,9 @@ export default function Faqs() {
                     <p className='flex uppercase font-black text-[3.335vw] leading-[2.8vw]'>Still have questions?</p>
                     <p className='flex font-host-grotesk font-normal text-[1.115vw] leading-[1.67vw] mt-[0.56vw]'>We're here to help!</p>
                 </div>
-                <Button className='mr-[2.78vw]' labelProps='w-[4.44vw] h-[1.4vw]' variant='primary' content='contact us' />
+                <Button onClick={() => setIsModalOpen(true)} className='mr-[2.78vw]' labelProps='w-[4.44vw] h-[1.4vw]' variant='primary' content='contact us' />
             </div>
+            {isModalOpen && <FaqsModal setIsModalOpen={setIsModalOpen} isModalOpen={isModalOpen} />}
         </div>
     )
 }
