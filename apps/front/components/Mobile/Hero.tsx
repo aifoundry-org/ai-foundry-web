@@ -1,8 +1,27 @@
+'use client'
+
+import { useState, useEffect } from 'react';
+import { motion } from "motion/react"
 import SVGIconHamburger from '@/public/svgs/common/Hamburger';
 import AIFoundryLogoTop from '@/public/pngs/common/AIFoundryLogoTopMobile.png';
+import AIFoundryLogoTopSticky from '@/public/pngs/common/AIFoundryLogoTopStickyMobile.png';
 import SVGPaperBackgroundMobile from '@/public/svgs/hero/PaperBackgroundMobile';
 
 export default function Hero() {
+    const [isSticky, setIsSticky] = useState(false);
+    
+    const checkIfSticky = () => {
+        setIsSticky(window.scrollY > 93);
+    }
+
+    useEffect(() => {
+        checkIfSticky();
+        window.addEventListener('scroll', checkIfSticky);
+        return () => {
+            window.removeEventListener('scroll', checkIfSticky);
+        };
+    },[])
+    
     return (
         <div className='xs:hidden block relative bg-black'>
             <div className='relative flex flex-col w-full bg-sand rounded-t-lg'>
@@ -10,15 +29,43 @@ export default function Hero() {
                     <div className='absolute w-full'>
                         <SVGPaperBackgroundMobile />
                     </div>
-                    <div className='absolute w-full flex flex-row items-center pt-10 pb-4 px-[2.4rem]'>
-                        <div className='flex basis-[50%] w-full mx-auto justify-start'>
-                            <div className='w-[40.3vw]'>
-                                <img src={AIFoundryLogoTop.src} />
+                    <div className='flex flex-row w-full py-[4vw] my-[7vw] bg-none'>
+                        <motion.nav
+                            className={`flex flex-row items-center bg-sand ${
+                                isSticky
+                                ? 'fixed z-20 top-0 px-[2.78vw] py-[7vw] border-2 border-black'
+                                : 'relative px-[2.78vw] mx-auto'
+                            }`}
+                            style={{
+                                ...(isSticky && {
+                                left: '50%',
+                                transform: 'translateX(-50%)',
+                                }),
+                            }}
+                            initial={{ width: '87.2vw' }}
+                            animate={{ width: isSticky ? '100vw' : '87.2vw' }}
+                            transition={{ ease: "easeInOut", duration: 0.5 }}
+                            >
+                            <div className='flex basis-[50%] w-full mx-auto items-center justify-start'>
+                                <motion.img
+                                    src={AIFoundryLogoTop.src}
+                                    className="absolute w-[40.27vw]"
+                                    animate={{ opacity: isSticky ? 0 : 1 }}
+                                    initial={{ opacity: 1 }}
+                                    transition={{ ease: "easeInOut", duration: 0.5 }}
+                                />
+                                <motion.img
+                                    src={AIFoundryLogoTopSticky.src}
+                                    className="absolute w-[14.15vw] ml-[3.5vw]"
+                                    animate={{ opacity: isSticky ? 1 : 0 }}
+                                    initial={{ opacity: 0 }}
+                                    transition={{ ease: "easeInOut", duration: 0.5 }}
+                                />
                             </div>
-                        </div>
-                        <div className='flex basis-[50%] w-full justify-end'>
-                            <SVGIconHamburger />
-                        </div>
+                            <div className='flex basis-[50%] w-full justify-end'>
+                                <SVGIconHamburger />
+                            </div>
+                        </motion.nav>
                     </div>
                     <div className='absolute w-full top-[36vw]'>
                         <p className='uppercase text-[23.5vw] leading-[17.4vw] text-center font-black'>

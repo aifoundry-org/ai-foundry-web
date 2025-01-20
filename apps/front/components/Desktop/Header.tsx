@@ -22,7 +22,6 @@ export default function Header() {
         };
     },[])
     
-    // #F6EFE4 = sand color
     return (
         <header className='hidden xs:block'>
             <div className='flex flex-col w-full bg-black'>
