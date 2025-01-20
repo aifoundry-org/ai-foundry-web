@@ -40,7 +40,7 @@ export default function Community() {
     const [selectedMonth, setSelectedMonth] = useState(months[0]);
 
     return (
-        <div className='hidden xs:flex xs:flex-col xs:pt-[7.85vw] xs:relative xs:w-full xs:h-fit xs:px-[7.78vw]'>
+        <div id='events' className='hidden xs:flex xs:flex-col xs:pt-[7.85vw] xs:relative xs:w-full xs:h-fit xs:px-[7.78vw]'>
             <div className='absolute w-full top-0 left-0 -z-10'>
                 <img src={IMGBackground.src} alt="Community background" />
             </div>

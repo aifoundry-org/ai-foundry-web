@@ -24,15 +24,12 @@ const coreValues = [{
 export default function VisionMission(){
     return (
         <>
-            <div className='hidden xs:flex xs:flex-col md:flex-row xl:flex-row 2xl:flex-row xs:relative xs:w-full xs:h-fit xs:mt-[7vw] xs:mb-[14.2vw] xs:px-[5.6vw]'>
+            <div className='hidden md:flex md:flex-row xl:flex-row 2xl:flex-row md:relative md:w-full md:h-fit md:mt-[7vw] md:px-[5.6vw]'>
                 <div className='relative w-full flex basis-7/12'>
                     <div className='absolute w-[33.275vw] -left-[5.65vw] top-[7.6vw]'>
                         <img src={IMGBackground.src} width="100%" alt="Vision & Mission Section" />
                     </div>
                     <div className='absolute xs:hidden md:block xl:block 2xl:block w-full left-[2vw] top-[2vw] font-black font-dharma-gothic-e text-orange text-[12.5vw] leading-[9.25vw] uppercase'>
-                        Vision<br/>& Mission
-                    </div>
-                    <div className='absolute block md:hidden xl:hidden 2xl:hidden w-fit left-[25.7vw] top-[6vw] font-black font-dharma-gothic-e text-orange text-[12.5vw] leading-[9.25vw] uppercase'>
                         Vision<br/>& Mission
                     </div>
                     <div className='absolute w-full -left-[4.1vw] top-[13vw]'>
@@ -53,7 +50,7 @@ export default function VisionMission(){
                     </div>
                 </div>
             </div>
-            <div className='hidden md:flex md:flex-col md:relative md:w-full md:h-fit md:px-[8vw]'>
+            <div id='values' className='hidden md:flex md:flex-col md:relative md:w-full md:h-fit md:px-[8vw] md:pt-[14.2vw]'>
                 <div className='w-full font-black text-[4.31vw] leading-[3.7vw] mb-[3.06vw] uppercase'>
                     Our core values
                 </div>

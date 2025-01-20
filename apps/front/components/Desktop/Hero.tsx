@@ -1,11 +1,11 @@
-import IMGPaperBackground from '@/public/pngs/hero/PaperBackground.png'
+import IMGPaperBackground from '@/public/pngs/hero/paperBackground.png'
 import SVGPaperError from '@/public/svgs/hero/PaperError'
-import IMGPaperGraffiti from '@/public/pngs/hero/PaperGraffiti.png'
+import IMGPaperGraffiti from '@/public/pngs/hero/paperGraffiti.png'
 
 export default function Hero() {
     return (
         <div className='hidden xs:flex xs:flex-col xs:gap-y-[6vw] xs:w-full xs:h-full'>
-            <div className='relative w-full h-full'>
+            <div className='hero relative w-full h-full'>
                 <img src={IMGPaperBackground.src} width="100%" height="100%" />
                 <p className='absolute uppercase text-[15vw] lg:text-[16.15vw] leading-[0.75] text-center font-black -bottom-[1.1vw] left-1/2 -translate-x-1/2'>
                     An open AI<br/>community<br/>for all
