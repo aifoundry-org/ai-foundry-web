@@ -48,7 +48,7 @@ export default function OpenSourceProjects() {
     };
 
     return (
-        <div className='xs:hidden flex flex-col pt-[21.35vw] pb-[7.7vw] relative w-full h-fit px-[5.6vw]'>
+        <div id='projects-mobile' className='xs:hidden flex flex-col pt-[30vw] pb-[7.7vw] relative w-full h-fit px-[5.6vw]'>
             <div className='font-black font-dharma-gothic-e text-[12.8vw] leading-[10.7vw] uppercase'>
                 View and join our<br/>open-source<br/>projects
             </div>

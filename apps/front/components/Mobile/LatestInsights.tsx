@@ -51,8 +51,8 @@ export default function LatestInsights() {
     };
 
     return (
-        <div className='xs:hidden flex flex-col pt-[21.35vw] pb-[7.7vw] relative w-full h-fit px-[5.6vw]'>
-            <div className='absolute w-full h-fit -top-[3.5vw] left-0 -z-[1]'>
+        <div id='blog-mobile' className='xs:hidden flex flex-col pt-[30vw] pb-[7.7vw] relative w-full h-fit px-[5.6vw]'>
+            <div className='absolute w-full h-fit top-[5.5vw] left-0 -z-[1]'>
                 <img src={IMGBackground.src} width="100%" alt="Latest Insights background" />
             </div>
             <div className='font-black font-dharma-gothic-e text-[12.8vw] leading-[10.7vw] uppercase'>
