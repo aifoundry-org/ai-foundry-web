@@ -31,6 +31,10 @@
   font-size: 10px;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   color: black;
   background: var(--sand);
@@ -49,5 +53,5 @@ ul {
 }
 
 ul li {
-  margin-left: 4.75vw;
+  margin-left: 1.6vw;
 }

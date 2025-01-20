@@ -1,6 +1,7 @@
 'use client';
 
 import { useState, useEffect } from 'react';
+import Link from "next/link";
 import { motion } from "motion/react"
 import Button from '@/litebox-lib/ui/Button/Button';
 import AIFoundryLogoTop from '@/public/pngs/common/AIFoundryLogoTop.png';
@@ -58,18 +59,18 @@ export default function Header() {
                                     animate={{ columnGap: isSticky ? '1.67vw' : '2.78vw' }}
                                     transition={{ ease: "easeInOut", duration: 0.5 }}
                                 >
-                                    <a className="uppercase" href="">
+                                    <Link className="uppercase" href="#projects">
                                         Projects
-                                    </a>
-                                    <a className="uppercase" href="">
+                                    </Link>
+                                    <Link className="uppercase" href="#events">
                                         Events
-                                    </a>
-                                    <a className="uppercase" href="">
+                                    </Link>
+                                    <Link className="uppercase" href="#blog">
                                         Blog
-                                    </a>
-                                    <a className="uppercase" href="">
+                                    </Link>
+                                    <Link className="uppercase" href="#values">
                                         Our Values
-                                    </a>
+                                    </Link>
                                 </motion.div>
                             </div>
                             <div className="flex w-full justify-center items-center relative">
