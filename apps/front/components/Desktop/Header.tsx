@@ -11,7 +11,7 @@ export default function Header() {
     const [isSticky, setIsSticky] = useState(false);
 
     const checkIfSticky = () => {
-        setIsSticky(window.scrollY >= 32);
+        setIsSticky(window.scrollY > 16);
     }
 
     useEffect(() => {
@@ -21,6 +21,7 @@ export default function Header() {
         };
     },[])
     
+    // ${isSticky ? 'px-[4vw]' : 'px-[5vw] pt-[2.225vw] pb-[0.5vw]'}
     // #F6EFE4 = sand color
     return (
         <header className='hidden xs:block'>
@@ -33,11 +34,11 @@ export default function Header() {
                         </p>
                     </a>
                 </div>
-                <div className='w-full h-[6.5vw] bg-sand'>
+                <div className={`flex items-center w-full h-[5.56vw] px-[5vw] pt-[2.225vw] pb-[0.5vw] bg-sand`}>
                     <motion.nav
                         className={`flex flex-col bg-sand ${
                             isSticky
-                            ? 'fixed z-20 top-[2.225vw] border-[1px] border-black'
+                            ? 'fixed z-20 top-[2.8vw] px-[2.78vw] py-[0.63vw] border-2 border-black'
                             : 'rounded-t-lg relative mx-auto'
                         }`}
                         style={{
@@ -48,18 +49,15 @@ export default function Header() {
                         }}
                         initial={{ width: '100%' }}
                         animate={{ width: isSticky ? '66.81vw' : '100%' }}
-                        transition={{ ease: "easeInOut", duration: 1 }}
+                        transition={{ ease: "easeInOut", duration: 2 }}
                         >
-                        <div
-                            className={`flex flex-row items-center ${
-                            isSticky ? 'px-[2.8vw] py-[0.625vw]' : 'pt-[2.225vw] px-[5vw] pb-[0.7vw]'
-                            }`}
-                        >
-                            <div className="flex w-full justify-start text-center">
-                                <div
-                                    className={`flex text-nowrap flex-wrap flex-row font-medium ${
-                                    isSticky ? 'gap-x-[1.67vw]' : 'gap-x-[2.78vw]'
-                                    } text-[1.4vw] leading-[1.4vw]`}
+                        <div className={`flex flex-row items-center`}>
+                            <div className="flex w-full justify-start">
+                                <motion.div
+                                    className='flex text-nowrap flex-wrap flex-row font-medium text-[1.4vw] leading-[1.4vw]'
+                                    initial={{ columnGap: '2.78vw'}}
+                                    animate={{ columnGap: isSticky ? '1.67vw' : '2.78vw' }}
+                                    transition={{ ease: "easeInOut", duration: 2 }}
                                 >
                                     <a className="uppercase" href="">
                                         Projects
@@ -73,9 +71,9 @@ export default function Header() {
                                     <a className="uppercase" href="">
                                         Our Values
                                     </a>
-                                </div>
+                                </motion.div>
                             </div>
-                            <div className="flex w-1/2 justify-center items-center relative">
+                            <div className="flex w-full justify-center items-center relative">
                                 <motion.img
                                     src={AIFoundryLogoTop.src}
                                     className="absolute w-[11vw]"
