@@ -53,7 +53,7 @@ ol {
 
 @media (min-width: 431px) {
   ul li {
-    margin-left: 1.7vw;
+    margin-left: 2rem;
   }
 
   ol li {
@@ -79,7 +79,7 @@ ol {
 
 @media (max-width: 430px) {
   ul li {
-    margin-left: 6vw;
+    margin-left: 2rem;
   }
 }
 
