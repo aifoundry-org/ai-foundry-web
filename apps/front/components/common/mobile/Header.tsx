@@ -16,6 +16,7 @@ import IMGLinkedinIcon from '@/public/pngs/footer/linkedinIconMobile.png'
 import IMGYoutubeIcon from '@/public/pngs/footer/youtubeIconMobile.png'
 
 export default function Header() {
+    const [currPage, setCurrPage] = useState('');
     const [showMenu, setShowMenu] = useState(false);
     const [isSticky, setIsSticky] = useState(false);
 
@@ -24,6 +25,7 @@ export default function Header() {
     }
 
     useEffect(() => {
+        setCurrPage(window.location.pathname)
         checkIfSticky();
         window.addEventListener('scroll', checkIfSticky);
         return () => {
@@ -43,7 +45,7 @@ export default function Header() {
                     </a>
                 </div>
                 <div className='flex flex-row w-full h-[27vw] bg-sand rounded-t-3xl relative'>
-                    <img className='absolute w-[19.48vw] h-[25.35vw] right-[0.3vw] z-[2]' src={IMGBackground.src} />
+                    {currPage == '/' && <img className='absolute w-[19.48vw] h-[25.35vw] right-[0.3vw] z-[2]' src={IMGBackground.src} />}
                     <motion.nav
                         className={`flex flex-row items-center bg-sand ${
                             isSticky

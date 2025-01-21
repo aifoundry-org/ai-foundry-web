@@ -46,12 +46,41 @@ ul {
   list-style-position: outside;
 }
 
+ol {
+  list-style-type: decimal;
+  list-style-position: outside;
+}
+
 @media (min-width: 431px) {
   ul li {
+    margin-left: 1.7vw;
+  }
+
+  ol li {
     margin-left: 4vw;
   }
 }
 
-ul li {
-  margin-left: 1.6vw;
+@media (max-width: 430px) {
+  ul li {
+    margin-left: 6vw;
+  }
+
+  ol li {
+    margin-left: 5vw;
+  }
+
+  h2 {
+    text-transform: uppercase;
+    font-size: 10.67vw;
+    font-weight: 900;
+    line-height: 8.8vw;
+  }
+
+  h3 {
+    text-transform: uppercase;
+    font-size: 8.55vw;
+    font-weight: 900;
+    line-height: 6.95vw;
+  }
 }
