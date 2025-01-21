@@ -1,9 +1,13 @@
 import React from 'react';
 import { cn } from '../../utils/cn';
+import { FieldValues, UseFormRegister } from 'react-hook-form';
 
 export interface InputProps extends React.InputHTMLAttributes<HTMLInputElement> {
+  label?: string;
   variant?: Variant;
   className?: string;
+  register?: UseFormRegister<FieldValues>;
+  required?: boolean;
 }
 
 type Variant = 'plain' | 'outlined' | 'error';
@@ -25,9 +29,13 @@ const inputVariants = {
  * @param variant - The visual style variant of the input.
  * @param className - Additional CSS classes that can be passed to customize the styling of the component.
  */
-const Input = React.forwardRef<HTMLInputElement, InputProps>(({ variant = 'plain', className = '', ...props }, ref) => {
+const Input = React.forwardRef<HTMLInputElement, InputProps>(({ label = '', variant = 'plain', className = '', register, required, ...props }, ref) => {
   const inputStyles = cn(inputVariants.essentialStyles, inputVariants.variant[variant], className);
-  return <input ref={ref} className={inputStyles} {...props} />;
+  if(register){
+    return <input {...register(label, {required})} ref={ref} className={inputStyles} {...props} />;
+  } else {
+    return <input ref={ref} className={inputStyles} {...props} />;
+  }
 });
 
 Input.displayName = 'Input';
