@@ -32,7 +32,7 @@ export default function Footer(){
                     </div>
                     <div className='flex flex-row gap-[3.34vw]'>
                         <a href=''>Privacy Policy</a>
-                        <a href=''>Terms Of Service</a>
+                        <a href='/terms-and-conditions'>Terms Of Service</a>
                     </div>
                 </div>
                 <div className='relative flex flex-row justify-between pb-[6.67vw]'>

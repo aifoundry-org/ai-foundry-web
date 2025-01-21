@@ -34,12 +34,12 @@ export default function Header() {
                       </p>
                   </a>
               </div>
-              <div className={`flex items-center w-full h-[5.56vw] pt-[2.225vw] pb-[0.5vw] bg-sand`}>
+              <div className={`flex items-center w-full h-[5.56vw] pt-[2.225vw] pb-[0.5vw] bg-sand rounded-t-lg`}>
                   <motion.nav
                       className={`flex flex-col bg-sand ${
                           isSticky
                           ? 'fixed z-20 top-[2.8vw] px-[2.78vw] py-[0.63vw] border-2 border-black'
-                          : 'rounded-t-lg relative px-[2.78vw] mx-auto'
+                          : 'relative px-[2.78vw] mx-auto'
                       }`}
                       style={{
                           ...(isSticky && {
