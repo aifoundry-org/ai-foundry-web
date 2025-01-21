@@ -4,6 +4,7 @@ import { useState } from 'react';
 import Accordion from '@/libs/litebox-lib/ui/Accordion/Accordion'
 import IMGBanner from '@/public/pngs/faqs/bannerMobile.png'
 import Button from '@/libs/litebox-lib/ui/Button/Button'
+import IMGErrorsCodes from '@/public/pngs/footer/errorCodesMobile.png'
 import FaqsModal from './FaqsModal'
 
 const questions = [{
@@ -47,6 +48,7 @@ export default function Faqs() {
                     <Button onClick={() => setIsModalOpen(true)} className='mt-[9.6vw] z-10' labelProps='w-[20.87vw] h-[6.875vw]' variant='primary' content='contact us' />
                 </div>
             </div>
+            <img className='absolute -bottom-[9vw] right-0' src={IMGErrorsCodes.src} />
             {isModalOpen && <FaqsModal setIsModalOpen={setIsModalOpen} isModalOpen={isModalOpen} />}
         </div>
     )

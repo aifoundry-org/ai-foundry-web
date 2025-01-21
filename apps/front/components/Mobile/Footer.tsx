@@ -1,5 +1,4 @@
 import IMGLogo from '@/public/pngs/footer/logoMobile.png'
-import IMGErrorsCodes from '@/public/pngs/footer/errorCodesMobile.png'
 import IMGErrors from '@/public/pngs/footer/errorsMobile.png'
 import IMGBucket from '@/public/pngs/footer/bucketMobile.png'
 import IMGArrows from '@/public/pngs/footer/arrowsMobile.png'
@@ -12,7 +11,6 @@ export default function Footer(){
     return (
         <footer className='xs:hidden flex flex-col bg-orange rounded-t-[5.335vw]'>
             <div className='relative flex flex-col px-[6.4vw] pt-[8.55vw]'>
-                <img className='absolute -top-[12.5vw] right-0' src={IMGErrorsCodes.src} />
                 <img className='absolute w-1/4 top-[49vw] right-0' src={IMGBucket.src} />
                 <div className='relative flex flex-col size-full font-dharma-gothic-e pb-[10.675vw] border-b-2 border-black'>
                     <img className='w-[33.1vw] mb-[6.4vw]' src={IMGLogo.src} />
