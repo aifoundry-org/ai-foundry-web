@@ -47,7 +47,7 @@ export default function Faqs() {
                 </div>
                 <Button onClick={() => setIsModalOpen(true)} className='mr-[2.78vw]' labelProps='w-[4.44vw] h-[1.4vw]' variant='primary' content='contact us' />
             </div>
-            {isModalOpen && <FaqsModal setIsModalOpen={setIsModalOpen} isModalOpen={isModalOpen} />}
+            <FaqsModal setIsModalOpen={setIsModalOpen} isModalOpen={isModalOpen} />
         </div>
     )
 }

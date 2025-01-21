@@ -13,7 +13,7 @@ export default function FaqsModal({isModalOpen, setIsModalOpen} : {isModalOpen:b
     const [isSending, setIsSending] = useState(false);
     const [showResult, setShowResult] = useState(false);
 
-    const onSubmit = (data: any) => {
+    const onSubmit = () => {
         if(Object.keys(errors).length == 0){
             setIsSending(true);
             const timeout = setTimeout(() => {
@@ -25,10 +25,11 @@ export default function FaqsModal({isModalOpen, setIsModalOpen} : {isModalOpen:b
     }
 
     const inputStyles = 'w-full h-[4.45vw] font-host-grotesk text-[1.125vw] border-2 border-black focus:border-orange'
+    const errorStyle = 'text-[1.2vw] text-red-500 uppercase'
 
     return (
         <Modal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)}>
-            <div className='flex flex-col w-[46.95vw] px-[5.28vw] pt-[2vw] pb-[3vw] justify-between border-black border-2 bg-sand relative'>
+            <div className='flex flex-col w-[46.95vw] px-[5.28vw] pb-[1vw] justify-between border-black border-2 bg-sand relative'>
                 <button className='absolute top-[2vw] right-[2vw]' type='button' onClick={() => setIsModalOpen(false)} aria-label='Close modal'>
                     <img src={IMGCloseButton.src} className='w-[2.225vw] h-[2.225vw]' />
                 </button>
@@ -44,8 +45,8 @@ export default function FaqsModal({isModalOpen, setIsModalOpen} : {isModalOpen:b
                                     className={`${inputStyles} ${errors.firstName ? 'border-red-600' : ''}`}
                                     {...register("firstName", { required: true, pattern: /^[A-Za-z]+$/i })}
                                 />
-                                {errors.firstName?.type === 'required' &&  <div className='text-[1.6vw] text-red-500 uppercase'>First Name is required</div>}
-                                {errors.firstName?.type === 'pattern' &&  <div className='text-[1.6vw] text-red-500 uppercase'>First Name format invalid</div>}
+                                {errors.firstName?.type === 'required' &&  <div className={errorStyle}>First Name is required</div>}
+                                {errors.firstName?.type === 'pattern' &&  <div className={errorStyle}>First Name format invalid</div>}
                             </div>
                             <div className='flex flex-col w-full'>
                                 <Input 
@@ -55,8 +56,8 @@ export default function FaqsModal({isModalOpen, setIsModalOpen} : {isModalOpen:b
                                     className={`${inputStyles} ${errors.lastName ? 'border-red-600' : ''}`}
                                     {...register("lastName", { required: true, pattern: /^[A-Za-z]+$/i })}
                                 />
-                                {errors.lastName?.type === 'required' &&  <div className='text-[1.6vw] text-red-500 uppercase'>Last Name is required</div>}
-                                {errors.lastName?.type === 'pattern' &&  <div className='text-[1.6vw] text-red-500 uppercase'>Last Name format invalid</div>}
+                                {errors.lastName?.type === 'required' &&  <div className={errorStyle}>Last Name is required</div>}
+                                {errors.lastName?.type === 'pattern' &&  <div className={errorStyle}>Last Name format invalid</div>}
                             </div>
                             <div className='flex flex-col w-full'>
                                 <Input 
@@ -66,8 +67,8 @@ export default function FaqsModal({isModalOpen, setIsModalOpen} : {isModalOpen:b
                                     className={`${inputStyles} ${errors.companyName ? 'border-red-600' : ''}`}
                                     {...register("companyName", { required: true, pattern: /^[A-Za-z]+$/i })}
                                 />
-                                {errors.companyName?.type === 'required' &&  <div className='text-[1.6vw] text-red-500 uppercase'>Company Name is required</div>}
-                                {errors.companyName?.type === 'pattern' &&  <div className='text-[1.6vw] text-red-500 uppercase'>Company Name format invalid</div>}
+                                {errors.companyName?.type === 'required' &&  <div className={errorStyle}>Company Name is required</div>}
+                                {errors.companyName?.type === 'pattern' &&  <div className={errorStyle}>Company Name format invalid</div>}
                             </div>
                             <div className='flex flex-col w-full'>
                                 <Input 
@@ -77,8 +78,8 @@ export default function FaqsModal({isModalOpen, setIsModalOpen} : {isModalOpen:b
                                     className={`${inputStyles} ${errors.email ? 'border-red-600' : ''}`}
                                     {...register("email", { required: true, pattern: /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/})}
                                 />
-                                {errors.email?.type === 'required' &&  <div className='text-[1.6vw] text-red-500 uppercase'>Email is required</div>}
-                                {errors.email?.type === 'pattern' &&  <div className='text-[1.6vw] text-red-500 uppercase'>Email format invalid</div>}
+                                {errors.email?.type === 'required' &&  <div className={errorStyle}>Email is required</div>}
+                                {errors.email?.type === 'pattern' &&  <div className={errorStyle}>Email format invalid</div>}
                             </div>
                             <div className='flex flex-col w-full'>
                                 <Input 
@@ -88,7 +89,7 @@ export default function FaqsModal({isModalOpen, setIsModalOpen} : {isModalOpen:b
                                     className={`${inputStyles} ${errors.message ? 'border-red-600' : ''}`}
                                     {...register("message", { required: true })}
                                 />
-                                {errors.message?.type === 'required' &&  <div className='text-[1.6vw] text-red-500 uppercase'>message is required</div>}
+                                {errors.message?.type === 'required' &&  <div className={errorStyle}>message is required</div>}
                             </div>
                         </div>
                         <Button className='flex mb-[2vw]' content='Send' onClick={() => {
