@@ -1,4 +1,4 @@
-import IMGBackground from '@/public/pngs/findOutMore/background.png';
+import IMGBackground from '@/public/pngs/home/findOutMore/background.png';
 import SVGCodeErrors from '@/public/svgs/findOutMore/CodeErrors';
 import SVGBadgeFoundryBadge from '@/public/svgs/findOutMore/FoundryBadge'
 import SVGArrowDown from '@/public/svgs/findOutMore/ArrowDown'
@@ -6,8 +6,8 @@ import SVGProjectArrowDown from '@/public/svgs/findOutMore/ProjectArrowDown'
 import SVGTextError from '@/public/svgs/findOutMore/TextError'
 import SVGTextArrowUpLeft from '@/public/svgs/findOutMore/TextArrowUpLeft'
 import SVGTextArrowDownRight from '@/public/svgs/findOutMore/TextArrowDownRight'
-import IMGSusanAvatar from '@/public/pngs/findOutMore/susanAvatar.png'
-import IMGMaraAvatar from '@/public/pngs/findOutMore/maraAvatar.png'
+import IMGSusanAvatar from '@/public/pngs/home/findOutMore/susanAvatar.png'
+import IMGMaraAvatar from '@/public/pngs/home/findOutMore/maraAvatar.png'
 import SVGArrowRight from '@/public/svgs/findOutMore/ArrowRight'
 import Button from '@/libs/litebox-lib/ui/Button/Button'
 

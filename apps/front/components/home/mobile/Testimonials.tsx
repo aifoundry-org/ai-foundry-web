@@ -2,19 +2,19 @@
 
 import { useState } from 'react'
 import Button from '@/litebox-lib/ui/Button/Button';
-import IMGBackgroundTop from '@/public/pngs/testimonials/backgroundTopMobile.png'
-import IMGBackgroundBottom from '@/public/pngs/testimonials/backgroundBottomMobile.png'
-import IMGStarFull from '@/public/pngs/testimonials/starFull.png'
-import IMGStarEmpty from '@/public/pngs/testimonials/starEmpty.png'
-import IMGSliderCircleFull from '@/public/pngs/testimonials/sliderCircleFull.png'
-import IMGSliderCircleEmpty from '@/public/pngs/testimonials/sliderCircleEmpty.png'
+import IMGBackgroundTop from '@/public/pngs/home/testimonials/backgroundTopMobile.png'
+import IMGBackgroundBottom from '@/public/pngs/home/testimonials/backgroundBottomMobile.png'
+import IMGStarFull from '@/public/pngs/home/testimonials/starFull.png'
+import IMGStarEmpty from '@/public/pngs/home/testimonials/starEmpty.png'
+import IMGSliderCircleFull from '@/public/pngs/home/testimonials/sliderCircleFull.png'
+import IMGSliderCircleEmpty from '@/public/pngs/home/testimonials/sliderCircleEmpty.png'
 
-import IMGCompanyWebflow from '@/public/pngs/testimonials/companyWebflow.png'
-import IMGCompanyMetacortex from '@/public/pngs/testimonials/companyMetacortex.png'
-import IMGCompanyMatrix from '@/public/pngs/testimonials/companyMatrix.png'
-import IMGDeveloper1 from '@/public/pngs/testimonials/developer1.png'
-import IMGDeveloper2 from '@/public/pngs/testimonials/developer2.png'
-import IMGDeveloper3 from '@/public/pngs/testimonials/developer3.png'
+import IMGCompanyWebflow from '@/public/pngs/home/testimonials/companyWebflow.png'
+import IMGCompanyMetacortex from '@/public/pngs/home/testimonials/companyMetacortex.png'
+import IMGCompanyMatrix from '@/public/pngs/home/testimonials/companyMatrix.png'
+import IMGDeveloper1 from '@/public/pngs/home/testimonials/developer1.png'
+import IMGDeveloper2 from '@/public/pngs/home/testimonials/developer2.png'
+import IMGDeveloper3 from '@/public/pngs/home/testimonials/developer3.png'
 
 const cards = [{
     stars: 3,

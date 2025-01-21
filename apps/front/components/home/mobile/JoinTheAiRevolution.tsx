@@ -1,7 +1,7 @@
 import Input from '@/libs/litebox-lib/ui/Input/Input'
 import Button from '@/libs/litebox-lib/ui/Button/Button'
-import IMGBackground from '@/public/pngs/joinTheAiRevolution/backgroundMobile.png'
-import IMGComputer from '@/public/pngs/joinTheAiRevolution/computer.png'
+import IMGBackground from '@/public/pngs/home/joinTheAiRevolution/backgroundMobile.png'
+import IMGComputer from '@/public/pngs/home/joinTheAiRevolution/computer.png'
 
 export default function JoinTheAiRevolution(){
     return (

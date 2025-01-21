@@ -1,5 +1,5 @@
 import Button from '@/libs/litebox-lib/ui/Button/Button'
-import IMGBackground from '@/public/pngs/visionMission/backgroundMobile.png'
+import IMGBackground from '@/public/pngs/home/visionMission/backgroundMobile.png'
 import OurCoreValue from './VisionMissionCard'
 
 const coreValues = [{

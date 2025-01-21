@@ -1,6 +1,6 @@
-import IMGBackground from '@/public/pngs/hero/background.png'
+import IMGBackground from '@/public/pngs/home/hero/background.png'
 import SVGPaperError from '@/public/svgs/hero/PaperError'
-import IMGPaperGraffiti from '@/public/pngs/hero/paperGraffiti.png'
+import IMGPaperGraffiti from '@/public/pngs/home/hero/paperGraffiti.png'
 
 export default function Hero() {
     return (

@@ -2,7 +2,7 @@
 
 import { useState } from 'react';
 import Accordion from '@/libs/litebox-lib/ui/Accordion/Accordion'
-import IMGBanner from '@/public/pngs/faqs/bannerMobile.png'
+import IMGBanner from '@/public/pngs/home/faqs/bannerMobile.png'
 import Button from '@/libs/litebox-lib/ui/Button/Button'
 import IMGErrorsCodes from '@/public/pngs/footer/errorCodesMobile.png'
 import FaqsModal from './FaqsModal'

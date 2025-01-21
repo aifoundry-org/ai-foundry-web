@@ -1,10 +1,10 @@
 'use client'
 
 import LatestInsightsCard from './LatestInsightsCard'
-import IMGBackground from '@/public/pngs/latestInsights/background.png'
-import IMGLLamaEvent from '@/public/pngs/latestInsights/llamaEvent.png'
-import IMGPodcast from '@/public/pngs/latestInsights/podcast.png'
-import IMGProductionStack from '@/public/pngs/latestInsights/productionStack.png'
+import IMGBackground from '@/public/pngs/home/latestInsights/background.png'
+import IMGLLamaEvent from '@/public/pngs/home/latestInsights/llamaEvent.png'
+import IMGPodcast from '@/public/pngs/home/latestInsights/podcast.png'
+import IMGProductionStack from '@/public/pngs/home/latestInsights/productionStack.png'
 import Button from '@/libs/litebox-lib/ui/Button/Button'
 
 const cards = [{

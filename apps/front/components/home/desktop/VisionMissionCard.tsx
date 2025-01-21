@@ -1,7 +1,7 @@
-import IMGIconHandshake from '@/public/pngs/visionMission/handshake.png';
-import IMGIconCooperation from '@/public/pngs/visionMission/cooperation.png';
-import IMGIconOpenBook from '@/public/pngs/visionMission/openBook.png';
-import IMGIconUser from '@/public/pngs/visionMission/user.png';
+import IMGIconHandshake from '@/public/pngs/home/visionMission/handshake.png';
+import IMGIconCooperation from '@/public/pngs/home/visionMission/cooperation.png';
+import IMGIconOpenBook from '@/public/pngs/home/visionMission/openBook.png';
+import IMGIconUser from '@/public/pngs/home/visionMission/user.png';
 
 const imgVariants : {[key: string]: string} = {
   handshake: IMGIconHandshake.src,

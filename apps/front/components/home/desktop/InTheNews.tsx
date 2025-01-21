@@ -2,9 +2,9 @@
 
 import { useState } from 'react'
 import InTheNewsCard from './InTheNewsCard'
-import IMGSliderCircleFull from '@/public/pngs/inTheNews/sliderCircleFull.png'
-import IMGSliderCircleEmpty from '@/public/pngs/inTheNews/sliderCircleEmpty.png'
-import IMGBackground from '@/public/pngs/inTheNews/background.png'
+import IMGSliderCircleFull from '@/public/pngs/home/inTheNews/sliderCircleFull.png'
+import IMGSliderCircleEmpty from '@/public/pngs/home/inTheNews/sliderCircleEmpty.png'
+import IMGBackground from '@/public/pngs/home/inTheNews/background.png'
 
 const cards = [{
     title: "Community Contributions to AI Projects",

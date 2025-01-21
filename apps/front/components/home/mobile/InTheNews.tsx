@@ -2,7 +2,7 @@
 
 import { useState } from 'react'
 import InTheNewsCard from './InTheNewsCard'
-import IMGBackground from '@/public/pngs/inTheNews/backgroundMobile.png'
+import IMGBackground from '@/public/pngs/home/inTheNews/backgroundMobile.png'
 
 const cards = [{
     title: "Community Contributions to AI Projects",

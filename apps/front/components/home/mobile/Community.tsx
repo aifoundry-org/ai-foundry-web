@@ -1,7 +1,7 @@
 'use client'
 
 import { useState } from 'react';
-import IMGBackground from '@/public/pngs/community/backgroundMobile.png';
+import IMGBackground from '@/public/pngs/home/community/backgroundMobile.png';
 import CommunityCard from './CommunityCard';
 import Button from '@/litebox-lib/ui/Button/Button';
 

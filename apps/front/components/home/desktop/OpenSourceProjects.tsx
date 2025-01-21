@@ -1,7 +1,7 @@
 'use client'
 
 import OpenSourceProjectsCard from './OpenSourceProjectsCard'
-import IMGBackground from '@/public/pngs/openSourceProjects/background.png'
+import IMGBackground from '@/public/pngs/home/openSourceProjects/background.png'
 
 const cards = [{
     id: 1,

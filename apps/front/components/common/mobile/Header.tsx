@@ -2,11 +2,11 @@
 import { useState, useEffect } from 'react';
 import { motion } from "motion/react"
 import Link from "next/link";
-import IMGHeaderIconArrowUpRight from '@/public/pngs/common/headerArrowUpRight.png';
+import IMGHeaderIconArrowUpRight from '@/public/pngs/header/headerArrowUpRight.png';
 import SVGIconHamburger from '@/public/svgs/common/Hamburger';
-import IMGAIFoundryLogoTop from '@/public/pngs/common/AIFoundryLogoTopMobile.png';
-import IMGAIFoundryLogoTopSticky from '@/public/pngs/common/AIFoundryLogoTopStickyMobile.png';
-import IMGBackground from '@/public/pngs/navbar/backgroundMobile.png';
+import IMGAIFoundryLogoTop from '@/public/pngs/header/AIFoundryLogoTopMobile.png';
+import IMGAIFoundryLogoTopSticky from '@/public/pngs/header/AIFoundryLogoTopStickyMobile.png';
+import IMGBackground from '@/public/pngs/home/navbar/backgroundMobile.png';
 import Button from '@/libs/litebox-lib/ui/Button/Button';
 
 import IMGAIFoundyLogoSideMenuMobile from '@/public/pngs/sideMenu/AIFoundryLogoMobile.png'

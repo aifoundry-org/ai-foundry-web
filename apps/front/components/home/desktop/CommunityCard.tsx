@@ -1,9 +1,9 @@
 'use client';
 
 import Button from '@/litebox-lib/ui/Button/Button';
-import IMGIconCalendar from '@/public/pngs/community/calendar.png';
-import IMGIconPosition from '@/public/pngs/community/position.png';
-import IMGIconCam from '@/public/pngs/community/cam.png';
+import IMGIconCalendar from '@/public/pngs/home/community/calendar.png';
+import IMGIconPosition from '@/public/pngs/home/community/position.png';
+import IMGIconCam from '@/public/pngs/home/community/cam.png';
 
 export default function CommunityCard({
     title = '',

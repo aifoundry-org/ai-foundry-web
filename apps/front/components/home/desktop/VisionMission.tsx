@@ -1,6 +1,6 @@
 import Button from '@/libs/litebox-lib/ui/Button/Button'
-import IMGBackground from '@/public/pngs/visionMission/background.png'
-import IMGErrors from '@/public/pngs/visionMission/errorCodes.png'
+import IMGBackground from '@/public/pngs/home/visionMission/background.png'
+import IMGErrors from '@/public/pngs/home/visionMission/errorCodes.png'
 import OurCoreValue from './VisionMissionCard'
 
 const coreValues = [{

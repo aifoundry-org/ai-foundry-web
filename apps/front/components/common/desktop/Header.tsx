@@ -4,9 +4,9 @@ import { useState, useEffect } from 'react';
 import Link from "next/link";
 import { motion } from "motion/react"
 import Button from '@/litebox-lib/ui/Button/Button';
-import IMGAIFoundryLogoTop from '@/public/pngs/common/AIFoundryLogoTop.png';
-import IMGAIFoundryLogoTopSticky from '@/public/pngs/common/AIFoundryLogoTopSticky.png';
-import IMGHeaderIconArrowUpRight from '@/public/pngs/common/headerArrowUpRight.png';
+import IMGAIFoundryLogoTop from '@/public/pngs/header/AIFoundryLogoTop.png';
+import IMGAIFoundryLogoTopSticky from '@/public/pngs/header/AIFoundryLogoTopSticky.png';
+import IMGHeaderIconArrowUpRight from '@/public/pngs/header/headerArrowUpRight.png';
 
 export default function Header() {
     const [isSticky, setIsSticky] = useState(false);

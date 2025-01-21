@@ -1,4 +1,4 @@
-import IMGBackground from '@/public/pngs/ourCompanyDivider/backgroundMobile.png'
+import IMGBackground from '@/public/pngs/home/ourCompanyDivider/backgroundMobile.png'
 
 export default function OurCompanyDivider(){
     return (

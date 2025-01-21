@@ -1,7 +1,7 @@
 'use client'
 
 import { useState } from 'react';
-import IMGBackgroundMobile from '@/public/pngs/hero/backgroundMobile.png';
+import IMGBackgroundMobile from '@/public/pngs/home/hero/backgroundMobile.png';
 
 export default function Hero() {
     const [showMenu, setShowMenu] = useState(false);
