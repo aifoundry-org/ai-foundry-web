@@ -25,10 +25,10 @@ export default function Footer(){
                 <img className='absolute w-[17.22vw] top-[19vw] left-[45.5vw]' src={IMGBucket.src} />
                 <div className='flex flex-row font-bold mt-[3.89vw] mb-[2.78vw] text-[1.395vw] leading-[1.395vw] uppercase justify-between'>
                     <div className='flex flex-row gap-[3.34vw]'>
-                        <a href=''>Projects</a>
-                        <a href=''>Events</a>
-                        <a href=''>Blog</a>
-                        <a href=''>Our Values</a>
+                        <a href='#projects'>Projects</a>
+                        <a href='#events'>Events</a>
+                        <a href='#blog'>Blog</a>
+                        <a href='#values'>Our Values</a>
                     </div>
                     <div className='flex flex-row gap-[3.34vw]'>
                         <a href=''>Privacy Policy</a>

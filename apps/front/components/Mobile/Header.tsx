@@ -62,6 +62,9 @@ export default function Header() {
                         >
                         <div className='flex basis-[50%] w-full mx-auto items-center justify-start'>
                             <motion.img
+                                onClick={() => {
+                                    window.location.href = '/';
+                                }}
                                 src={IMGAIFoundryLogoTop.src}
                                 className="absolute w-[40.27vw]"
                                 animate={{ opacity: isSticky ? 0 : 1 }}
@@ -118,10 +121,13 @@ export default function Header() {
                         </Link>
                     </div>
                     <div className="flex flex-col w-full mb-[10.667vw] font-dharma-gothic-e font-bold text-[4.8vw] leading-[4.8vw] gap-[4.8vw]">
-                        <Link className="uppercase" href="#projects-mobile">
+                        <Link className="uppercase" href="#">
                             Privacy policy
                         </Link>
-                        <Link className="uppercase" href="#events-mobile">
+                        <Link className="uppercase" onClick={() => {
+                            window.scrollTo(0, 0);
+                            setShowMenu(false)}
+                        } href="/terms-and-conditions">
                             Terms of service
                         </Link>
                     </div>

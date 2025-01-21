@@ -74,23 +74,26 @@ export default function Header() {
                               </motion.div>
                           </div>
                           <div className="flex w-full justify-center items-center relative">
-                              <motion.img
-                                  src={IMGAIFoundryLogoTop.src}
-                                  className='absolute w-[11vw]'
-                                  animate={{ opacity: isSticky ? 0 : 1, zIndex: isSticky ? 0 : 1 }}
-                                  initial={{ opacity: 1, zIndex: 10 }}
-                                  transition={{ ease: 'easeIn', duration: 0.2, delay: !isSticky ? 0.3 : 0 }}
-                              />
-                              <motion.img
-                                  onClick={() => {
-                                    window.scrollTo(0, 0);
-                                  }}
-                                  src={IMGAIFoundryLogoTopSticky.src}
-                                  className='absolute w-[4.87vw] cursor-pointer'
-                                  animate={{ opacity: isSticky ? 1 : 0, zIndex: isSticky ? 1 : 0 }}
-                                  initial={{ opacity: 0, zIndex: 0 }}
-                                  transition={{ ease: 'easeIn', duration: 0.4, delay: isSticky ? 0.2 : 0 }}
-                              />
+                                <motion.img
+                                    onClick={() => {
+                                        window.location.href = '/';
+                                    }}
+                                    src={IMGAIFoundryLogoTop.src}
+                                    className='absolute w-[11vw]'
+                                    animate={{ opacity: isSticky ? 0 : 1, zIndex: isSticky ? 0 : 1 }}
+                                    initial={{ opacity: 1, zIndex: 10 }}
+                                    transition={{ ease: 'easeIn', duration: 0.2, delay: !isSticky ? 0.3 : 0 }}
+                                />
+                                <motion.img
+                                    onClick={() => {
+                                        window.scrollTo(0, 0);
+                                    }}
+                                    src={IMGAIFoundryLogoTopSticky.src}
+                                    className='absolute w-[4.87vw] cursor-pointer'
+                                    animate={{ opacity: isSticky ? 1 : 0, zIndex: isSticky ? 1 : 0 }}
+                                    initial={{ opacity: 0, zIndex: 0 }}
+                                    transition={{ ease: 'easeIn', duration: 0.4, delay: isSticky ? 0.2 : 0 }}
+                                />
                           </div>
                           <div className="flex w-full justify-end">
                               <Button variant="primary" content="Join our discord" svg="discord" />

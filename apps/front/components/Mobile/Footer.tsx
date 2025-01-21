@@ -26,14 +26,14 @@ export default function Footer(){
                     </div>
                 </div>
                 <div className='flex flex-row font-bold text-[5vw] leading-[3vw] mt-[10vw] justify-between uppercase'>
-                    <a href=''>Projects</a>
-                    <a href=''>Events</a>
-                    <a href=''>Blog</a>
-                    <a href=''>Our Values</a>
+                    <a href='#projects'>Projects</a>
+                    <a href='#events'>Events</a>
+                    <a href='#blog'>Blog</a>
+                    <a href='#values'>Our Values</a>
                 </div>
                 <div className='flex flex-row font-bold text-[5vw] leading-[3vw] mt-[6.4vw] mb-[10.675vw] justify-between uppercase'>
                     <a href=''>Privacy Policy</a>
-                    <a href=''>Terms Of Service</a>
+                    <a href='/terms-and-conditions'>Terms Of Service</a>
                 </div>
                 <div className='relative flex flex-row justify-between pb-[21vw]'>
                     <div className='flex flex-row gap-[8.55vw]'>
