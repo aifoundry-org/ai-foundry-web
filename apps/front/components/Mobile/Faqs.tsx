@@ -49,7 +49,7 @@ export default function Faqs() {
                 </div>
             </div>
             <img className='absolute -bottom-[9vw] right-0' src={IMGErrorsCodes.src} />
-            {isModalOpen && <FaqsModal setIsModalOpen={setIsModalOpen} isModalOpen={isModalOpen} />}
+            <FaqsModal setIsModalOpen={setIsModalOpen} isModalOpen={isModalOpen} />
         </div>
     )
 }

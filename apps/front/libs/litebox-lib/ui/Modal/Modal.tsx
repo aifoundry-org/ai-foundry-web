@@ -1,7 +1,6 @@
 'use client';
 
-import { useRef, useState } from 'react';
-import { useClickOutside } from '../../hooks/useClickOutside';
+import { motion, AnimatePresence } from "motion/react"
 import useScrollLock from '../../hooks/useScrollLock';
 import { cn } from '../../utils/cn';
 
@@ -24,43 +23,44 @@ export interface ModalProps {
  *
  */
 const Modal = ({ isOpen, children, className, onClose }: ModalProps) => {
-  const [isExiting, setIsExiting] = useState(false);
-  const ref = useRef<HTMLDivElement>(null);
-
-  const animateExit = (callback: () => void) => {
-    setIsExiting(true);
-
-    const timeout = setTimeout(() => {
-      callback();
-      setIsExiting(false);
-      clearTimeout(timeout);
-      // This value should be the same as the duration of the fade-out animation declared in the tailwind.config.ts file
-    }, 300);
-  };
-
-  const handleCloseModal = () => {
-    animateExit(onClose);
-  };
-
-  useClickOutside({ ref, callback: handleCloseModal });
   useScrollLock({
     autoLock: isOpen,
   });
 
-  if (!isOpen) {
-    return null;
-  }
-
   return (
-    <div
-      ref={ref}
-      className={cn(
-        'fixed top-0 left-0 right-0 bottom-0 z-50 bg-[#00000080] flex items-center justify-center',
-        isExiting ? 'animate-fade-out' : 'animate-fade-in',
-        className
-      )}>
-      {children}
-    </div>
+    <AnimatePresence>
+      {isOpen && 
+        <motion.div
+          onClick={onClose}
+          className={cn(
+            'fixed top-0 left-0 right-0 bottom-0 z-50 bg-[#00000080] flex items-center justify-center',
+            className
+          )}
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
+        >
+          <motion.div
+            onClick={(e) => e.stopPropagation()}
+            initial={{
+              scale: 0.9,
+              opacity: 0
+            }}
+            animate={{
+              scale: 1,
+              opacity: 1
+            }}
+            exit={{
+              scale: 0.9,
+              opacity: 0
+            }}
+            transition={{type: 'spring', stiffness: 400, damping: 25}}
+          >
+            {children}
+          </motion.div>
+        </motion.div>
+      }
+    </AnimatePresence>
   );
 };
 

@@ -49,7 +49,7 @@ export default function Faqs() {
                 <Button onClick={() => setIsModalOpen(true)} className='mr-[2.78vw]' labelProps='w-[4.44vw] h-[1.4vw]' variant='primary' content='contact us' />
             </div>
             <img className='absolute w-[58.27vw] -bottom-[9.3vw] right-[2vw]' src={IMGErrorsCodes.src} />
-            {isModalOpen && <FaqsModal setIsModalOpen={setIsModalOpen} isModalOpen={isModalOpen} />}
+            <FaqsModal setIsModalOpen={setIsModalOpen} isModalOpen={isModalOpen} />
         </div>
     )
 }

@@ -13,7 +13,7 @@ export default function FaqsModal({isModalOpen, setIsModalOpen} : {isModalOpen:b
     const [isSending, setIsSending] = useState(false);
     const [showResult, setShowResult] = useState(false);
 
-    const onSubmit = (data: any) => {
+    const onSubmit = () => {
         if(Object.keys(errors).length == 0){
             setIsSending(true);
             const timeout = setTimeout(() => {
@@ -25,17 +25,17 @@ export default function FaqsModal({isModalOpen, setIsModalOpen} : {isModalOpen:b
     }
 
     const inputStyle = 'w-full h-[14.15vw] font-host-grotesk text-[3.75vw] border-2 border-black focus:border-orange'
-    const errorStyle = 'text-[6vw] text-red-500 uppercase'
+    const errorStyle = 'text-[4vw] text-red-500 uppercase'
 
     return (
         <Modal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)}>
-            <div className='flex flex-col w-[87.2vw] px-[5.28vw] pt-[2vw] pb-[3vw] justify-between border-black border-2 bg-sand relative'>
+            <div className='flex flex-col w-[87.2vw] px-[5.28vw] justify-between border-black border-2 bg-sand relative'>
                 <button className='absolute top-[5vw] right-[5vw]' type='button' onClick={() => setIsModalOpen(false)} aria-label='Close modal'>
                     <img src={IMGCloseButton.src} className='w-[8.55vw] h-[8.55vw]' />
                 </button>
                 {!showResult && <>
                     <form onSubmit={handleSubmit(onSubmit)} className={`flex flex-col items-center ${isSending ? 'bg-transparent opacity-50 pointer-events-none' : ''}`}>
-                        <div className='flex flex-col gap-[10.675vw] py-[3.34vw] items-center justify-center w-full'>
+                        <div className='flex flex-col gap-[6.675vw] py-[3.34vw] items-center justify-center w-full'>
                             <p className='text-[8.8vw] font-black uppercase'>Contact us</p>
                             <div className='flex flex-col w-full'>
                                 <Input 
