@@ -57,7 +57,23 @@ ol {
   }
 
   ol li {
-    margin-left: 4vw;
+    margin-left: 2vw;
+  }
+}
+
+@media (min-width: 431px) {
+  h2 {
+    text-transform: uppercase;
+    font-size: 3.34vw;
+    font-weight: 900;
+    line-height: 2.78vw;
+  }
+
+  h3 {
+    text-transform: uppercase;
+    font-size: 2.795vw;
+    font-weight: 900;
+    line-height: 2.295vw;
   }
 }
 
@@ -65,11 +81,12 @@ ol {
   ul li {
     margin-left: 6vw;
   }
+}
 
+@media (max-width: 767px) {
   ol li {
-    margin-left: 5vw;
+    margin-left: 5.5vw;
   }
-
   h2 {
     text-transform: uppercase;
     font-size: 10.67vw;
