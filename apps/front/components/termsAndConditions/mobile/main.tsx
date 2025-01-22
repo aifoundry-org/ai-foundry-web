@@ -184,21 +184,21 @@ export default function main() {
                     Privacy policy
                 </h3>   
                 <p className={`${paragraphStyle} mt-[4.27vw]`}>
-                    Coming soon
+                    <iframe className='flex w-full' src='https://app.termly.io/policy-viewer/iframe-content.html?policyUUID=2fd31d37-c2f6-4c3e-9769-c3667f76cb3d' />
                 </p>  
                 <h3 className='mt-[8.55vw] relative'>
                     <div id='terms-of-use-mobile' className='absolute left-0 -top-[30vw]' />
                     Terms of use
                 </h3>   
                 <p className={`${paragraphStyle} mt-[4.27vw]`}>
-                    Coming soon
+                    <iframe className='flex w-full' src='https://app.termly.io/policy-viewer/iframe-content.html?policyUUID=34285775-1595-400b-b451-a7f993129f0d' />
                 </p> 
                 <h3 className='mt-[8.55vw] relative'>
                     <div id='cookie-policy-mobile' className='absolute left-0 -top-[30vw]' />
                     Cookie Policy
                 </h3>   
                 <p className={`${paragraphStyle} mt-[4.27vw]`}>
-                    Coming soon
+                    <iframe className='flex w-full' src='https://app.termly.io/policy-viewer/iframe-content.html?policyUUID=7cb45296-38b6-4722-97b1-df160a8f5fd3' />
                 </p> 
             </div>
         </div>
