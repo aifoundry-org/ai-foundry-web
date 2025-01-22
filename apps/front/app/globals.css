@@ -46,12 +46,58 @@ ul {
   list-style-position: outside;
 }
 
+ol {
+  list-style-type: decimal;
+  list-style-position: outside;
+}
+
 @media (min-width: 431px) {
   ul li {
-    margin-left: 4vw;
+    margin-left: 2rem;
+  }
+
+  ol li {
+    margin-left: 2vw;
   }
 }
 
-ul li {
-  margin-left: 1.6vw;
+@media (min-width: 431px) {
+  h2 {
+    text-transform: uppercase;
+    font-size: 3.34vw;
+    font-weight: 900;
+    line-height: 2.78vw;
+  }
+
+  h3 {
+    text-transform: uppercase;
+    font-size: 2.795vw;
+    font-weight: 900;
+    line-height: 2.295vw;
+  }
+}
+
+@media (max-width: 430px) {
+  ul li {
+    margin-left: 2rem;
+  }
+}
+
+@media (max-width: 767px) {
+  ol li {
+    margin-left: 5.5vw;
+  }
+  h2 {
+    text-transform: uppercase;
+    font-size: 10.67vw;
+    font-weight: 900;
+    line-height: 8.8vw;
+  }
+
+  h3 {
+    text-transform: uppercase;
+    font-size: 8.55vw;
+    font-weight: 900;
+    line-height: 6.95vw;
+  }
 }
