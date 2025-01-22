@@ -24,7 +24,7 @@ export default function Header() {
     },[])
     
     return (
-      <header className='hidden xs:block'>
+      <header className='hidden md:block'>
           <div className='flex flex-col w-full bg-black'>
               <div className='flex flex-row text-sand justify-center p-4'>
                   <a className='flex' href="#">
@@ -54,7 +54,7 @@ export default function Header() {
                       <div className={`flex flex-row items-center`}>
                           <div className="flex w-full justify-start">
                               <motion.div
-                                  className='flex text-nowrap flex-wrap flex-row font-medium text-[1.4vw] leading-[1.4vw]'
+                                  className='flex text-nowrap flex-wrap flex-row font-medium text-[1.8rem] lg:text-[2rem] xl:text-[2rem]'
                                   initial={{ columnGap: '2.78vw'}}
                                   animate={{ columnGap: isSticky ? '1.67vw' : '2.78vw' }}
                                   transition={{ ease: "easeInOut", duration: 0.5 }}
