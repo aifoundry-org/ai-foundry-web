@@ -3,7 +3,7 @@ import { useState, useEffect } from 'react';
 import { motion } from "motion/react"
 import Link from "next/link";
 import IMGHeaderIconArrowUpRight from '@/public/pngs/header/headerArrowUpRight.png';
-import SVGIconHamburger from '@/public/svgs/common/Hamburger';
+import IMGIconHamburger from '@/public/pngs/header/hamburger.png';
 import IMGAIFoundryLogoTop from '@/public/pngs/header/AIFoundryLogoTopMobile.png';
 import IMGAIFoundryLogoTopSticky from '@/public/pngs/header/AIFoundryLogoTopStickyMobile.png';
 import IMGBackground from '@/public/pngs/home/navbar/backgroundMobile.png';
@@ -34,7 +34,7 @@ export default function Header() {
     },[])
     
     return (
-        <header className='xs:hidden flex flex-col w-full'>
+        <header className='md:hidden flex flex-col w-full'>
             <div className='flex flex-col w-full h-full bg-black'>
                 <div className='flex flex-row text-sand justify-center p-4'>
                     <a href="#">
@@ -85,7 +85,7 @@ export default function Header() {
                             />
                         </div>
                         <div className='flex basis-[50%] w-full justify-end'>
-                            <SVGIconHamburger className='z-[3]' onClick={() => setShowMenu(true)} />
+                            <img src={IMGIconHamburger.src} className='z-[3] w-[6.4vw]' onClick={() => setShowMenu(true)} />
                         </div>
                     </motion.nav>
                 </div>
@@ -102,13 +102,13 @@ export default function Header() {
                             <img onClick={() => {
                                 setShowMenu(false);
                                 window.scrollTo(0, 0);
-                            }} className='w-[40.27vw]' src={IMGAIFoundyLogoSideMenuMobile.src} />
+                            }} className='w-[40.27vw] xs:w-[30vw]' src={IMGAIFoundyLogoSideMenuMobile.src} />
                         </div>
                         <div className='flex justify-end'>
                             <img onClick={() => setShowMenu(false)} className='w-[6.4vw]' src={IMGCloseButton.src} />
                         </div>
                     </div>
-                    <div className="flex flex-col w-full my-[10.667vw] font-dharma-gothic-e font-black text-[10.667vw] leading-[8.8vw] gap-[8.8vw]">
+                    <div className="flex flex-col w-full my-[10.667vw] xs:my-[4vw] font-dharma-gothic-e font-black text-[10.667vw] xs:text-[6.5vw] leading-[8.8vw] gap-[8.8vw] xs:gap-0">
                         <Link className="uppercase" onClick={() => setShowMenu(false)} href="#projects-mobile">
                             Projects
                         </Link>
@@ -122,7 +122,7 @@ export default function Header() {
                             Our values
                         </Link>
                     </div>
-                    <div className="flex flex-col w-full mb-[10.667vw] font-dharma-gothic-e font-bold text-[4.8vw] leading-[4.8vw] gap-[4.8vw]">
+                    <div className="flex flex-col w-full mb-[10.667vw] xs:mb-[5vw] font-dharma-gothic-e font-bold text-[4.8vw] xs:text-[4vw] leading-[4.8vw] gap-[4.8vw] xs:gap-[2vw]">
                         <Link className="uppercase" href="#">
                             Privacy policy
                         </Link>
@@ -136,12 +136,12 @@ export default function Header() {
                     <div className='flex w-full justify-start'>
                         <Button variant='primary' content='Join our discord' svg='discord' />
                     </div>
-                    <div className='flex flex-row gap-[8.55vw] mt-[12.27vw]'>
-                        <img className='w-[6.4vw] h-[6.4vw]' src={IMGInstagramIcon.src} />
-                        <img className='w-[6.4vw] h-[6.4vw]' src={IMGLinkedinIcon.src} />
-                        <img className='w-[6.4vw] h-[6.4vw]' src={IMGYoutubeIcon.src} />
+                    <div className='flex flex-row gap-[8.55vw] xs:gap-[2vw] mt-[12.27vw] xs:mt-[5vw]'>
+                        <img className='w-[6.4vw] h-[6.4vw] xs:w-[5vw] xs:h-[5vw]' src={IMGInstagramIcon.src} />
+                        <img className='w-[6.4vw] h-[6.4vw] xs:w-[5vw] xs:h-[5vw]' src={IMGLinkedinIcon.src} />
+                        <img className='w-[6.4vw] h-[6.4vw] xs:w-[5vw] xs:h-[5vw]' src={IMGYoutubeIcon.src} />
                     </div>
-                    <div className='font-host-grotesk font-normal text-[3.2vw] leading-[4.8vw] mt-[4.8vw]'>
+                    <div className='font-host-grotesk font-normal text-[3.2vw] xs:text-[2vw] leading-[4.8vw] mt-[4.8vw]'>
                         © 2024 AI Foundry. All rights reserved.
                     </div>
                 </div>
