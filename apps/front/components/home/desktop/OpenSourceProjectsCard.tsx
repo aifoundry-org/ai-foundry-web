@@ -1,5 +1,6 @@
 import Button from '@/litebox-lib/ui/Button/Button';
 import SVGIconArrowUpRight from '@/public/svgs/common/ArrowUpRight';
+import Link from 'next/link';
 
 export default function OpenSourceProjectsCard({title = '', subtitle = '', content = '', link = ''}) {
     return (
@@ -14,7 +15,7 @@ export default function OpenSourceProjectsCard({title = '', subtitle = '', conte
                 <div className={`font-host-grotesk font-bold text-[1.6rem] 2xl:text-[1.1vw] 2xl:leading-[1.2vw] ${content == '' && 'pb-[3vw] md:pb-0 xl:pb-0 lg:pb-0'}`}>{subtitle}</div>
                 {content !== '' && <div dangerouslySetInnerHTML={{__html: content}} className='font-host-grotesk font-normal text-[1.4rem] 2xl:text-[1vw] 2xl:leading-[1.5vw] pt-[1.125vw] pb-[3.5vw] xl:pb-0 lg:pb-0' />}
             </div>
-            <Button href={link} className='mt-8' variant='secondary' content='View repo' svg='github' />
+            <Button target="_blank" as={Link} href={link} className='mt-8' variant='secondary' content='View repo' svg='github' />
         </div>
         )
 }

@@ -1,3 +1,5 @@
+import Link from 'next/link';
+
 import IMGLogo from '@/public/pngs/footer/logoMobile.png'
 import IMGErrors from '@/public/pngs/footer/errorsMobile.png'
 import IMGBucket from '@/public/pngs/footer/bucketMobile.png'
@@ -30,14 +32,20 @@ export default function Footer(){
                     <a href='#values'>Our Values</a>
                 </div>
                 <div className='flex flex-row font-bold text-[5vw] leading-[3vw] mt-[6.4vw] mb-[10.675vw] justify-between uppercase'>
-                    <a href=''>Privacy Policy</a>
+                    <a href='/terms-and-conditions#privacy-policy-mobile'>Privacy Policy</a>
                     <a href='/terms-and-conditions'>Terms Of Service</a>
                 </div>
                 <div className='relative flex flex-row justify-between pb-[21vw]'>
                     <div className='flex flex-row gap-[8.55vw]'>
-                        <img className='w-[6.4vw] h-[6.4vw]' src={IMGInstagramIcon.src} />
-                        <img className='w-[6.4vw] h-[6.4vw]' src={IMGLinkedinIcon.src} />
-                        <img className='w-[6.4vw] h-[6.4vw]' src={IMGYoutubeIcon.src} />
+                        <Link target='_blank' href='https://www.instagram.com/ai.foundry/'>
+                            <img className='w-[6.4vw] h-[6.4vw]' src={IMGInstagramIcon.src} />
+                        </Link>
+                        <Link target='_blank' href='https://www.linkedin.com/company/aifoundry-org'>
+                            <img className='w-[6.4vw] h-[6.4vw]' src={IMGLinkedinIcon.src} />
+                        </Link>
+                        <Link target='_blank' href='https://www.youtube.com/channel/UCGktaVJ19Ze8J9auyD5IoDQ'>
+                            <img className='w-[6.4vw] h-[6.4vw]' src={IMGYoutubeIcon.src} />
+                        </Link>
                     </div>
                     <div className='text-end font-host-grotesk font-normal text-[3.2vw] leading-[4.8vw]'>
                         © 2024 AI Foundry.<br/>

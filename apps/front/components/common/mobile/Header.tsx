@@ -123,7 +123,10 @@ export default function Header() {
                         </Link>
                     </div>
                     <div className="flex flex-col w-full mb-[10.667vw] xs:mb-[5vw] font-dharma-gothic-e font-bold text-[4.8vw] xs:text-[4vw] leading-[4.8vw] gap-[4.8vw] xs:gap-[2vw]">
-                        <Link className="uppercase" href="#">
+                        <Link className="uppercase" onClick={() => {
+                            window.scrollTo(0, 0);
+                            setShowMenu(false)}
+                        } href="/terms-and-conditions#privacy-policy-mobile">
                             Privacy policy
                         </Link>
                         <Link className="uppercase" onClick={() => {
@@ -134,12 +137,18 @@ export default function Header() {
                         </Link>
                     </div>
                     <div className='flex w-full justify-start'>
-                        <Button variant='primary' content='Join our discord' svg='discord' />
+                        <Button target='_blank' as={Link} href='https://discord.com/invite/WNKvkefkUs' variant='primary' content='Join our discord' svg='discord' />
                     </div>
                     <div className='flex flex-row gap-[8.55vw] xs:gap-[2vw] mt-[12.27vw] xs:mt-[5vw]'>
-                        <img className='w-[6.4vw] h-[6.4vw] xs:w-[5vw] xs:h-[5vw]' src={IMGInstagramIcon.src} />
-                        <img className='w-[6.4vw] h-[6.4vw] xs:w-[5vw] xs:h-[5vw]' src={IMGLinkedinIcon.src} />
-                        <img className='w-[6.4vw] h-[6.4vw] xs:w-[5vw] xs:h-[5vw]' src={IMGYoutubeIcon.src} />
+                        <Link target='_blank' href='https://www.instagram.com/ai.foundry/'>
+                            <img className='w-[6.4vw] h-[6.4vw] xs:w-[5vw] xs:h-[5vw]' src={IMGInstagramIcon.src} />
+                        </Link>
+                        <Link target='_blank' href='https://www.linkedin.com/company/aifoundry-org'>
+                            <img className='w-[6.4vw] h-[6.4vw] xs:w-[5vw] xs:h-[5vw]' src={IMGLinkedinIcon.src} />
+                        </Link>
+                        <Link target='_blank' href='https://www.youtube.com/channel/UCGktaVJ19Ze8J9auyD5IoDQ'>
+                            <img className='w-[6.4vw] h-[6.4vw] xs:w-[5vw] xs:h-[5vw]' src={IMGYoutubeIcon.src} />
+                        </Link>
                     </div>
                     <div className='font-host-grotesk font-normal text-[3.2vw] xs:text-[2vw] leading-[4.8vw] mt-[4.8vw]'>
                         © 2024 AI Foundry. All rights reserved.

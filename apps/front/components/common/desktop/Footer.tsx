@@ -7,6 +7,7 @@ import IMGInstagramIcon from '@/public/pngs/footer/instagramIconMobile.png'
 import IMGLinkedinIcon from '@/public/pngs/footer/linkedinIconMobile.png'
 import IMGYoutubeIcon from '@/public/pngs/footer/youtubeIconMobile.png'
 import IMGGraffiti from '@/public/pngs/footer/graffiti.png'
+import Link from 'next/link'
 
 export default function Footer(){
     return (
@@ -29,20 +30,26 @@ export default function Footer(){
                         <a href='#values'>Our Values</a>
                     </div>
                     <div className='flex flex-row gap-[3.34vw]'>
-                        <a href=''>Privacy Policy</a>
+                        <a className='z-[1]' href='/terms-and-conditions#privacy-policy'>Privacy Policy</a>
                         <a href='/terms-and-conditions'>Terms Of Service</a>
                     </div>
                 </div>
                 <div className='relative flex flex-row justify-between pb-[6.67vw]'>
                     <div className='flex flex-row gap-[2.78vw]'>
-                        <img className='w-[1.67vw] h-[1.67vw]' src={IMGInstagramIcon.src} />
-                        <img className='w-[1.67vw] h-[1.67vw]' src={IMGLinkedinIcon.src} />
-                        <img className='w-[1.67vw] h-[1.67vw]' src={IMGYoutubeIcon.src} />
+                        <Link target='_blank' href='https://www.instagram.com/ai.foundry/'>
+                            <img className='w-[1.67vw] h-[1.67vw]' src={IMGInstagramIcon.src} />
+                        </Link>
+                        <Link target='_blank' href='https://www.linkedin.com/company/aifoundry-org'>
+                            <img className='w-[1.67vw] h-[1.67vw]' src={IMGLinkedinIcon.src} />
+                        </Link>
+                        <Link target='_blank' href='https://www.youtube.com/channel/UCGktaVJ19Ze8J9auyD5IoDQ'>
+                            <img className='w-[1.67vw] h-[1.67vw]' src={IMGYoutubeIcon.src} />
+                        </Link>
                     </div>
                     <div className='text-end font-host-grotesk font-normal text-[0.84vw] leading-[1.25vw]'>
                         © 2024 AI Foundry. All rights reserved.
                     </div>
-                    <img className='mix-blend-plus-lighter absolute w-[54.725vw] bottom-0 left-[24vw]' src={IMGGraffiti.src} />
+                    <img className='mix-blend-plus-lighter absolute w-[54.725vw] bottom-0 z-0 left-[24vw]' src={IMGGraffiti.src} />
                 </div>
             </div>
         </footer>

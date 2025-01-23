@@ -11,6 +11,7 @@ import SVGProjectArrowDown from '@/public/svgs/findOutMore/ProjectArrowDown'
 import IMGSusanAvatar from '@/public/pngs/home/findOutMore/susanAvatar.png'
 import IMGMaraAvatar from '@/public/pngs/home/findOutMore/maraAvatar.png'
 import SVGArrowRight from '@/public/svgs/findOutMore/ArrowRight'
+import Link from 'next/link'
 
 export default function FindOutMore() {
     return (
@@ -30,7 +31,7 @@ export default function FindOutMore() {
             <SVGTextError className='absolute w-[32.3vw] left-[25vw] top-[47.5vw]' />
             <div className='absolute bottom-[23vw] w-full'>
                 <div className='relative w-full flex justify-center'>
-                    <Button svg='discord' variant='secondary' content='Join our discord' />
+                    <Button target='_blank' as={Link} href='https://discord.com/invite/WNKvkefkUs' svg='discord' variant='secondary' content='Join our discord' />
                 </div>
             </div>
             <div className='absolute w-fit h-fit bg-black text-sand p-[1.5vw] top-[58.5vw] left-[9.5vw] rounded-lg'>

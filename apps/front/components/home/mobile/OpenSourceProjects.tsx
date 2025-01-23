@@ -15,17 +15,17 @@ const cards = [{
             <li>Licensed under Apache License, Version 2.0</li>
         </ul>
     `,
-    link: ""
+    link: "https://github.com/aifoundry-org/llamagator"
 },{
     title: "$blame.ai",
     subtitle: "$blame.ai is a demo app for testing AI infrastructure from LLMs to inference engines.",
-    content: "",
-    link: ""
+    content: "We're building an open data set, application code, and reference implementation that any developer can use to showcase their AI infrastructure.",
+    link: "https://github.com/aifoundry-org/blame-ai-discord-bot"
 },{
     title: "Quantization-Aware Training",
     subtitle: "A community research project to investigate data-free quantization-aware training.",
-    content: "We're building an open data set, application code, and reference implementation that any developer can use to showcase their AI infrastructure.",
-    link: ""
+    content: "",
+    link: "https://github.com/aifoundry-org/.github/wiki/Proposal-on-QAT-LLM-quantization"
 }]
 
 export default function OpenSourceProjects() {
