@@ -1,6 +1,7 @@
 import Button from '@/libs/litebox-lib/ui/Button/Button'
 import IMGBackground from '@/public/pngs/home/visionMission/backgroundMobile.png'
 import OurCoreValue from './VisionMissionCard'
+import Link from 'next/link'
 
 const coreValues = [{
     title: "Openness",
@@ -38,7 +39,7 @@ export default function VisionMission(){
                 We are a community of practitioners building an open-source composable AI ecosystem. By collaborating on standards for everyone, we aim to reduce the complexity of the AI industry. 
             </div>
             <div id='values-mobile' className='mt-[7.475vw] w-full h-fit'>
-                <Button variant='secondary' content='Community code of conduct' svg='arrow-up-right' />
+                <Button as={Link} href='/terms-and-conditions' variant='secondary' content='Community code of conduct' svg='arrow-up-right' />
             </div>
             <div className='mt-[19.2vw] mb-[11.2vw] font-black font-dharma-gothic-e text-[12.8vw] leading-[10.7vw] uppercase'>
                 Our core values

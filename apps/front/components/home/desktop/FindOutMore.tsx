@@ -10,6 +10,7 @@ import IMGSusanAvatar from '@/public/pngs/home/findOutMore/susanAvatar.png'
 import IMGMaraAvatar from '@/public/pngs/home/findOutMore/maraAvatar.png'
 import SVGArrowRight from '@/public/svgs/findOutMore/ArrowRight'
 import Button from '@/libs/litebox-lib/ui/Button/Button'
+import Link from 'next/link';
 
 export default function FindOutMore() {
     return (
@@ -82,7 +83,7 @@ export default function FindOutMore() {
             </div>
             <div className='absolute bottom-[5vw] w-full'>
                 <div className='relative w-full flex justify-center'>
-                    <Button svg='discord' variant='secondary' content='Join our discord' />
+                    <Button target='_blank' as={Link} href='https://discord.com/invite/WNKvkefkUs' svg='discord' variant='secondary' content='Join our discord' />
                 </div>
             </div>
         </div>

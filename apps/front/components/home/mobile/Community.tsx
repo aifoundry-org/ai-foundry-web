@@ -4,6 +4,7 @@ import { useState } from 'react';
 import IMGBackground from '@/public/pngs/home/community/backgroundMobile.png';
 import CommunityCard from './CommunityCard';
 import Button from '@/litebox-lib/ui/Button/Button';
+import Link from 'next/link';
 
 const events: {[key: string]: Array<{[key: string]: string | number}>} = {
     'january': [{
@@ -73,7 +74,7 @@ export default function Community() {
             }
             </div>
             <div className='flex pb-[8.55vw]'>
-                <Button href='' variant='primary' content='View full calendar' svg='arrow-up-right' />
+                <Button target='_blank' as={Link} href='https://lu.ma/aifoundryorg' variant='primary' content='View full calendar' svg='arrow-up-right' />
             </div>
         </div>
     )

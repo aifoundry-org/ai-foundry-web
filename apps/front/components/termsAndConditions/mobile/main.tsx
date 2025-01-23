@@ -179,27 +179,18 @@ export default function main() {
                     <br/><br/>
                     For answers to common questions about this code of conduct, see the <a className='font-bold' href='https://www.contributor-covenant.org/faq'>FAQ</a>. Translations are available at <a className='font-bold' href='https://www.contributor-covenant.org/translations'>https://www.contributor-covenant.org/translations</a>.
                 </p>   
-                <h3 className='mt-[8.55vw] relative'>
+                <div className={`${paragraphStyle} mt-[8.55vw] relative`}>
                     <div id='privacy-policy-mobile' className='absolute left-0 -top-[30vw]' />
-                    Privacy policy
-                </h3>   
-                <p className={`${paragraphStyle} mt-[4.27vw]`}>
-                    <iframe className='flex w-full' src='https://app.termly.io/policy-viewer/iframe-content.html?policyUUID=2fd31d37-c2f6-4c3e-9769-c3667f76cb3d' />
-                </p>  
-                <h3 className='mt-[8.55vw] relative'>
+                    <iframe className='w-full h-[35780px] border-2 p-[16px] border-black rounded-[1.115vw]' src='https://app.termly.io/policy-viewer/iframe-content.html?policyUUID=2fd31d37-c2f6-4c3e-9769-c3667f76cb3d' />
+                </div>   
+                <div className={`${paragraphStyle} mt-[8.55vw] relative`}>
                     <div id='terms-of-use-mobile' className='absolute left-0 -top-[30vw]' />
-                    Terms of use
-                </h3>   
-                <p className={`${paragraphStyle} mt-[4.27vw]`}>
-                    <iframe className='flex w-full' src='https://app.termly.io/policy-viewer/iframe-content.html?policyUUID=34285775-1595-400b-b451-a7f993129f0d' />
-                </p> 
-                <h3 className='mt-[8.55vw] relative'>
+                    <iframe className='w-full h-[32300px] border-2 p-[16px] border-black rounded-[1.115vw]' src='https://app.termly.io/policy-viewer/iframe-content.html?policyUUID=34285775-1595-400b-b451-a7f993129f0d' />
+                </div>   
+                <div className={`${paragraphStyle} mt-[8.55vw] mb-[10vw] relative`}>
                     <div id='cookie-policy-mobile' className='absolute left-0 -top-[30vw]' />
-                    Cookie Policy
-                </h3>   
-                <p className={`${paragraphStyle} mt-[4.27vw]`}>
-                    <iframe className='flex w-full' src='https://app.termly.io/policy-viewer/iframe-content.html?policyUUID=7cb45296-38b6-4722-97b1-df160a8f5fd3' />
-                </p> 
+                    <iframe className='w-full h-[13500px] border-2 p-[16px] border-black rounded-[1.115vw]' src='https://app.termly.io/policy-viewer/iframe-content.html?policyUUID=7cb45296-38b6-4722-97b1-df160a8f5fd3' />
+                </div> 
             </div>
         </div>
     )

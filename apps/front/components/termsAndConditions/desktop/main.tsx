@@ -6,7 +6,7 @@ const paragraphStyle = 'font-host-grotesk font-normal text-[1.115vw] leading-[1.
 export default function main() {
     return (
         <div className='hidden md:flex md:flex-col md:w-full md:h-full md:font-dharma-gothic-e'>
-            <div className='flex flex-col w-full mx-auto my-[6vw]'>
+            <div className='flex flex-col w-full h-fit mx-auto my-[6vw]'>
                 <div className='flex w-full text-center justify-center relative'>
                     <img className='absolute top-[0.5vw] left-1/2 -translate-x-1/2 w-[50vw] z-0' src={IMGBackground.src} />
                     <div className='flex text-[4.45vw] font-black leading-[10.67vw] uppercase z-[1]'>
@@ -174,28 +174,19 @@ export default function main() {
                     Community Impact Guidelines were inspired by <a className='font-bold' href='https://github.com/mozilla/diversity'>Mozilla's code of conduct enforcement ladder</a>.
                     <br/><br/>
                     For answers to common questions about this code of conduct, see the <a className='font-bold' href='https://www.contributor-covenant.org/faq'>FAQ</a>. Translations are available at <a className='font-bold' href='https://www.contributor-covenant.org/translations'>https://www.contributor-covenant.org/translations</a>.
-                </p>   
-                <h3 className='mt-[3.34vw] relative'>
+                </p>
+                <div className={`${paragraphStyle} mt-[3.34vw] relative`}>
                     <div id='privacy-policy' className='absolute left-0 -top-[10vw]' />
-                    Privacy policy
-                </h3>   
-                <p className={`${paragraphStyle} mt-[1.115vw]`}>
-                    <iframe className='flex w-full' src='https://app.termly.io/policy-viewer/iframe-content.html?policyUUID=2fd31d37-c2f6-4c3e-9769-c3667f76cb3d' />
-                </p>  
-                <h3 className='mt-[3.34vw] relative'>
+                    <iframe className='w-full h-[16800px] border-2 p-[16px] border-black rounded-[1.115vw]' src='https://app.termly.io/policy-viewer/iframe-content.html?policyUUID=2fd31d37-c2f6-4c3e-9769-c3667f76cb3d' />
+                </div>  
+                <div className={`${paragraphStyle} mt-[3.34vw] relative`}>
                     <div id='terms-of-use' className='absolute left-0 -top-[10vw]' />
-                    Terms of use
-                </h3>   
-                <p className={`${paragraphStyle} mt-[1.115vw]`}>
-                    <iframe className='flex w-full' src='https://app.termly.io/policy-viewer/iframe-content.html?policyUUID=34285775-1595-400b-b451-a7f993129f0d' />
-                </p> 
-                <h3 className='mt-[3.34vw] relative'>
+                    <iframe className='w-full h-[962vw] border-2 p-[1vw] border-black rounded-[1.115vw] overflow-hidden' src='https://app.termly.io/policy-viewer/iframe-content.html?policyUUID=34285775-1595-400b-b451-a7f993129f0d' />
+                </div> 
+                <div className={`${paragraphStyle} mt-[3.34vw] relative`}>
                     <div id='cookie-policy' className='absolute left-0 -top-[10vw]' />
-                    Cookie Policy
-                </h3>   
-                <p className={`${paragraphStyle} mt-[1.115vw]`}>
-                    <iframe className='flex w-full' src='https://app.termly.io/policy-viewer/iframe-content.html?policyUUID=7cb45296-38b6-4722-97b1-df160a8f5fd3' />
-                </p>          
+                    <iframe className='w-full h-[542vw] border-2 p-[1vw] border-black rounded-[1.115vw] overflow-hidden' src='https://app.termly.io/policy-viewer/iframe-content.html?policyUUID=7cb45296-38b6-4722-97b1-df160a8f5fd3' />
+                </div>           
             </div>
         </div>
     )

@@ -73,7 +73,7 @@ export default function Header() {
                                   </Link>
                               </motion.div>
                           </div>
-                          <div className="flex w-full justify-center items-center relative">
+                          <div className="flex w-1/4 justify-center items-center relative">
                                 <motion.img
                                     onClick={() => {
                                         window.location.href = '/';
@@ -96,7 +96,7 @@ export default function Header() {
                                 />
                           </div>
                           <div className="flex w-full justify-end">
-                              <Button variant="primary" content="Join our discord" svg="discord" />
+                              <Button target='_blank' as={Link} href='https://discord.com/invite/WNKvkefkUs' variant="primary" content="Join our discord" svg="discord" />
                           </div>
                       </div>
                   </motion.nav>

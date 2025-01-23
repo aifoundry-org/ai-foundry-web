@@ -11,9 +11,15 @@ import SVGIconScrollArrowRight from '@/public/svgs/common/ScrollArrowRightMobile
 export interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   variant?: 'primary' | 'secondary';
   className?: string;
+  as?: React.ElementType;
   href?: string;
   svg?: string;
-  content: string;
+  content?: string;
+  noShadow?: boolean;
+  containerProps?: string;
+  labelProps?: string;
+  svgProps?: string;
+  target?: string;
 }
 
 const btnVariants: {[key: string]: string } = {
@@ -37,11 +43,12 @@ const svgVariants : {[key: string]: FC<SVGProps<SVGSVGElement>>} = {
  *
  * @param variant - The visual style variant of the button.
  * @param className - Additional CSS classes that can be passed to customize the styling of the component.
+ * @param as - Optionally change the underlying component type or custom component for the button. For example, this can be used to render the component as a 'Next.js Link' instead of a 'button'.
  * @param href - If the button is rendered as a 'Next.js Link', 'href' can be provided to specify the link's destination.
  * @param svg - Optionally adding a predetermined svg, available svg: 'plus', 'discord', 'github', 'arrow-up-right'
  * @param content - Content of the button
  */
-const Button = ({href = '', variant = 'primary', className = '', svg = '', content = '', noShadow = false, containerProps = '', labelProps = '', svgProps = '', ...props }) => {
+const Button: FC<ButtonProps> = ({as: Component = 'button', href = '', variant = 'primary', className = '', svg = '', content = '', noShadow = false, containerProps = '', labelProps = '', svgProps = '', target = '', ...props }) => {
   // #F6EFE4 = sand color
   const essentialStyles = `flex items-center align-middle justify-between ${noShadow ? 'shadow-[4px_4px_0_0_#F6EFE4]' : 'shadow-[4px_4px_0_0_black]'} w-fit h-fit text-[black] font-bold uppercase border border-2 whitespace-nowrap rounded-md transition-all ease-in-out focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#22D3EE] disabled:opacity-50 disabled:cursor-not-allowed cursor-pointer select-none px-[2.5vw] py-[1.5vw] md:py-[0.835vw] xl:py-[0.835vw] 2xl:py-[0.835vw] md:px-[1.67vw] xl:px-[1.67vw] 2xl:px-[1.67vw] 2xl:gap-[1vw] xl:gap-[1vw] md:gap-[1vw] xs:gap-[2vw] gap-[3vw] items-center ${containerProps}`;
   const styles = `${essentialStyles} ${btnVariants[variant]} ${className}`;
@@ -49,6 +56,7 @@ const Button = ({href = '', variant = 'primary', className = '', svg = '', conte
   const componentProps = {
     ...props,
     ...(href ? { href } : {}),
+    ...(target ? { target } : {}),
     className: styles,
   };
 
@@ -62,10 +70,10 @@ const Button = ({href = '', variant = 'primary', className = '', svg = '', conte
   const SVGStyle = `flex ${svgProps}`
 
   return (
-    <div {...componentProps} >
+    <Component {...componentProps}>
       {content !== '' &&  <div className={labelStyle} dangerouslySetInnerHTML={{__html: content}} /> }
       {SVGIcon && <div className={SVGStyle}><SVGIcon /></div>}
-    </div>
+    </Component>
   );
 };
 

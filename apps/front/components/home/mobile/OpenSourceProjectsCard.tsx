@@ -2,6 +2,7 @@
 
 import Button from '@/litebox-lib/ui/Button/Button';
 import SVGIconArrowUpRight from '@/public/svgs/common/ArrowUpRightMobile';
+import Link from 'next/link';
 
 export default function OpenSourceProjectsCard({title = '', subtitle = '', content = '', link = '', onClickLeft = () => {}, onClickRight = () => {}}) {
     return (
@@ -19,7 +20,7 @@ export default function OpenSourceProjectsCard({title = '', subtitle = '', conte
                     <Button onClick={onClickLeft} variant='secondary' svg='scroll-left' />
                 </div>
                 <div className='flex basis-[80%] justify-center mt-8'>
-                    <Button href={link} variant='secondary' content='View repo' svg='github' />
+                    <Button target="_blank" as={Link} href={link} variant='secondary' content='View repo' svg='github' />
                 </div>
                 <div className='flex basis-[10%] mt-8'>
                     <Button onClick={onClickRight} variant='secondary' svg='scroll-right' />
