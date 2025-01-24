@@ -1,20 +1,23 @@
 'use client'
 
-import { useState } from 'react'
+import { useRef, useState } from 'react'
 import Button from '@/litebox-lib/ui/Button/Button';
 import IMGBackgroundTop from '@/public/pngs/home/testimonials/backgroundTopMobile.png'
-import IMGBackgroundBottom from '@/public/pngs/home/testimonials/backgroundBottomMobile.png'
+import IMGDoodle from '@/public/pngs/home/testimonials/doodleMobile.png'
+import IMGWhatPeopleSay from '@/public/pngs/home/testimonials/whatPeopleSayMobile.png'
 import IMGStarFull from '@/public/pngs/home/testimonials/starFull.png'
 import IMGStarEmpty from '@/public/pngs/home/testimonials/starEmpty.png'
-import IMGSliderCircleFull from '@/public/pngs/home/testimonials/sliderCircleFull.png'
-import IMGSliderCircleEmpty from '@/public/pngs/home/testimonials/sliderCircleEmpty.png'
 
 import IMGCompanyWebflow from '@/public/pngs/home/testimonials/companyWebflow.png'
-import IMGCompanyMetacortex from '@/public/pngs/home/testimonials/companyMetacortex.png'
-import IMGCompanyMatrix from '@/public/pngs/home/testimonials/companyMatrix.png'
 import IMGDeveloper1 from '@/public/pngs/home/testimonials/developer1.png'
 import IMGDeveloper2 from '@/public/pngs/home/testimonials/developer2.png'
 import IMGDeveloper3 from '@/public/pngs/home/testimonials/developer3.png'
+
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Pagination, Navigation } from 'swiper/modules';
+import 'swiper/css';
+import 'swiper/css/pagination';
+import 'swiper/css/navigation';
 
 const cards = [{
     stars: 3,
@@ -29,45 +32,34 @@ const cards = [{
     author: 'Thomas Anderson',
     avatar: IMGDeveloper2.src,
     position: 'Developer, Meta Cortex',
-    companyLogo: IMGCompanyMetacortex.src
+    companyLogo: IMGCompanyWebflow.src
 },{
     stars: 0,
     content: 'This is an example with a very long text that needs to be cut to avoid the component to take too much vertical space, so instead of showing the full text it is been truncate with "..." somewhere before the end',
     author: 'Agent Smith',
     avatar: IMGDeveloper3.src,
     position: 'Agent, Matrix',
-    companyLogo: IMGCompanyMatrix.src
+    companyLogo: IMGCompanyWebflow.src
 }]
 
 export default function Testimonials() {
-    const totalCards = cards.length;
-    const [cardIndex, setCardIndex] = useState(0);
-
-    const onClickLeft = () => {
-        if(cardIndex-1 < 0){
-            setCardIndex(totalCards-1)
-        } else {
-            setCardIndex(cardIndex-1);
-        }
-    }
-
-    const onClickRight = () => {
-        if(cardIndex+1 > totalCards-1){
-            setCardIndex(0)
-        } else {
-            setCardIndex(cardIndex+1);
-        }
-    };
+    //Add a state that will force a re-render
+    const [_, setSwiperInstance] = useState<any>(null);
+    const buttonPrevRef = useRef(null)
+    const buttonNextRef = useRef(null)
 
     const charLimit = 150;
-    let processedContent = cards[cardIndex].content;
-    if (processedContent && processedContent.length > charLimit){
-        processedContent = processedContent.slice(0, charLimit)
-		const lastSpaceIndex = processedContent.lastIndexOf(' ');
-		if (lastSpaceIndex > -1) {
-			processedContent = processedContent.slice(0, lastSpaceIndex) + "...";
-		}
-	}
+    const processContent = (content: string) => {
+        let newContent = content
+        if (newContent && newContent.length > charLimit){
+            newContent = newContent.slice(0, charLimit)
+            const lastSpaceIndex = newContent.lastIndexOf(' ');
+            if (lastSpaceIndex > -1) {
+                newContent = newContent.slice(0, lastSpaceIndex) + "...";
+            }
+        }
+        return newContent;
+    }
 
     return (
         <div className='md:hidden flex flex-col pt-[18.35vw] pb-[7.7vw] relative w-full h-fit'>
@@ -75,45 +67,65 @@ export default function Testimonials() {
                 <div className='absolute w-full h-fit -top-[6.75vw] left-0'>
                     <img src={IMGBackgroundTop.src} />
                 </div>
-                <div className='flex flex-col w-full h-full px-[6.4vw] pt-[14.95vw]'>
-                    <div className='flex flex-row gap-[0.5vw]'>
-                        {[...Array(5)].map((i, idx) => (
-                            <img key={idx} width='13' height='13' src={idx <= cards[cardIndex].stars ? IMGStarFull.src : IMGStarEmpty.src} />
+                <div className='flex flex-col w-full items-center justify-center'>
+                    <Swiper
+                        className='testimonialsSwiper !flex !flex-col !w-full !h-full'
+                        slidesPerView={1}
+                        loop
+                        pagination={{ 
+                            el: '.testimonialsPaginationMobile',
+                            type: 'bullets',
+                            bulletClass: 'testimonials-pagination-mobile-bullet',
+                            bulletActiveClass: 'testimonials-pagination-bullet-mobile-active',
+                            clickable: true,
+                        }}
+                        navigation={{
+                            prevEl: buttonPrevRef.current,
+                            nextEl: buttonNextRef.current,
+                        }}
+                        modules={[Pagination, Navigation]}
+                        onInit={setSwiperInstance}
+                    >
+                        {cards.map((el, idx) => (
+                            <SwiperSlide className='flex flex-col w-full px-[8vw] items-center' key={idx}>
+                                <div className='flex flex-row mt-[15vw] gap-[0.5vw]'>
+                                    {[...Array(5)].map((i, idx) => (
+                                        <img key={idx} width='13' height='13' src={idx <= el.stars ? IMGStarFull.src : IMGStarEmpty.src} />
+                                    ))}
+                                </div>
+                                <div className='font-dharma-gothic-e font-black text-[10vw] mt-[9vw] leading-[8.8vw] tracking-wide uppercase'>
+                                    {processContent(el.content)}
+                                </div>
+                                <div className='flex flex-row w-full gap-[5.35vw] mt-[9vw] mb-[10.7vw]'>
+                                    <div>
+                                        <img width='55' src={el.avatar} />
+                                    </div>
+                                    <div className='flex flex-col font-host-grotesk w-full'>
+                                        <div className='font-bold text-[3.75vw] leading-[5.6vw] select-none'>{el.author}</div>
+                                        <div className='font-normal text-[3.75vw] leading-[5.6vw] select-none'>{el.position}</div>
+                                        <div className='w-[21.9vw] h-[8.6vw] select-none'>
+                                            <img src={el.companyLogo} />
+                                        </div>
+                                    </div>
+                                </div>
+                            </SwiperSlide>
                         ))}
-                    </div>
-                    <div className='flex h-[85vw] items-center'>
-                        <p className='font-dharma-gothic-e font-black text-[10vw] leading-[8.8vw] tracking-wide uppercase'>
-                            {processedContent}
-                        </p>
-                    </div>
-                    <div className='flex flex-row w-full gap-[5.35vw] mb-[10.7vw]'>
-                        <div>
-                            <img width='55' src={cards[cardIndex].avatar} />
+                    </Swiper>
+                    <div className='flex w-full justify-center items-center px-[7vw]'>
+                        <div ref={buttonPrevRef} className='flex basis-[15%] justify-center'>
+                            <Button variant='secondary' svg='scroll-left' noShadow/>
                         </div>
-                        <div className='flex flex-col font-host-grotesk w-full'>
-                            <div className='font-bold text-[3.75vw] leading-[5.6vw] select-none'>{cards[cardIndex].author}</div>
-                            <div className='font-normal text-[3.75vw] leading-[5.6vw] select-none'>{cards[cardIndex].position}</div>
-                            <div className='w-[21.9vw] h-[8.6vw] select-none'>
-                                <img src={cards[cardIndex].companyLogo} />
-                            </div>
-                        </div>
-                    </div>
-                    <div className='flex flex-row z-10'>
-                        <div className='flex basis-[10%]'>
-                            <Button onClick={onClickLeft} variant='secondary' svg='scroll-left' noShadow/>
-                        </div>
-                        <div className='flex basis-[80%] justify-center items-center gap-[3.2vw]'>
-                            {[...Array(totalCards)].map((i, idx) => (
-                                <img key={idx} className='w-[13px]' src={idx == cardIndex ? IMGSliderCircleFull.src : IMGSliderCircleEmpty.src} />
-                            ))}
-                        </div>
-                        <div className='flex basis-[10%]'>
-                            <Button onClick={onClickRight} variant='secondary' svg='scroll-right' noShadow/>
+                        <div className='testimonialsPaginationMobile !gap-[3.2vw] flex basis-[80%] justify-center' />
+                        <div ref={buttonNextRef} className='flex basis-[15%] justify-center'>
+                            <Button variant='secondary' svg='scroll-right' noShadow/>
                         </div>
                     </div>
                 </div>
-                <div className='absolute w-[83.2vw] -bottom-[31vw] right-0'>
-                    <img src={IMGBackgroundBottom.src} />
+                <div className='absolute w-[83.2vw] -bottom-[31vw] right-[1vw] -z-[1]'>
+                    <img src={IMGDoodle.src} />
+                </div>
+                <div className='absolute w-[48vw] -bottom-[8.5vw] right-[9vw] z-[1]'>
+                    <img src={IMGWhatPeopleSay.src} />
                 </div>
             </div>
         </div>
