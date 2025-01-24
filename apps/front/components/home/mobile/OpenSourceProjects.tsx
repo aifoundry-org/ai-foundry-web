@@ -1,7 +1,14 @@
 'use client'
 
-import { useState } from 'react'
-import OpenSourceProjectsCard from './OpenSourceProjectsCard'
+import { useRef, useState } from 'react'
+import Button from '@/litebox-lib/ui/Button/Button';
+import SVGIconArrowUpRight from '@/public/svgs/common/ArrowUpRightMobile';
+import Link from 'next/link';
+
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Navigation } from 'swiper/modules';
+import 'swiper/css';
+import 'swiper/css/navigation';
 
 const cards = [{
     title: "Llamagator",
@@ -29,23 +36,12 @@ const cards = [{
 }]
 
 export default function OpenSourceProjects() {
-    const [cardIndex, setCardIndex] = useState(0);
+    //Add a state that will force a re-render
+    const [_, setSwiperInstance] = useState<any>(null);
 
-    const onClickLeft = () => {
-        if(cardIndex-1 < 0){
-            setCardIndex(cards.length-1)
-        } else {
-            setCardIndex(cardIndex-1);
-        }
-    }
-
-    const onClickRight = () => {
-        if(cardIndex+1 > cards.length-1){
-            setCardIndex(0)
-        } else {
-            setCardIndex(cardIndex+1);
-        }
-    };
+    const [currentIndex, setCurrentIndex] = useState(0);
+    const buttonPrevRef = useRef(null)
+    const buttonNextRef = useRef(null)
 
     return (
         <div id='projects-mobile' className='xs:hidden flex flex-col pt-[30vw] pb-[7.7vw] relative w-full h-fit px-[5.6vw]'>
@@ -58,14 +54,47 @@ export default function OpenSourceProjects() {
                 collaborate with project contributors in our<br/>
                 Discord Server.
             </div>
-            <OpenSourceProjectsCard 
-                title={cards[cardIndex].title}
-                subtitle={cards[cardIndex].subtitle}
-                content={cards[cardIndex].content}
-                link={cards[cardIndex].link}
-                onClickLeft={onClickLeft}
-                onClickRight={onClickRight}
-            />
+            <div className='flex flex-col w-full h-full items-center justify-center'>
+                <Swiper
+                    onSlideChange={swiper => setCurrentIndex(swiper.activeIndex)}
+                    slidesPerView={1}
+                    spaceBetween={40}
+                    loop
+                    className='openSourceProjectsMobileSwiper !flex !flex-row !w-full !h-full'
+                    navigation={{
+                        prevEl: buttonPrevRef.current,
+                        nextEl: buttonNextRef.current,
+                    }}
+                    modules={[Navigation]}
+                    onInit={setSwiperInstance}
+                >
+                    {cards.map((card, idx) => (
+                        <SwiperSlide key={idx} className='flex flex-col w-full h-full'>
+                            <div className='flex flex-col w-full h-full'>
+                                <div className='flex flex-row items-center justify-between'>
+                                    <p className='font-dharma-gothic-e font-black text-[8.6vw] uppercase'>{card.title}</p>
+                                    <SVGIconArrowUpRight />
+                                </div>
+                                <div className='flex flex-col border-y-2 border-black mt-[2vw] py-[6.4vw] h-[70vw] leading-[5.6vw]'>
+                                    <div className='font-host-grotesk font-bold text-[4.3vw]'>{card.subtitle}</div>
+                                    {card.content !== '' && <div dangerouslySetInnerHTML={{__html: card.content}} className='font-host-grotesk font-normal text-[3.75vw] pt-[4.3vw] leading-[5vw]' />}
+                                </div>
+                            </div>
+                        </SwiperSlide>
+                    ))}
+                </Swiper>
+                <div className='openSourceProjectsMobilePagination flex flex-row w-full relative mt-[6.4vw]'>
+                    <div ref={buttonPrevRef} className='flex basis-[10%] justify-start'>
+                        <Button variant='secondary' svg='scroll-left' />
+                    </div>
+                    <div className='flex basis-[80%] justify-center'>
+                        <Button target="_blank" as={Link} href={cards[currentIndex].link} variant='secondary' content='View repo' svg='github' />
+                    </div>
+                    <div ref={buttonNextRef} className='flex basis-[10%] justify-end'>
+                        <Button variant='secondary' svg='scroll-right' />
+                    </div>
+                </div>
+            </div>
         </div>
     )
 }

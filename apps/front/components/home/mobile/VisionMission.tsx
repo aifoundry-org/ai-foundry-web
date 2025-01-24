@@ -2,23 +2,28 @@ import Button from '@/libs/litebox-lib/ui/Button/Button'
 import IMGBackground from '@/public/pngs/home/visionMission/backgroundMobile.png'
 import OurCoreValue from './VisionMissionCard'
 import Link from 'next/link'
+import FadeUp from '@/components/common/universal/FadeUp'
 
 const coreValues = [{
     title: "Openness",
     content: "We don't just mean you can use our tools, we mean you are free to use it however you want.",
-    icon: "open-book"
+    icon: "open-book",
+    delay: 0.2
 },{
     title: "Integrity",
     content: "Honesty, ethics, and follow-through foster trust within the community.",
-    icon: "user"
+    icon: "user",
+    delay: 0.5,
 },{
     title: "Emphaty",
     content: "Our community members are mindful and curious about other people’s motivations and ideas and help each other with compassion and kindness.",
-    icon: "handshake"
+    icon: "handshake",
+    delay: 0.7,
 },{
     title: "Cooperation",
     content: "Our community seeks win-win solutions with mutually beneficial outcomes.",
-    icon: "cooperation"
+    icon: "cooperation",
+    delay: 1,
 }]
 
 export default function VisionMission(){
@@ -45,12 +50,14 @@ export default function VisionMission(){
                 Our core values
             </div>
             {coreValues.map((el, idx) => (
-                <OurCoreValue
-                    key={idx}
-                    title={el.title}
-                    content={el.content}
-                    icon={el.icon}
-                />
+                <FadeUp key={idx} delay={el.delay} duration={0.5}>
+                    <OurCoreValue
+                        key={idx}
+                        title={el.title}
+                        content={el.content}
+                        icon={el.icon}
+                    />
+                </FadeUp>
             ))}
         </div>
     )
