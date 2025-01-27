@@ -59,16 +59,16 @@ export default function Header() {
                                   animate={{ columnGap: isSticky ? '1.67vw' : '2.78vw' }}
                                   transition={{ ease: "easeInOut", duration: 0.5 }}
                               >
-                                  <Link className="uppercase" href="#projects">
+                                  <Link className="uppercase relative after:bg-black after:absolute after:h-1 after:w-0 after:bottom-0 after:left-0 focus:after:w-full hover:after:w-full after:transition-all after:duration-300" href="#projects">
                                       Projects
                                   </Link>
-                                  <Link className="uppercase" href="#events">
+                                  <Link className="uppercase relative after:bg-black after:absolute after:h-1 after:w-0 after:bottom-0 after:left-0 focus:after:w-full hover:after:w-full after:transition-all after:duration-300" href="#events">
                                       Events
                                   </Link>
-                                  <Link className="uppercase" href="#blog">
+                                  <Link className="uppercase relative after:bg-black after:absolute after:h-1 after:w-0 after:bottom-0 after:left-0 focus:after:w-full hover:after:w-full after:transition-all after:duration-300" href="#blog">
                                       Blog
                                   </Link>
-                                  <Link className="uppercase" href="#values">
+                                  <Link className="uppercase relative after:bg-black after:absolute after:h-1 after:w-0 after:bottom-0 after:left-0 focus:after:w-full hover:after:w-full after:transition-all after:duration-300" href="#values">
                                       Our Values
                                   </Link>
                               </motion.div>

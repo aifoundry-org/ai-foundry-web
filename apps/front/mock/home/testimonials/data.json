@@ -1,0 +1,22 @@
+[{
+    "stars": 3,
+    "content": "AI Foundry has been a game-changer for my development journey. The collaborative spirit and innovative projects inspire me every day.",
+    "author": "Jordan Smith",
+    "avatar": "",
+    "position": "Developer, TechCorp",
+    "companyLogo": ""
+},{
+    "stars": 5,
+    "content": "This is an example with a short text",
+    "author": "Thomas Anderson",
+    "avatar": "",
+    "position": "Developer, Meta Cortex",
+    "companyLogo": ""
+},{
+    "stars": 0,
+    "content": "This is an example with a very long text that needs to be cut to avoid the component to take too much vertical space, so instead of showing the full text it is been truncate with ... somewhere before the end",
+    "author": "Agent Smith",
+    "avatar": "",
+    "position": "Agent, Matrix",
+    "companyLogo": ""
+}]
