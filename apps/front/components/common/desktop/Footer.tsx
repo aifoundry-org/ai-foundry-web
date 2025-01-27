@@ -1,3 +1,6 @@
+'use client'
+
+import { useState, useEffect } from 'react'
 import Link from 'next/link'
 import IMGLogo from '@/public/pngs/footer/logo.png'
 import IMGErrors from '@/public/pngs/footer/errorsMobile.png'
@@ -14,12 +17,18 @@ import FadeUp from '@/components/common/universal/FadeUp';
 import FadeIn from '@/components/common/universal/FadeIn';
 
 export default function Footer(){
+    const [currPage, setCurrPage] = useState('');
+    
+    useEffect(() => {
+        setCurrPage(window.location.pathname)    
+    },[])
+    
     return (
         <FadeUp delay={1}>
             <footer className='hidden xs:flex xs:flex-col xs:bg-orange xs:rounded-t-[1.39vw] xs:mt-[5vw] relative'>
-                <FadeIn delay={1.5}>
+                {currPage == '/' && <FadeIn delay={1.5}>
                     <img className='absolute w-[58.27vw] -top-[3.5vw] right-0' src={IMGErrorsCodes.src} />
-                </FadeIn>
+                </FadeIn>}
                 <div className='relative flex flex-col px-[6.4vw] pt-[8.55vw]'>
                     <FadeIn delay={1.5} className='relative flex flex-col size-full font-dharma-gothic-e pb-[10.675vw] border-b-2 border-black'>
                         <FadeIn delay={1.5}>
@@ -44,10 +53,10 @@ export default function Footer(){
                     </FadeIn>
                     <div className='flex flex-row font-bold mt-[3.89vw] mb-[2.78vw] text-[1.395vw] leading-[1.395vw] uppercase justify-between'>
                         <FadeIn delay={1.5} className='flex flex-row gap-[3.34vw]'>
-                            <a href='#projects'>Projects</a>
-                            <a href='#events'>Events</a>
-                            <a href='#blog'>Blog</a>
-                            <a href='#values'>Our Values</a>
+                            <a href='/#projects'>Projects</a>
+                            <a href='/#events'>Events</a>
+                            <a href='/#blog'>Blog</a>
+                            <a href='/#values'>Our Values</a>
                         </FadeIn>
                         <FadeIn delay={1.6} className='flex flex-row gap-[3.34vw]'>
                             <a className='z-[1]' href='/terms-and-conditions#privacy-policy'>Privacy Policy</a>

@@ -109,16 +109,16 @@ export default function Header() {
                         </div>
                     </div>
                     <div className="flex flex-col w-full my-[10.667vw] xs:my-[4vw] font-dharma-gothic-e font-black text-[10.667vw] xs:text-[6.5vw] leading-[8.8vw] gap-[8.8vw] xs:gap-0">
-                        <Link className="uppercase" onClick={() => setShowMenu(false)} href="#projects-mobile">
+                        <Link className="uppercase" onClick={() => setShowMenu(false)} href="/#projects-mobile">
                             Projects
                         </Link>
-                        <Link className="uppercase" onClick={() => setShowMenu(false)} href="#events-mobile">
+                        <Link className="uppercase" onClick={() => setShowMenu(false)} href="/#events-mobile">
                             Events
                         </Link>
-                        <Link className="uppercase" onClick={() => setShowMenu(false)} href="#blog-mobile">
+                        <Link className="uppercase" onClick={() => setShowMenu(false)} href="/#blog-mobile">
                             Blog
                         </Link>
-                        <Link className="uppercase" onClick={() => setShowMenu(false)} href="#values-mobile">
+                        <Link className="uppercase" onClick={() => setShowMenu(false)} href="/#values-mobile">
                             Our values
                         </Link>
                     </div>
