@@ -2,7 +2,7 @@
 
 import React, { useState } from 'react';
 import { cn } from '../../utils/cn';
-import IMGChevron from '@/public/pngs/common/chevron.png'
+import IMGChevron from '@/public/pngs/home/faqs/chevron.png'
 
 interface AccordionProps {
   title: React.ReactNode;
