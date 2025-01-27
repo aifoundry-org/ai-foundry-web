@@ -1,18 +1,18 @@
 'use client';
 
-import { motion, AnimatePresence } from "motion/react"
+import { motion } from "motion/react"
 
-export default function FadeUp({ children, delay, duration, startY = '15%', endY = '0' }: Readonly<{ children: React.ReactNode, delay: number, duration: number, startY?: string, endY?: string }>) {
+export default function FadeUp({ children, id = '', delay = 0, duration = 1, className = '', startY = '15%', endY = '0', additionalInitialParams = {}, additionalWhileInView = {}}: Readonly<{ children: React.ReactNode, id?: string, delay?: number, duration?: number, className?: string, startY?: string, endY?: string, additionalInitialParams?: {[key: string]: any}, additionalWhileInView?: {[key: string]: any}}>) {
     return (
-        <AnimatePresence mode="sync">
-            <motion.div 
-                viewport={{ once: true }}
-                initial={{opacity: 0, y: startY}}
-                whileInView={{opacity: 1, y: endY}}
-                transition={{duration, delay, ease: "easeOut"}}
-            >
-                {children}
-            </motion.div>
-        </AnimatePresence>
+        <motion.div 
+            id={id}
+            className={className}
+            viewport={{ once: true, amount: 0.4}}
+            initial={{opacity: 0, y: startY, ...additionalInitialParams}}
+            whileInView={{opacity: 1, y: endY, ...additionalWhileInView}}
+            transition={{duration, delay, ease: "easeOut"}}
+        >
+            {children}
+        </motion.div>
     )
 }
