@@ -6,7 +6,7 @@ export default function FadeUp({ children, delay = 0, duration = 1, className = 
     return (
         <motion.div 
             className={className}
-            viewport={{ once: true, amount: 0.4, ...additionalViewportParams}}
+            viewport={{ once: true, amount: 0.3, ...additionalViewportParams}}
             initial={{opacity: 0, y: startY, ...additionalInitialParams}}
             whileInView={{opacity: 1, y: endY, ...additionalWhileInView}}
             transition={{duration, delay, ease: "easeOut"}}

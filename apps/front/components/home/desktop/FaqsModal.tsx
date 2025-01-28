@@ -25,19 +25,19 @@ export default function FaqsModal({isModalOpen, setIsModalOpen} : {isModalOpen:b
     }
 
     const inputStyles = 'w-full h-[4.45vw] font-host-grotesk text-[1.125vw] border-2 border-black focus:border-orange'
-    const errorStyle = 'text-[1.2vw] text-red-500 uppercase'
+    const errorStyle = 'text-[0.84vw] text-red-500 font-host-grotesk mt-[0.56vw]'
 
     return (
         <Modal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)}>
-            <div className='flex flex-col w-[46.95vw] px-[5.28vw] pb-[1vw] justify-between border-black border-2 bg-sand relative'>
+            <div className='flex flex-col w-[47.25vw] px-[4.45vw] pb-[1vw] justify-between border-black border-2 bg-sand relative'>
                 <button className='absolute top-[2vw] right-[2vw]' type='button' onClick={() => setIsModalOpen(false)} aria-label='Close modal'>
                     <img src={IMGCloseButton.src} className='w-[2.225vw] h-[2.225vw]' />
                 </button>
                 {!showResult && <>
-                    <form onSubmit={handleSubmit(onSubmit)} className={`flex flex-col items-center ${isSending ? 'bg-transparent opacity-50 pointer-events-none' : ''}`}>
+                    <form onSubmit={handleSubmit(onSubmit)} className={`faqsModal relative flex flex-col items-center ${isSending ? 'bg-transparent opacity-50 pointer-events-none' : ''}`}>
                         <div className='flex flex-col gap-[1.67vw] py-[3.34vw] items-center justify-center w-full'>
                             <p className='text-[3.34vw] font-black uppercase'>Contact us</p>
-                            <div className='flex flex-col w-full'>
+                            <div className='flex flex-col w-full relative'>
                                 <Input 
                                     label="First Name"
                                     variant="outlined"
@@ -92,7 +92,7 @@ export default function FaqsModal({isModalOpen, setIsModalOpen} : {isModalOpen:b
                                 {errors.message?.type === 'required' &&  <div className={errorStyle}>message is required</div>}
                             </div>
                         </div>
-                        <Button className='flex mb-[2vw]' content='Send' onClick={() => {
+                        <Button containerProps='!px-[1.55vw] !py-[0.85vw]' className='flex mb-[2vw]' content='Send' onClick={() => {
                             inputRef.current?.click();
                         }} />
                         <input ref={inputRef} id='submit-contact-us' type='submit' className='hidden'/>

@@ -13,7 +13,7 @@ export interface InputProps extends React.InputHTMLAttributes<HTMLInputElement> 
 type Variant = 'plain' | 'outlined' | 'error';
 
 const inputVariants = {
-  essentialStyles: `text-gray-600 placeholder-gray-300 focus:border-purple-600 transition duration-100 outline-none px-3 py-4 w-full disabled:opacity-50 disabled:cursor-not-allowed`,
+  essentialStyles: `text-[#7B7B7B] placeholder-gray-300 focus:border-purple-600 transition duration-100 outline-none px-3 py-4 w-full disabled:opacity-50 disabled:cursor-not-allowed`,
   variant: {
     plain: 'border-0 border-b bg-gray-50 rounded-t-md',
     outlined: 'border rounded-md',

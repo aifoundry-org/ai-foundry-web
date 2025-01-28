@@ -12,6 +12,7 @@ export default function Community() {
     const months = Object.keys(events);
     const [selectedMonth, setSelectedMonth] = useState(months[0]);
     const _events = events as {[key: string]: Array<{[key: string]: string | number}>};
+    const hasEvents = _events[selectedMonth].length > 0;
 
     return (
         <div id='events-mobile' className='xs:hidden flex flex-col pt-[30vw] pb-[7.7vw] relative w-full h-fit px-[5.6vw]'>
@@ -31,25 +32,32 @@ export default function Community() {
                     </div>
                 ))}
             </FadeUp>
-            <div className={`flex flex-col ${_events[selectedMonth].length > 0 ? 'pt-[10.7vw] pb-[2.15vw]' : 'py-[10.7vw]'} `}>
-                {_events[selectedMonth].length > 0 ? _events[selectedMonth].map((el, idx) => (
-                    <FadeUp key={el.id} delay={el.delay as number}>
-                        <CommunityCard 
-                            title={el.title as string}
-                            author={el.author as string}
-                            date={el.date as string}
-                            time={el.time as string}
-                            location={el.location as string}
-                            link={el.link as string} 
-                            isLastElement={el.id == _events[selectedMonth].length}
-                        />
+            <FadeUp delay={1.7}>
+                <div className={`flex flex-col ${_events[selectedMonth].length > 0 ? 'pt-[10.7vw] pb-[2.15vw]' : 'py-[10.7vw]'} `}>
+                    <FadeUp delay={0.9}>
+                        {hasEvents ? _events[selectedMonth].map((el, idx) => (
+                                <CommunityCard 
+                                    key={idx}
+                                    title={el.title as string}
+                                    author={el.author as string}
+                                    date={el.date as string}
+                                    time={el.time as string}
+                                    location={el.location as string}
+                                    href={el.href as string} 
+                                    isLastElement={el.id == _events[selectedMonth].length}
+                                />
+                        )) : 
+                            <div className='flex flex-col'>
+                                <div className='font-black font-dharma-gothic-e text-[10vw] leading-[9vw] uppercase mb-[1.12vw]'>No upcoming events</div>
+                                <div className='font-bold w-3/4 font-host-grotesk text-[6vw] leading-[6vw]'>Subscribe to keep up with new events!</div>
+                            </div>
+                        }
                     </FadeUp>
-                )) : <div className='font-normal font-host-grotesk text-[3.75vw] leading-[5.6vw]'>No events found!</div> 
-            }
-            </div>
-            <div className='flex pb-[8.55vw]'>
-                <Button target='_blank' as={Link} href='https://lu.ma/aifoundryorg' variant='primary' content='View full calendar' svg='arrow-up-right' />
-            </div>
+                </div>
+                <div className='flex pb-[8.55vw]'>
+                    <Button target='_blank' as={Link} href='https://lu.ma/aifoundryorg' variant='primary' content='View full calendar' svg='arrow-up-right' />
+                </div>
+            </FadeUp>
         </div>
     )
 }

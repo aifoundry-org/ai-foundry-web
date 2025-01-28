@@ -25,16 +25,16 @@ export default function FaqsModal({isModalOpen, setIsModalOpen} : {isModalOpen:b
     }
 
     const inputStyle = 'w-full h-[14.15vw] font-host-grotesk text-[3.75vw] border-2 border-black focus:border-orange'
-    const errorStyle = 'text-[4vw] text-red-500 uppercase'
+    const errorStyle = 'text-[3.2vw] text-red-500 font-host-grotesk mt-[2.15vw]'
 
     return (
         <Modal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)}>
-            <div className='flex flex-col w-[87.2vw] px-[5.28vw] justify-between border-black border-2 bg-sand relative'>
+            <div className='flex flex-col w-[88.3vw] px-[6.4vw] justify-between border-black border-2 bg-sand relative'>
                 <button className='absolute top-[5vw] right-[5vw]' type='button' onClick={() => setIsModalOpen(false)} aria-label='Close modal'>
                     <img src={IMGCloseButton.src} className='w-[8.55vw] h-[8.55vw]' />
                 </button>
                 {!showResult && <>
-                    <form onSubmit={handleSubmit(onSubmit)} className={`flex flex-col items-center ${isSending ? 'bg-transparent opacity-50 pointer-events-none' : ''}`}>
+                    <form onSubmit={handleSubmit(onSubmit)} className={`faqsModal flex flex-col items-center ${isSending ? 'bg-transparent opacity-50 pointer-events-none' : ''}`}>
                         <div className='flex flex-col gap-[6.675vw] py-[3.34vw] items-center justify-center w-full'>
                             <p className='text-[8.8vw] font-black uppercase'>Contact us</p>
                             <div className='flex flex-col w-full'>
@@ -92,7 +92,7 @@ export default function FaqsModal({isModalOpen, setIsModalOpen} : {isModalOpen:b
                                 {errors.message?.type === 'required' &&  <div className={errorStyle}>message is required</div>}
                             </div>
                         </div>
-                        <Button className='my-[7vw]' labelProps='p-[2.5vw]' content='Send' onClick={() => {
+                        <Button containerProps='!px-[2.55vw] !py-[1.7vw]' className='my-[7vw]' labelProps='p-[2.5vw]' content='Send' onClick={() => {
                             inputRef.current?.click();
                         }} />
                         <input ref={inputRef} id='submit-contact-us' type='submit' className='hidden'/>

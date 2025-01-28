@@ -24,7 +24,7 @@ export default function Footer(){
 
     return (
         <FadeUp delay={1}>
-            <footer className='xs:hidden flex flex-col bg-orange rounded-t-[5.335vw] relative'>
+            <footer className='sm:hidden flex flex-col bg-orange rounded-t-[5.335vw] relative'>
                 {currPage == '/' && <FadeIn delay={1.5}>
                     <img className='absolute -top-[12.5vw] left-0' src={IMGErrorsCodes.src} />
                 </FadeIn>}
@@ -48,10 +48,10 @@ export default function Footer(){
                         </FadeIn>
                     </FadeIn>
                     <FadeIn delay={1.5} className='flex flex-row font-bold text-[5vw] leading-[3vw] mt-[10vw] justify-between uppercase'>
-                        <a href='/#projects'>Projects</a>
-                        <a href='/#events'>Events</a>
-                        <a href='/#blog'>Blog</a>
-                        <a href='/#values'>Our Values</a>
+                        <a href='/#projects-mobile'>Projects</a>
+                        <a href='/#events-mobile'>Events</a>
+                        <a href='/#blog-mobile'>Blog</a>
+                        <a href='/#values-mobile'>Our Values</a>
                     </FadeIn>
                     <FadeIn delay={1.6} className='flex flex-row font-bold text-[5vw] leading-[3vw] mt-[6.4vw] mb-[10.675vw] justify-between uppercase'>
                         <a href='/terms-and-conditions#privacy-policy-mobile'>Privacy Policy</a>

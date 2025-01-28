@@ -10,8 +10,6 @@ import IMGStarEmpty from '@/public/pngs/home/testimonials/starEmpty.png'
 import cards from '@/mock/home/testimonials/data.json';
 import IMGCompanyWebflow from '@/public/pngs/home/testimonials/companyWebflow.png'
 import IMGDeveloper1 from '@/public/pngs/home/testimonials/developer1.png'
-import IMGDeveloper2 from '@/public/pngs/home/testimonials/developer2.png'
-import IMGDeveloper3 from '@/public/pngs/home/testimonials/developer3.png'
 
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Pagination, Navigation } from 'swiper/modules';
@@ -43,12 +41,6 @@ export default function Testimonials() {
     
     cards[0].avatar = IMGDeveloper1.src;
     cards[0].companyLogo = IMGCompanyWebflow.src;
-
-    cards[1].avatar = IMGDeveloper2.src;
-    cards[1].companyLogo = IMGCompanyWebflow.src;
-
-    cards[2].avatar = IMGDeveloper3.src;
-    cards[2].companyLogo = IMGCompanyWebflow.src;
 
     return (
         <FadeUp className='hidden md:flex md:flex-col md:pt-[6vw] md:pb-[7.7vw] md:relative md:w-full md:h-full'>

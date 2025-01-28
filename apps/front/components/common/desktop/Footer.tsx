@@ -25,7 +25,7 @@ export default function Footer(){
     
     return (
         <FadeUp delay={1}>
-            <footer className='hidden xs:flex xs:flex-col xs:bg-orange xs:rounded-t-[1.39vw] xs:mt-[5vw] relative'>
+            <footer className='hidden sm:flex sm:flex-col sm:bg-orange sm:rounded-t-[1.39vw] sm:mt-[5vw] relative'>
                 {currPage == '/' && <FadeIn delay={1.5}>
                     <img className='absolute w-[58.27vw] -top-[3.5vw] right-0' src={IMGErrorsCodes.src} />
                 </FadeIn>}
@@ -67,17 +67,17 @@ export default function Footer(){
                         <div className='flex flex-row gap-[2.78vw]'>
                             <FadeIn delay={1}>
                                 <Link target='_blank' href='https://www.instagram.com/ai.foundry/'>
-                                    <img className='w-[1.67vw] h-[1.67vw]' src={IMGInstagramIcon.src} />
+                                    <img className='w-[1.67vw] h-[1.67vw] hover:mix-blend-soft-light hover:invert hover:duration-100' src={IMGInstagramIcon.src} />
                                 </Link>
                             </FadeIn>
                             <FadeIn delay={1.2}>
                                 <Link target='_blank' href='https://www.linkedin.com/company/aifoundry-org'>
-                                    <img className='w-[1.67vw] h-[1.67vw]' src={IMGLinkedinIcon.src} />
+                                    <img className='w-[1.67vw] h-[1.67vw] hover:mix-blend-soft-light hover:invert hover:duration-100' src={IMGLinkedinIcon.src} />
                                 </Link>
                             </FadeIn>
                             <FadeIn delay={1.5}>
                                 <Link target='_blank' href='https://www.youtube.com/channel/UCGktaVJ19Ze8J9auyD5IoDQ'>
-                                    <img className='w-[1.67vw] h-[1.67vw]' src={IMGYoutubeIcon.src} />
+                                    <img className='w-[1.67vw] h-[1.67vw] hover:mix-blend-soft-light hover:invert hover:duration-100' src={IMGYoutubeIcon.src} />
                                 </Link>
                             </FadeIn>
                         </div>
