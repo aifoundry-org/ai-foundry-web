@@ -1,32 +1,12 @@
 {
-    "january": [{
-        "id": 1,
-        "title": "speaker dinner",
-        "author": "Nina Daydova",
-        "date": "Jan 2, 2025 Sunday",
-        "time": "6:30 PM - 9:00 PM GMT+1",
-        "location": "Ixelles, Bruxelles",
-        "href": "",
-        "delay": 1.2
-    },{
-        "id": 2,
-        "title": "FOSDEM fringe: AI plumbers conference",
+    "february": [{
+        "title": "FOSDEM fringe:<br/>AI plumbers conference",
         "author": "Tanya Dadasheva & Roman Shaposhnik",
-        "date": "Jan 3, 2025 Monday",
+        "date": "Feb 3, 2025 Monday",
         "time": "9:00 AM - 5:00 PM GMT+1",
-        "location": "Ghent, Flanders",
-        "href": "",
-        "delay": 1.4
-    },{
-        "id": 3,
-        "title": "Distillation Reverse Annealing Quantization DRAQ",
-        "author": "Nina Davydova",
-        "date": "Jan 16, 2025 Thursday",
-        "time": "3:30 PM - 4:30 PM GMT-3",
-        "location": "Virtual",
-        "href": "",
-        "delay": 1.5
+        "location": "Gent, Belgium",
+        "href": "https://lu.ma/fx9kupug"
     }],
-    "febraury": [],
-    "march": []
+    "march": [],
+    "april": []
 }

@@ -4,6 +4,7 @@ import Button from '@/litebox-lib/ui/Button/Button';
 import IMGIconCalendar from '@/public/pngs/home/community/calendar.png';
 import IMGIconPosition from '@/public/pngs/home/community/position.png';
 import IMGIconCam from '@/public/pngs/home/community/cam.png';
+import Link from 'next/link';
 
 export default function CommunityCard({
     title = '',
@@ -11,7 +12,7 @@ export default function CommunityCard({
     date = '',
     time = '',
     location = '',
-    link = '',
+    href = '',
     isLastElement = false
 }) {
     const day = date !== '' ? date.split(' ').pop() : '';
@@ -29,7 +30,7 @@ export default function CommunityCard({
     return (
         <div className='flex flex-col w-full h-full'>
             <div className='flex flex-row items-start pb-[2.15vw]'>
-                <p className='font-dharma-gothic-e font-black leading-[7vw] text-[8.6vw] uppercase'>{title}</p>
+                <p className='font-dharma-gothic-e font-black leading-[7vw] text-[8.6vw] uppercase'dangerouslySetInnerHTML={{__html:title}} />
             </div>
             <div className='flex flex-row items-start pb-[4.3vw]'>
                 <p className='font-host-grotesk font-normal leading-[4.8vw] text-[3.2vw]'>By {author}</p>
@@ -46,7 +47,7 @@ export default function CommunityCard({
                 </div>
             </div>
             <div className='flex pb-[8.55vw]'>
-                <Button href={link} variant='secondary' content='Event page' svg='arrow-up-right' />
+                <Button as={Link} href={href} target='_blank' variant='secondary' content='Event page' svg='arrow-up-right' />
             </div>
             {!isLastElement && <div className='h-[8.55vw] border-t-2 border-black' />}
         </div>

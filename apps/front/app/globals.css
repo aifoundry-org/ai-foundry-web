@@ -149,3 +149,7 @@ ol {
   opacity: 1;
   border-radius: 1.6vw;
 }
+
+.faqsModal input:hover, input:focus{
+  border-color: #F9A03F !important;
+}

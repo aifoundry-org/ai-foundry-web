@@ -54,12 +54,12 @@ export default function InTheNews() {
                             <FadeIn delay={card.delay}>
                                 <div className='flex flex-row items-center mb-[1.67vw] gap-x-[0.56vw]'>
                                     {(card.source == 'cnn' ? IMGLogoCnn.src : '') && 
-                                        <div className='flex border-[1px] p-[1vw] rounded-[0.28vw] border-black'>
+                                        <div className='flex border-[1px] px-[0.8vw] py-[0.59vw] rounded-[0.28vw] border-black'>
                                             <img className='w-[2.225vw]' src={(card.source == 'cnn' ? IMGLogoCnn.src : '')} />
                                         </div>
                                     }
                                     {card.tag && 
-                                        <div className='flex font-bold text-[1.395vw] bg-orange rounded-[0.28vw] px-[1vw] py-[1vw] leading-[1.395vw] font-dharma-gothic-e uppercase items-center'>
+                                        <div className='flex font-bold text-[1.395vw] bg-orange rounded-[0.28vw] px-[1.1vw] py-[0.5vw] leading-[1.395vw] font-dharma-gothic-e uppercase items-center'>
                                             {card.tag}
                                         </div>
                                     }

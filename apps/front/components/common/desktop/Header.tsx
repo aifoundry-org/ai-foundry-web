@@ -38,7 +38,7 @@ export default function Header() {
                   <motion.nav
                       className={`flex flex-col bg-sand ${
                           isSticky
-                          ? 'fixed z-20 top-[2.8vw] px-[2.78vw] py-[0.63vw] border-2 border-black'
+                          ? 'fixed z-20 top-[2.8vw] px-[2.78vw] py-[1vw] border-2 border-black'
                           : 'relative px-[2.78vw] mx-auto'
                       }`}
                       style={{
@@ -94,14 +94,14 @@ export default function Header() {
                                     initial={{ opacity: 0, zIndex: 0 }}
                                     transition={{ ease: 'easeIn', duration: 0.4, delay: isSticky ? 0.2 : 0 }}
                                 />
-                          </div>
-                          <div className="flex w-full justify-end">
-                              <Button target='_blank' as={Link} href='https://discord.com/invite/WNKvkefkUs' variant="primary" content="Join our discord" svg="discord" />
-                          </div>
-                      </div>
-                  </motion.nav>
-              </div>
-          </div>
-      </header>
-  );
+                            </div>
+                            <div className="flex w-full justify-end">
+                                <Button containerProps='!px-[1.25vw] !py-[0.7vw]' target='_blank' as={Link} href='https://discord.com/invite/WNKvkefkUs' variant="primary" content="Join our discord" svg="discord" />
+                            </div>
+                        </div>
+                    </motion.nav>
+                </div>
+            </div>
+        </header>
+    );
 }

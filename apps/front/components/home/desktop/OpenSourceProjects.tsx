@@ -18,9 +18,9 @@ export default function OpenSourceProjects() {
                 AI Foundry open source projects are Apache V2 licensed. View the code on<br/>
                 our Github, and collaborate with project contributors in our Discord Server.
             </FadeUp>
-            <FadeUp className='flex flex-col xl:flex-row lg:flex-row md:flex-row justify-between gap-[4.8rem]'>
+            <FadeUp className='flex flex-col md:flex-row justify-between gap-[7rem] mt-[4rem] md:mt-0 lg:mt-0 xl:mt-0 2xl:mt-0 md:gap-[3.34vw] lg:gap-[3.34vw] xl:gap-[3.34vw] 2xl:gap-[3.34vw]'>
                 {cards.map(card => 
-                    (<FadeUp className='flex basis-1/4' key={card.id} delay={card.delay} duration={1}>
+                    (<FadeUp className='flex basis-1/3' key={card.id} delay={card.delay} duration={1}>
                         <OpenSourceProjectsCard
                             title={card.title}
                             subtitle={card.subtitle}

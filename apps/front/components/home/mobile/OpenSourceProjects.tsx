@@ -2,7 +2,7 @@
 
 import { useRef, useState } from 'react'
 import Button from '@/litebox-lib/ui/Button/Button';
-import SVGIconArrowUpRight from '@/public/svgs/common/ArrowUpRightMobile';
+import IMGArrowUpRight from '@/public/pngs/home/openSourceProjects/arrowUpRightMobile.png';
 import Link from 'next/link';
 
 import { Swiper, SwiperSlide } from 'swiper/react';
@@ -50,7 +50,7 @@ export default function OpenSourceProjects() {
                             <div className='flex flex-col w-full h-full'>
                                 <div className='flex flex-row items-center justify-between'>
                                     <p className='font-dharma-gothic-e font-black text-[8.6vw] uppercase'>{card.title}</p>
-                                    <SVGIconArrowUpRight />
+                                    <img className='w-[5.87vw]' src={IMGArrowUpRight.src} />
                                 </div>
                                 <div className='flex flex-col border-y-2 border-black mt-[2vw] py-[6.4vw] h-[70vw] leading-[5.6vw]'>
                                     <div className='font-host-grotesk font-bold text-[4.3vw]'>{card.subtitle}</div>
