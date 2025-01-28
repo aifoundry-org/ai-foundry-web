@@ -1,4 +1,7 @@
-import Link from 'next/link';
+'use client'
+
+import { useEffect, useState } from 'react'
+import Link from 'next/link'
 import IMGLogo from '@/public/pngs/footer/logoMobile.png'
 import IMGErrors from '@/public/pngs/footer/errorsMobile.png'
 import IMGBucket from '@/public/pngs/footer/bucketMobile.png'
@@ -13,12 +16,18 @@ import FadeUp from '@/components/common/universal/FadeUp';
 import FadeIn from '@/components/common/universal/FadeIn';
 
 export default function Footer(){
+    const [currPage, setCurrPage] = useState('');
+
+    useEffect(() => {
+        setCurrPage(window.location.pathname)    
+    },[])
+
     return (
         <FadeUp delay={1}>
             <footer className='xs:hidden flex flex-col bg-orange rounded-t-[5.335vw] relative'>
-                <FadeIn delay={1.5}>
+                {currPage == '/' && <FadeIn delay={1.5}>
                     <img className='absolute -top-[12.5vw] left-0' src={IMGErrorsCodes.src} />
-                </FadeIn>
+                </FadeIn>}
                 <div className='relative flex flex-col px-[6.4vw] pt-[8.55vw]'>
                     <FadeIn delay={1.5}>
                         <img className='absolute w-1/4 top-[49vw] right-0' src={IMGBucket.src} />
@@ -39,10 +48,10 @@ export default function Footer(){
                         </FadeIn>
                     </FadeIn>
                     <FadeIn delay={1.5} className='flex flex-row font-bold text-[5vw] leading-[3vw] mt-[10vw] justify-between uppercase'>
-                        <a href='#projects'>Projects</a>
-                        <a href='#events'>Events</a>
-                        <a href='#blog'>Blog</a>
-                        <a href='#values'>Our Values</a>
+                        <a href='/#projects'>Projects</a>
+                        <a href='/#events'>Events</a>
+                        <a href='/#blog'>Blog</a>
+                        <a href='/#values'>Our Values</a>
                     </FadeIn>
                     <FadeIn delay={1.6} className='flex flex-row font-bold text-[5vw] leading-[3vw] mt-[6.4vw] mb-[10.675vw] justify-between uppercase'>
                         <a href='/terms-and-conditions#privacy-policy-mobile'>Privacy Policy</a>
