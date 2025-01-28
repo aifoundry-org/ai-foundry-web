@@ -27,12 +27,10 @@ export default function Header() {
       <header className='hidden md:block'>
           <div className='flex flex-col w-full bg-black'>
               <div className='flex flex-row text-sand justify-center p-4'>
-                  <a className='flex' href="#">
-                      <p className='font-host-grotesk text-[1.6rem]'>
-                          AIFoundry.org is sponsoring the "Low-Level AI Engineering & Hacking" Dev Room at FOSDEM. Find out more!
-                          <img src={IMGHeaderIconArrowUpRight.src} className='inline-block ml-[0.5vw] w-[22px]' />
-                      </p>
-                  </a>
+                    <Link target="_blank" className='flex font-host-grotesk text-[1.6rem]' href="https://aifoundry.org/fosdem-2025-low-level-ai-engineering-hacking-dev-room">
+                        <div className='flex'>AIFoundry.org is sponsoring the "Low-Level AI Engineering & Hacking" Dev Room at FOSDEM. Find out more!</div>
+                        <div className='flex items-center'><img src={IMGHeaderIconArrowUpRight.src} className='inline-block ml-[0.56vw] w-[1.53vw]' /></div>
+                    </Link>
               </div>
               <div className={`flex items-center w-full h-[5.56vw] pt-[2.225vw] pb-[0.5vw] bg-sand rounded-t-lg`}>
                   <motion.nav
