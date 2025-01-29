@@ -33,7 +33,7 @@ export default function JoinTheAiRevolution(){
                 <div className='relative w-[12.71vw] -left-[2.1vw]'>
                     <img src={IMGArrows.src} />
                 </div>
-                <p className='font-dharma-gothic-e font-black text-black text-[2.8vw] leading-[2.3vw] mt-[1.05vw] uppercase'>
+                {/* <p className='font-dharma-gothic-e font-black text-black text-[2.8vw] leading-[2.3vw] mt-[1.05vw] uppercase'>
                     Subscribe to our newsletter
                 </p>
                 <div className='flex w-full mt-[1.675vw]'>
@@ -45,7 +45,7 @@ export default function JoinTheAiRevolution(){
                 </div>
                 <div className='mt-[1vw] w-full h-fit flex justify-end'>
                     <Button variant='primary' content='Submit' />
-                </div>
+                </div> */}
             </FadeUp>
         </div>
     )

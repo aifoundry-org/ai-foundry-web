@@ -55,7 +55,7 @@ export default function Footer(){
                         <FadeIn delay={1.5} className='flex flex-row gap-[3.34vw]'>
                             <a href='/#projects'>Projects</a>
                             <a href='/#events'>Events</a>
-                            <a href='/#blog'>Blog</a>
+                            {process.env.HIDE_SECTIONS === "false" && <a href='/#blog'>Blog</a>}
                             <a href='/#values'>Our Values</a>
                         </FadeIn>
                         <FadeIn delay={1.6} className='flex flex-row gap-[3.34vw]'>
