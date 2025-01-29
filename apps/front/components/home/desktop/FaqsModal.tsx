@@ -43,10 +43,14 @@ export default function FaqsModal({isModalOpen, setIsModalOpen} : {isModalOpen:b
                                     variant="outlined"
                                     placeholder='First Name'
                                     className={`${inputStyles} ${errors.firstName ? 'border-red-600' : ''}`}
-                                    {...register("firstName", { required: true, pattern: /^[A-Za-z]+$/i })}
+                                    {...register("firstName", { required: true, pattern: /^[\p{L}\s]+$/u, maxLength: {
+                                        value: 20,
+                                        message: "Too many characters, 20 chars limit"
+                                    }})}
                                 />
                                 {errors.firstName?.type === 'required' &&  <div className={errorStyle}>First Name is required</div>}
                                 {errors.firstName?.type === 'pattern' &&  <div className={errorStyle}>First Name format invalid</div>}
+                                {errors.firstName?.message && <div className={errorStyle}>{errors.firstName?.message.toString()}</div>}
                             </div>
                             <div className='flex flex-col w-full'>
                                 <Input 
@@ -54,7 +58,10 @@ export default function FaqsModal({isModalOpen, setIsModalOpen} : {isModalOpen:b
                                     variant="outlined"
                                     placeholder='Last Name'
                                     className={`${inputStyles} ${errors.lastName ? 'border-red-600' : ''}`}
-                                    {...register("lastName", { required: true, pattern: /^[A-Za-z]+$/i })}
+                                    {...register("lastName", { required: true, pattern: /^[\p{L}\s]+$/u, maxLength: {
+                                        value: 20,
+                                        message: "Too many characters, 20 chars limit"
+                                    }})}
                                 />
                                 {errors.lastName?.type === 'required' &&  <div className={errorStyle}>Last Name is required</div>}
                                 {errors.lastName?.type === 'pattern' &&  <div className={errorStyle}>Last Name format invalid</div>}
@@ -65,7 +72,10 @@ export default function FaqsModal({isModalOpen, setIsModalOpen} : {isModalOpen:b
                                     variant="outlined"
                                     placeholder='Company Name'
                                     className={`${inputStyles} ${errors.companyName ? 'border-red-600' : ''}`}
-                                    {...register("companyName", { required: true, pattern: /^[A-Za-z]+$/i })}
+                                    {...register("companyName", { required: true, pattern: /^[\p{L}\s]+$/u, maxLength: {
+                                        value: 20,
+                                        message: "Too many characters, 20 chars limit"
+                                    }})}
                                 />
                                 {errors.companyName?.type === 'required' &&  <div className={errorStyle}>Company Name is required</div>}
                                 {errors.companyName?.type === 'pattern' &&  <div className={errorStyle}>Company Name format invalid</div>}
@@ -76,7 +86,10 @@ export default function FaqsModal({isModalOpen, setIsModalOpen} : {isModalOpen:b
                                     variant="outlined"
                                     placeholder='Email'
                                     className={`${inputStyles} ${errors.email ? 'border-red-600' : ''}`}
-                                    {...register("email", { required: true, pattern: /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/})}
+                                    {...register("email", { required: true, maxLength: {
+                                        value: 40,
+                                        message: "Too many characters, 40 chars limit"
+                                    }, pattern: /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/})}
                                 />
                                 {errors.email?.type === 'required' &&  <div className={errorStyle}>Email is required</div>}
                                 {errors.email?.type === 'pattern' &&  <div className={errorStyle}>Email format invalid</div>}
@@ -87,9 +100,12 @@ export default function FaqsModal({isModalOpen, setIsModalOpen} : {isModalOpen:b
                                     variant="outlined"
                                     placeholder='Message'
                                     className={`${inputStyles} ${errors.message ? 'border-red-600' : ''}`}
-                                    {...register("message", { required: true })}
+                                    {...register("message", { required: true, maxLength: {
+                                        value: 500,
+                                        message: "Too many characters, 500 chars limit"
+                                    }, pattern: /^[\p{L}\p{N}\s]+\$/u })}
                                 />
-                                {errors.message?.type === 'required' &&  <div className={errorStyle}>message is required</div>}
+                                {errors.message?.type === 'required' &&  <div className={errorStyle}>Message is required</div>}
                             </div>
                         </div>
                         <Button className='flex mb-[2vw]' content='Send' onClick={() => {
