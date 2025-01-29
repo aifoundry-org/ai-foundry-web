@@ -18,7 +18,7 @@ import SVGArrowRight from '@/public/svgs/findOutMore/ArrowRight'
 
 export default function FindOutMore() {
     return (
-        <FadeDown className='xs:hidden flex flex-col pt-[17.4vw] relative w-full h-fit'>
+        <FadeUp className='xs:hidden flex flex-col pt-[17.4vw] relative w-full h-fit'>
             <SVGFindOutMoreBackground />
             <SVGCodeErrors className='absolute w-[61.1vw] top-[8.9vw] right-0' />
             <div className='absolute w-[34vw] left-[20.8vw] top-[37.5vw] mix-blend-plus-lighter'>
@@ -92,6 +92,6 @@ export default function FindOutMore() {
                     </div>
                 </div>
             </FadeUp>
-        </FadeDown>
+        </FadeUp>
     )
 }
