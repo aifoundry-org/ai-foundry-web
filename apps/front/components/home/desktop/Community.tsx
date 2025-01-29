@@ -50,7 +50,7 @@ export default function Community() {
                             <div className='font-black font-dharma-gothic-e text-[6vw] sm:text-[6vw] md:text-[4vw] xl:text-[2.8vw] 2xl:text-[2.8vw] leading-[3vw] md:leading-[2.3vw] lg:leading-[2.3vw] xl:leading-[2.3vw] 2xl:leading-[2.3vw] uppercase mb-[1.12vw]'>No upcoming events</div>
                             <div className='font-bold w-full xs:w-[30vw] font-host-grotesk text-[3vw] sm:text-[3vw] md:text-[1.6vw] xl:text-[1.4vw] 2xl:text-[1.4vw] leading-[2.1vw]'>Subscribe to keep up with new events!</div>
                         </div> 
-                        <Button className='flex' target='_blank' as={Link} href='https://lu.ma/aifoundryorg' variant='primary' content='View full calendar' svg='arrow-up-right' />
+                        <Button className='flex z-[1]' target='_blank' as={Link} href='https://lu.ma/aifoundryorg' variant='primary' content='View full calendar' svg='arrow-up-right' />
                     </div> 
                 }
                 </div>
