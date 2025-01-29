@@ -33,7 +33,7 @@ export default function OpenSourceProjects() {
             </FadeUp>
             <FadeUp delay={0.5} className='flex flex-col w-full h-full items-center justify-center'>
                 <Swiper
-                    onSlideChange={swiper => setCurrentIndex(swiper.activeIndex)}
+                    onSlideChange={swiper => setCurrentIndex(swiper.realIndex)}
                     slidesPerView={1}
                     spaceBetween={40}
                     loop
