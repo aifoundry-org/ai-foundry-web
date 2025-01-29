@@ -25,7 +25,7 @@ export default function Faqs() {
                     <Accordion isDesktop key={idx} title={el.title} content={el.content} />
                 </FadeUp>
             ))}
-            <FadeUp className='relative flex flex-row justify-between items-center w-full h-[9.45vw] mt-[2.778vw] border-2 border-black rounded-[4px]'>
+            {/* <FadeUp className='relative flex flex-row justify-between items-center w-full h-[9.45vw] mt-[2.778vw] border-2 border-black rounded-[4px]'>
                 <div className='absolute left-0 top-0 w-full h-full -z-10'>
                     <img className='w-full h-full' src={IMGBanner.src} />
                 </div>
@@ -34,7 +34,7 @@ export default function Faqs() {
                     <p className='flex font-host-grotesk font-normal text-[1.115vw] leading-[1.67vw] mt-[0.56vw]'>We're here to help!</p>
                 </div>
                 <Button onClick={() => setIsModalOpen(true)} className='mr-[2.78vw]' variant='primary' content='contact us' />
-            </FadeUp>
+            </FadeUp> */}
             {isModalOpen && <FaqsModal setIsModalOpen={setIsModalOpen} isModalOpen={isModalOpen} />}
         </div>
     )

@@ -5,6 +5,7 @@ import IMGComputer from '@/public/pngs/home/joinTheAiRevolution/computer.png'
 import IMGVerticalText from '@/public/pngs/home/joinTheAiRevolution/verticalTextMobile.png'
 import IMGArrows from '@/public/pngs/home/joinTheAiRevolution/arrowsMobile.png'
 import FadeUp from '@/components/common/universal/FadeUp'
+import Button from '@/libs/litebox-lib/ui/Button/Button'
 
 export default function JoinTheAiRevolution(){
     return (
@@ -32,7 +33,7 @@ export default function JoinTheAiRevolution(){
                 <div className='relative w-[36.6vw] bottom-[3.5vw] left-[49.1vw]'>
                     <img src={IMGArrows.src} />
                 </div>
-                <p className='font-dharma-gothic-e font-black text-black text-[8.55vw] leading-[7vw] uppercase'>
+                {/* <p className='font-dharma-gothic-e font-black text-black text-[8.55vw] leading-[7vw] uppercase'>
                     Subscribe to our newsletter
                 </p>
                 <div className='flex w-full mt-[6vw]'>
@@ -42,6 +43,9 @@ export default function JoinTheAiRevolution(){
                         className="w-full h-[14.15vw] font-host-grotesk text-[3.75vw] border-2 border-black"
                     />
                 </div>
+                <div className='mt-[6vw] w-full h-fit flex justify-end'>
+                    <Button variant='primary' content='Submit' />
+                </div> */}
             </FadeUp>
         </div>
     )

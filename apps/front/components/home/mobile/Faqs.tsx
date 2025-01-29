@@ -25,7 +25,7 @@ export default function Faqs() {
                     <Accordion title={el.title} content={el.content} />
                 </FadeUp>
             ))}
-            <FadeUp className='relative flex w-[87.2vw] h-[72.55vw] mt-[10.67vw] border-2 border-black rounded-[4px]'>
+            {/* <FadeUp className='relative flex w-[87.2vw] h-[72.55vw] mt-[10.67vw] border-2 border-black rounded-[4px]'>
                 <div className='absolute left-0 top-0 w-full h-full'>
                     <img src={IMGBanner.src} />
                 </div>
@@ -34,7 +34,7 @@ export default function Faqs() {
                     <p className='flex font-normal text-[4.27vw] leading-[6vw] mt-[2.15vw]'>We're here to help!</p>
                     <Button onClick={() => setIsModalOpen(true)} className='mt-[9.6vw] z-10' variant='primary' content='contact us' />
                 </div>
-            </FadeUp>
+            </FadeUp> */}
             {isModalOpen && <FaqsModal setIsModalOpen={setIsModalOpen} isModalOpen={isModalOpen} />}
         </div>
     )
