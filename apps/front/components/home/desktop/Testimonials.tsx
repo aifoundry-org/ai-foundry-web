@@ -50,7 +50,7 @@ export default function Testimonials() {
                 </FadeIn>
                 <FadeUp delay={1} className='flex flex-row w-full items-center justify-center relative'>
                     <div ref={buttonPrevRef} className='flex basis-[15%] justify-center'>
-                        <Button className='!w-[3.34vw] !h-[3.34vw]' containerProps='!px-[0.75vw]' variant='secondary' svg='scroll-left' noShadow/>
+                        <Button className='!w-[3.34vw] !h-[3.34vw]' variant='secondary' svg='scroll-left' noShadow/>
                     </div>
                     <Swiper
                         className='testimonialsSwiper !flex !flex-row !basis-[70%] !w-full !h-full !relative'
@@ -97,7 +97,7 @@ export default function Testimonials() {
                     </Swiper>
                     <div className='testimonialsPagination !absolute !flex !w-full !justify-center !items-center !-bottom-[6vw] !gap-[0.905vw] z-[1]' />
                     <div ref={buttonNextRef} className='flex basis-[15%] justify-center'>
-                        <Button className='!w-[3.34vw] !h-[3.34vw]' containerProps='!px-[0.75vw]' variant='secondary' svg='scroll-right' noShadow/>
+                        <Button className='!w-[3.34vw] !h-[3.34vw]' variant='secondary' svg='scroll-right' noShadow/>
                     </div>
                 </FadeUp>
                 <FadeIn delay={1} className='relative w-[25.91vw] -bottom-[6.5vw] left-[70vw] -z-[1]'>

@@ -23,7 +23,7 @@ export default function Footer(){
     },[])
 
     return (
-        <FadeUp delay={1}>
+        <FadeUp>
             <footer className='sm:hidden flex flex-col bg-orange rounded-t-[5.335vw] relative'>
                 {currPage == '/' && <FadeIn delay={1.5}>
                     <img className='absolute -top-[12.5vw] left-0' src={IMGErrorsCodes.src} />

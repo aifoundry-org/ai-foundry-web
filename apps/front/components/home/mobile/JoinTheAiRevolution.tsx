@@ -1,4 +1,5 @@
 import Input from '@/libs/litebox-lib/ui/Input/Input'
+import IMGInTheNewsBackground from '@/public/pngs/home/inTheNews/backgroundMobile.png'
 import IMGBackground from '@/public/pngs/home/joinTheAiRevolution/backgroundMobile.png'
 import IMGComputer from '@/public/pngs/home/joinTheAiRevolution/computer.png'
 import IMGVerticalText from '@/public/pngs/home/joinTheAiRevolution/verticalTextMobile.png'
@@ -7,7 +8,12 @@ import FadeUp from '@/components/common/universal/FadeUp'
 
 export default function JoinTheAiRevolution(){
     return (
-        <div className='md:hidden flex flex-col relative w-full h-[160vw] px-[5.6vw] mt-[5.6vw] mb-[7.0vw]'>
+        <div className={`md:hidden flex flex-col relative w-full h-[160vw] px-[5.6vw] mt-[5.6vw] mb-[7.0vw] ${process.env.HIDE_SECTIONS === "true" && 'mt-[65vw]'}`}>
+            {process.env.HIDE_SECTIONS === "true" && 
+                <div className='absolute w-full h-fit -top-[86vw] left-0 -z-[2]'>
+                    <img src={IMGInTheNewsBackground.src} />
+                </div>
+            }
             <div className='absolute w-full h-fit top-[22vw] left-0'>
                 <img src={IMGBackground.src} width="100%" alt="Join the AI Revolution background" />
             </div>

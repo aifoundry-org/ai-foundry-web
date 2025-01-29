@@ -46,7 +46,7 @@ export default function LatestInsights() {
                 Podcasts.
             </FadeUp>
             <FadeUp className='w-full h-fit mb-[8.55vw]'>
-                <Button as={Link} href="https://aifoundry.org/blog" target="_blank" labelProps='h-[5vw]' variant='primary' content='Visit our blog' />
+                <Button as={Link} href="https://aifoundry.org/blog" target="_blank" variant='primary' content='Visit our blog' />
             </FadeUp>
             <FadeUp className='flex flex-col w-full h-full items-center justify-center'>
                 <Swiper
@@ -90,7 +90,7 @@ export default function LatestInsights() {
                         <Button variant='secondary' svg='scroll-left' />
                     </div>
                     <div className='flex basis-[80%] justify-center'>
-                        <Button target="_blank" as={Link} href={cards[currentIndex].link} labelProps='w-[20.1vw] h-[6.6vw]' variant='secondary' content='Read more' />
+                        <Button target="_blank" as={Link} href={cards[currentIndex].link} variant='secondary' content='Read more' />
                     </div>
                     <div ref={buttonNextRef} className='flex basis-[10%] justify-end'>
                         <Button variant='secondary' svg='scroll-right' />

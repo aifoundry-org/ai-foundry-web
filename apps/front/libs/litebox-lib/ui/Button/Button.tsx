@@ -16,15 +16,13 @@ export interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   svg?: string;
   content?: string;
   noShadow?: boolean;
-  containerProps?: string;
-  labelProps?: string;
   svgProps?: string;
   target?: string;
 }
 
 const btnVariants: {[key: string]: string } = {
-  primary: 'bg-orange border-black hover:shadow-none hover:translate-x-[4px] hover:translate-y-[4px]',
-  secondary: 'bg-sand border-black hover:shadow-none hover:translate-x-[4px] hover:translate-y-[4px]',
+  primary: 'bg-orange border-black hover:shadow-none hover:translate-x-[4px] hover:translate-y-[4px] focus:shadow-none focus:translate-x-[4px] focus:translate-y-[4px]',
+  secondary: 'bg-sand border-black hover:shadow-none hover:translate-x-[4px] hover:translate-y-[4px] focus:shadow-none focus:translate-x-[4px] focus:translate-y-[4px]',
 };
 
 const svgVariants : {[key: string]: FC<SVGProps<SVGSVGElement>>} = {
@@ -48,10 +46,19 @@ const svgVariants : {[key: string]: FC<SVGProps<SVGSVGElement>>} = {
  * @param svg - Optionally adding a predetermined svg, available svg: 'plus', 'discord', 'github', 'arrow-up-right'
  * @param content - Content of the button
  */
-const Button: FC<ButtonProps> = ({as: Component = 'button', href = '', variant = 'primary', className = '', svg = '', content = '', noShadow = false, containerProps = '', labelProps = '', svgProps = '', target = '', ...props }) => {
+const Button: FC<ButtonProps> = ({as: Component = 'button', href = '', variant = 'primary', className = '', svg = '', content = '', noShadow = false, svgProps = '', target = '', ...props }) => {
   // #F6EFE4 = sand color
-  const essentialStyles = `flex items-center align-middle justify-between ${noShadow ? 'shadow-[4px_4px_0_0_#F6EFE4]' : 'shadow-[4px_4px_0_0_black]'} w-fit h-fit text-[black] font-bold uppercase border border-2 whitespace-nowrap rounded-md transition-all ease-in-out focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#22D3EE] disabled:opacity-50 disabled:cursor-not-allowed cursor-pointer select-none px-[2.5vw] py-[1.5vw] md:py-[0.835vw] lg:py-[0.835vw] xl:py-[0.775vw] 2xl:py-[0.835vw] md:px-[1.67vw] lg:px-[1.67vw] xl:px-[1.35vw] 2xl:px-[1.67vw] 2xl:gap-[1vw] xl:gap-[1vw] md:gap-[1vw] xs:gap-[2vw] gap-[3vw] items-center ${containerProps}`;
-  const styles = `${essentialStyles} ${btnVariants[variant]} ${className}`;
+  const essentialStyles = `flex flex-row items-center align-middle justify-between ${noShadow ? 'shadow-[4px_4px_0_0_#F6EFE4]' : 'shadow-[4px_4px_0_0_black]'} w-fit h-fit text-[black] font-bold uppercase border border-2 whitespace-nowrap rounded-md transition-all ease-in-out focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#22D3EE] disabled:opacity-50 disabled:cursor-not-allowed cursor-pointer select-none`;
+  let styles = `${essentialStyles} ${btnVariants[variant]} ${className}`;
+  if(svg !== ''){       // icon present 
+    if(content !== ''){ // icon present - content
+      styles += ' px-[1.95rem] py-[0.45rem] sm:px-[1.5rem] sm:py-[0.4rem] md:px-[1.5rem] md:py-[0rem] lg:px-[2.51rem] lg:py-[0.7rem] xl:px-[2.51rem] xl:py-[0.7rem] 2xl:px-[2.51rem] 2xl:py-[0.7rem] gap-x-[0.8rem]';
+    } else {            // icon present - no content
+      styles += ' p-[0.7rem]';
+    }
+  } else {        // no icon present - content
+    styles += ' px-[1.95rem] py-[0.45rem] sm:px-[1.5rem] sm:py-[0.4rem] md:px-[1.5rem] md:py-[0rem] lg:px-[2.51rem] lg:py-[0.7rem] xl:px-[2.51rem] xl:py-[0.7rem] 2xl:px-[2.51rem] 2xl:py-[0.7rem]';
+  }
 
   const componentProps = {
     ...props,
@@ -66,13 +73,12 @@ const Button: FC<ButtonProps> = ({as: Component = 'button', href = '', variant =
     SVGIcon = svgVariants[svg];
   }
 
-  const labelStyle = `flex text-[4.8vw] xs:text-[3.2vw] sm:text-[2.5vw] md:text-[2.25vw] xl:text-[1.5vw] 2xl:text-[1.5vw] leading-[1.39vw] items-center justify-center ${labelProps}`
-  const SVGStyle = `flex ${svgProps}`
+  const labelStyle = `flex text-[1.8rem] xs:text-[1.8rem] sm:text-[2rem] md:text-[2rem] lg:text-[2rem] xl:text-[2rem] 2xl:text-[2rem] items-center justify-center`
 
   return (
     <Component {...componentProps}>
       {content !== '' &&  <div className={labelStyle} dangerouslySetInnerHTML={{__html: content}} /> }
-      {SVGIcon && <div className={SVGStyle}><SVGIcon /></div>}
+      {SVGIcon && <div className='flex w-full justify-center items-center'><SVGIcon /></div>}
     </Component>
   );
 };

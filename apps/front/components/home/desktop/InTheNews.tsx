@@ -64,9 +64,9 @@ export default function InTheNews() {
                                         </div>
                                     }
                                 </div>
-                                <div className='flex flex-col w-full h-[15vw] pb-[0.5vw]'>
-                                    <div className='flex font-dharma-gothic-e font-black text-[2.8vw] leading-[2.3vw] uppercase'>{card.title}</div>
-                                    <div className='flex flex-1 pt-[1.115vw] font-host-grotesk font-normal text-[0.975vw]'>{card.subtitle}</div>
+                                <div className='flex flex-col w-full h-full pb-[0.5vw]'>
+                                    <div className='flex md:min-h-[8vw] sm:min-h-[2vw] lg:min-h-[2vw] xl:min-h-[2vw] 2xl:min-h-[2vw] font-dharma-gothic-e font-black md:text-[2.7rem] lg:text-[2.8vw] xl:text-[2.8vw] 2xl:text-[2.8vw] md:leading-[2.2rem] lg:leading-[2.3vw] xl:leading-[2.3vw] 2xl:leading-[2.3vw] uppercase'>{card.title}</div>
+                                    <div className='flex md:min-h-[5vw] sm:min-h-[1vw] lg:min-h-[1vw] xl:min-h-[1vw] 2xl:min-h-[1vw] pt-[1.115vw] font-host-grotesk font-normal md:text-[1.5rem] lg:text-[0.975vw] xl:text-[0.975vw] 2xl:text-[0.975vw] md:leading-[1.5rem] lg:leading-[2vw] xl:leading-[2vw] 2xl:leading-[2vw]'>{card.subtitle}</div>
                                     <Button target='_blank' as={Link} className='flex mt-[1.67vw]' href={card.link} variant='secondary' content='Read more' svg='arrow-up-right' />
                                 </div>
                             </FadeIn>
@@ -75,11 +75,11 @@ export default function InTheNews() {
                 </Swiper>
                 <FadeUp className='flex flex-row w-full relative mt-[2.73vw]'>
                     <div ref={buttonPrevRef} className='flex basis-[15%] justify-start'>
-                        <Button className='!w-[3.34vw] !h-[3.34vw]' containerProps='!px-[0.75vw]' variant='secondary' svg='scroll-left'/>
+                        <Button className='!w-[3.34vw] !h-[3.34vw]' variant='secondary' svg='scroll-left'/>
                     </div>
                     <div className='inTheNewsPagination !flex !basis-[70%] !justify-center !items-center !bottom-[6vw] !gap-[0.905vw]' />
                     <div ref={buttonNextRef} className='flex basis-[15%] justify-end'>
-                        <Button className='!w-[3.34vw] !h-[3.34vw]' containerProps='!px-[0.75vw]' variant='secondary' svg='scroll-right'/>
+                        <Button className='!w-[3.34vw] !h-[3.34vw]' variant='secondary' svg='scroll-right'/>
                     </div>
                 </FadeUp>
             </div>

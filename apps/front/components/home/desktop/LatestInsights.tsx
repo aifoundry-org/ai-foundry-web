@@ -32,7 +32,7 @@ export default function LatestInsights() {
                 access to summaries and video replays of prior AI Hack Labs and Podcasts.
             </FadeUp>
             <FadeUp className='w-full h-fit mb-[3.335vw]'>
-                <Button as={Link} href="https://aifoundry.org/blog" target="_blank" labelProps='!h-[1.5vw]' variant='primary' content='Visit our blog' />
+                <Button as={Link} href="https://aifoundry.org/blog" target="_blank" variant='primary' content='Visit our blog' />
             </FadeUp>
             <div className='flex flex-col gap-[6vw] md:flex-row xl:flex-row 2xl:flex-row md:gap-[1vw] xl:gap-[1vw] 2xl:gap-[1vw]'>
                 {cards.map((card, idx) => (

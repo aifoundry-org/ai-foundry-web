@@ -33,7 +33,7 @@ export default function Faqs() {
                     <p className='flex uppercase font-black text-[3.335vw] leading-[2.8vw]'>Still have questions?</p>
                     <p className='flex font-host-grotesk font-normal text-[1.115vw] leading-[1.67vw] mt-[0.56vw]'>We're here to help!</p>
                 </div>
-                <Button onClick={() => setIsModalOpen(true)} className='mr-[2.78vw]' labelProps='w-[4.44vw] h-[1.4vw]' variant='primary' content='contact us' />
+                <Button onClick={() => setIsModalOpen(true)} className='mr-[2.78vw]' variant='primary' content='contact us' />
             </FadeUp>
             {isModalOpen && <FaqsModal setIsModalOpen={setIsModalOpen} isModalOpen={isModalOpen} />}
         </div>
