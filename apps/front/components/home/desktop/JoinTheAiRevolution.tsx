@@ -1,5 +1,6 @@
 import Input from '@/libs/litebox-lib/ui/Input/Input'
 import Button from '@/libs/litebox-lib/ui/Button/Button'
+import IMGInTheNewsBackground from '@/public/pngs/home/inTheNews/background.png'
 import IMGBackground from '@/public/pngs/home/joinTheAiRevolution/background.png'
 import IMGComputer from '@/public/pngs/home/joinTheAiRevolution/computer.png'
 import IMGArrows from '@/public/pngs/home/joinTheAiRevolution/arrows.png'
@@ -8,9 +9,14 @@ import FadeUp from '@/components/common/universal/FadeUp'
 
 export default function JoinTheAiRevolution(){
     return (
-        <div className='hidden md:flex md:flex-col md:relative md:w-full md:h-[34vw] md:px-[5.6vw] relative'>
+        <div className={`hidden md:flex md:flex-col md:relative md:w-full md:h-[34vw] md:px-[5.6vw] relative ${process.env.HIDE_SECTIONS === "true" && 'mt-[15vw]'}`}>
+            {process.env.HIDE_SECTIONS === "true" && 
+                <div className='absolute w-full h-fit -top-[25.6vw] left-0 -z-[2]'>
+                    <img src={IMGInTheNewsBackground.src} />
+                </div>
+            }
             <div className='absolute w-full h-fit -top-[4.3vw] left-0'>
-                <img src={IMGBackground.src} alt="Join the AI Revolution background" />
+                <img src={IMGBackground.src} />
             </div>
             <FadeUp className='relative w-fit top-[9vw] left-[6vw]' delay={0.25} duration={0.75}>
                 <div className='w-fit font-dharma-gothic-e font-black text-sand text-[8.89vw] leading-[6.53vw] uppercase'>
@@ -38,7 +44,7 @@ export default function JoinTheAiRevolution(){
                     />
                 </div>
                 <div className='mt-[1vw] w-full h-fit flex justify-end'>
-                    <Button labelProps='w-[2.705vw] h-[1.39vw]' variant='primary' content='Submit' />
+                    <Button variant='primary' content='Submit' />
                 </div>
             </FadeUp>
         </div>

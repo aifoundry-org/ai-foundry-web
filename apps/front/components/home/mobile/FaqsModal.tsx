@@ -92,7 +92,7 @@ export default function FaqsModal({isModalOpen, setIsModalOpen} : {isModalOpen:b
                                 {errors.message?.type === 'required' &&  <div className={errorStyle}>message is required</div>}
                             </div>
                         </div>
-                        <Button containerProps='!px-[2.55vw] !py-[1.7vw]' className='my-[7vw]' labelProps='p-[2.5vw]' content='Send' onClick={() => {
+                        <Button className='my-[7vw]' content='Send' onClick={() => {
                             inputRef.current?.click();
                         }} />
                         <input ref={inputRef} id='submit-contact-us' type='submit' className='hidden'/>
@@ -102,7 +102,7 @@ export default function FaqsModal({isModalOpen, setIsModalOpen} : {isModalOpen:b
                     <div className='flex flex-col gap-[1.67vw] pt-[10vw] pb-[1.6vw] items-center justify-center w-full'>
                         <p className='text-[10.675vw] font-black uppercase'>Thanks!</p>
                         <p className='text-[4.8vw] font-host-grotesk text-center font-normal leading-[7.2vw]'>The form was<br/>successfully submitted.</p>
-                        <Button className='my-[7vw]' labelProps='p-[2.5vw]' content='Ok' onClick={() => setIsModalOpen(false)} />
+                        <Button className='my-[7vw]' content='Ok' onClick={() => setIsModalOpen(false)} />
                     </div>
                 </>}
             </div>

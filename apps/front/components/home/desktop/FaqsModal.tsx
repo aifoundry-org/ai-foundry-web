@@ -92,7 +92,7 @@ export default function FaqsModal({isModalOpen, setIsModalOpen} : {isModalOpen:b
                                 {errors.message?.type === 'required' &&  <div className={errorStyle}>message is required</div>}
                             </div>
                         </div>
-                        <Button containerProps='!px-[1.55vw] !py-[0.85vw]' className='flex mb-[2vw]' content='Send' onClick={() => {
+                        <Button className='flex mb-[2vw]' content='Send' onClick={() => {
                             inputRef.current?.click();
                         }} />
                         <input ref={inputRef} id='submit-contact-us' type='submit' className='hidden'/>

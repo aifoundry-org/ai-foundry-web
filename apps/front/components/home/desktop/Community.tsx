@@ -55,7 +55,7 @@ export default function Community() {
                 }
                 </div>
                 {hasEvents && 
-                    <div className='flex justify-end'>
+                    <div className={`flex justify-end ${process.env.HIDE_SECTIONS === "false" ? '' : 'mb-[5vw]'} `}>
                         <Button target='_blank' as={Link} href='https://lu.ma/aifoundryorg' variant='primary' content='View full calendar' svg='arrow-up-right' />
                     </div>
                 }
