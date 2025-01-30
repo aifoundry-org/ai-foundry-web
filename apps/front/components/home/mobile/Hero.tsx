@@ -1,6 +1,5 @@
 'use client'
 
-// import IMGBackgroundMobile from '@/public/pngs/home/hero/backgroundMobile.png';
 import IMGArrow from '@/public/pngs/home/hero/arrowMobile.png'
 import IMGCircle from '@/public/pngs/home/hero/circleMobile.png'
 import IMGPluses from '@/public/pngs/home/hero/plusesMobile.png'
