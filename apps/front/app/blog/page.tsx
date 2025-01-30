@@ -1,5 +1,5 @@
-import MainDesktop from '@/components/blog/desktop/main';
-import MainMobile from '@/components/blog/mobile/main';
+import MainDesktop from '@/components/blog/desktop/Main';
+import MainMobile from '@/components/blog/mobile/Main';
 
 export default function Home() {
   return (
