@@ -37,12 +37,10 @@ export default function Header() {
         <header className='md:hidden flex flex-col w-full'>
             <div className='flex flex-col w-full h-full bg-black'>
                 <div className='flex flex-row text-sand justify-center p-4'>
-                    <a href="#">
-                        <p className='font-host-grotesk text-center my-[1.35vw] text-[1.4rem]'>
-                            AIFoundry.org is sponsoring the "Low-Level AI Engineering & Hacking" Dev Room at FOSDEM. Find out more!
-                            <img src={IMGHeaderIconArrowUpRight.src} className='inline-block ml-[0.5vw] w-[14px]' />
-                        </p>
-                    </a>
+                    <Link className='flex flex-col font-host-grotesk text-center items-center my-[1.35vw] text-[1.4rem]' target="_blank" href="https://aifoundry.org/fosdem-2025-low-level-ai-engineering-hacking-dev-room">
+                        <div className='flex'>AIFoundry.org is sponsoring the "Low-Level AI Engineering & Hacking" Dev Room at FOSDEM. </div>
+                        <div className='flex items-center'>Find out more! <img src={IMGHeaderIconArrowUpRight.src} className='inline-block ml-[2.15vw] w-[3.735vw]' /></div>
+                    </Link>
                 </div>
                 <div className='flex flex-row w-full h-[27vw] bg-sand rounded-t-3xl relative'>
                     {currPage == '/' && <img className='absolute w-[19.48vw] h-[25.35vw] right-[0.3vw] z-[2]' src={IMGBackground.src} />}
@@ -68,7 +66,7 @@ export default function Header() {
                                     window.location.href = '/';
                                 }}
                                 src={IMGAIFoundryLogoTop.src}
-                                className="absolute w-[40.27vw]"
+                                className="absolute w-[40.27vw] xs:w-[30.27vw]"
                                 animate={{ opacity: isSticky ? 0 : 1 }}
                                 initial={{ opacity: 1 }}
                                 transition={{ ease: 'easeIn', duration: 0.4, delay: !isSticky ? 0.2 : 0 }}
@@ -78,14 +76,14 @@ export default function Header() {
                                     window.scrollTo(0, 0);
                                 }}
                                 src={IMGAIFoundryLogoTopSticky.src}
-                                className="absolute w-[14.15vw] ml-[2vw]"
+                                className="absolute w-[14.15vw] xs:w-[12vw] ml-[2vw]"
                                 animate={{ opacity: isSticky ? 1 : 0 }}
                                 initial={{ opacity: 0 }}
                                 transition={{ ease: 'easeIn', duration: 0.2, delay: isSticky ? 0.3 : 0 }}
                             />
                         </div>
                         <div className='flex basis-[50%] w-full justify-end'>
-                            <img src={IMGIconHamburger.src} className='z-[3] w-[6.4vw]' onClick={() => setShowMenu(true)} />
+                            <img src={IMGIconHamburger.src} className='z-[3] w-[6.4vw] xs:w-[5vw]' onClick={() => setShowMenu(true)} />
                         </div>
                     </motion.nav>
                 </div>
@@ -109,16 +107,18 @@ export default function Header() {
                         </div>
                     </div>
                     <div className="flex flex-col w-full my-[10.667vw] xs:my-[4vw] font-dharma-gothic-e font-black text-[10.667vw] xs:text-[6.5vw] leading-[8.8vw] gap-[8.8vw] xs:gap-0">
-                        <Link className="uppercase" onClick={() => setShowMenu(false)} href="#projects-mobile">
+                        <Link className="uppercase" onClick={() => setShowMenu(false)} href="/#projects-mobile">
                             Projects
                         </Link>
-                        <Link className="uppercase" onClick={() => setShowMenu(false)} href="#events-mobile">
+                        <Link className="uppercase" onClick={() => setShowMenu(false)} href="/#events-mobile">
                             Events
                         </Link>
-                        <Link className="uppercase" onClick={() => setShowMenu(false)} href="#blog-mobile">
-                            Blog
-                        </Link>
-                        <Link className="uppercase" onClick={() => setShowMenu(false)} href="#values-mobile">
+                        {process.env.HIDE_SECTIONS === "false" &&
+                            <Link className="uppercase" onClick={() => setShowMenu(false)} href="/#blog-mobile">
+                                Blog
+                            </Link>
+                        }
+                        <Link className="uppercase" onClick={() => setShowMenu(false)} href="/#values-mobile">
                             Our values
                         </Link>
                     </div>

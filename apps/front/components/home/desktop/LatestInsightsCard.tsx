@@ -1,5 +1,6 @@
 'use client'
 
+import Link from 'next/link';
 import Button from '@/litebox-lib/ui/Button/Button';
 
 export default function LatestInsightsCard({title = '', tags = [] as Array<string>, imageUrl = '', author = '', date = '', link = ''}) {
@@ -24,7 +25,7 @@ export default function LatestInsightsCard({title = '', tags = [] as Array<strin
                 {author} | {date}
             </div>
             <div className='flex flex-row basis-[80%] justify-start mt-8'>
-                <Button href={link} variant='secondary' content='Read more' />
+                <Button as={Link} href={link} target="_blank" variant='secondary' content='Read more' />
             </div>
         </div>
         )

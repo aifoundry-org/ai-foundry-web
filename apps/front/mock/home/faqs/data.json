@@ -1,0 +1,16 @@
+[{
+    "title": "Why is AIFoundry.org focusing on machine learning engineer & developer collaboration?",
+    "content": "We believe that economically viable, decentralized, self-governed, developer-centric \"Open Source AI\" alternatives are essential and downright critical for the future of business and society."
+},{
+    "title": "The AI market is vibrant and dynamic, why is this change needed now?",
+    "content": "Machine learning and application development are entirely different disciplines with disparate communities, practices, and tools. The current state of the practice for application development includes continuous integration and deployment, treating configuration as code, and cross-functional integrated teams that own all aspects of delivering business value to production. The current state of the practice for machine learning engineers includes dealing with large datasets, model evaluation, and exploratory analysis tools like Jupyter notebooks. These divergent practices often end up causing friction in application development."
+},{
+    "title": "AI is just software, and we know how to develop that. Why is a new approach needed?",
+    "content": "We do, but just like with DevOps (when the wall between Developers and Operations was finally broken), practices and tooling make a difference.  As AI reshapes the industry, we believe bringing the two disciplines of machine learning and application development together is critical. The two communities have much to learn from one another. Further, we believe cross-functional teams with representation from both specialties will be more productive and yield more significant innovation. Therefore, we believe that increasing the collaboration between the two communities will create the conditions to improve both the practices and the tooling across the board."
+},{
+    "title": "Are AI Hack Labs like an unconference?",
+    "content": "AI Hack Labs are similar to unconferences since the agenda is fluid and determined by the participants. However, an AI Hack Lab involves hands-on work like a Hack Room at FOSDEM.  Participants are expected to bring their laptops."
+},{
+    "title": "What are examples of tooling that needs to improve for AI developers?",
+    "content": "Consider just one tooling example: although it is theoretically possible to version Jupyter notebooks in Git, in practice, the default configuration doesn’t play nicely with diff. Noisy diffs break the usual Git pull request workflow."
+}]

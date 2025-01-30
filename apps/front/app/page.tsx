@@ -46,8 +46,10 @@ export default function Home() {
       <CommunityDesktop />
       <CommunityMobile />
 
-      <LatestInsightsDesktop />
-      <LatestInsightsMobile />
+      {process.env.HIDE_SECTIONS === "false" && <>
+        <LatestInsightsDesktop />
+        <LatestInsightsMobile />
+      </>}
 
       <OurCompanyDividerDesktop />
       <OurCompanyDividerMobile />
@@ -58,8 +60,11 @@ export default function Home() {
       <TestimonialsDesktop />
       <TestimonialsMobile />
 
-      <InTheNewsDesktop />
-      <InTheNewsMobile />
+      {process.env.HIDE_SECTIONS === "false" && <>
+        <InTheNewsDesktop />
+        <InTheNewsMobile />
+      </>
+      }
 
       <JoinTheAiRevolutionDesktop />
       <JoinTheAiRevolutionMobile />

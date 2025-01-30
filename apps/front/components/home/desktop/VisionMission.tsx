@@ -1,50 +1,28 @@
 import Link from 'next/link'
-
 import Button from '@/libs/litebox-lib/ui/Button/Button'
 import IMGBackground from '@/public/pngs/home/visionMission/background.png'
 import IMGErrors from '@/public/pngs/home/visionMission/errorCodes.png'
-
+import FadeIn from '@/components/common/universal/FadeIn';
 import FadeUp from '@/components/common/universal/FadeUp';
 import OurCoreValue from './VisionMissionCard'
-
-const coreValues = [{
-    title: "Openness",
-    content: "We don't just mean you can use our tools, we mean you are free to use it however you want.",
-    icon: "open-book",
-    delay: 0.2
-},{
-    title: "Integrity",
-    content: "Honesty, ethics, and follow-through foster trust within the community.",
-    icon: "user",
-    delay: 0.5,
-},{
-    title: "Emphaty",
-    content: "Our community members are mindful and curious about other people’s motivations and ideas and help each other with compassion and kindness.",
-    icon: "handshake",
-    delay: 0.7,
-},{
-    title: "Cooperation",
-    content: "Our community seeks win-win solutions with mutually beneficial outcomes.",
-    icon: "cooperation",
-    delay: 1,
-}]
+import coreValues from '@/mock/home/visionMission/data.json'
 
 export default function VisionMission(){
     return (
         <>
-            <div className='hidden md:flex md:flex-row xl:flex-row 2xl:flex-row md:relative md:w-full md:h-fit md:mt-[7vw] md:px-[5.6vw]'>
+            <div className='hidden md:flex md:flex-row xl:flex-row 2xl:flex-row md:relative md:w-full md:h-fit md:mt-[3vw] md:px-[5.6vw]'>
                 <div className='relative w-full flex basis-7/12'>
-                    <div className='absolute w-[33.275vw] -left-[5.65vw] top-[7.6vw]'>
+                    <FadeIn className='absolute w-[33.275vw] -left-[5.65vw] top-[7.6vw]'>
                         <img src={IMGBackground.src} width="100%" alt="Vision & Mission Section" />
-                    </div>
-                    <div className='absolute xs:hidden md:block xl:block 2xl:block w-full left-[2vw] top-[2vw] font-black font-dharma-gothic-e text-orange text-[12.5vw] leading-[9.25vw] uppercase'>
+                    </FadeIn>
+                    <FadeUp delay={1} className='absolute xs:hidden md:block xl:block 2xl:block w-full left-[2vw] top-[2vw] font-black font-dharma-gothic-e text-orange text-[12.5vw] leading-[9.25vw] uppercase'>
                         Vision<br/>& Mission
-                    </div>
-                    <div className='absolute w-full -left-[4.1vw] top-[13vw]'>
+                    </FadeUp>
+                    <FadeIn delay={2} className='absolute w-full -left-[4.1vw] top-[13vw]'>
                         <img src={IMGErrors.src} width="100%" alt="Code Errors" />
-                    </div>
+                    </FadeIn>
                 </div>
-                <div className='w-full xs:pt-[35vw] md:pt-0 xl:pt-0 2xl:pt-0 flex flex-col basis-5/12 mx-[2vw]'>
+                <FadeUp delay={2} className='w-full xs:pt-[35vw] md:pt-0 xl:pt-0 2xl:pt-0 flex flex-col basis-5/12 mx-[2vw]'>
                     <div className='mb-[2.25vw] uppercase font-black font-dharma-gothic-e text-[5.5vw] md:text-[2.8vw] xl:text-[2.8vw] 2xl:text-[2.8vw] leading-[4.5vw] md:leading-[2.3vw] xl:leading-[2.3vw] 2xl:leading-[2.3vw]'>
                         Our long-term vision is to help the industry evolve to a structure where model training and deployment for any company are open, transparent, and concise.
                     </div>
@@ -56,17 +34,16 @@ export default function VisionMission(){
                     <div className='w-full h-fit mt-[2.25vw]'>
                         <Button as={Link} href='/terms-and-conditions' variant='secondary' content='Community code of conduct' svg='arrow-up-right' />
                     </div>
-                </div>
+                </FadeUp>
             </div>
-            <div id='values' className='hidden md:flex md:flex-col md:relative md:w-full md:h-fit md:px-[8vw] md:pt-[14.2vw]'>
-                <div className='w-full font-black text-[4.31vw] leading-[3.7vw] mb-[3.06vw] uppercase'>
+            <div id='values' className='hidden md:flex md:flex-col md:relative md:w-full md:h-fit md:px-[8vw] md:pt-[10.2vw]'>
+                <FadeIn className='w-full font-black text-[4.31vw] leading-[3.7vw] mb-[3.06vw] uppercase'>
                     Our core values
-                </div>
+                </FadeIn>
                 <div className='flex flex-row gap-[3vw]'>
                     {coreValues.map((el, idx) => (
-                        <FadeUp key={idx} delay={el.delay} duration={1}>
+                        <FadeUp className='flex basis-1/4' key={idx} delay={el.delay} duration={1}>
                             <OurCoreValue
-                                className='flex basis-1/4'
                                 title={el.title}
                                 content={el.content}
                                 icon={el.icon}

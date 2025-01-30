@@ -1,0 +1,21 @@
+[{
+    "title": "Openness",
+    "content": "We don't just mean you can use our tools, we mean you are free to use it however you want.",
+    "icon": "open-book",
+    "delay": 1
+},{
+    "title": "Integrity",
+    "content": "Honesty, ethics, and follow-through foster trust within the community.",
+    "icon": "user",
+    "delay": 1.2
+},{
+    "title": "Empathy",
+    "content": "Our community members are mindful and curious about other people’s motivations and ideas and help each other with compassion and kindness.",
+    "icon": "handshake",
+    "delay": 1.5
+},{
+    "title": "Cooperation",
+    "content": "Our community seeks win-win solutions with mutually beneficial outcomes.",
+    "icon": "cooperation",
+    "delay": 1.7
+}]

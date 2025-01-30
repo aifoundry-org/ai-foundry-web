@@ -7,11 +7,9 @@ import IMGDoodle from '@/public/pngs/home/testimonials/doodle.png'
 import IMGWhatPeopleSaying from '@/public/pngs/home/testimonials/whatPeopleSaying.png'
 import IMGStarFull from '@/public/pngs/home/testimonials/starFull.png'
 import IMGStarEmpty from '@/public/pngs/home/testimonials/starEmpty.png'
-
+import cards from '@/mock/home/testimonials/data.json';
 import IMGCompanyWebflow from '@/public/pngs/home/testimonials/companyWebflow.png'
 import IMGDeveloper1 from '@/public/pngs/home/testimonials/developer1.png'
-import IMGDeveloper2 from '@/public/pngs/home/testimonials/developer2.png'
-import IMGDeveloper3 from '@/public/pngs/home/testimonials/developer3.png'
 
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Pagination, Navigation } from 'swiper/modules';
@@ -19,28 +17,8 @@ import 'swiper/css';
 import 'swiper/css/pagination';
 import 'swiper/css/navigation';
 
-const cards = [{
-    stars: 3,
-    content: '"AI Foundry has been a game-changer for my development journey. The collaborative spirit and innovative projects inspire me every day."',
-    author: 'Jordan Smith',
-    avatar: IMGDeveloper1.src,
-    position: 'Developer, TechCorp',
-    companyLogo: IMGCompanyWebflow.src
-},{
-    stars: 5,
-    content: 'This is an example with a short text',
-    author: 'Thomas Anderson',
-    avatar: IMGDeveloper2.src,
-    position: 'Developer, Meta Cortex',
-    companyLogo: IMGCompanyWebflow.src
-},{
-    stars: 0,
-    content: 'This is an example with a very long text that needs to be cut to avoid the component to take too much vertical space, so instead of showing the full text it is been truncate with "..." somewhere before the end',
-    author: 'Agent Smith',
-    avatar: IMGDeveloper3.src,
-    position: 'Agent, Matrix',
-    companyLogo: IMGCompanyWebflow.src
-}]
+import FadeUp from '@/components/common/universal/FadeUp';
+import FadeIn from '@/components/common/universal/FadeIn';
 
 export default function Testimonials() {
     //Add a state that will force a re-render
@@ -61,16 +39,18 @@ export default function Testimonials() {
         return newContent;
     }
     
+    cards[0].avatar = IMGDeveloper1.src;
+    cards[0].companyLogo = IMGCompanyWebflow.src;
 
     return (
-        <div className='hidden md:flex md:flex-col md:pt-[6vw] md:pb-[7.7vw] md:relative md:w-full md:h-full'>
+        <FadeUp className='hidden md:flex md:flex-col md:pt-[6vw] md:pb-[7.7vw] md:relative md:w-full md:h-full'>
             <div className='flex flex-col relative w-full h-[55vw] bg-black text-sand rounded-[1.4vw]'>
-                <div className='absolute w-full h-fit -top-[3.45vw] left-0'>
+                <FadeIn delay={1} className='relative w-full h-fit -top-[3.45vw] left-0'>
                     <img src={IMGBackgroundTop.src} />
-                </div>
-                <div className='flex flex-row w-full items-center justify-center'>
+                </FadeIn>
+                <FadeUp delay={1} className='flex flex-row w-full items-center justify-center relative'>
                     <div ref={buttonPrevRef} className='flex basis-[15%] justify-center'>
-                        <Button className='!w-[3.34vw] !h-[3.34vw]' containerProps='!px-[0.75vw]' variant='secondary' svg='scroll-left' noShadow/>
+                        <Button className='!w-[3.34vw] !h-[3.34vw]' variant='secondary' svg='scroll-left' noShadow/>
                     </div>
                     <Swiper
                         className='testimonialsSwiper !flex !flex-row !basis-[70%] !w-full !h-full !relative'
@@ -91,7 +71,7 @@ export default function Testimonials() {
                         onInit={setSwiperInstance}
                     >
                         {cards.map((el, idx) => (
-                            <SwiperSlide className='flex flex-col w-full py-[10vw] px-[5vw] items-center' key={idx}>
+                            <SwiperSlide className='flex flex-col w-full py-0 px-[5vw] items-center' key={idx}>
                                 <div className='flex flex-row w-full justify-start pb-[2.225vw] gap-[0.15vw]'>
                                     {[...Array(5)].map((i, idx) => (
                                         <img key={idx} width='19' src={idx <= el.stars ? IMGStarFull.src : IMGStarEmpty.src} />
@@ -115,18 +95,18 @@ export default function Testimonials() {
                             </SwiperSlide>
                         ))}
                     </Swiper>
-                    <div className='testimonialsPagination !absolute !flex !w-full !justify-center !items-center !bottom-[6vw] !gap-[0.905vw] z-[1]' />
+                    <div className='testimonialsPagination !absolute !flex !w-full !justify-center !items-center !-bottom-[6vw] !gap-[0.905vw] z-[1]' />
                     <div ref={buttonNextRef} className='flex basis-[15%] justify-center'>
-                        <Button className='!w-[3.34vw] !h-[3.34vw]' containerProps='!px-[0.75vw]' variant='secondary' svg='scroll-right' noShadow/>
+                        <Button className='!w-[3.34vw] !h-[3.34vw]' variant='secondary' svg='scroll-right' noShadow/>
                     </div>
-                </div>
-                <div className='absolute w-[25.91vw] -bottom-[10.75vw] right-[4.45vw] -z-[1]'>
+                </FadeUp>
+                <FadeIn delay={1} className='relative w-[25.91vw] -bottom-[6.5vw] left-[70vw] -z-[1]'>
                     <img src={IMGDoodle.src} />
-                </div>
-                <div className='absolute w-[12.5vw] -bottom-[2.25vw] right-[6.25vw] z-[1]'>
+                </FadeIn>
+                <FadeIn delay={1} className='relative w-[12.5vw] bottom-[6.5vw] left-[81.5vw] z-[1]'>
                     <img src={IMGWhatPeopleSaying.src} />
-                </div>
+                </FadeIn>
             </div>
-        </div>
+        </FadeUp>
     )
 }

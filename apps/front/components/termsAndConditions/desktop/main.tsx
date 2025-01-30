@@ -8,8 +8,8 @@ export default function main() {
         <div className='hidden md:flex md:flex-col md:w-full md:h-full md:font-dharma-gothic-e'>
             <div className='flex flex-col w-full h-fit mx-auto my-[6vw]'>
                 <div className='flex w-full text-center justify-center relative'>
-                    <img className='absolute top-[0.5vw] left-1/2 -translate-x-1/2 w-[50vw] z-0' src={IMGBackground.src} />
-                    <div className='flex text-[4.45vw] font-black leading-[10.67vw] uppercase z-[1]'>
+                    <img className='absolute top-[0.2vw] left-[27vw] w-[48vw] z-0' src={IMGBackground.src} />
+                    <div className='flex text-[4.45vw] font-black leading-[3.69vw] mt-[3vw] mb-[2.225vw] uppercase z-[1]'>
                         Applicable Terms & Conditions
                     </div> 
                 </div>
@@ -177,7 +177,7 @@ export default function main() {
                 </p>
                 <div className={`${paragraphStyle} mt-[3.34vw] relative`}>
                     <div id='privacy-policy' className='absolute left-0 -top-[10vw]' />
-                    <iframe className='w-full h-[16800px] border-2 p-[16px] border-black rounded-[1.115vw]' src='https://app.termly.io/policy-viewer/iframe-content.html?policyUUID=2fd31d37-c2f6-4c3e-9769-c3667f76cb3d' />
+                    <iframe className='w-full h-[1166.67vw] border-2 p-[16px] border-black rounded-[1.115vw]' src='https://app.termly.io/policy-viewer/iframe-content.html?policyUUID=2fd31d37-c2f6-4c3e-9769-c3667f76cb3d' />
                 </div>  
                 <div className={`${paragraphStyle} mt-[3.34vw] relative`}>
                     <div id='terms-of-use' className='absolute left-0 -top-[10vw]' />

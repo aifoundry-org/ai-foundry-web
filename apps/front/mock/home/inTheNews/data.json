@@ -1,0 +1,29 @@
+[{
+    "title": "Community Contributions to AI Projects",
+    "subtitle": "Discover how developers are collaborating on AI initiatives.",
+    "source": "cnn",
+    "tag": "Insights",
+    "link": "https://edition.cnn.com/",
+    "delay": 1
+},{
+    "title": "AI Foundry Featured in Tech News",
+    "subtitle": "AI Foundry is making waves in the developer community.",
+    "source": "cnn",
+    "tag": "Updates",
+    "link": "https://edition.cnn.com/",
+    "delay": 1.3
+},{
+    "title": "Upcoming AI Workshops and Meetups",
+    "subtitle": "Join us for our next exciting AI event.",
+    "source": "cnn",
+    "tag": "Events",
+    "link": "https://edition.cnn.com/",
+    "delay": 1.5
+},{
+    "title": "This is a test event news",
+    "subtitle": "This is a test event news content",
+    "source": "cnn",
+    "tag": "Insights",
+    "link": "https://edition.cnn.com/",
+    "delay": 0
+}]

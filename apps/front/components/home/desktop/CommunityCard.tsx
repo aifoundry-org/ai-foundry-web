@@ -1,5 +1,6 @@
 'use client';
 
+import Link from 'next/link';
 import Button from '@/litebox-lib/ui/Button/Button';
 import IMGIconCalendar from '@/public/pngs/home/community/calendar.png';
 import IMGIconPosition from '@/public/pngs/home/community/position.png';
@@ -11,7 +12,7 @@ export default function CommunityCard({
     date = '',
     time = '',
     location = '',
-    link = ''
+    href = ''
 }) {
     const day = date !== '' ? date.split(' ').pop() : '';
     let newDate = '';
@@ -26,24 +27,24 @@ export default function CommunityCard({
     }
     
     return (
-        <div className='flex flex-row w-full h-full pb-[3.35vw] mb-[3.35vw] border-b-2 border-black'>
-            <div className='flex flex-col basis-1/4 '>
-                <p className='font-dharma-gothic-e font-black leading-[5vw] xl:leading-[2.3vw] 2xl:leading-[2.3vw] text-[5vw] xl:text-[2.8vw] 2xl:text-[2.8vw] pb-[0.56vw] uppercase'>{title}</p>
-                <p className='font-host-grotesk font-normal text-[3vw] xl:text-[1vw] 2xl:text-[1vw]'>By {author}</p>
+        <div className='flex flex-row w-full h-full mb-[3.35vw] pb-[4vw] md:pb-0 lg:pb-0 xl:pb-0 2xl:pb-0 border-b-2 border-black'>
+            <div className='flex flex-col w-[32vw] mr-[5vw]'>
+                <p className='font-dharma-gothic-e font-black leading-[2.6rem] lg:leading-[3.4rem] xl:leading-[3.4rem] 2xl:leading-[3.4rem] text-[3rem] lg:text-[4rem] xl:text-[4rem] 2xl:text-[4rem] pb-[0.56vw] uppercase'dangerouslySetInnerHTML={{__html:title}} />
+                <p className='font-host-grotesk font-normal text-[1.4rem]'>By {author}</p>
             </div>
-            <div className='flex flex-col xl:flex-row 2xl:flex-row basis-1/2 ml-[2.75vw] xl:justify-center 2xl:justify-center'>
-                <div className='flex flex-col xs:pb-[4vw] xl:basis-1/2 2xl:basis-1/2 font-host-grotesk font-normal'>
-                    <img className='pb-[0.42vw]' src={IMGIconCalendar.src} width='24' height='24' />
-                    <p className='text-[3vw] xl:text-[1.15vw] 2xl:text-[1.15vw]'><b>{newDate}</b> {day}</p>
-                    <p className='text-[3vw] xl:text-[1.15vw] 2xl:text-[1.15vw]'>{time}</p>
+            <div className='flex flex-col md:flex-row lg:flex-row xl:flex-row 2xl:flex-row w-[35vw] gap-0 md:gap-[5vw] lg:gap-[5vw] xl:gap-[5vw] 2xl:gap-[5vw]'>
+                <div className='flex flex-col pb-[4vw] font-host-grotesk font-normal'>
+                    <img className='w-[1.67vw] h-[2.1vw] pb-[0.42vw]' src={IMGIconCalendar.src} />
+                    <p className='text-[1.4rem] lg:text-[1.6rem] xl:text-[1.6rem] 2xl:text-[1.6rem]'><b>{newDate}</b> {day}</p>
+                    <p className='text-[1.4rem] lg:text-[1.6rem] xl:text-[1.6rem] 2xl:text-[1.6rem]'>{time}</p>
                 </div>
-                <div className={`flex flex-col xl:basis-1/3 2xl:basis-1/3 font-host-grotesk ${location == 'Virtual' ? 'font-bold' : 'font-normal'}`}>
-                    <img className='pb-[0.42vw]' src={location == 'Virtual' ? IMGIconCam.src : IMGIconPosition.src} width='20' height='20' />
-                    <p className='text-[3vw] xl:text-[1.15vw] 2xl:text-[1.15vw]'>{location !== 'Virtual' ? <><b>{city}</b>{state}</> : 'Virtual'}</p>
+                <div className={`flex flex-col font-host-grotesk ${location == 'Virtual' ? 'font-bold' : 'font-normal'}`}>
+                    <img className='w-[1.67vw] h-[2.1vw] pb-[0.42vw]' src={location == 'Virtual' ? IMGIconCam.src : IMGIconPosition.src} />
+                    <p className='text-[1.4rem] lg:text-[1.6rem] xl:text-[1.6rem] 2xl:text-[1.6rem]'>{location !== 'Virtual' ? <><b>{city}</b>{state}</> : 'Virtual'}</p>
                 </div>
             </div>
-            <div className='flex basis-1/4 justify-end'>
-                <Button href={link} variant='secondary' content='Event page' svg='arrow-up-right' />
+            <div className='flex justify-end w-[30vw]'>
+                <Button as={Link} href={href} target='_blank' variant='secondary' content='Event page' svg='arrow-up-right' />
             </div>
         </div>
         )
