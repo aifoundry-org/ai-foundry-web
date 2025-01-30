@@ -18,7 +18,7 @@ export default function VisionMission(){
                     <FadeUp delay={1} className='absolute xs:hidden md:block xl:block 2xl:block w-full left-[2vw] top-[2vw] font-black font-dharma-gothic-e text-orange text-[12.5vw] leading-[9.25vw] uppercase'>
                         Vision<br/>& Mission
                     </FadeUp>
-                    <FadeIn className='absolute w-full -left-[4.1vw] top-[13vw]'>
+                    <FadeIn delay={2} className='absolute w-full -left-[4.1vw] top-[13vw]'>
                         <img src={IMGErrors.src} width="100%" alt="Code Errors" />
                     </FadeIn>
                 </div>
@@ -36,8 +36,8 @@ export default function VisionMission(){
                     </div>
                 </FadeUp>
             </div>
-            <div id='values' className='hidden md:flex md:flex-col md:relative md:w-full md:h-fit md:px-[8vw] md:pt-[14.2vw]'>
-                <FadeIn delay={1} className='w-full font-black text-[4.31vw] leading-[3.7vw] mb-[3.06vw] uppercase'>
+            <div id='values' className='hidden md:flex md:flex-col md:relative md:w-full md:h-fit md:px-[8vw] md:pt-[10.2vw]'>
+                <FadeIn className='w-full font-black text-[4.31vw] leading-[3.7vw] mb-[3.06vw] uppercase'>
                     Our core values
                 </FadeIn>
                 <div className='flex flex-row gap-[3vw]'>
