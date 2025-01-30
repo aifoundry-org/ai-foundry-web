@@ -1,5 +1,5 @@
-import TermsMobile from '@/components/termsAndConditions/mobile/main';
-import TermsDesktop from '@/components/termsAndConditions/desktop/main';
+import TermsMobile from '@/components/termsAndConditions/mobile/Main';
+import TermsDesktop from '@/components/termsAndConditions/desktop/Main';
 
 export default function Home() {
   return (
