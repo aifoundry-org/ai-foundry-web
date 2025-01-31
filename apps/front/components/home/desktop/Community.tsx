@@ -23,7 +23,7 @@ export default function Community() {
                 <img className='absolute w-[33.9vw] left-0 top-0' src={IMGCircle.src} alt="Community circle" />
                 <img className='absolute w-[25.1vw] right-[1.5vw] top-[10vw]' src={IMGIlus.src} alt="Community ilus" />
             </FadeIn>
-            <div className='px-[7.78vw] relative'>
+            <div className='relative px-[7.78vw]'>
                 <FadeIn delay={0.5} className='relative font-black font-dharma-gothic-e text-[6vw] xs:text-[8vw] xl:text-[4.5vw] 2xl:text-[4.5vw] xs:leading-[6.5vw] leading-[5vw] xl:leading-[3.75vw] 2xl:leading-[3.75vw] uppercase'>
                     What's happening<br/>in the community
                     <img className='absolute w-[21vw] left-[13vw] -top-[1.7vw] -z-[1]' src={IMGError.src} alt='Community error' />
