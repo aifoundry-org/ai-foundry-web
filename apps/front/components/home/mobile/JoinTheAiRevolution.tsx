@@ -11,8 +11,8 @@ export default function JoinTheAiRevolution(){
     return (
         <div className={`md:hidden flex flex-col relative w-full h-[160vw] px-[5.6vw] mt-[5.6vw] mb-[7.0vw] ${process.env.HIDE_SECTIONS === "true" && 'mt-[65vw]'}`}>
             {process.env.HIDE_SECTIONS === "true" && 
-                <div className='absolute w-full h-fit -top-[86vw] left-0 -z-[2]'>
-                    <img src={IMGInTheNewsBackground.src} />
+                <div className='absolute w-full h-fit -top-[109vw] left-0 -z-[2]'>
+                    <img src={IMGInTheNewsBackground.src} width='100%' />
                 </div>
             }
             <div className='absolute w-full h-fit top-[22vw] left-0'>
