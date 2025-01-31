@@ -26,10 +26,10 @@ export default function JoinTheAiRevolution(){
                     <img src={IMGVerticalText.src} />
                 </div>
             </FadeUp>
-            <FadeUp className='relative -top-[10.9vw] left-[18.2vw] w-[15.15vw]' delay={0.75} duration={0.75}>
+            <FadeUp className='relative -top-[10.9vw] left-[18.2vw] w-[15.15vw]' delay={0.5} duration={0.75}>
                 <img src={IMGComputer.src} />
             </FadeUp>
-            <FadeUp className='relative bottom-[28.4vw] -right-[60.7vw] flex flex-col w-[26.115vw]' delay={1.15} duration={0.75}>
+            <FadeUp className='relative bottom-[28.4vw] -right-[60.7vw] flex flex-col w-[26.115vw]' delay={0.5} duration={0.75}>
                 <div className='relative w-[12.71vw] -left-[2.1vw]'>
                     <img src={IMGArrows.src} />
                 </div>

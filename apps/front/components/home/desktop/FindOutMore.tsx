@@ -54,7 +54,7 @@ export default function FindOutMore() {
                     Out more
                     <SVGTextArrowDownRight className='relative w-[1.95vw] left-[35.2vw] bottom-[18.2vw]' />
                 </FadeUp>
-                <FadeDown delay={1.2} className='absolute flex flex-row items-center w-fit h-[3.65vw] p-[0.5vw] rounded-full bg-black top-[15.3vw] right-[25.2vw]'>
+                <FadeDown delay={0.5} className='absolute flex flex-row items-center w-fit h-[3.65vw] p-[0.5vw] rounded-full bg-black top-[15.3vw] right-[25.2vw]'>
                     <div className='flex w-[3.3vw]'>
                         <img src={IMGSusanAvatar.src} width="100%" height="100%" />
                     </div>
@@ -62,7 +62,7 @@ export default function FindOutMore() {
                         Welcome Susan!
                     </div>
                 </FadeDown>
-                <FadeDown delay={1.2} className='absolute flex flex-row items-center w-fit h-[3.65vw] p-[0.5vw] rounded-full bg-black top-[19.8vw] right-[25.2vw]'>
+                <FadeDown delay={0.5} className='absolute flex flex-row items-center w-fit h-[3.65vw] p-[0.5vw] rounded-full bg-black top-[19.8vw] right-[25.2vw]'>
                     <div className='flex w-[3.3vw]'>
                         <img src={IMGMaraAvatar.src} width="100%" height="100%" />
                     </div>
@@ -85,7 +85,7 @@ export default function FindOutMore() {
                         </div>
                     </div>
                 </FadeUp>
-                <FadeUp delay={1} className='absolute bottom-[5vw] w-full'>
+                <FadeUp delay={0.5} className='absolute bottom-[5vw] w-full'>
                     <div className='relative w-full flex justify-center'>
                         <Button target='_blank' as={Link} href='https://discord.com/invite/WNKvkefkUs' svg='discord' variant='secondary' content='Join our discord' />
                     </div>

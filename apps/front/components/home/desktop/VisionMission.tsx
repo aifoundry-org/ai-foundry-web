@@ -15,14 +15,14 @@ export default function VisionMission(){
                     <FadeIn className='absolute w-[33.275vw] -left-[5.65vw] top-[7.6vw]'>
                         <img src={IMGBackground.src} width="100%" alt="Vision & Mission Section" />
                     </FadeIn>
-                    <FadeUp delay={1} className='absolute xs:hidden md:block xl:block 2xl:block w-full left-[2vw] top-[2vw] font-black font-dharma-gothic-e text-orange text-[12.5vw] leading-[9.25vw] uppercase'>
+                    <FadeUp delay={0.5} className='absolute xs:hidden md:block xl:block 2xl:block w-full left-[2vw] top-[2vw] font-black font-dharma-gothic-e text-orange text-[12.5vw] leading-[9.25vw] uppercase'>
                         Vision<br/>& Mission
                     </FadeUp>
-                    <FadeIn delay={2} className='absolute w-full -left-[4.1vw] top-[13vw]'>
+                    <FadeIn delay={0.5} className='absolute w-full -left-[4.1vw] top-[13vw]'>
                         <img src={IMGErrors.src} width="100%" alt="Code Errors" />
                     </FadeIn>
                 </div>
-                <FadeUp delay={2} className='w-full xs:pt-[35vw] md:pt-0 xl:pt-0 2xl:pt-0 flex flex-col basis-5/12 mx-[2vw]'>
+                <FadeUp delay={0.5} className='w-full xs:pt-[35vw] md:pt-0 xl:pt-0 2xl:pt-0 flex flex-col basis-5/12 mx-[2vw]'>
                     <div className='mb-[2.25vw] uppercase font-black font-dharma-gothic-e text-[5.5vw] md:text-[2.8vw] xl:text-[2.8vw] 2xl:text-[2.8vw] leading-[4.5vw] md:leading-[2.3vw] xl:leading-[2.3vw] 2xl:leading-[2.3vw]'>
                         Our long-term vision is to help the industry evolve to a structure where model training and deployment for any company are open, transparent, and concise.
                     </div>
@@ -42,7 +42,7 @@ export default function VisionMission(){
                 </FadeIn>
                 <div className='flex flex-row gap-[3vw]'>
                     {coreValues.map((el, idx) => (
-                        <FadeUp className='flex basis-1/4' key={idx} delay={el.delay} duration={1}>
+                        <FadeUp className='flex basis-1/4' key={idx} delay={el.delay/2}>
                             <OurCoreValue
                                 title={el.title}
                                 content={el.content}

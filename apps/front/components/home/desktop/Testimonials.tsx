@@ -43,18 +43,18 @@ export default function Testimonials() {
     cards[0].companyLogo = IMGCompanyWebflow.src;
 
     return (
-        <FadeUp className='hidden md:flex md:flex-col md:pt-[6vw] md:pb-[7.7vw] md:relative md:w-full md:h-full'>
+        <div className='hidden md:flex md:flex-col md:pt-[6vw] md:pb-[7.7vw] md:relative md:w-full md:h-full'>
             <div className='flex flex-col relative w-full h-[55vw] bg-black text-sand rounded-[1.4vw]'>
-                <FadeIn delay={1} className='relative w-full h-fit -top-[3.45vw] left-0'>
+                <div className='relative w-full h-fit -top-[3.45vw] left-0'>
                     <img src={IMGBackgroundTop.src} />
-                </FadeIn>
-                <FadeUp delay={1} className='flex flex-row w-full items-center justify-center relative'>
+                </div>
+                <FadeUp delay={0.5} className='flex flex-row w-full items-center justify-center relative'>
                     <div ref={buttonPrevRef} className='flex basis-[15%] justify-center'>
                         <Button className='!w-[3.34vw] !h-[3.34vw]' variant='secondary' svg='scroll-left' noShadow/>
                     </div>
                     <Swiper
                         className='testimonialsSwiper !flex !flex-row !basis-[70%] !w-full !h-full !relative'
-                        slidesPerView={1}
+                        slidesPerView={0.5}
                         loop
                         pagination={{ 
                             el: '.testimonialsPagination',
@@ -100,13 +100,13 @@ export default function Testimonials() {
                         <Button className='!w-[3.34vw] !h-[3.34vw]' variant='secondary' svg='scroll-right' noShadow/>
                     </div>
                 </FadeUp>
-                <FadeIn delay={1} className='relative w-[25.91vw] -bottom-[6.5vw] left-[70vw] -z-[1]'>
+                <FadeIn delay={0.5} className='relative w-[25.91vw] -bottom-[6.5vw] left-[70vw] -z-[1]'>
                     <img src={IMGDoodle.src} />
                 </FadeIn>
-                <FadeIn delay={1} className='relative w-[12.5vw] bottom-[6.5vw] left-[81.5vw] z-[1]'>
+                <FadeIn delay={0.5} className='relative w-[12.5vw] bottom-[6.5vw] left-[81.5vw] z-[1]'>
                     <img src={IMGWhatPeopleSaying.src} />
                 </FadeIn>
             </div>
-        </FadeUp>
+        </div>
     )
 }

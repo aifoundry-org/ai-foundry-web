@@ -59,7 +59,7 @@ export default function Header() {
                                         animate={{ columnGap: isSticky ? '1.67vw' : '2.78vw' }}
                                         transition={{ ease: "easeInOut", duration: 0.5 }}
                                     >
-                                        <div className='flex flex-wrap gap-x-[2.78vw]'>
+                                        <div className={`flex flex-wrap gap-x-[${isSticky ? '1.67vw' : '2.78vw'}]`}>
                                             <Link className="uppercase relative after:bg-black after:absolute after:h-1 after:w-0 after:bottom-0 after:left-0 focus:after:w-full hover:after:w-full after:transition-all after:duration-300" href="/#projects">
                                                 Projects
                                             </Link>
@@ -67,7 +67,7 @@ export default function Header() {
                                                 Events
                                             </Link>
                                         </div>
-                                        <div className='flex flex-wrap gap-x-[2.78vw]'>
+                                        <div className={`flex flex-wrap gap-x-[${isSticky ? '1.67vw' : '2.78vw'}]`}>
                                             {process.env.HIDE_SECTIONS === "false" &&
                                                 <Link className="uppercase relative after:bg-black after:absolute after:h-1 after:w-0 after:bottom-0 after:left-0 focus:after:w-full hover:after:w-full after:transition-all after:duration-300" href="/#blog">
                                                     Blog
