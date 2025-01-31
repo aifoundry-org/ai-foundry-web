@@ -54,9 +54,9 @@ export default function Testimonials() {
                     </div>
                     <Swiper
                         className='testimonialsSwiper !flex !flex-row !basis-[70%] !w-full !h-full !relative'
-                        slidesPerView={0.5}
+                        slidesPerView={1}
                         loop
-                        pagination={{ 
+                        pagination={cards.length > 1 && { 
                             el: '.testimonialsPagination',
                             type: 'bullets',
                             bulletClass: 'testimonials-pagination-bullet',
@@ -67,6 +67,7 @@ export default function Testimonials() {
                             prevEl: buttonPrevRef.current,
                             nextEl: buttonNextRef.current,
                         }}
+                        watchOverflow
                         modules={[Pagination, Navigation]}
                         onInit={setSwiperInstance}
                     >

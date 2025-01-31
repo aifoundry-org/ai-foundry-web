@@ -1,11 +1,11 @@
-import Input from '@/libs/litebox-lib/ui/Input/Input'
+// import Input from '@/libs/litebox-lib/ui/Input/Input'
+// import Button from '@/libs/litebox-lib/ui/Button/Button'
 import IMGInTheNewsBackground from '@/public/pngs/home/inTheNews/backgroundMobile.png'
 import IMGBackground from '@/public/pngs/home/joinTheAiRevolution/backgroundMobile.png'
 import IMGComputer from '@/public/pngs/home/joinTheAiRevolution/computer.png'
 import IMGVerticalText from '@/public/pngs/home/joinTheAiRevolution/verticalTextMobile.png'
 import IMGArrows from '@/public/pngs/home/joinTheAiRevolution/arrowsMobile.png'
 import FadeUp from '@/components/common/universal/FadeUp'
-import Button from '@/libs/litebox-lib/ui/Button/Button'
 
 export default function JoinTheAiRevolution(){
     return (
