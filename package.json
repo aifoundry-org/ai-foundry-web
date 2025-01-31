@@ -12,8 +12,7 @@
     "lint": "turbo run lint",
     "lint:fix": "turbo run lint:fix",
     "prepare": "husky install",
-    "commit": "git-cz",
-    "preinstall": "npx only-allow yarn"
+    "commit": "git-cz"
   },
   "devDependencies": {
     "turbo": "1.10.6"
