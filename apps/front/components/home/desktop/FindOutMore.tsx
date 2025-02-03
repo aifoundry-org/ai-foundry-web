@@ -22,7 +22,7 @@ export default function FindOutMore() {
     return (
         <div className='hidden xs:flex xs:flex-col xs:relative xs:w-full xs:h-full xs:pt-[4.95vw]'>
             <LazyMotion>
-                <img src={IMGBackground.src} width="100%" height="626" alt="Find out more background" />
+                <img src={IMGBackground.src} className='w-full h-full' alt="Find out more background" />
                 <img src={IMGCode.src} className='absolute w-[29.1vw] top-[1.5vw] right-0' />
                 <FadeUp className='absolute text-sand font-dharma-gothic-e uppercase top-[16.5vw] left-[7.6vw] text-[15vw] font-black'>
                     Find
@@ -59,7 +59,7 @@ export default function FindOutMore() {
                 </FadeUp>
                 <FadeDown delay={0.5} className='absolute flex flex-row items-center w-fit h-[3.65vw] p-[0.5vw] rounded-full bg-black top-[15.3vw] right-[25.2vw]'>
                     <div className='flex w-[3.3vw]'>
-                        <img src={IMGSusanAvatar.src} width="100%" height="100%" />
+                        <img src={IMGSusanAvatar.src} />
                     </div>
                     <div className='flex w-full ml-[1vw] font-normal font-helvetica text-[1.15vw] text-sand'>
                         Welcome Susan!
@@ -67,7 +67,7 @@ export default function FindOutMore() {
                 </FadeDown>
                 <FadeDown delay={0.5} className='absolute flex flex-row items-center w-fit h-[3.65vw] p-[0.5vw] rounded-full bg-black top-[19.8vw] right-[25.2vw]'>
                     <div className='flex w-[3.3vw]'>
-                        <img src={IMGMaraAvatar.src} width="100%" height="100%" />
+                        <img src={IMGMaraAvatar.src} />
                     </div>
                     <div className='flex w-full ml-[1vw] font-normal font-helvetica text-[1.15vw] text-sand'>
                         Glad to join this community! 

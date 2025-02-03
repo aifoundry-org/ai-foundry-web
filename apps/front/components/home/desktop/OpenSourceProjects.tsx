@@ -8,9 +8,7 @@ import cards from '@/mock/home/openSourceProjects/data.json';
 export default function OpenSourceProjects() {
     return (
         <div id='projects' className='hidden xs:flex xs:flex-col xs:pt-[10.95vw] xs:pb-[7.7vw] xs:relative xs:w-full xs:h-fit xs:px-[7.78vw]'>
-            <div className='absolute w-full h-fit -top-[1.1vw] left-0 -z-[1]'>
-                <img src={IMGBackground.src} width="100%" height="412" alt="Open Source Projects background" />
-            </div>
+            <img className='absolute w-[18vw] -top-[1.1vw] right-0 -z-[1]' src={IMGBackground.src} alt="Open Source Projects background" />
             <FadeUp className='font-black font-dharma-gothic-e text-[6.4rem] 2xl:text-[5vw] leading-[5.3rem] 2xl:leading-[4vw] uppercase'>
                 View and join our<br/>open-source projects
             </FadeUp>
