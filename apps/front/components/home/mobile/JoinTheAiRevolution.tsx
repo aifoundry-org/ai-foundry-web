@@ -1,6 +1,3 @@
-// import Input from '@/libs/litebox-lib/ui/Input/Input'
-// import Button from '@/libs/litebox-lib/ui/Button/Button'
-import IMGInTheNewsBackground from '@/public/pngs/home/inTheNews/backgroundMobile.png'
 import IMGBackground from '@/public/pngs/home/joinTheAiRevolution/backgroundMobile.png'
 import IMGComputer from '@/public/pngs/home/joinTheAiRevolution/computer.png'
 import IMGVerticalText from '@/public/pngs/home/joinTheAiRevolution/verticalTextMobile.png'
@@ -9,15 +6,8 @@ import FadeUp from '@/components/common/universal/FadeUp'
 
 export default function JoinTheAiRevolution(){
     return (
-        <div className={`md:hidden flex flex-col relative w-full h-[160vw] px-[5.6vw] mt-[5.6vw] mb-[7.0vw] ${process.env.HIDE_SECTIONS === "true" && 'mt-[65vw]'}`}>
-            {process.env.HIDE_SECTIONS === "true" && 
-                <div className='absolute w-full h-fit -top-[109vw] left-0 -z-[2]'>
-                    <img src={IMGInTheNewsBackground.src} width='100%' />
-                </div>
-            }
-            <div className='absolute w-full h-fit top-[22vw] left-0'>
-                <img src={IMGBackground.src} width="100%" alt="Join the AI Revolution background" />
-            </div>
+        <div className={`md:hidden flex flex-col relative w-full h-[160vw] px-[5.6vw] mt-[5.6vw] mb-[7.0vw] ${process.env.HIDE_SECTIONS === "true" && 'mt-[35vw]'}`}>
+            <img className='absolute w-full top-0 left-0' src={IMGBackground.src} alt="Join the AI Revolution background" />
             <FadeUp className='relative w-fit top-[34vw] left-[13vw]' delay={0.25} duration={0.75}>
                 <div className='w-fit font-dharma-gothic-e font-black text-sand text-[17.07vw] leading-[12.55vw] uppercase'>
                     Join the ai<br/>revolution<br/>today
