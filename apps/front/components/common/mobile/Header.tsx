@@ -1,11 +1,9 @@
 'use client';
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { m } from 'motion/react';
 import Link from "next/link";
 import IMGHeaderIconArrowUpRight from '@/public/pngs/header/headerArrowUpRight.png';
 import IMGIconHamburger from '@/public/pngs/header/hamburger.png';
-import IMGAIFoundryLogoTop from '@/public/pngs/header/AIFoundryLogoTopMobile.png';
-import IMGAIFoundryLogoTopSticky from '@/public/pngs/header/AIFoundryLogoTopStickyMobile.png';
 import IMGBackground from '@/public/pngs/home/navbar/backgroundMobile.png';
 import Button from '@/libs/litebox-lib/ui/Button/Button';
 import LazyMotion from '@/components/common/universal/LazyAnimation'
@@ -14,14 +12,26 @@ import IMGCloseButton from '@/public/pngs/sideMenu/closeButton.png'
 import IMGInstagramIcon from '@/public/pngs/footer/instagramIconMobile.png'
 import IMGLinkedinIcon from '@/public/pngs/footer/linkedinIconMobile.png'
 import IMGYoutubeIcon from '@/public/pngs/footer/youtubeIconMobile.png'
+import animationData from '@/data/home/lotties/navbarLogo.json'
+import { Player } from "@lottiefiles/react-lottie-player";
 
 export default function Header() {
+    const playerRef = useRef<Player>(null);
     const [currPage, setCurrPage] = useState('');
     const [showMenu, setShowMenu] = useState(false);
     const [isSticky, setIsSticky] = useState(false);
 
     const checkIfSticky = () => {
-        setIsSticky(window.scrollY > 93);
+        const { scrollY } = window
+        const stickyState = scrollY > 93;
+
+        setIsSticky(stickyState);
+        if(stickyState){
+            playerRef.current?.setPlayerDirection(1);
+        } else {
+            playerRef.current?.setPlayerDirection(-1);
+        }
+        playerRef.current?.play();
     }
 
     useEffect(() => {
@@ -62,25 +72,13 @@ export default function Header() {
                             transition={{ ease: "easeInOut", duration: 0.5 }}
                             >
                             <div className='flex basis-[50%] w-full mx-auto items-center justify-start'>
-                                <m.img
-                                    onClick={() => {
-                                        window.location.href = '/';
-                                    }}
-                                    src={IMGAIFoundryLogoTop.src}
-                                    className="absolute w-[40.27vw] xs:w-[30.27vw]"
-                                    animate={{ opacity: isSticky ? 0 : 1 }}
-                                    initial={{ opacity: 1 }}
-                                    transition={{ ease: 'easeIn', duration: 0.4, delay: !isSticky ? 0.2 : 0 }}
-                                />
-                                <m.img
-                                    onClick={() => {
-                                        window.scrollTo(0, 0);
-                                    }}
-                                    src={IMGAIFoundryLogoTopSticky.src}
-                                    className="absolute w-[14.15vw] xs:w-[12vw] ml-[2vw]"
-                                    animate={{ opacity: isSticky ? 1 : 0 }}
-                                    initial={{ opacity: 0 }}
-                                    transition={{ ease: 'easeIn', duration: 0.2, delay: isSticky ? 0.3 : 0 }}
+                                <Player
+                                    className='h-[15vw]'
+                                    ref={playerRef}
+                                    src={animationData}
+                                    autoplay={false}
+                                    keepLastFrame
+                                    loop={false}
                                 />
                             </div>
                             <div className='flex basis-[50%] w-full justify-end'>

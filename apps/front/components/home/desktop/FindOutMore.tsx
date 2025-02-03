@@ -1,34 +1,37 @@
 import Link from 'next/link';
+
 import LazyMotion from '@/components/common/universal/LazyAnimation'
 import FadeUp from '@/components/common/universal/FadeUp'
 import FadeDown from '@/components/common/universal/FadeDown'
 import Button from '@/libs/litebox-lib/ui/Button/Button'
+
 import IMGBackground from '@/public/pngs/home/findOutMore/background.png';
-import SVGCodeErrors from '@/public/svgs/findOutMore/CodeErrors';
-import SVGBadgeFoundryBadge from '@/public/svgs/findOutMore/FoundryBadge'
-import SVGArrowDown from '@/public/svgs/findOutMore/ArrowDown'
-import SVGProjectArrowDown from '@/public/svgs/findOutMore/ProjectArrowDown'
-import SVGTextError from '@/public/svgs/findOutMore/TextError'
-import SVGTextArrowUpLeft from '@/public/svgs/findOutMore/TextArrowUpLeft'
-import SVGTextArrowDownRight from '@/public/svgs/findOutMore/TextArrowDownRight'
 import IMGSusanAvatar from '@/public/pngs/home/findOutMore/susanAvatar.png'
 import IMGMaraAvatar from '@/public/pngs/home/findOutMore/maraAvatar.png'
+import IMGErrors from '@/public/pngs/home/findOutMore/errors.png'
+import IMGFoundryBadge from '@/public/pngs/home/findOutMore/badge.png'
+import IMGCode from '@/public/pngs/home/findOutMore/code.png'
+import IMGCursorUp from '@/public/pngs/home/findOutMore/cursorUp.png'
+import IMGCursorDown from '@/public/pngs/home/findOutMore/cursorDown.png'
+
+import SVGArrowDown from '@/public/svgs/findOutMore/ArrowDown'
 import SVGArrowRight from '@/public/svgs/findOutMore/ArrowRight'
+import SVGProjectArrowDown from '@/public/svgs/findOutMore/ProjectArrowDown'
 
 export default function FindOutMore() {
     return (
         <div className='hidden xs:flex xs:flex-col xs:relative xs:w-full xs:h-full xs:pt-[4.95vw]'>
             <LazyMotion>
                 <img src={IMGBackground.src} width="100%" height="626" alt="Find out more background" />
-                <SVGCodeErrors className='absolute w-[29.1vw] top-[1.5vw] right-0' />
+                <img src={IMGCode.src} className='absolute w-[29.1vw] top-[1.5vw] right-0' />
                 <FadeUp className='absolute text-sand font-dharma-gothic-e uppercase top-[16.5vw] left-[7.6vw] text-[15vw] font-black'>
                     Find
-                    <SVGTextError className='relative w-[21vw] -left-[2.3vw] bottom-[12.8vw]' />
-                    <SVGTextArrowUpLeft className='relative w-[1.95vw] left-[17vw] bottom-[10.7vw]' />
+                    <img src={IMGErrors.src} className='relative w-[21vw] -left-[2.3vw] bottom-[12.8vw]' />
+                    <img src={IMGCursorUp.src} className='relative w-[1.95vw] left-[17vw] bottom-[10.7vw]' />
                 </FadeUp>
                 <FadeDown delay={0.5} className='absolute w-fit h-fit bg-black text-sand p-[1.3vw] top-[16.5vw] left-[30vw] rounded-lg'>
                     <div className='relative font-helvetica px-[0.5vw] pt-[2vw] pb-[0.5vw]'>
-                        <SVGBadgeFoundryBadge className='absolute -top-[2.8vw] left-0 w-[3.4vw] h-[3.4vw]'/>
+                        <img src={IMGFoundryBadge.src} className='absolute -top-[2.8vw] left-0 w-[3.4vw] h-[3.4vw]'/>
                         <div className='text-[1.48vw] mb-[1vw] font-bold'>
                             AiFoundry.org
                             <SVGArrowDown className='inline-block w-[0.85vw] ml-[1.4vw]' />
@@ -52,7 +55,7 @@ export default function FindOutMore() {
                 </FadeDown>
                 <FadeUp className='absolute text-sand font-dharma-gothic-e uppercase top-[16.5vw] right-[7.6vw] text-[15vw] font-black'>
                     Out more
-                    <SVGTextArrowDownRight className='relative w-[1.95vw] left-[35.2vw] bottom-[18.2vw]' />
+                    <img src={IMGCursorDown.src} className='relative w-[1.95vw] left-[35.2vw] bottom-[18.2vw]' />
                 </FadeUp>
                 <FadeDown delay={0.5} className='absolute flex flex-row items-center w-fit h-[3.65vw] p-[0.5vw] rounded-full bg-black top-[15.3vw] right-[25.2vw]'>
                     <div className='flex w-[3.3vw]'>
