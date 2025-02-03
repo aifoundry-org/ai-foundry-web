@@ -1,19 +1,30 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import Link from "next/link";
-import { m, motion } from "motion/react"
-import Button from '@/litebox-lib/ui/Button/Button';
+import { m } from "motion/react"
 import LazyMotion from '@/components/common/universal/LazyAnimation'
-import IMGAIFoundryLogoTop from '@/public/pngs/header/AIFoundryLogoTop.png';
-import IMGAIFoundryLogoTopSticky from '@/public/pngs/header/AIFoundryLogoTopSticky.png';
+import Button from '@/litebox-lib/ui/Button/Button';
 import IMGHeaderIconArrowUpRight from '@/public/pngs/header/headerArrowUpRight.png';
+import animationData from '@/data/home/lotties/navbarLogo.json'
+import { Player } from "@lottiefiles/react-lottie-player";
 
 export default function Header() {
+    const playerRef = useRef<Player>(null);
     const [isSticky, setIsSticky] = useState(false);
 
     const checkIfSticky = () => {
-        setIsSticky(window.scrollY > 16);
+        const { scrollY } = window
+        const isSticky = scrollY > 16;
+
+        setIsSticky(isSticky);
+
+        if(isSticky){
+            playerRef.current?.setPlayerDirection(1);
+        } else {
+            playerRef.current?.setPlayerDirection(-1);
+        }
+        playerRef.current?.play();
     }
 
     useEffect(() => {
@@ -79,8 +90,21 @@ export default function Header() {
                                         </div>
                                     </m.div>
                                 </div>
-                                <div className="flex w-1/3 md:w-full sm:w-full lg:w-full xl:w-full 2xl:w-full justify-center items-center relative">
-                                    <m.img
+                                <div className="flex w-1/3 h-[5vw] md:w-full sm:w-full lg:w-full xl:w-full 2xl:w-full justify-center items-center relative">
+                                    <Player
+                                        className={`h-[4.31vw] absolute mx-auto top-1/2 -translate-y-1/2 ${isSticky ? 'left-[8vw]' : 'left-[9vw]' }`}
+                                        // className='absolute mx-auto w-[11vw] top-1/2 -translate-y-1/2 left-1/2 -translate-x-1/2'
+                                        ref={playerRef}
+                                        src={animationData}
+                                        autoplay={false}
+                                        keepLastFrame
+                                        loop={false}
+                                        rendererSettings={{
+                                            preserveAspectRatio: "xMidYMid slice",
+                                        }}
+                                    />
+
+                                    {/* <m.img
                                         onClick={() => {
                                             window.location.href = '/';
                                         }}
@@ -99,7 +123,7 @@ export default function Header() {
                                         animate={{ opacity: isSticky ? 1 : 0, zIndex: isSticky ? 1 : 0 }}
                                         initial={{ opacity: 0, zIndex: 0 }}
                                         transition={{ ease: 'easeIn', duration: 0.4, delay: isSticky ? 0.2 : 0 }}
-                                    />
+                                    /> */}
                                 </div>
                                 <div className="flex w-1/3 md:w-full sm:w-full lg:w-full xl:w-full 2xl:w-full justify-end">
                                     <Button target='_blank' as={Link} href='https://discord.com/invite/WNKvkefkUs' variant="primary" content="Join our discord" svg="discord" />

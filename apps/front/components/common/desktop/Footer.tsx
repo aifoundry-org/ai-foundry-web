@@ -50,14 +50,14 @@ export default function Footer(){
                 </FadeIn>
                 <div className='flex flex-row font-bold mt-[3.89vw] mb-[2.78vw] text-[1.395vw] leading-[1.395vw] uppercase justify-between'>
                     <FadeIn delay={0.5} className='flex flex-row gap-[3.34vw]'>
-                        <a href='/#projects'>Projects</a>
-                        <a href='/#events'>Events</a>
-                        {process.env.HIDE_SECTIONS === "false" && <a href='/#blog'>Blog</a>}
-                        <a href='/#values'>Our Values</a>
+                        <a className='relative after:bg-black after:absolute after:h-1 after:w-0 after:-bottom-[0.5vw] after:left-0 focus:after:w-full hover:after:w-full after:transition-all after:duration-300' href='/#projects'>Projects</a>
+                        <a className='relative after:bg-black after:absolute after:h-1 after:w-0 after:-bottom-[0.5vw] after:left-0 focus:after:w-full hover:after:w-full after:transition-all after:duration-300' href='/#events'>Events</a>
+                        {process.env.HIDE_SECTIONS === "false" && <a className='relative after:bg-black after:absolute after:h-1 after:w-0 after:-bottom-[0.5vw] after:left-0 focus:after:w-full hover:after:w-full after:transition-all after:duration-300' href='/#blog'>Blog</a>}
+                        <a className='relative after:bg-black after:absolute after:h-1 after:w-0 after:-bottom-[0.5vw] after:left-0 focus:after:w-full hover:after:w-full after:transition-all after:duration-300' href='/#values'>Our Values</a>
                     </FadeIn>
                     <FadeIn delay={0.5} className='flex flex-row gap-[3.34vw]'>
-                        <a className='z-[1]' href='/terms-and-conditions#privacy-policy'>Privacy Policy</a>
-                        <a href='/terms-and-conditions'>Terms Of Service</a>
+                        <a className='relative after:bg-black after:absolute after:h-1 after:w-0 after:-bottom-[0.5vw] after:left-0 focus:after:w-full hover:after:w-full after:transition-all after:duration-300 z-[1]' href='/terms-and-conditions#privacy-policy'>Privacy Policy</a>
+                        <a className='relative after:bg-black after:absolute after:h-1 after:w-0 after:-bottom-[0.5vw] after:left-0 focus:after:w-full hover:after:w-full after:transition-all after:duration-300' href='/terms-and-conditions'>Terms Of Service</a>
                     </FadeIn>
                 </div>
                 <div className='relative flex flex-row justify-between pb-[6.67vw]'>
