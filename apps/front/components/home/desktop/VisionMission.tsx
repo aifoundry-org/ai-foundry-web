@@ -1,10 +1,10 @@
 import Link from 'next/link'
+import FadeIn from '@/components/common/universal/FadeIn'
+import FadeUp from '@/components/common/universal/FadeUp'
 import Button from '@/libs/litebox-lib/ui/Button/Button'
 import IMGCircle from '@/public/pngs/home/visionMission/circle.png'
 import IMGError from '@/public/pngs/home/visionMission/error.png'
 import IMGGraffiti from '@/public/pngs/home/visionMission/graffiti.png'
-import FadeIn from '@/components/common/universal/FadeIn';
-import FadeUp from '@/components/common/universal/FadeUp';
 import OurCoreValue from './VisionMissionCard'
 import coreValues from '@/mock/home/visionMission/data.json'
 
