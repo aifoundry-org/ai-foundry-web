@@ -12,11 +12,11 @@ import IMGCloseButton from '@/public/pngs/sideMenu/closeButton.png'
 import IMGInstagramIcon from '@/public/pngs/footer/instagramIconMobile.png'
 import IMGLinkedinIcon from '@/public/pngs/footer/linkedinIconMobile.png'
 import IMGYoutubeIcon from '@/public/pngs/footer/youtubeIconMobile.png'
-import animationData from '@/data/home/lotties/navbarLogo.json'
-import { Player } from "@lottiefiles/react-lottie-player";
+// import animationData from '@/data/home/lotties/navbarLogo.json'
+// import { Player } from "@lottiefiles/react-lottie-player";
 
 export default function Header() {
-    const playerRef = useRef<Player>(null);
+    // const playerRef = useRef<Player>(null);
     const [currPage, setCurrPage] = useState('');
     const [showMenu, setShowMenu] = useState(false);
     const [isSticky, setIsSticky] = useState(false);
@@ -26,12 +26,12 @@ export default function Header() {
         const stickyState = scrollY > 93;
 
         setIsSticky(stickyState);
-        if(stickyState){
-            playerRef.current?.setPlayerDirection(1);
-        } else {
-            playerRef.current?.setPlayerDirection(-1);
-        }
-        playerRef.current?.play();
+        // if(stickyState){
+        //     playerRef.current?.setPlayerDirection(1);
+        // } else {
+        //     playerRef.current?.setPlayerDirection(-1);
+        // }
+        // playerRef.current?.play();
     }
 
     useEffect(() => {
@@ -72,14 +72,14 @@ export default function Header() {
                             transition={{ ease: "easeInOut", duration: 0.5 }}
                             >
                             <div className='flex basis-[50%] w-full mx-auto items-center justify-start'>
-                                <Player
+                                {/* <Player
                                     className='h-[15vw]'
                                     ref={playerRef}
                                     src={animationData}
                                     autoplay={false}
                                     keepLastFrame
                                     loop={false}
-                                />
+                                /> */}
                             </div>
                             <div className='flex basis-[50%] w-full justify-end'>
                                 <img src={IMGIconHamburger.src} className='z-[3] w-[6.4vw] xs:w-[5vw]' onClick={() => setShowMenu(true)} />
