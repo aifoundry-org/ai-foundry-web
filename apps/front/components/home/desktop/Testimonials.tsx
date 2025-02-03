@@ -101,12 +101,12 @@ export default function Testimonials() {
                         <Button className='!w-[3.34vw] !h-[3.34vw]' variant='secondary' svg='scroll-right' noShadow/>
                     </div>
                 </FadeUp>
-                <FadeIn delay={0.5} className='relative w-[25.91vw] -bottom-[6.5vw] left-[70vw] -z-[1]'>
+                <div className='relative w-[25.91vw] -bottom-[6.5vw] left-[70vw] -z-[1]'>
                     <img src={IMGDoodle.src} />
-                </FadeIn>
-                <FadeIn delay={0.5} className='relative w-[12.5vw] bottom-[6.5vw] left-[81.5vw] z-[1]'>
+                </div>
+                <div className='relative w-[12.5vw] bottom-[6.5vw] left-[81.5vw] z-[1]'>
                     <img src={IMGWhatPeopleSaying.src} />
-                </FadeIn>
+                </div>
             </div>
         </div>
     )
