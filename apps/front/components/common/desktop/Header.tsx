@@ -24,7 +24,6 @@ export default function Header() {
         } else {
             lottieRef.current?.setDirection(-1);
         }
-
         lottieRef.current?.play();
     }
 
