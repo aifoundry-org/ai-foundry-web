@@ -1,16 +1,17 @@
 'use client';
 
-import { useState, useEffect, useRef } from 'react';
+import { useState, useEffect, useRef, lazy } from 'react';
 import Link from "next/link";
 import { m } from "motion/react"
 import LazyMotion from '@/components/common/universal/LazyAnimation'
 import Button from '@/litebox-lib/ui/Button/Button';
 import IMGHeaderIconArrowUpRight from '@/public/pngs/header/headerArrowUpRight.png';
-// import animationData from '@/data/home/lotties/navbarLogo.json'
-// import { Player } from "@lottiefiles/react-lottie-player";
+import animationData from '@/data/home/lotties/navbarLogo.json'
+import { Player } from "@lottiefiles/react-lottie-player";
+const LazyPlayer = lazy(() => import('@/components/common/universal/LazyPlayer'));
 
 export default function Header() {
-    // const playerRef = useRef<Player>(null);
+    const playerRef = useRef<Player>(null);
     const [isSticky, setIsSticky] = useState(false);
 
     const checkIfSticky = () => {
@@ -18,12 +19,12 @@ export default function Header() {
         const stickyState = scrollY > 16;
 
         setIsSticky(stickyState);
-        // if(stickyState){
-        //     playerRef.current?.setPlayerDirection(1);
-        // } else {
-        //     playerRef.current?.setPlayerDirection(-1);
-        // }
-        // playerRef.current?.play();
+        if(stickyState){
+            playerRef.current?.setPlayerDirection(1);
+        } else {
+            playerRef.current?.setPlayerDirection(-1);
+        }
+        playerRef.current?.play();
     }
 
     useEffect(() => {
@@ -90,14 +91,14 @@ export default function Header() {
                                     </m.div>
                                 </div>
                                 <div className="flex w-1/3 h-[5vw] md:w-full sm:w-full lg:w-full xl:w-full 2xl:w-full justify-center items-center relative">
-                                    {/* <Player
+                                    <LazyPlayer
                                         className={`h-[4.31vw] absolute mx-auto top-1/2 -translate-y-1/2 ${isSticky ? 'left-[8vw]' : 'left-[9vw]' }`}
                                         ref={playerRef}
                                         src={animationData}
                                         autoplay={false}
                                         keepLastFrame
                                         loop={false}
-                                    /> */}
+                                    />
                                 </div>
                                 <div className="flex w-1/3 md:w-full sm:w-full lg:w-full xl:w-full 2xl:w-full justify-end">
                                     <Button target='_blank' as={Link} href='https://discord.com/invite/WNKvkefkUs' variant="primary" content="Join our discord" svg="discord" />
