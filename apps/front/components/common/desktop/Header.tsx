@@ -19,10 +19,15 @@ export default function Header() {
         const stickyState = scrollY > 16;
 
         setIsSticky(stickyState);
-        if(stickyState){
+        if(!stickyState){
             lottieRef.current?.setDirection(1);
-        } else {
+            const totalFrames = lottieRef.current?.totalFrames;
+
+            lottieRef.current?.seek(totalFrames - 10);
             lottieRef.current?.setDirection(-1);
+            lottieRef.current?.play();
+        } else {
+            lottieRef.current?.setDirection(1);
         }
         lottieRef.current?.play();
     }

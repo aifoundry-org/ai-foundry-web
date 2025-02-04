@@ -1,7 +1,7 @@
 'use client';
 
 import { forwardRef, lazy, Suspense } from 'react';
-import type { DotLottieCommonPlayer, PlayerEvents } from '@dotlottie/react-player';
+import { PlayMode, type DotLottieCommonPlayer, type PlayerEvents } from '@dotlottie/react-player';
 
 const DotLottiePlayer = lazy(() => import('@dotlottie/react-player').then(mod => ({ default: mod.DotLottiePlayer })));
 
