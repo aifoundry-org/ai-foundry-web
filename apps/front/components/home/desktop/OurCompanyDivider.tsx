@@ -1,17 +1,18 @@
 'use client'
 
+import dynamic from 'next/dynamic';
 import FadeUp from '@/components/common/universal/FadeUp';
-import animation from '@/data/home/lotties/marquee.json'
-import { DotLottieReact } from '@lottiefiles/dotlottie-react';
+
+const LottiePlayer = dynamic(() => import('@/components/common/universal/LottiePlayer'));
 
 export default function OurCompanyDivider(){
     return (
-        <FadeUp className='hidden xs:flex xs:flex-col xs:mt-[8vw] xs:w-full xs:h-[10vw]'>
-            <DotLottieReact
-                className='relative h-fit -top-[25vw] z-0'
-                data={animation}
+        <FadeUp className='hidden relative xs:flex xs:flex-col xs:my-[5vw] xs:w-full xs:h-[10vw]'>
+            <LottiePlayer
+                className='absolute h-fit top-0 z-0'
                 loop
                 autoplay
+                src='/lotties/marquee.lottie'
             />
         </FadeUp>
     )
