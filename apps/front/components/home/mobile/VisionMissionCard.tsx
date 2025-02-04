@@ -1,14 +1,14 @@
-import IMGIconHandshake from '@/public/pngs/home/visionMission/handshake.png';
-import IMGIconCooperation from '@/public/pngs/home/visionMission/cooperation.png';
-import IMGIconOpenBook from '@/public/pngs/home/visionMission/openBook.png';
-import IMGIconUser from '@/public/pngs/home/visionMission/user.png';
+import SVGIconEmpathy from '@/public/svgs/ourCoreValues/empathy';
+import SVGIconCooperation from '@/public/svgs/ourCoreValues/cooperation';
+import SVGIconOpenness from '@/public/svgs/ourCoreValues/openness';
+import SVGIconIntegrity from '@/public/svgs/ourCoreValues/integrity';
 
-const imgVariants : {[key: string]: string} = {
-  handshake: IMGIconHandshake.src,
-  cooperation: IMGIconCooperation.src,
-  'open-book': IMGIconOpenBook.src,
-  user: IMGIconUser.src
-}
+const imgVariants : {[key: string]: React.FC<React.SVGProps<SVGSVGElement>>} = {
+    empathy: SVGIconEmpathy,
+    cooperation: SVGIconCooperation,
+    openness: SVGIconOpenness,
+    integrity: SVGIconIntegrity
+  }
 
 export default function OurCoreValue({className = '', icon = '', title = '', content = '', ...props}) {
     const essentialStyles = `flex flex-col mb-[6.4vw]`;
@@ -27,11 +27,7 @@ export default function OurCoreValue({className = '', icon = '', title = '', con
 
     return (
         <div {...componentProps}>
-            {IMGIcon && 
-                <div className='h-[6.4vw] w-[6.4vw] mb-[3.75vw]'>
-                    <img src={IMGIcon} />
-                </div>
-            }
+            {IMGIcon && <IMGIcon className='w-fit mb-[3.75vw]' /> }
             <div className='font-dharma-gothic-e font-black text-[8.55vw] leading-[7vw] mb-[2.15vw] uppercase'>
                 {title}
             </div>

@@ -1,13 +1,13 @@
-import IMGIconHandshake from '@/public/pngs/home/visionMission/handshake.png';
-import IMGIconCooperation from '@/public/pngs/home/visionMission/cooperation.png';
-import IMGIconOpenBook from '@/public/pngs/home/visionMission/openBook.png';
-import IMGIconUser from '@/public/pngs/home/visionMission/user.png';
+import SVGIconEmpathy from '@/public/svgs/ourCoreValues/empathy';
+import SVGIconCooperation from '@/public/svgs/ourCoreValues/cooperation';
+import SVGIconOpenness from '@/public/svgs/ourCoreValues/openness';
+import SVGIconIntegrity from '@/public/svgs/ourCoreValues/integrity';
 
-const imgVariants : {[key: string]: string} = {
-  handshake: IMGIconHandshake.src,
-  cooperation: IMGIconCooperation.src,
-  'open-book': IMGIconOpenBook.src,
-  user: IMGIconUser.src
+const imgVariants : {[key: string]: React.FC<React.SVGProps<SVGSVGElement>>} = {
+  empathy: SVGIconEmpathy,
+  cooperation: SVGIconCooperation,
+  openness: SVGIconOpenness,
+  integrity: SVGIconIntegrity
 }
 
 export default function OurCoreValue({className = '', icon = '', title = '', content = '', ...props}) {
@@ -27,15 +27,11 @@ export default function OurCoreValue({className = '', icon = '', title = '', con
 
     return (
         <div {...componentProps}>
-            {IMGIcon && 
-                <div className='h-[2.225vw] w-[2.225vw] mb-[1.125vw]'>
-                    <img src={IMGIcon} />
-                </div>
-            }
-            <div className='font-dharma-gothic-e font-black text-[2.78vw] leading-[2.3vw] mb-[0.56vw] uppercase'>
+            {IMGIcon && <IMGIcon className='w-fit mb-[1.125vw]' /> }
+            <div className='font-dharma-gothic-e font-black text-[3rem] lg:text-[2.78vw] xl:text-[2.78vw] 2xl:text-[2.78vw] leading-[2.3vw] mb-[0.56vw] uppercase'>
                 {title}
             </div>
-            <div className='font-host-grotesk font-normal text-[1.115vw] leading-[1.67vw]'>
+            <div className='font-host-grotesk font-normal text-[1.8rem] lg:text-[1.115vw] xl:text-[1.115vw] 2xl:text-[1.115vw] leading-[1.67vw]'>
                 {content}
             </div>
         </div>

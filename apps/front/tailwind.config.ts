@@ -12,7 +12,7 @@ export default {
       colors: {
         orange: '#F9A03F',
         sand: '#F6EFE4',
-        peach: '#F0D6AC',
+        peach: '#FCCE90',
         background: "var(--orange)",
         foreground: "var(--black)",
       },
