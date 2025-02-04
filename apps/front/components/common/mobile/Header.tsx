@@ -13,12 +13,15 @@ import IMGCloseButton from '@/public/pngs/sideMenu/closeButton.png'
 import IMGInstagramIcon from '@/public/pngs/footer/instagramIconMobile.png'
 import IMGLinkedinIcon from '@/public/pngs/footer/linkedinIconMobile.png'
 import IMGYoutubeIcon from '@/public/pngs/footer/youtubeIconMobile.png'
+
+const LazyLottieComponent = lazy(() => import('lottie-react'));
 import animationData from '@/data/home/lotties/navbarLogo.json'
-import { Player } from '@lottiefiles/react-lottie-player';
-const LazyPlayer = lazy(() => import('@/components/common/universal/LazyPlayer'));
+import { LottieRefCurrentProps } from 'lottie-react';
+import gsap from 'gsap';
+import ScrollTrigger from 'gsap/dist/ScrollTrigger';
 
 export default function Header() {
-    const playerRef = useRef<Player>(null);
+    const lottieRef = useRef<LottieRefCurrentProps>(null);
     const [currPage, setCurrPage] = useState('');
     const [showMenu, setShowMenu] = useState(false);
     const [isSticky, setIsSticky] = useState(false);
@@ -29,12 +32,16 @@ export default function Header() {
 
         setIsSticky(stickyState);
         if(stickyState){
-            playerRef.current?.setPlayerDirection(1);
+            lottieRef.current?.setDirection(1);
         } else {
-            playerRef.current?.setPlayerDirection(-1);
+            lottieRef.current?.setDirection(-1);
         }
-        playerRef.current?.play();
+        lottieRef.current?.play();
     }
+
+    useEffect(() => {
+        gsap.registerPlugin(ScrollTrigger);
+    }, []);
 
     useEffect(() => {
         setCurrPage(window.location.pathname)
@@ -74,12 +81,11 @@ export default function Header() {
                             transition={{ ease: "easeInOut", duration: 0.5 }}
                             >
                             <div className='flex basis-[50%] w-full mx-auto items-center justify-start'>
-                                <LazyPlayer
-                                    ref={playerRef}
+                                <LazyLottieComponent
+                                    lottieRef={lottieRef}
                                     className='h-[15vw]'
-                                    src={animationData}
+                                    animationData={animationData}
                                     autoplay={false}
-                                    keepLastFrame
                                     loop={false}
                                 />
                             </div>
