@@ -1,6 +1,7 @@
 'use client';
 
-import { useState, useEffect, useRef, lazy } from 'react';
+import { useState, useEffect, useRef } from 'react';
+import dynamic from 'next/dynamic';
 import { m } from 'motion/react';
 import Link from "next/link";
 import IMGHeaderIconArrowUpRight from '@/public/pngs/header/headerArrowUpRight.png';
@@ -14,14 +15,11 @@ import IMGInstagramIcon from '@/public/pngs/footer/instagramIconMobile.png'
 import IMGLinkedinIcon from '@/public/pngs/footer/linkedinIconMobile.png'
 import IMGYoutubeIcon from '@/public/pngs/footer/youtubeIconMobile.png'
 
-const LazyLottieComponent = lazy(() => import('lottie-react'));
-import animationData from '@/data/home/lotties/navbarLogo.json'
-import { LottieRefCurrentProps } from 'lottie-react';
-import gsap from 'gsap';
-import ScrollTrigger from 'gsap/dist/ScrollTrigger';
+const LottiePlayer = dynamic(() => import('@/components/common/universal/LottiePlayer'));
 
 export default function Header() {
-    const lottieRef = useRef<LottieRefCurrentProps>(null);
+    const lottieRef = useRef<any>(null);
+
     const [currPage, setCurrPage] = useState('');
     const [showMenu, setShowMenu] = useState(false);
     const [isSticky, setIsSticky] = useState(false);
@@ -38,10 +36,6 @@ export default function Header() {
         }
         lottieRef.current?.play();
     }
-
-    useEffect(() => {
-        gsap.registerPlugin(ScrollTrigger);
-    }, []);
 
     useEffect(() => {
         setCurrPage(window.location.pathname)
@@ -81,10 +75,10 @@ export default function Header() {
                             transition={{ ease: "easeInOut", duration: 0.5 }}
                             >
                             <div className='flex basis-[50%] w-full mx-auto items-center justify-start'>
-                                <LazyLottieComponent
-                                    lottieRef={lottieRef}
+                                <LottiePlayer
                                     className='h-[15vw]'
-                                    animationData={animationData}
+                                    ref={lottieRef}
+                                    src='/lotties/navbarLogo.lottie'
                                     autoplay={false}
                                     loop={false}
                                 />

@@ -1,20 +1,17 @@
 'use client';
 
-import { useState, useEffect, useRef, lazy } from 'react';
+import { useState, useEffect, useRef } from 'react';
+import dynamic from 'next/dynamic';
+import { m } from 'motion/react';
 import Link from "next/link";
-import { m } from "motion/react"
 import LazyMotion from '@/components/common/universal/LazyAnimation'
 import Button from '@/litebox-lib/ui/Button/Button';
 import IMGHeaderIconArrowUpRight from '@/public/pngs/header/headerArrowUpRight.png';
 
-const LazyLottieComponent = lazy(() => import('lottie-react'));
-import animationData from '@/data/home/lotties/navbarLogo.json'
-import { LottieRefCurrentProps } from 'lottie-react';
-import gsap from 'gsap';
-import ScrollTrigger from 'gsap/dist/ScrollTrigger';
+const LottiePlayer = dynamic(() => import('@/components/common/universal/LottiePlayer'));
 
 export default function Header() {
-    const lottieRef = useRef<LottieRefCurrentProps>(null);
+    const lottieRef = useRef<any>(null);
     const [isSticky, setIsSticky] = useState(false);
 
     const checkIfSticky = () => {
@@ -27,14 +24,12 @@ export default function Header() {
         } else {
             lottieRef.current?.setDirection(-1);
         }
+
         lottieRef.current?.play();
     }
 
     useEffect(() => {
-        gsap.registerPlugin(ScrollTrigger);
-    }, []);
-
-    useEffect(() => {
+        lottieRef.current?.addEventListener('complete', () => {console.log('complete')})
         checkIfSticky();
         window.addEventListener('scroll', checkIfSticky);
         return () => {
@@ -98,10 +93,10 @@ export default function Header() {
                                     </m.div>
                                 </div>
                                 <div className="flex w-1/3 h-[5vw] md:w-full sm:w-full lg:w-full xl:w-full 2xl:w-full justify-center items-center relative">
-                                    <LazyLottieComponent
-                                        lottieRef={lottieRef}
+                                    <LottiePlayer
                                         className={`h-[4.31vw] absolute mx-auto top-1/2 -translate-y-1/2 ${isSticky ? 'left-[8vw]' : 'left-[9vw]' }`}
-                                        animationData={animationData}
+                                        ref={lottieRef}
+                                        src='/lotties/navbarLogo.lottie'
                                         autoplay={false}
                                         loop={false}
                                     />

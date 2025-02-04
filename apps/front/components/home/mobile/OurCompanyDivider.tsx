@@ -1,18 +1,18 @@
 'use client'
 
-import { lazy } from 'react';
+import dynamic from 'next/dynamic';
 import FadeUp from '@/components/common/universal/FadeUp';
-import animationData from '@/data/home/lotties/marqueeMobile.json'
-const LazyLottieComponent = lazy(() => import('lottie-react'));
+
+const LottiePlayer = dynamic(() => import('@/components/common/universal/LottiePlayer'));
 
 export default function OurCompanyDivider(){
     return (
         <FadeUp className='xs:hidden flex flex-col relative w-full h-[10vw] my-[13.7vw]'>
-            <LazyLottieComponent
+            <LottiePlayer
                 className='absolute h-fit -top-[10vw]'
-                animationData={animationData}
                 loop
                 autoplay
+                src='/lotties/marqueeMobile.lottie'
             />
         </FadeUp>
     )
