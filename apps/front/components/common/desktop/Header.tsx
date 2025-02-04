@@ -29,7 +29,6 @@ export default function Header() {
     }
 
     useEffect(() => {
-        lottieRef.current?.addEventListener('complete', () => {console.log('complete')})
         checkIfSticky();
         window.addEventListener('scroll', checkIfSticky);
         return () => {
