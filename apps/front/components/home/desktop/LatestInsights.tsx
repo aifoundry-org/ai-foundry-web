@@ -1,21 +1,30 @@
 'use client'
 
 import Link from 'next/link'
-import LatestInsightsCard from './LatestInsightsCard'
-import IMGBackground from '@/public/pngs/home/latestInsights/background.png'
-import IMGBackgroundTitle from '@/public/pngs/home/latestInsights/backgroundTitle.png'
-import IMGLLamaEvent from '@/public/pngs/home/latestInsights/llamaEvent.png'
-import IMGPodcast from '@/public/pngs/home/latestInsights/podcast.png'
-import IMGProductionStack from '@/public/pngs/home/latestInsights/productionStack.png'
 import Button from '@/libs/litebox-lib/ui/Button/Button'
-import cards from '@/mock/home/latestInsights/data.json'
 import FadeUp from '@/components/common/universal/FadeUp'
 import FadeIn from '@/components/common/universal/FadeIn'
 
+import LatestInsightsCard from './LatestInsightsCard'
+import IMGBackground from '@/public/pngs/home/latestInsights/background.png'
+import IMGBackgroundTitle from '@/public/pngs/home/latestInsights/backgroundTitle.png'
+
+// TODO: Remove images from page after implementing strapi
+import articles from '@/mock/home/latestInsights/data.json'
+import IMGLLamaEvent from '@/public/pngs/home/latestInsights/llamaEvent.png'
+import IMGPodcast from '@/public/pngs/home/latestInsights/podcast.png'
+import IMGProductionStack from '@/public/pngs/home/latestInsights/productionStack.png'
+// END TODO
+
 export default function LatestInsights() {
-    cards[0].imageUrl = IMGLLamaEvent.src;
-    cards[1].imageUrl = IMGPodcast.src;
-    cards[2].imageUrl = IMGProductionStack.src;
+    // TODO: Replace with strapi
+    for(let i=0; i<4; i++){
+        articles[0+(i*3)].imageUrl = IMGLLamaEvent.src;
+        articles[1+(i*3)].imageUrl = IMGPodcast.src;
+        articles[2+(i*3)].imageUrl = IMGProductionStack.src;
+    }
+    // END TODO
+    
     return (
         <div id='blog' className='hidden xs:flex xs:flex-col xs:pt-[12vw] xs:pb-[7.7vw] xs:relative xs:w-full xs:h-fit xs:px-[7.78vw]'>
             <FadeIn delay={1} className='absolute w-full h-fit -top-[3.5vw] left-0 -z-[1]'>
@@ -35,7 +44,7 @@ export default function LatestInsights() {
                 <Button as={Link} href="https://aifoundry.org/blog" target="_blank" variant='primary' content='Visit our blog' />
             </FadeUp>
             <div className='flex flex-col gap-[6vw] md:flex-row xl:flex-row 2xl:flex-row md:gap-[1vw] xl:gap-[1vw] 2xl:gap-[1vw]'>
-                {cards.map((card, idx) => (
+                {articles.slice(0, 3).map((card, idx) => (
                     <FadeUp key={idx} delay={card.delay}>
                         <LatestInsightsCard 
                             title={card.title}

@@ -15,6 +15,7 @@ export default {
         peach: '#FCCE90',
         background: "var(--orange)",
         foreground: "var(--black)",
+        'text-neutral-650': '#434343'
       },
       screens: {
         xs: '431px'
