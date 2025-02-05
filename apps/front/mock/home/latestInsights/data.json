@@ -1,25 +1,109 @@
 [{
+    "id": 1,
     "title": "Llama Shaving Podcast: Is Data Truly a Moat for an Enterprise?",
     "tags": ["podcast", "big data", "enterprise ai"],
     "author": "Tanya Dadasheva",
     "date": "November 19, 2024",
     "imageUrl": "",
-    "link": "https://aifoundry.org/blog/llama-shaving-podcast-is-data-truly-a-moat-for-an-enterprise",
+    "link": "/blog/llama-shaving-podcast-is-data-truly-a-moat-for-an-enterprise",
     "delay": 0.75
 },{
+    "id": 2,
     "title": "Productionizing AI: Three Layers of Models Production Stack",
     "tags": ["podcast", "opening ai", "productionization"],
     "author": "Tanya Dadasheva",
     "date": "November 13, 2024",
     "imageUrl": "",
-    "link": "https://aifoundry.org/blog/productionizing-ai-three-layers-of-models-production-stack",
+    "link": "/blog/productionizing-ai-three-layers-of-models-production-stack",
     "delay": 1
 },{
+    "id": 3,
     "title": "Low-Level AI Engineering and Hacking: AIFoundry.org Podcast",
     "tags": ["podcast", "community", "fosdem"],
     "author": "Tanya Dadasheva",
     "date": "November 12, 2024",
     "imageUrl": "",
-    "link": "https://aifoundry.org/blog/low-level-ai-engineering-and-hacking-aifoundry.org-podcast",
+    "link": "/blog/low-level-ai-engineering-and-hacking-aifoundry.org-podcast",
+    "delay": 1.25
+},{
+    "id": 4,
+    "title": "Llama Shaving Podcast: Is Data Truly a Moat for an Enterprise?",
+    "tags": ["podcast", "big data", "enterprise ai"],
+    "author": "Tanya Dadasheva",
+    "date": "November 19, 2024",
+    "imageUrl": "",
+    "link": "/blog/llama-shaving-podcast-is-data-truly-a-moat-for-an-enterprise",
+    "delay": 0.75
+},{
+    "id": 5,
+    "title": "Productionizing AI: Three Layers of Models Production Stack",
+    "tags": ["podcast", "opening ai", "productionization"],
+    "author": "Tanya Dadasheva",
+    "date": "November 13, 2024",
+    "imageUrl": "",
+    "link": "/blog/productionizing-ai-three-layers-of-models-production-stack",
+    "delay": 1
+},{
+    "id": 6,
+    "title": "Low-Level AI Engineering and Hacking: AIFoundry.org Podcast",
+    "tags": ["podcast", "community", "fosdem"],
+    "author": "Tanya Dadasheva",
+    "date": "November 12, 2024",
+    "imageUrl": "",
+    "link": "/blog/low-level-ai-engineering-and-hacking-aifoundry.org-podcast",
+    "delay": 1.25
+},{
+    "id": 7,
+    "title": "Llama Shaving Podcast: Is Data Truly a Moat for an Enterprise?",
+    "tags": ["podcast", "big data", "enterprise ai"],
+    "author": "Tanya Dadasheva",
+    "date": "November 19, 2024",
+    "imageUrl": "",
+    "link": "/blog/llama-shaving-podcast-is-data-truly-a-moat-for-an-enterprise",
+    "delay": 0.75
+},{
+    "id": 8,
+    "title": "Productionizing AI: Three Layers of Models Production Stack",
+    "tags": ["podcast", "opening ai", "productionization"],
+    "author": "Tanya Dadasheva",
+    "date": "November 13, 2024",
+    "imageUrl": "",
+    "link": "/blog/productionizing-ai-three-layers-of-models-production-stack",
+    "delay": 1
+},{
+    "id": 9,
+    "title": "Low-Level AI Engineering and Hacking: AIFoundry.org Podcast",
+    "tags": ["podcast", "community", "fosdem"],
+    "author": "Tanya Dadasheva",
+    "date": "November 12, 2024",
+    "imageUrl": "",
+    "link": "/blog/low-level-ai-engineering-and-hacking-aifoundry.org-podcast",
+    "delay": 1.25
+},{
+    "id": 10,
+    "title": "Llama Shaving Podcast: Is Data Truly a Moat for an Enterprise?",
+    "tags": ["podcast", "big data", "enterprise ai"],
+    "author": "Tanya Dadasheva",
+    "date": "November 19, 2024",
+    "imageUrl": "",
+    "link": "/blog/llama-shaving-podcast-is-data-truly-a-moat-for-an-enterprise",
+    "delay": 0.75
+},{
+    "id": 11,
+    "title": "Productionizing AI: Three Layers of Models Production Stack",
+    "tags": ["podcast", "opening ai", "productionization"],
+    "author": "Tanya Dadasheva",
+    "date": "November 13, 2024",
+    "imageUrl": "",
+    "link": "/blog/productionizing-ai-three-layers-of-models-production-stack",
+    "delay": 1
+},{
+    "id": 12,
+    "title": "Low-Level AI Engineering and Hacking: AIFoundry.org Podcast",
+    "tags": ["podcast", "community", "fosdem"],
+    "author": "Tanya Dadasheva",
+    "date": "November 12, 2024",
+    "imageUrl": "",
+    "link": "/blog/low-level-ai-engineering-and-hacking-aifoundry.org-podcast",
     "delay": 1.25
 }]
