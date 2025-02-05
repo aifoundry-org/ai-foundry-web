@@ -25,7 +25,6 @@ export default function Header() {
 
             lottieRef.current?.seek(totalFrames - 10);
             lottieRef.current?.setDirection(-1);
-            lottieRef.current?.play();
         } else {
             lottieRef.current?.setDirection(1);
         }
