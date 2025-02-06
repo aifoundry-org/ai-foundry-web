@@ -31,7 +31,7 @@ import JoinTheAiRevolutionMobile from '@/components/home/mobile/JoinTheAiRevolut
 import FaqsDesktop from '@/components/home/desktop/Faqs'
 import FaqsMobile from '@/components/home/mobile/Faqs'
 
-export default function Home() {
+export default function Page() {
   return (
     <main>
       <HeroDesktop />

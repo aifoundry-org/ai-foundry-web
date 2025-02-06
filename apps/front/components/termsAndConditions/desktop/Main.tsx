@@ -3,7 +3,7 @@ import IMGBackground from '@/public/pngs/termsAndConditions/background.png'
 
 const paragraphStyle = 'font-host-grotesk font-normal text-[1.115vw] leading-[1.67vw]'
 
-export default function main() {
+export default function Main() {
     return (
         <div className='hidden md:flex md:flex-col md:w-full md:h-full md:font-dharma-gothic-e'>
             <div className='flex flex-col w-full h-fit mx-auto my-[6vw]'>

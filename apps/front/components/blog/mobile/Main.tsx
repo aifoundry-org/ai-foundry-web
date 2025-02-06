@@ -1,7 +1,7 @@
 import IMGBackground from '@/public/pngs/blog/backgroundMobile.png'
 import IMGTitleErrors from '@/public/pngs/blog/titleErrorsMobile.png'
 
-export default function main() {
+export default function Main() {
     return (
         <div className='md:hidden flex flex-col w-full h-full'>
             <div className='flex flex-col w-[87.2vw] h-[51.2vw] mx-auto my-[6vw]'>

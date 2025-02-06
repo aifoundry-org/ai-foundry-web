@@ -1,48 +1,48 @@
 import { useState, useEffect, useMemo } from 'react';
 import Button from '@/libs/litebox-lib/ui/Button/Button';
 import Link from 'next/link';
-import { InfinitePostsProps, PAGINATION_LIMIT } from '../universal/InfinitePostsType';
+import { InfiniteArticlesProps, PAGINATION_LIMIT } from '../universal/InfiniteArticlesType';
 
-const InfinitePosts = ({
+const InfiniteArticles = ({
   search,
   tags,
-  initPosts,
-  featuredPostId
-}: InfinitePostsProps) => {
-    const [posts, setPosts] = useState(initPosts.slice(0, PAGINATION_LIMIT));
+  initArticles,
+  featuredArticleId
+}: InfiniteArticlesProps) => {
+    const [articles, setArticles] = useState(initArticles.slice(0, PAGINATION_LIMIT));
     const [visibleCount, setVisibleCount] = useState(PAGINATION_LIMIT);
-    const [hasMorePosts, setHasMorePosts] = useState(true);
+    const [hasMoreArticles, setHasMoreArticles] = useState(true);
 
-    const sortedPosts = useMemo(() => {
-        return posts.sort((a, b) => {
-            if (a.id === featuredPostId) return -1;
-            if (b.id === featuredPostId) return 1;
+    const sortedArticles = useMemo(() => {
+        return articles.sort((a, b) => {
+            if (a.id === featuredArticleId) return -1;
+            if (b.id === featuredArticleId) return 1;
             return 0;
         });
-    }, [posts, featuredPostId]);
+    }, [articles, featuredArticleId]);
 
     const showMoreArticles = async () => {
         const newVisibleCount = visibleCount + PAGINATION_LIMIT;
-        setPosts(initPosts.slice(0, newVisibleCount));
+        setArticles(initArticles.slice(0, newVisibleCount));
         setVisibleCount(newVisibleCount);
-        setHasMorePosts(newVisibleCount < initPosts.length);
+        setHasMoreArticles(newVisibleCount < initArticles.length);
     };
 
     useEffect(() => {
-        setPosts(initPosts.slice(0, PAGINATION_LIMIT));
+        setArticles(initArticles.slice(0, PAGINATION_LIMIT));
         setVisibleCount(PAGINATION_LIMIT);
-        setHasMorePosts(initPosts.length > PAGINATION_LIMIT);
-    }, [search, tags, initPosts]);
+        setHasMoreArticles(initArticles.length > PAGINATION_LIMIT);
+    }, [search, tags, initArticles]);
 
   return (
     <>
         <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-6 gap-y-20'>
-            {sortedPosts.map(post => {
-                const isFeaturedPost = post.id === featuredPostId;
-                const { title, date, author, imageUrl, tags = [] } = post;
+            {sortedArticles.map(article => {
+                const isFeaturedArticle = article.id === featuredArticleId;
+                const { title, date, author, imageUrl, tags = [] } = article;
 
                 return (
-                    <div key={post.id} className={`flex flex-col w-full h-full ${isFeaturedPost ? 'sm:col-start-1 sm:col-end-3' : ''}`}>
+                    <div key={article.id} className={`flex flex-col w-full h-full ${isFeaturedArticle ? 'sm:col-start-1 sm:col-end-3' : ''}`}>
                         <div className={`flex flex-row items-center justify-between mb-[1.675vw] h-[21.4rem] overflow-hidden`}>
                             <img src={imageUrl} className='w-full h-full border-2 border-black rounded-lg object-cover object-top' />
                         </div>
@@ -62,14 +62,14 @@ const InfinitePosts = ({
                             {author} | {date}
                         </div>
                         <div className='flex flex-row justify-start mt-8'>
-                            <Button as={Link} href={post.link} target="_blank" variant='secondary' content='Read more' />
+                            <Button as={Link} href={`/blog/${article.slug}`} variant='secondary' content='Read more' />
                         </div>
                     </div>
                 );
             })}
         </div>
-        {hasMorePosts && (
-            <div className='flex flex-row justify-start mt-20'>
+        {hasMoreArticles && (
+            <div className='flex flex-row justify-center my-32'>
                 <Button onClick={showMoreArticles} variant='secondary' content='Load more articles' />
             </div>
         )}
@@ -77,4 +77,4 @@ const InfinitePosts = ({
   );
 };
 
-export default InfinitePosts;
+export default InfiniteArticles;

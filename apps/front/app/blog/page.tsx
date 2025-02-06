@@ -2,17 +2,17 @@ import { Suspense } from 'react';
 
 import MainDesktop from '@/components/blog/desktop/Main';
 import MainMobile from '@/components/blog/mobile/Main';
-import ArticlesGrid from '@/components/blog/desktop/ArticlesGrid'
+import ArticlesGridDesktop from '@/components/blog/desktop/ArticlesGrid'
 import ArticlesGridMobile from '@/components/blog/mobile/ArticlesGrid'
 
-export default function Home() {
+export default function Page() {
   return (
     <main>
       <MainDesktop />
       <MainMobile />
 
       <Suspense>
-        <ArticlesGrid />
+        <ArticlesGridDesktop />
         <ArticlesGridMobile />
       </Suspense>
     </main>

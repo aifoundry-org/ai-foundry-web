@@ -1,7 +1,8 @@
 'use client'
 
-import { useEffect, useState } from 'react'
+import { usePathname } from 'next/navigation';
 import Link from 'next/link'
+import FadeIn from '@/components/common/universal/FadeIn';
 import IMGLogo from '@/public/pngs/footer/logoMobile.png'
 import IMGErrors from '@/public/pngs/footer/errorsMobile.png'
 import IMGBucket from '@/public/pngs/footer/bucketMobile.png'
@@ -10,24 +11,17 @@ import IMGInstagramIcon from '@/public/pngs/footer/instagramIconMobile.png'
 import IMGLinkedinIcon from '@/public/pngs/footer/linkedinIconMobile.png'
 import IMGYoutubeIcon from '@/public/pngs/footer/youtubeIconMobile.png'
 import IMGGraffiti from '@/public/pngs/footer/graffitiMobile.png'
-import IMGErrorsCodes from '@/public/pngs/footer/errorCodesMobile.png'
-
-import FadeUp from '@/components/common/universal/FadeUp';
-import FadeIn from '@/components/common/universal/FadeIn';
+import IMGCode from '@/public/pngs/footer/codeMobile.png'
 
 export default function Footer(){
-    const [currPage, setCurrPage] = useState('');
-
-    useEffect(() => {
-        setCurrPage(window.location.pathname)    
-    },[])
+    const pathname = usePathname();
 
     return (
-        <footer className='sm:hidden flex flex-col bg-orange rounded-t-[5.335vw] relative'>
-            {currPage == '/' && <FadeIn delay={0.5}>
-                <img className='absolute -top-[12.5vw] left-0' src={IMGErrorsCodes.src} />
+        <footer className={`sm:hidden flex flex-col ${pathname.includes('/blog/') && 'bg-peach'} relative`}>
+            {pathname == '/' && <FadeIn delay={0.5}>
+                <img className='absolute -top-[12.5vw] left-0' src={IMGCode.src} />
             </FadeIn>}
-            <div className='relative flex flex-col px-[6.4vw] pt-[8.55vw]'>
+            <div className='relative flex flex-col px-[6.4vw] pt-[8.55vw] bg-orange rounded-t-[5.335vw]'>
                 <FadeIn delay={0.5}>
                     <img className='absolute w-1/4 top-[49vw] right-0' src={IMGBucket.src} />
                 </FadeIn>

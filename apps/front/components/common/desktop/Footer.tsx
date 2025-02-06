@@ -1,7 +1,8 @@
 'use client'
 
-import { useState, useEffect } from 'react'
+import { usePathname } from 'next/navigation';
 import Link from 'next/link'
+import FadeIn from '@/components/common/universal/FadeIn';
 import IMGLogo from '@/public/pngs/footer/logo.png'
 import IMGErrors from '@/public/pngs/footer/errorsMobile.png'
 import IMGBucket from '@/public/pngs/footer/bucket.png'
@@ -11,22 +12,15 @@ import IMGInstagramIcon from '@/public/pngs/footer/instagramIconMobile.png'
 import IMGLinkedinIcon from '@/public/pngs/footer/linkedinIconMobile.png'
 import IMGYoutubeIcon from '@/public/pngs/footer/youtubeIconMobile.png'
 import IMGGraffiti from '@/public/pngs/footer/graffiti.png'
-import IMGErrorsCodes from '@/public/pngs/footer/errorCodes.png'
-
-import FadeUp from '@/components/common/universal/FadeUp';
-import FadeIn from '@/components/common/universal/FadeIn';
+import IMGCode from '@/public/pngs/footer/code.png'
 
 export default function Footer(){
-    const [currPage, setCurrPage] = useState('');
-    
-    useEffect(() => {
-        setCurrPage(window.location.pathname)    
-    },[])
+    const pathname = usePathname();
     
     return (
-        <footer className='hidden sm:flex sm:flex-col sm:bg-orange sm:rounded-t-[1.39vw] sm:mt-[5vw] relative'>
-            {currPage == '/' && <img className='absolute w-[58.27vw] -top-[3.5vw] right-0' src={IMGErrorsCodes.src} />}
-            <div className='relative flex flex-col px-[6.4vw] pt-[8.55vw]'>
+        <footer className={`hidden sm:w-full sm:h-full ${pathname.includes('/blog/') ? 'sm:bg-peach' : 'sm:bg-none'}  sm:flex sm:flex-col sm:pt-[5vw] relative`}>
+            {pathname == '/' && <img className='absolute w-[43.5vw] top-[2vw] right-0' src={IMGCode.src} />}
+            <div className='relative flex flex-col px-[6.4vw] pt-[8.55vw] bg-orange rounded-t-[1.39vw] z-10'>
                 <FadeIn delay={0.5} className='relative flex flex-col size-full font-dharma-gothic-e pb-[10.675vw] border-b-2 border-black'>
                     <FadeIn delay={0.5}>
                         <p className='font-black text-sand text-[12.5vw] leading-[9.25vw] uppercase mb-[1.67vw]'>Your new<br/>community</p>

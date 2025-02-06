@@ -7,7 +7,7 @@ export default function LatestInsightsCard({title = '', tags = [] as Array<strin
     return (
         <div className='flex flex-col w-full h-full'>
             <div className='flex flex-row items-center justify-between mb-[1.675vw]'>
-                <img src={imageUrl} className='border-2 border-black rounded-lg' />
+                <img src={imageUrl} className='w-[27.05vw] border-2 border-black rounded-lg' />
             </div>
             <div className='flex flex-row items-center mb-[2vw] md:mb-[1.125vw] xl:mb-[1.125vw] 2xl:mb-[1.125vw] gap-x-[0.575vw]'>
                 {tags.map((el, idx) => (
@@ -28,5 +28,5 @@ export default function LatestInsightsCard({title = '', tags = [] as Array<strin
                 <Button as={Link} href={link} target="_blank" variant='secondary' content='Read more' />
             </div>
         </div>
-        )
+    )
 }
