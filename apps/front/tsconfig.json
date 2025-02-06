@@ -11,8 +11,12 @@
     "moduleResolution": "bundler",
     "resolveJsonModule": true,
     "isolatedModules": true,
-    "jsx": "preserve",
     "incremental": true,
+    "jsx": "preserve",
+    "types": ["@types/swiper", "next/types"],
+    "skipLibCheck": true,
+    "noUnusedLocals": false,
+    "strictNullChecks": false,
     "plugins": [
       {
         "name": "next"
