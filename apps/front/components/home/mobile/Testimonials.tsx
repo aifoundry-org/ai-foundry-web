@@ -11,7 +11,6 @@ import cards from '@/mock/home/testimonials/data.json';
 import IMGCompanyWebflow from '@/public/pngs/home/testimonials/companyWebflow.png'
 import IMGDeveloper1 from '@/public/pngs/home/testimonials/developer1.png'
 
-import { Swiper, SwiperSlide } from 'swiper/react';
 import { Pagination, Navigation } from 'swiper/modules';
 import 'swiper/css';
 import 'swiper/css/pagination';
@@ -19,6 +18,7 @@ import 'swiper/css/navigation';
 
 import FadeUp from '@/components/common/universal/FadeUp';
 import FadeIn from '@/components/common/universal/FadeIn';
+import { Swiper } from 'swiper/react';
 
 export default function Testimonials() {
     //Add a state that will force a re-render
