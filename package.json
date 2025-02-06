@@ -8,9 +8,9 @@
   ],
   "scripts": {
     "build": "turbo run build",
-    "dev": "turbo run dev",
+    "dev": "concurrently \"yarn workspace @ai-foundry/front dev\"",
     "lint": "turbo run lint",
-    "lint:fix": "turbo run lint:fix",
+    "lint:fix": "turbo run lint:fix", 
     "prepare": "husky install",
     "commit": "git-cz"
   },
