@@ -9,22 +9,11 @@ import LatestInsightsCard from './LatestInsightsCard'
 import IMGBackground from '@/public/pngs/home/latestInsights/background.png'
 import IMGBackgroundTitle from '@/public/pngs/home/latestInsights/backgroundTitle.png'
 
-// TODO: Remove images from page after implementing strapi
-import articles from '@/mock/home/latestInsights/data.json'
-import IMGLLamaEvent from '@/public/pngs/home/latestInsights/llamaEvent.png'
-import IMGPodcast from '@/public/pngs/home/latestInsights/podcast.png'
-import IMGProductionStack from '@/public/pngs/home/latestInsights/productionStack.png'
+// TODO: Remove articles from page after implementing strapi
+import articles from '@/mock/home/latestInsights/data'
 // END TODO
 
 export default function LatestInsights() {
-    // TODO: Replace with strapi
-    for(let i=0; i<4; i++){
-        articles[0+(i*3)].imageUrl = IMGLLamaEvent.src;
-        articles[1+(i*3)].imageUrl = IMGPodcast.src;
-        articles[2+(i*3)].imageUrl = IMGProductionStack.src;
-    }
-    // END TODO
-    
     return (
         <div id='blog' className='hidden xs:flex xs:flex-col xs:pt-[12vw] xs:pb-[7.7vw] xs:relative xs:w-full xs:h-fit xs:px-[7.78vw]'>
             <FadeIn delay={1} className='absolute w-full h-fit -top-[3.5vw] left-0 -z-[1]'>
@@ -52,7 +41,7 @@ export default function LatestInsights() {
                             author={card.author}
                             date={card.date}
                             imageUrl={card.imageUrl}
-                            link={card.link}
+                            link={`/blog/${card.slug}`}
                         />
                     </FadeUp>
                 ))}

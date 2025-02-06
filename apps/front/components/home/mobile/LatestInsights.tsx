@@ -8,11 +8,8 @@ import FadeUp from '@/components/common/universal/FadeUp'
 import IMGBackground from '@/public/pngs/home/latestInsights/backgroundMobile.png'
 import IMGGraffiti from '@/public/pngs/home/latestInsights/graffitiMobile.png'
 
-// TODO: Remove images from page after implementing strapi
-import IMGLLamaEvent from '@/public/pngs/home/latestInsights/llamaEvent.png'
-import IMGPodcast from '@/public/pngs/home/latestInsights/podcast.png'
-import IMGProductionStack from '@/public/pngs/home/latestInsights/productionStack.png'
-import articles from '@/mock/home/latestInsights/data.json'
+// TODO: Remove articles from page after implementing strapi
+import articles from '@/mock/home/latestInsights/data'
 // END TODO
 
 import { Swiper, SwiperSlide } from 'swiper/react';
@@ -27,10 +24,6 @@ export default function LatestInsights() {
     const [currentIndex, setCurrentIndex] = useState(0);
     const buttonPrevRef = useRef(null)
     const buttonNextRef = useRef(null)
-
-    articles[0].imageUrl = IMGLLamaEvent.src;
-    articles[1].imageUrl = IMGPodcast.src;
-    articles[2].imageUrl = IMGProductionStack.src;
 
     return (
         <div id='blog-mobile' className='xs:hidden flex flex-col pt-[30vw] pb-[7.7vw] relative w-full h-fit px-[5.6vw]'>
@@ -94,7 +87,7 @@ export default function LatestInsights() {
                         <Button variant='secondary' svg='scroll-left' />
                     </div>
                     <div className='flex basis-[80%] justify-center'>
-                        <Button target="_blank" as={Link} href={articles[currentIndex].link} variant='secondary' content='Read more' />
+                        <Button target="_blank" as={Link} href={`/blog/${articles[currentIndex].slug}`} variant='secondary' content='Read more' />
                     </div>
                     <div ref={buttonNextRef} className='flex basis-[10%] justify-end'>
                         <Button variant='secondary' svg='scroll-right' />

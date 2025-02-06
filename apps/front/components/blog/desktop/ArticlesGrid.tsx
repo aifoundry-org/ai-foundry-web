@@ -4,15 +4,12 @@ import { useState, useMemo } from 'react'
 import { useRouter, usePathname } from 'next/navigation';
 import { useQueryString } from '@/hooks/useQueryString';
 import useDebounce from '@/hooks/useDebounce';
-import articles from '@/mock/home/latestInsights/data.json'
 
-// TODO: Remove images from page after implementing strapi
-import IMGLLamaEvent from '@/public/pngs/home/latestInsights/llamaEvent.png'
-import IMGPodcast from '@/public/pngs/home/latestInsights/podcast.png'
-import IMGProductionStack from '@/public/pngs/home/latestInsights/productionStack.png'
+// TODO: Remove articles after implementing strapi
+import articles from '@/mock/home/latestInsights/data'
 // END TODO
 
-import InfinitePosts from './InfititePosts';
+import InfinitePosts from './InfititeArticles';
 import Filters from './Filters';
 import SearchInput from '../universal/SearchInput';
 import { FiltersOption, CheckOption } from '../universal/FiltersType';
@@ -49,12 +46,6 @@ export default function ArticlesGrid() {
             name: tag
         })
     })
-    
-    for(let i=0; i<4; i++){
-        articles[0+(i*3)].imageUrl = IMGLLamaEvent.src;
-        articles[1+(i*3)].imageUrl = IMGPodcast.src;
-        articles[2+(i*3)].imageUrl = IMGProductionStack.src;
-    }
     // END TODO
 
     const [filtersOptions, setFiltersOptions] = useState(getInitTags(tags, selectedTags));
@@ -88,8 +79,8 @@ export default function ArticlesGrid() {
                 <InfinitePosts
                     search={debouncedSearchTerm}
                     tags={selectedTags}
-                    initPosts={articles}
-                    featuredPostId={1}
+                    initArticles={articles}
+                    featuredArticleId={1}
                 />
             </div>
         </div>
