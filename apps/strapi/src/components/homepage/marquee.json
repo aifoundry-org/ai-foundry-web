@@ -1,0 +1,22 @@
+{
+  "collectionName": "components_homepage_marquees",
+  "info": {
+    "displayName": "marquee",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "first_text": {
+      "type": "string"
+    },
+    "second_text": {
+      "type": "string"
+    },
+    "third_text": {
+      "type": "string"
+    },
+    "fourth_text": {
+      "type": "string"
+    }
+  }
+}

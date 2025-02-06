@@ -1,0 +1,25 @@
+{
+  "collectionName": "components_about_us_investors",
+  "info": {
+    "displayName": "investors",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "companies": {
+      "displayName": "companies",
+      "type": "component",
+      "repeatable": true,
+      "component": "about-us.companies"
+    },
+    "individual_investors": {
+      "displayName": "individual_investors",
+      "type": "component",
+      "repeatable": true,
+      "component": "about-us.individual-investors"
+    }
+  }
+}

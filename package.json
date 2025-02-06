@@ -12,8 +12,7 @@
     "lint": "turbo run lint",
     "lint:fix": "turbo run lint:fix",
     "prepare": "husky install",
-    "commit": "git-cz",
-    "preinstall": "npx only-allow yarn"
+    "commit": "git-cz"
   },
   "devDependencies": {
     "turbo": "1.10.6"
@@ -27,6 +26,9 @@
     "@hello-litebox/commitlint": "^1.1.4",
     "commitizen": "^4.3.0",
     "husky": "^8.0.0"
+  },
+  "resolutions": {
+    "ajv": "^8.12.0"
   },
   "packageManager": "yarn@1.22.19",
   "config": {

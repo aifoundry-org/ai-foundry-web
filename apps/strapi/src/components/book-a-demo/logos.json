@@ -1,0 +1,18 @@
+{
+  "collectionName": "components_book_a_demo_logos",
+  "info": {
+    "displayName": "logos"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "logos_images": {
+      "displayName": "logo_images",
+      "type": "component",
+      "repeatable": true,
+      "component": "book-a-demo.logo-images"
+    }
+  }
+}

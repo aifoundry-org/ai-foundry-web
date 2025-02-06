@@ -1,0 +1,26 @@
+{
+  "collectionName": "components_security_cards",
+  "info": {
+    "displayName": "card",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "image": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "title": {
+      "type": "string",
+      "required": true,
+      "maxLength": 55
+    },
+    "items": {
+      "type": "json"
+    }
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "collectionName": "components_common_subscribe_tos",
+  "info": {
+    "displayName": "SubscribeTo"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "inputPlaceholder": {
+      "type": "string"
+    },
+    "buttonText": {
+      "type": "string"
+    },
+    "bottomClarification": {
+      "type": "string"
+    }
+  }
+}

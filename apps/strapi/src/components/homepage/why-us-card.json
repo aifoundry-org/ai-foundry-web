@@ -1,0 +1,27 @@
+{
+  "collectionName": "components_homepage_why_us_cards",
+  "info": {
+    "displayName": "why_us_card",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "image": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "title": {
+      "type": "string",
+      "maxLength": 50
+    },
+    "text": {
+      "type": "text",
+      "required": true,
+      "maxLength": 350
+    }
+  }
+}

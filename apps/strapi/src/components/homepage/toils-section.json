@@ -1,0 +1,25 @@
+{
+  "collectionName": "components_homepage_toils_sections",
+  "info": {
+    "displayName": "toils_section",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "lottie": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "files"
+      ]
+    },
+    "show_on_website": {
+      "type": "boolean",
+      "default": false
+    }
+  }
+}

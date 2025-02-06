@@ -1,0 +1,36 @@
+{
+  "kind": "singleType",
+  "collectionName": "book_a_demos",
+  "info": {
+    "singularName": "book-a-demo",
+    "pluralName": "book-a-demos",
+    "displayName": "Book a demo",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "metadata": {
+      "type": "component",
+      "repeatable": false,
+      "component": "seo.metadata"
+    },
+    "quote": {
+      "displayName": "quote",
+      "type": "component",
+      "repeatable": false,
+      "component": "book-a-demo.quote"
+    },
+    "logos": {
+      "displayName": "logos",
+      "type": "component",
+      "repeatable": false,
+      "component": "book-a-demo.logos"
+    },
+    "forbidden_email_domains": {
+      "type": "text"
+    }
+  }
+}

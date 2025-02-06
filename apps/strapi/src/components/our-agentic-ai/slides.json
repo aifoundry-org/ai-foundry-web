@@ -1,0 +1,41 @@
+{
+  "collectionName": "components_our_agentic_ai_slides",
+  "info": {
+    "displayName": "slides",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "maxLength": 55,
+      "required": true
+    },
+    "description": {
+      "type": "text",
+      "maxLength": 420,
+      "required": true
+    },
+    "diamond_color": {
+      "type": "enumeration",
+      "enum": [
+        "gray-50",
+        "orange-500",
+        "orange-900",
+        "green-500",
+        "green-900"
+      ]
+    },
+    "lottie": {
+      "type": "media",
+      "multiple": true,
+      "required": true,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    }
+  }
+}

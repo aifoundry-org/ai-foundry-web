@@ -1,0 +1,36 @@
+{
+  "collectionName": "components_homepage_cards",
+  "info": {
+    "displayName": "cards",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "maxLength": 50,
+      "required": true
+    },
+    "description": {
+      "type": "text",
+      "maxLength": 250,
+      "required": true
+    },
+    "image": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "button_CTA_text": {
+      "type": "string",
+      "required": true
+    },
+    "button_CTA_link": {
+      "type": "string",
+      "required": true
+    }
+  }
+}
