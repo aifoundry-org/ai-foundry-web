@@ -11,6 +11,7 @@ import 'swiper/css';
 import 'swiper/css/navigation';
 import FadeUp from '@/components/common/universal/FadeUp';
 import cards from '@/mock/home/openSourceProjects/data.json';
+import { Swiper as SwiperType } from 'swiper/types';
 
 export default function OpenSourceProjects() {
     //Add a state that will force a re-render
@@ -33,7 +34,7 @@ export default function OpenSourceProjects() {
             </FadeUp>
             <FadeUp delay={0.5} className='flex flex-col w-full h-full items-center justify-center'>
                 <Swiper
-                    onSlideChange={swiper => setCurrentIndex(swiper.realIndex)}
+                    onSlideChange={(swiper: SwiperType) => setCurrentIndex(swiper.realIndex)}
                     slidesPerView={1}
                     spaceBetween={40}
                     loop
