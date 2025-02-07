@@ -1,0 +1,18 @@
+{
+  "collectionName": "components_our_agentic_ai_structured_data_markups",
+  "info": {
+    "displayName": "structured_data_markup"
+  },
+  "options": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "url": {
+      "type": "string"
+    },
+    "description": {
+      "type": "text"
+    }
+  }
+}

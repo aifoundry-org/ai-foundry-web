@@ -1,0 +1,29 @@
+{
+  "collectionName": "components_customer_post_highlights",
+  "info": {
+    "displayName": "highlights",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "description": {
+      "type": "string"
+    },
+    "iconType": {
+      "type": "enumeration",
+      "enum": [
+        "none",
+        "arrowUp",
+        "arrowDown"
+      ],
+      "default": "none"
+    },
+    "isFeatured": {
+      "type": "boolean",
+      "default": false
+    }
+  }
+}

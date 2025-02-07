@@ -1,0 +1,39 @@
+{
+  "kind": "singleType",
+  "collectionName": "customers",
+  "info": {
+    "singularName": "customer",
+    "pluralName": "customers",
+    "displayName": "Customer",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "hero": {
+      "displayName": "hero",
+      "type": "component",
+      "repeatable": false,
+      "component": "customer.hero"
+    },
+    "book_a_demo_banner": {
+      "displayName": "book_a_demo_banner",
+      "type": "component",
+      "repeatable": false,
+      "component": "customer.book-a-demo-banner"
+    },
+    "metadata": {
+      "type": "component",
+      "repeatable": false,
+      "component": "seo.metadata"
+    },
+    "structured_data_markup": {
+      "displayName": "structured_data_markup",
+      "type": "component",
+      "repeatable": false,
+      "component": "customer.structured-data-markup"
+    }
+  }
+}

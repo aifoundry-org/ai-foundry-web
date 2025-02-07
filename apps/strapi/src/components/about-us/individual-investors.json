@@ -1,0 +1,18 @@
+{
+  "collectionName": "components_about_us_individual_investors",
+  "info": {
+    "displayName": "individual_investors"
+  },
+  "options": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "position": {
+      "type": "string"
+    },
+    "link": {
+      "type": "string"
+    }
+  }
+}

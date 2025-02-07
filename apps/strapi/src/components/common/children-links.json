@@ -1,0 +1,15 @@
+{
+  "collectionName": "components_common_children_links",
+  "info": {
+    "displayName": "children_links"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "href": {
+      "type": "string"
+    }
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "collectionName": "components_product_production_issues",
+  "info": {
+    "displayName": "production_issues"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "issues_list": {
+      "displayName": "issues_list",
+      "type": "component",
+      "repeatable": true,
+      "component": "product.issues-list"
+    }
+  }
+}

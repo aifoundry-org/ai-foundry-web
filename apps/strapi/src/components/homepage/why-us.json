@@ -1,0 +1,24 @@
+{
+  "collectionName": "components_homepage_why_uses",
+  "info": {
+    "displayName": "why_us",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true,
+      "maxLength": 90
+    },
+    "why_us_cards": {
+      "displayName": "why_us_card",
+      "type": "component",
+      "repeatable": true,
+      "component": "homepage.why-us-card",
+      "max": 3,
+      "min": 3,
+      "required": true
+    }
+  }
+}
