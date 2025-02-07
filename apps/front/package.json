@@ -9,8 +9,7 @@
     "lint": "eslint --max-warnings=0 . ",
     "prelint": "tsc --noEmit",
     "prelint:fix": "tsc --noEmit && prettier --write .",
-    "lint:fix": "eslint --fix .",
-    "preinstall": "npx only-allow yarn"
+    "lint:fix": "eslint --fix ."
   },
   "dependencies": {
     "@dotlottie/react-player": "^1.6.19",
