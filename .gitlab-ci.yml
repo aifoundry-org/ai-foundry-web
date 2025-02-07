@@ -4,10 +4,10 @@ default:
 stages: # List of stages for jobs, and their order of execution
   - install_and_build
 
-# install_and_build: # This job runs in the build stage, which runs first.
-  # stage: install_and_build
-  # before_script:
-    # - corepack enable
-    # - corepack prepare yarn@latest --activate
-  # script:
-    # - yarn install && yarn build
+install_and_build: # This job runs in the build stage, which runs first.
+  stage: install_and_build
+  before_script:
+    - corepack enable
+    - corepack prepare yarn@latest --activate
+  script:
+    - yarn install && yarn build
