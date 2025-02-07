@@ -28,7 +28,8 @@
     "@hello-litebox/commit-prompt": "^1.1.6",
     "@hello-litebox/commitlint": "^1.1.4",
     "commitizen": "^4.3.0",
-    "husky": "^8.0.0"
+    "husky": "^8.0.0",
+    "sharp": "^0.33.5"
   },
   "packageManager": "yarn@1.22.19",
   "config": {
