@@ -1,0 +1,16 @@
+{
+  "collectionName": "components_homepage_our_blogs",
+  "info": {
+    "displayName": "Our Blog",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "button_CTA_text": {
+      "type": "string"
+    }
+  }
+}

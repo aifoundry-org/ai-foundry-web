@@ -1,0 +1,19 @@
+{
+  "collectionName": "components_product_structured_data_markups",
+  "info": {
+    "displayName": "structured_data_markup",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "url": {
+      "type": "string"
+    },
+    "description": {
+      "type": "text"
+    }
+  }
+}

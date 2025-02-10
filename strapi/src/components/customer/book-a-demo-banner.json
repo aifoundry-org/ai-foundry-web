@@ -1,0 +1,24 @@
+{
+  "collectionName": "components_customer_book_a_demo_banners",
+  "info": {
+    "displayName": "book_a_demo_banner",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true,
+      "maxLength": 55
+    },
+    "description": {
+      "type": "text",
+      "maxLength": 100
+    },
+    "button_CTA_text": {
+      "type": "string",
+      "required": true,
+      "maxLength": 15
+    }
+  }
+}

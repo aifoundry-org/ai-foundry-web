@@ -1,0 +1,56 @@
+{
+  "kind": "singleType",
+  "collectionName": "securities",
+  "info": {
+    "singularName": "security",
+    "pluralName": "securities",
+    "displayName": "Security",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "hero": {
+      "displayName": "hero",
+      "type": "component",
+      "repeatable": false,
+      "component": "security.hero"
+    },
+    "metadata": {
+      "type": "component",
+      "repeatable": false,
+      "component": "seo.metadata"
+    },
+    "structured_data_markup": {
+      "displayName": "structured_data_markup",
+      "type": "component",
+      "repeatable": false,
+      "component": "security.structured-data-markup"
+    },
+    "trust_banner": {
+      "displayName": "trust_banner",
+      "type": "component",
+      "repeatable": false,
+      "component": "security.trust-banner"
+    },
+    "enterprise_control": {
+      "displayName": "Enterprise Control",
+      "type": "component",
+      "repeatable": false,
+      "component": "security.enterprise-control"
+    },
+    "organization_data": {
+      "displayName": "Organization Data",
+      "type": "component",
+      "repeatable": false,
+      "component": "security.organization-data"
+    },
+    "technology_tools": {
+      "type": "component",
+      "repeatable": false,
+      "component": "homepage.how-does-resolve-works"
+    }
+  }
+}

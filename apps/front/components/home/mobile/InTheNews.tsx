@@ -13,6 +13,7 @@ import 'swiper/css/navigation';
 
 import FadeUp from '@/components/common/universal/FadeUp';
 import FadeIn from '@/components/common/universal/FadeIn';
+import {Swiper as SwiperType} from 'swiper'
 
 export default function InTheNews() {
     //Add a state that will force a re-render
@@ -32,7 +33,7 @@ export default function InTheNews() {
             </FadeUp>
             <div className='flex flex-col w-full h-full items-center justify-center'>
                 <Swiper
-                    onSlideChange={swiper => setCurrentIndex(swiper.activeIndex)}
+                    onSlideChange={(swiper: SwiperType) => setCurrentIndex(swiper.activeIndex)}
                     slidesPerView={1}
                     spaceBetween={40}
                     loop

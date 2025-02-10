@@ -1,0 +1,54 @@
+{
+  "kind": "singleType",
+  "collectionName": "products",
+  "info": {
+    "singularName": "product",
+    "pluralName": "products",
+    "displayName": "Product",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "hero": {
+      "displayName": "hero",
+      "type": "component",
+      "repeatable": false,
+      "component": "product.hero"
+    },
+    "metadata": {
+      "type": "component",
+      "repeatable": false,
+      "component": "seo.metadata"
+    },
+    "structured_data_markup": {
+      "displayName": "structured_data_markup",
+      "type": "component",
+      "repeatable": false,
+      "component": "product.structured-data-markup"
+    },
+    "book_a_demo_banner": {
+      "type": "component",
+      "repeatable": false,
+      "component": "product.book-a-demo-banner"
+    },
+    "product_view": {
+      "type": "component",
+      "repeatable": false,
+      "component": "homepage.product-view"
+    },
+    "technology_tools": {
+      "type": "component",
+      "repeatable": false,
+      "component": "homepage.how-does-resolve-works"
+    },
+    "production_issues": {
+      "displayName": "production_issues",
+      "type": "component",
+      "repeatable": false,
+      "component": "product.production-issues"
+    }
+  }
+}

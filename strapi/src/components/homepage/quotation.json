@@ -1,0 +1,38 @@
+{
+  "collectionName": "components_homepage_quotations",
+  "info": {
+    "displayName": "quotation",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "quote": {
+      "type": "text"
+    },
+    "author": {
+      "type": "string"
+    },
+    "job": {
+      "type": "string"
+    },
+    "picture": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "author_link": {
+      "type": "string"
+    },
+    "company_logo": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images"
+      ]
+    }
+  }
+}

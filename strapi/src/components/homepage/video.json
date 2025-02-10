@@ -1,0 +1,31 @@
+{
+  "collectionName": "components_homepage_videos",
+  "info": {
+    "displayName": "video",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "video_poster": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "video": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": [
+        "videos"
+      ]
+    },
+    "play_button_text": {
+      "type": "string",
+      "maxLength": 15,
+      "required": true
+    }
+  }
+}

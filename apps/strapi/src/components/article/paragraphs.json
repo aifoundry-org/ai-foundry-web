@@ -1,0 +1,17 @@
+{
+  "collectionName": "components_article_paragraphs",
+  "info": {
+    "displayName": "Paragraphs",
+    "icon": "bulletList",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "content": {
+      "type": "blocks"
+    },
+    "tag": {
+      "type": "string"
+    }
+  }
+}

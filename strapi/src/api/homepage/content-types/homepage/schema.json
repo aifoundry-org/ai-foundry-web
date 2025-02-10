@@ -1,0 +1,105 @@
+{
+  "kind": "singleType",
+  "collectionName": "homepages",
+  "info": {
+    "singularName": "homepage",
+    "pluralName": "homepages",
+    "displayName": "homepage",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "what_is_resolved": {
+      "displayName": "what_is_resolved",
+      "type": "component",
+      "repeatable": false,
+      "component": "homepage.what-is-resolved"
+    },
+    "how_does_resolve_works": {
+      "displayName": "how_does_resolve_works",
+      "type": "component",
+      "repeatable": false,
+      "component": "homepage.how-does-resolve-works"
+    },
+    "quotations_section": {
+      "displayName": "quotations_section",
+      "type": "component",
+      "repeatable": false,
+      "component": "homepage.quotations-section"
+    },
+    "toils_section": {
+      "displayName": "toils_section",
+      "type": "component",
+      "repeatable": false,
+      "component": "homepage.toils-section"
+    },
+    "hero": {
+      "displayName": "hero",
+      "type": "component",
+      "repeatable": false,
+      "component": "homepage.hero"
+    },
+    "marquee": {
+      "displayName": "marquee",
+      "type": "component",
+      "repeatable": false,
+      "component": "homepage.marquee"
+    },
+    "why_us": {
+      "displayName": "why_us",
+      "type": "component",
+      "repeatable": false,
+      "component": "homepage.why-us"
+    },
+    "product_view": {
+      "displayName": "product_view",
+      "type": "component",
+      "repeatable": false,
+      "component": "homepage.product-view"
+    },
+    "work_with_us_banner": {
+      "displayName": "work_with_us_banner",
+      "type": "component",
+      "repeatable": false,
+      "component": "homepage.work-with-us-banner"
+    },
+    "metadata": {
+      "displayName": "metadata",
+      "type": "component",
+      "repeatable": false,
+      "component": "seo.metadata"
+    },
+    "our_blog": {
+      "type": "component",
+      "repeatable": false,
+      "component": "homepage.our-blog"
+    },
+    "structured_data_markup": {
+      "displayName": "structured_data_markup",
+      "type": "component",
+      "repeatable": false,
+      "component": "homepage.structured-data-markup"
+    },
+    "common_production_issues": {
+      "displayName": "Common Production Issues",
+      "type": "component",
+      "repeatable": false,
+      "component": "homepage.common-production-issues"
+    },
+    "our_community": {
+      "displayName": "our_community",
+      "type": "component",
+      "repeatable": false,
+      "component": "homepage.our-community"
+    },
+    "agentic_ai": {
+      "displayName": "agentic_ai",
+      "type": "component",
+      "repeatable": false,
+      "component": "homepage.agentic-ai"
+    }
+  }
+}

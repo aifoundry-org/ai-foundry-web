@@ -4,6 +4,7 @@ import { useRef, useState } from 'react'
 import Link from 'next/link';
 import Button from '@/libs/litebox-lib/ui/Button/Button'
 import FadeUp from '@/components/common/universal/FadeUp'
+import { Swiper as SwiperType } from 'swiper/types';
 
 import IMGBackground from '@/public/pngs/home/latestInsights/backgroundMobile.png'
 import IMGGraffiti from '@/public/pngs/home/latestInsights/graffitiMobile.png'
@@ -47,7 +48,7 @@ export default function LatestInsights() {
             </FadeUp>
             <FadeUp className='flex flex-col w-full h-full items-center justify-center'>
                 <Swiper
-                    onSlideChange={swiper => setCurrentIndex(swiper.activeIndex)}
+                    onSlideChange={(swiper: SwiperType) => setCurrentIndex(swiper.activeIndex)}
                     slidesPerView={1}
                     spaceBetween={40}
                     loop

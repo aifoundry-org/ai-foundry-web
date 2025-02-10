@@ -1,0 +1,28 @@
+{
+  "kind": "collectionType",
+  "collectionName": "pages_links",
+  "info": {
+    "singularName": "pages-link",
+    "pluralName": "pages-links",
+    "displayName": "Pages_link",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "href": {
+      "type": "string"
+    },
+    "children_links": {
+      "displayName": "children_links",
+      "type": "component",
+      "repeatable": true,
+      "component": "common.children-links"
+    }
+  }
+}
