@@ -2,10 +2,15 @@
   "name": "@ai-foundry/root",
   "version": "0.0.0",
   "private": true,
-  "workspaces": [
-    "packages/*",
-    "apps/*"
-  ],
+  "workspaces": {
+    "packages": [
+      "apps/*"
+    ],
+    "nohoist": [
+      "**/@strapi/strapi",
+      "**/@strapi/**"
+    ]
+  },
   "scripts": {
     "build": "turbo run build --filter=apps/front",
     "dev": "turbo run dev --filter=apps/front",
