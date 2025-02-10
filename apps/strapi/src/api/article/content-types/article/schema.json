@@ -28,11 +28,6 @@
         "images"
       ]
     },
-    "tags": {
-      "type": "relation",
-      "relation": "oneToMany",
-      "target": "api::tag.tag"
-    },
     "seo": {
       "type": "component",
       "repeatable": false,
@@ -56,6 +51,11 @@
       "type": "component",
       "repeatable": true,
       "component": "article.content-navigation"
+    },
+    "tags": {
+      "type": "component",
+      "repeatable": true,
+      "component": "article.tag"
     }
   }
 }

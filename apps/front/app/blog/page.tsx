@@ -4,8 +4,12 @@ import MainDesktop from '@/components/blog/desktop/Main';
 import MainMobile from '@/components/blog/mobile/Main';
 import ArticlesGridDesktop from '@/components/blog/desktop/ArticlesGrid'
 import ArticlesGridMobile from '@/components/blog/mobile/ArticlesGrid'
+import { getArticles } from '@/backend/blog/actions';
 
-export default function Page() {
+const Page = async () => {
+  const allArticles = await getArticles();
+  console.log(allArticles)
+
   return (
     <main>
       <MainDesktop />
@@ -18,3 +22,5 @@ export default function Page() {
     </main>
   );
 }
+
+export default Page;
