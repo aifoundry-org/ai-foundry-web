@@ -1,0 +1,26 @@
+{
+  "collectionName": "components_homepage_what_is_resolveds",
+  "info": {
+    "displayName": "what_is_resolved",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "first_main_text": {
+      "type": "string"
+    },
+    "second_main_text": {
+      "type": "string"
+    },
+    "small_description": {
+      "type": "text"
+    },
+    "show_on_website": {
+      "type": "boolean",
+      "default": false
+    }
+  }
+}

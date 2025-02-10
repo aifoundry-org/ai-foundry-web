@@ -1,0 +1,16 @@
+{
+  "collectionName": "components_about_us_bottom_slides",
+  "info": {
+    "displayName": "bottom_slides"
+  },
+  "options": {},
+  "attributes": {
+    "image": {
+      "allowedTypes": [
+        "images"
+      ],
+      "type": "media",
+      "multiple": false
+    }
+  }
+}

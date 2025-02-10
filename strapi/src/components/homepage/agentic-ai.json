@@ -1,0 +1,24 @@
+{
+  "collectionName": "components_homepage_agentic_ais",
+  "info": {
+    "displayName": "agentic_ai",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "title": {
+      "type": "string"
+    },
+    "items": {
+      "displayName": "items",
+      "type": "component",
+      "repeatable": true,
+      "component": "homepage.items",
+      "required": true,
+      "min": 1
+    }
+  }
+}

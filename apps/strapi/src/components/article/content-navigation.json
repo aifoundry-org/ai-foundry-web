@@ -1,0 +1,16 @@
+{
+  "collectionName": "components_article_content_navigations",
+  "info": {
+    "displayName": "ContentNavigation",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "content": {
+      "type": "string"
+    },
+    "tag": {
+      "type": "string"
+    }
+  }
+}

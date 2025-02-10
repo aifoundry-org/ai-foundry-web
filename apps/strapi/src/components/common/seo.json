@@ -1,0 +1,38 @@
+{
+  "collectionName": "components_common_seos",
+  "info": {
+    "displayName": "SEO",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "canonical": {
+      "type": "string"
+    },
+    "openGraphUrl": {
+      "type": "string"
+    },
+    "openGraphImages": {
+      "type": "media",
+      "multiple": true,
+      "required": false,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "openGraphSiteName": {
+      "type": "string"
+    },
+    "twitterSiteId": {
+      "type": "string"
+    },
+    "twitterCardType": {
+      "type": "string",
+      "default": "summary_large_image",
+      "required": true
+    },
+    "twitterCreatorId": {
+      "type": "string"
+    }
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "collectionName": "components_homepage_quotations_sections",
+  "info": {
+    "displayName": "quotations_section"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "slider": {
+      "type": "component",
+      "repeatable": true,
+      "component": "homepage.quotation"
+    }
+  }
+}

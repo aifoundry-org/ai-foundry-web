@@ -1,0 +1,18 @@
+{
+  "collectionName": "components_about_us_postal_addresses",
+  "info": {
+    "displayName": "postal_address"
+  },
+  "options": {},
+  "attributes": {
+    "addressLocality": {
+      "type": "string"
+    },
+    "addressRegion": {
+      "type": "string"
+    },
+    "addressCountry": {
+      "type": "string"
+    }
+  }
+}

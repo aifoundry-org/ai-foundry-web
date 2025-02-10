@@ -1,0 +1,28 @@
+{
+  "collectionName": "components_about_us_our_resolves",
+  "info": {
+    "displayName": "our_resolve",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "main_text": {
+      "type": "text"
+    },
+    "first_description_text": {
+      "type": "text"
+    },
+    "second_description_text": {
+      "type": "text"
+    },
+    "third_description_text": {
+      "type": "text"
+    },
+    "fourth_description_text": {
+      "type": "text"
+    }
+  }
+}

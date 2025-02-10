@@ -1,0 +1,18 @@
+{
+  "collectionName": "components_homepage_our_communities",
+  "info": {
+    "displayName": "our_community",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "social_medias": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::social-media.social-media"
+    }
+  }
+}

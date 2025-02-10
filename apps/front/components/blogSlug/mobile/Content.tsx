@@ -1,7 +1,5 @@
 'use client'
 
-import IMGArticleVideo from '@/public/pngs/blogSlug/articleVideoMobile.png'
-
 export default function Content() {
     return (
         <div className='mb-16'>
@@ -24,7 +22,7 @@ export default function Content() {
                 <p>Obviously, at first it's used for a lot of decision-making, and that's where business intelligence comes in. This concept isn't new; it started long before computers. Corporations have always needed to make predictions, signaling to stock markets what they expect for the next quarter or further ahead. This is the first level of data usage, a very straightforward, business-oriented approach to making informed decisions.</p>
             </div>
             <div className='flex flex-row items-center justify-between mb-[7vw]'>
-                <img src={IMGArticleVideo.src} className='w-full border-black rounded-lg' />
+                <iframe src="https://www.youtube.com/embed/8vK49z1D55k" className='w-[32.7rem] h-[31.5rem]' />
             </div>
             <div className='flex flex-col font-normal text-[1.4rem] font-host-grotesk gap-y-[1.6rem] mb-[2.4rem]'>
                 <p>The second level of data usage emerged with the concept of digitally defined enterprises or digital transformation. Companies realized that the value lay not in the actual product they were selling but in their relationship with their customers. It became about keeping customers engaged, extending the relationship for as long as possible. This was linked to the popularity of social networks, where companies aimed to shape consumer behavior, keeping individuals engaged by analyzing aspects like their economic status, gender identity, and preferences. Enterprises aimed to know everything about their customers to retain their attention for as long as possible.</p>

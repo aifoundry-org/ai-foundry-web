@@ -1,0 +1,31 @@
+{
+  "collectionName": "components_product_product_slides",
+  "info": {
+    "displayName": "product_slides",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "lottie": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "description": {
+      "type": "text"
+    },
+    "background_color": {
+      "type": "string"
+    }
+  }
+}

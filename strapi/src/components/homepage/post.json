@@ -1,0 +1,31 @@
+{
+  "collectionName": "components_homepage_posts",
+  "info": {
+    "displayName": "post"
+  },
+  "options": {},
+  "attributes": {
+    "username": {
+      "type": "string"
+    },
+    "user": {
+      "type": "string"
+    },
+    "description": {
+      "type": "text"
+    },
+    "url": {
+      "type": "string"
+    },
+    "image": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": true
+    }
+  }
+}

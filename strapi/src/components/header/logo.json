@@ -1,0 +1,14 @@
+{
+  "collectionName": "components_header_logos",
+  "info": {
+    "displayName": "logo"
+  },
+  "options": {},
+  "attributes": {
+    "logo": {
+      "type": "component",
+      "repeatable": false,
+      "component": "common.link"
+    }
+  }
+}

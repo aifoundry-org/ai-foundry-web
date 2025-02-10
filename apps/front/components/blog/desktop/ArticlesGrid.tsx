@@ -80,7 +80,7 @@ export default function ArticlesGrid() {
                     search={debouncedSearchTerm}
                     tags={selectedTags}
                     initArticles={articles}
-                    featuredArticleId={1}
+                    featuredArticleId={0}
                 />
             </div>
         </div>

@@ -1,0 +1,23 @@
+{
+  "collectionName": "components_security_organization_data",
+  "info": {
+    "displayName": "Organization Data",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "maxLength": 55,
+      "required": true
+    },
+    "cards": {
+      "displayName": "card",
+      "type": "component",
+      "repeatable": true,
+      "component": "security.card",
+      "max": 3,
+      "min": 2
+    }
+  }
+}
