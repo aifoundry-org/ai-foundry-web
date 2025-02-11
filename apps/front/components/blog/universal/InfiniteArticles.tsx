@@ -1,17 +1,7 @@
 import { useState, useEffect, useMemo } from 'react';
-
 import { getArticles } from '@/backend/blog/actions';
-import { PAGINATION_LIMIT } from '../universal/InfiniteArticlesType';
-import { StrapiArticle } from '@/libs/litebox-lib/types/strapi/strapiBlog';
+import { PAGINATION_LIMIT, InfiniteArticlesProps } from './InfiniteArticlesType';
 import Spinner from '@/components/common/universal/Spinner';
-
-interface InfiniteArticlesProps {
-  search: string;
-  tags: string[];
-  initArticles: StrapiArticle[];
-  featuredArticleId?: number;
-  InfiniteArticleComponent: any;
-}
 
 const InfiniteArticles = ({
   search,

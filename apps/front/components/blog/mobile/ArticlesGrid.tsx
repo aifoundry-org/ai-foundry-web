@@ -29,16 +29,16 @@ interface ArticlesGridProps {
 }
 
 export default function ArticlesGrid({articles, search, tags, selectedTags}: ArticlesGridProps) {
-    const [searchTerm, setSearchTerm] = useState(search);
-    const debouncedSearchTerm = useDebounce(searchTerm, 300);
-    const [filtersOptions, setFiltersOptions] = useState(getInitTags(tags, selectedTags));
     const pathname = usePathname();
     const { replace } = useRouter();
     const router = useRouter();
     const { createQueryString } = useQueryString();
     const searchParams = useSearchParams();
-    const tagsParams = searchParams.get('tags');
 
+    const [searchTerm, setSearchTerm] = useState(search);
+    const debouncedSearchTerm = useDebounce(searchTerm, 300);
+    const [filtersOptions, setFiltersOptions] = useState(getInitTags(tags, selectedTags));
+    const tagsParams = searchParams.get('tags');
     const hasMoreArticles = useMemo(() => articles.data.length > 0, [articles]);
 
     useEffect(() => {
