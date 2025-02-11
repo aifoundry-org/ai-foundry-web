@@ -1,5 +1,5 @@
 import qs from 'qs';
-import { PAGINATION_LIMIT } from '@/components/blog/universal/InfiniteArticlesType';
+import { PAGINATION_LIMIT } from '@/components/blog/universal/InfiniteArticlesContainerType';
 
 export const getArticlesQueryParams = (search?: string, tags?: string[], offset?: number) => {
     const config = {
