@@ -28,8 +28,8 @@ interface ArticlesGridProps {
     selectedTags: string[];
 }
 
-export default function ArticlesGrid({articles, search: initialSearch, tags, selectedTags}: ArticlesGridProps) {
-    const [searchTerm, setSearchTerm] = useState(initialSearch);
+export default function ArticlesGrid({articles, search, tags, selectedTags}: ArticlesGridProps) {
+    const [searchTerm, setSearchTerm] = useState(search);
     const debouncedSearchTerm = useDebounce(searchTerm, 300);
     const [filtersOptions, setFiltersOptions] = useState(getInitTags(tags, selectedTags));
     const pathname = usePathname();
@@ -42,30 +42,30 @@ export default function ArticlesGrid({articles, search: initialSearch, tags, sel
     const hasMoreArticles = useMemo(() => articles.data.length > 0, [articles]);
 
     useEffect(() => {
-    if (debouncedSearchTerm !== initialSearch) {
-        const newUrl = debouncedSearchTerm
-        ? `${pathname}?${createQueryString('search', [debouncedSearchTerm])}`
-        : `${pathname}${
-            tagsParams
-                ? `?tags=${tagsParams
-                    .split(',')
-                    .map(tag => encodeURIComponent(tag))
-                    .join('%2C')}`
-                : ''
-            }`;
-        replace(newUrl, { scroll: false });
-    }
-    }, [debouncedSearchTerm, initialSearch, pathname, replace, createQueryString, tagsParams, router]);
+        if (debouncedSearchTerm !== search) {
+            const newUrl = debouncedSearchTerm
+            ? `${pathname}?${createQueryString('search', [debouncedSearchTerm])}`
+            : `${pathname}${
+                tagsParams
+                    ? `?tags=${tagsParams
+                        .split(',')
+                        .map(tag => encodeURIComponent(tag))
+                        .join('%2C')}`
+                    : ''
+                }`;
+            replace(newUrl, { scroll: false });
+        }
+    }, [debouncedSearchTerm, search, pathname, replace, createQueryString, tagsParams, router]);
 
-    const handleCheckboxChange = (updatedOption: CheckOption) => {
+    const handleFilterClick = (updatedOption: CheckOption) => {
         const updatedfiltersOptions = filtersOptions.map(option => ({
             ...option,
             isChecked: option.id === updatedOption.id ? updatedOption.isChecked : option.isChecked,
-        }
-    ));
-    const checkedFilters = updatedfiltersOptions.filter(option => option.isChecked).map(option => option.id);
+        }));
 
-    setFiltersOptions(updatedfiltersOptions);
+        const checkedFilters = updatedfiltersOptions.filter(option => option.isChecked).map(option => option.id);
+
+        setFiltersOptions(updatedfiltersOptions);
         replace(`${pathname}?${createQueryString('tags', checkedFilters)}`, { scroll: false });
     };
 
@@ -76,7 +76,7 @@ export default function ArticlesGrid({articles, search: initialSearch, tags, sel
     return (
         <div className='md:hidden m-auto text-center px-10 mb-14 pt-2'>
             <div className='flex flex-col items-start gap-4 mb-16'>
-                <Filters options={filtersOptions} onChange={handleCheckboxChange} />
+                <Filters options={filtersOptions} onClick={handleFilterClick} />
                 <SearchInput className='w-full mt-5' value={searchTerm} onChange={handleSearch} />
             </div>
             <div>
