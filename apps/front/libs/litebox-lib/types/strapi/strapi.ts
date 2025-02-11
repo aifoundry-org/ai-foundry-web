@@ -11,11 +11,13 @@ export interface StrapiDefaultAttributes {
 
 export interface StrapiData<T> {
 	data: T;
-}
-
-export interface StrapiAttributes<TAttributes extends object> {
-	id: number;
-	attributes: TAttributes;
+	meta: {
+		pagination: {
+			start: number,
+			limit: number,
+			total: number
+		}
+	}
 }
 
 export interface StrapiBaseMedia extends StrapiDefaultAttributes {
@@ -48,38 +50,6 @@ export interface StrapiBaseMedia extends StrapiDefaultAttributes {
 	placeholder: string | null;
 }
 
-export type StrapiAttributesMedia = StrapiAttributes<StrapiBaseMedia>;
-export type StrapiMedia = StrapiData<StrapiAttributesMedia>;
-export type StrapiMultipleMedia = StrapiData<StrapiAttributesMedia[]>;
-
-export interface StrapiAuthor extends StrapiDefaultAttributes {
-	name: string;
-	role?: string;
-	profileImage: StrapiMedia;
-	description?: string;
-	youtube_link?: string;
-	linkedin_link?: string;
-	instagram_link?: string;
-}
-
-export interface StrapiSeoComponent {
-	title?: string;
-	description?: string;
-	canonical?: string;
-	openGraphUrl?: string;
-	openGraphImages?: StrapiMultipleMedia;
-	openGraphSiteName?: string;
-	twitterSiteId?: string;
-	twitterCardType?: 'summary' | 'summary_large_image' | 'player' | 'app';
-	twitterCreatorId?: string;
-}
-
-export interface StrapiParagraph extends StrapiDefaultAttributes {
-	content: string;
-	tag: string;
-}
-
-export interface StrapiContentNavigation extends StrapiDefaultAttributes {
-	content: string;
-	tag: string;
-}
+export type StrapiAttributesMedia = StrapiBaseMedia;
+export type StrapiMedia = StrapiAttributesMedia;
+export type StrapiMultipleMedia = StrapiAttributesMedia[];

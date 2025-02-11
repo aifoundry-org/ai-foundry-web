@@ -25,17 +25,6 @@ export interface ArticleParagraphs extends Struct.ComponentSchema {
   };
 }
 
-export interface ArticleTag extends Struct.ComponentSchema {
-  collectionName: 'components_article_tags';
-  info: {
-    displayName: 'tag';
-    icon: 'priceTag';
-  };
-  attributes: {
-    content: Schema.Attribute.String;
-  };
-}
-
 export interface CommonSeo extends Struct.ComponentSchema {
   collectionName: 'components_common_seos';
   info: {
@@ -73,7 +62,6 @@ declare module '@strapi/strapi' {
     export interface ComponentSchemas {
       'article.content-navigation': ArticleContentNavigation;
       'article.paragraphs': ArticleParagraphs;
-      'article.tag': ArticleTag;
       'common.seo': CommonSeo;
       'seo.metadata': SeoMetadata;
     }

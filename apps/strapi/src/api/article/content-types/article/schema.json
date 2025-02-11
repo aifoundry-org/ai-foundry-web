@@ -53,9 +53,10 @@
       "component": "article.content-navigation"
     },
     "tags": {
-      "type": "component",
-      "repeatable": true,
-      "component": "article.tag"
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::tag.tag",
+      "inversedBy": "articles"
     }
   }
 }

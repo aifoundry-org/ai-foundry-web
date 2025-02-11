@@ -17,9 +17,9 @@ export const getArticlesQueryParams = (search?: string, tags?: string[], offset?
             }),
         },
         populate: {
-            coverImage: '*',
-            seo: '*',
-            tags: '*',
+            coverImage: true,
+            seo: true,
+            tags: true,
             authors: {
                 fields: ['name'],
             },

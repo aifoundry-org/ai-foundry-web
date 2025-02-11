@@ -1,14 +1,16 @@
 'use client'
 
-import { useState, useMemo } from 'react'
-import { useRouter, usePathname } from 'next/navigation';
+import { useState, useMemo, useEffect } from 'react'
+import { useRouter, usePathname, useSearchParams } from 'next/navigation';
 import { useQueryString } from '@/hooks/useQueryString';
 import useDebounce from '@/hooks/useDebounce';
-import articles from '@/mock/home/latestInsights/data'
-import InfiniteArticles from './InfititeArticles';
+import InfiniteArticles from '../universal/InfiniteArticles';
 import Filters from './Filters';
 import SearchInput from '../universal/SearchInput';
 import { FiltersOption, CheckOption } from '../universal/FiltersType';
+import { StrapiData } from '@/libs/litebox-lib/types/strapi/strapi';
+import { StrapiArticle } from '@/libs/litebox-lib/types/strapi/strapiBlog';
+import InfiniteArticle from './InfititeArticle';
 
 const getInitTags = (tags: FiltersOption[], selectedTags: string[]) => {
     const formattedTags = tags.map(tag => ({
@@ -19,49 +21,57 @@ const getInitTags = (tags: FiltersOption[], selectedTags: string[]) => {
     return formattedTags;
 };
 
-export default function ArticlesGrid() {
-    const [searchTerm, setSearchTerm] = useState('');
+interface ArticlesGridProps {
+    articles: StrapiData<StrapiArticle[]>;
+    search: string;
+    tags: FiltersOption[];
+    selectedTags: string[];
+}
+
+export default function ArticlesGrid({articles, search: initialSearch, tags, selectedTags}: ArticlesGridProps) {
+    const [searchTerm, setSearchTerm] = useState(initialSearch);
     const debouncedSearchTerm = useDebounce(searchTerm, 300);
-    const { replace } = useRouter();
-    const { createQueryString } = useQueryString();
-    const pathname = usePathname();
-    const selectedTags : Array<string> = []
-    
-    // TODO: Replace with strapi implementation
-    let allTags: Array<string> = []
-    articles.forEach(article => {
-        allTags.push(...article.tags);
-    })
-
-    allTags = [...new Set(allTags)]
-    const tags: Array<FiltersOption> = []
-    allTags.forEach((tag, i) => {
-        tags.push({
-            id: i.toString(),
-            isChecked: false,
-            name: tag
-        })
-    })
-    // END TODO
-
     const [filtersOptions, setFiltersOptions] = useState(getInitTags(tags, selectedTags));
+    const pathname = usePathname();
+    const { replace } = useRouter();
+    const router = useRouter();
+    const { createQueryString } = useQueryString();
+    const searchParams = useSearchParams();
+    const tagsParams = searchParams.get('tags');
+
+    const hasMoreArticles = useMemo(() => articles.data.length > 0, [articles]);
+
+    useEffect(() => {
+    if (debouncedSearchTerm !== initialSearch) {
+        const newUrl = debouncedSearchTerm
+        ? `${pathname}?${createQueryString('search', [debouncedSearchTerm])}`
+        : `${pathname}${
+            tagsParams
+                ? `?tags=${tagsParams
+                    .split(',')
+                    .map(tag => encodeURIComponent(tag))
+                    .join('%2C')}`
+                : ''
+            }`;
+        replace(newUrl, { scroll: false });
+    }
+    }, [debouncedSearchTerm, initialSearch, pathname, replace, createQueryString, tagsParams, router]);
 
     const handleCheckboxChange = (updatedOption: CheckOption) => {
         const updatedfiltersOptions = filtersOptions.map(option => ({
-          ...option,
-          isChecked: option.id === updatedOption.id ? updatedOption.isChecked : option.isChecked,
-        }));
-        const checkedFilters = updatedfiltersOptions.filter(option => option.isChecked).map(option => option.id);
-    
-        setFiltersOptions(updatedfiltersOptions);
+            ...option,
+            isChecked: option.id === updatedOption.id ? updatedOption.isChecked : option.isChecked,
+        }
+    ));
+    const checkedFilters = updatedfiltersOptions.filter(option => option.isChecked).map(option => option.id);
+
+    setFiltersOptions(updatedfiltersOptions);
         replace(`${pathname}?${createQueryString('tags', checkedFilters)}`, { scroll: false });
     };
 
     const handleSearch = (e: React.ChangeEvent<HTMLInputElement>) => {
         setSearchTerm(e.target.value);
     };
-
-    const hasMoreArticles = useMemo(() => articles.length > 0, [articles]);
 
     return (
         <div className='md:hidden m-auto text-center px-10 mb-14 pt-2'>
@@ -75,8 +85,8 @@ export default function ArticlesGrid() {
                 <InfiniteArticles
                     search={debouncedSearchTerm}
                     tags={selectedTags}
-                    initArticles={articles}
-                    featuredArticleId={1}
+                    initArticles={articles.data}
+                    InfiniteArticleComponent={InfiniteArticle}
                 />
             </div>
         </div>

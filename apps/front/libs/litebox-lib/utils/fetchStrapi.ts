@@ -1,17 +1,10 @@
-import { StrapiAttributes, StrapiDefaultAttributes, StrapiData } from '../types/strapi/strapi';
+import {  StrapiDefaultAttributes, StrapiData } from '../types/strapi/strapi';
 
 type HandledErrorCode = 404 | 500;
 
 const ERROR_CODES_MESSAGES: Record<HandledErrorCode, string> = {
     404: "404. We couldn't find the endpoint you specified",
     500: '500. There was a problem in the server',
-};
-
-export const flattenStrapiData = <T extends StrapiDefaultAttributes | object>(item: StrapiAttributes<T>) => {
-    return {
-        ...item.attributes,
-        id: item.id,
-    };
 };
 
 /**
