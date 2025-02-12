@@ -1,11 +1,17 @@
 import { StrapiArticle, StrapiTag, StrapiBlogData } from '@/libs/litebox-lib/types/strapi/strapiBlog';
 import { fetchStrapi } from '@/libs/litebox-lib/utils/fetchStrapi';
-import { getArticlesQueryParams, getBlogFeaturedArticleQueryParams } from './queries'
+import { getArticlesQueryParams, getArticleQueryParams, getBlogFeaturedArticleQueryParams } from './queries'
 
 export const getArticles = async (search?: string, tags?: string[], offset = 0) => {
     const articlesQueryParams = getArticlesQueryParams(search, tags, offset);
     const articles = await fetchStrapi<StrapiArticle[]>(`/articles?${articlesQueryParams}`);
     return articles;
+};
+
+export const getArticle = async (slug: string) => {
+    const articleQueryParams = getArticleQueryParams(slug);
+    const article = await fetchStrapi<StrapiArticle[]>(`/articles?${articleQueryParams}`);
+    return article.data[0];
 };
 
 export const getTags = async () => {

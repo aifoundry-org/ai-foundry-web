@@ -34,6 +34,28 @@ export const getArticlesQueryParams = (search?: string, tags?: string[], offset?
     return qs.stringify(config);
 };
 
+export const getArticleQueryParams = (slug: string) => {
+    const config = {
+        filters: {
+            ...(slug && {
+                slug: {
+                    $containsi: slug,
+                }
+            })
+        },
+        populate: {
+            coverImage: true,
+            seo: true,
+            tags: true,
+            authors: true,
+            paragraphs: true,
+            contentNavigation: true
+        }
+    }
+
+    return qs.stringify(config);
+}
+
 export const getBlogFeaturedArticleQueryParams = () => {
     const config = {
         populate: {

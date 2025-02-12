@@ -1,10 +1,11 @@
+import { StrapiArticle } from '@/libs/litebox-lib/types/strapi/strapiBlog';
 import Headline from './Headline';
 import Content from './Content';
 import Author from './Author';
 import RelatedPosts from './RelatedArticles'
 
 interface BlogArticleProps {
-    article: any;
+    article: StrapiArticle;
     relatedArticles?: any[];
     className?: string;
 }
