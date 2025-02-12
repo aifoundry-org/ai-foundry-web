@@ -31,46 +31,53 @@ import JoinTheAiRevolutionMobile from '@/components/home/mobile/JoinTheAiRevolut
 import FaqsDesktop from '@/components/home/desktop/Faqs'
 import FaqsMobile from '@/components/home/mobile/Faqs'
 
+import FooterMobile from '@/components/common/mobile/Footer';
+import FooterDesktop from '@/components/common/desktop/Footer';
+
 export default function Page() {
   return (
-    <main>
-      <HeroDesktop />
-      <HeroMobile />
+    <>
+      <main>
+        <HeroDesktop />
+        <HeroMobile />
 
-      <FindOutMoreDesktop />
-      <FindOutMoreMobile />
+        <FindOutMoreDesktop />
+        <FindOutMoreMobile />
 
-      <OpenSourceProjectsDesktop />
-      <OpenSourceProjectsMobile />
+        <OpenSourceProjectsDesktop />
+        <OpenSourceProjectsMobile />
 
-      <CommunityDesktop />
-      <CommunityMobile />
+        <CommunityDesktop />
+        <CommunityMobile />
 
-      {process.env.HIDE_SECTIONS === "false" && <>
-        <LatestInsightsDesktop />
-        <LatestInsightsMobile />
-      </>}
+        {process.env.HIDE_SECTIONS === "false" && <>
+          <LatestInsightsDesktop />
+          <LatestInsightsMobile />
+        </>}
 
-      <OurCompanyDividerDesktop />
-      <OurCompanyDividerMobile />
+        <OurCompanyDividerDesktop />
+        <OurCompanyDividerMobile />
 
-      <VisionMissionDesktop />
-      <VisionMissionMobile />
+        <VisionMissionDesktop />
+        <VisionMissionMobile />
 
-      <TestimonialsDesktop />
-      <TestimonialsMobile />
+        <TestimonialsDesktop />
+        <TestimonialsMobile />
 
-      {process.env.HIDE_SECTIONS === "false" && <>
-        <InTheNewsDesktop />
-        <InTheNewsMobile />
-      </>
-      }
+        {process.env.HIDE_SECTIONS === "false" && <>
+          <InTheNewsDesktop />
+          <InTheNewsMobile />
+        </>
+        }
 
-      <JoinTheAiRevolutionDesktop />
-      <JoinTheAiRevolutionMobile />
+        <JoinTheAiRevolutionDesktop />
+        <JoinTheAiRevolutionMobile />
 
-      <FaqsDesktop />
-      <FaqsMobile />
-    </main>
+        <FaqsDesktop />
+        <FaqsMobile />
+      </main>
+      <FooterMobile />
+      <FooterDesktop />
+    </>
   );
 }
