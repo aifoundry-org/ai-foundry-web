@@ -48,3 +48,10 @@ export interface StrapiArticle extends StrapiDefaultAttributes {
     contentNavigation: StrapiContentNavigation[];
     tags: StrapiTag[];
 }
+
+export interface StrapiBlogDataDeaturedArticle {
+	id: number;
+}
+export interface StrapiBlogData {
+	featuredArticle: StrapiBlogDataDeaturedArticle;
+}

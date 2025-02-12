@@ -8,4 +8,5 @@ export interface ArticlesGridProps {
     onSearchChange: (newSearch: string) => void;
     filtersOptions: FiltersOption[];
     onFilterChange: (updatedFilters: any[]) => void;
+    featuredArticleId: number;
 }

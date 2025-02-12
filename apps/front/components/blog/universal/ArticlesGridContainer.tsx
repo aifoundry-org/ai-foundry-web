@@ -15,7 +15,7 @@ const getInitTags = (tags: FiltersOption[], selectedTags: string[]) => {
     return formattedTags;
 };
 
-export default function ArticlesGridContainer({articles, search, tags, selectedTags}: ArticlesGridProps) {
+export default function ArticlesGridContainer({articles, search, tags, selectedTags, featuredArticleId}: ArticlesGridProps) {
     const [searchTerm, setSearchTerm] = useState<string>(search);
     const [filtersOptions, setFiltersOptions] = useState<FiltersOption[]>(getInitTags(tags, selectedTags));
 
@@ -30,6 +30,7 @@ export default function ArticlesGridContainer({articles, search, tags, selectedT
                 onSearchChange={handleSearchChange}
                 filtersOptions={filtersOptions}
                 onFilterChange={handleFilterChange}
+                featuredArticleId={featuredArticleId}
             />
             <ArticlesGridMobile
                 articles={articles}
@@ -37,6 +38,7 @@ export default function ArticlesGridContainer({articles, search, tags, selectedT
                 onSearchChange={handleSearchChange}
                 filtersOptions={filtersOptions}
                 onFilterChange={handleFilterChange}
+                featuredArticleId={0}
             />
         </>
     )

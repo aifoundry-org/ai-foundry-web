@@ -33,3 +33,13 @@ export const getArticlesQueryParams = (search?: string, tags?: string[], offset?
 
     return qs.stringify(config);
 };
+
+export const getBlogFeaturedArticleQueryParams = () => {
+    const config = {
+        populate: {
+            featuredArticle: true,
+        }
+    }
+
+    return qs.stringify(config);
+};

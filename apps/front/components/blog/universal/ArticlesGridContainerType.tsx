@@ -7,4 +7,5 @@ export interface ArticlesGridProps {
     search: string;
     tags: FiltersOption[];
     selectedTags: string[];
+    featuredArticleId: number;
 }

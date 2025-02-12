@@ -31,7 +31,7 @@ const InfiniteArticlesContainer = ({
 
     const sortedArticles = useMemo(() => {
         if(featuredArticleId){
-            return articles.data.sort((a, b) => {
+            articles.data = articles.data.sort((a, b) => {
                 if (a.id === featuredArticleId) return -1;
                 if (b.id === featuredArticleId) return 1;
                 return 0;

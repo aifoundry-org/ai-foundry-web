@@ -16,7 +16,8 @@ export default function ArticlesGrid({
     searchTerm,
     onSearchChange,
     filtersOptions,
-    onFilterChange
+    onFilterChange,
+    featuredArticleId
   }: ArticlesGridProps) {
     const debouncedSearchTerm = useDebounce(searchTerm, 300);
     const pathname = usePathname();
@@ -59,7 +60,7 @@ export default function ArticlesGrid({
                     search={debouncedSearchTerm}
                     tags={filtersOptions.filter(option => option.isChecked).map(option => option.id)}
                     initArticles={articles}
-                    featuredArticleId={0}
+                    featuredArticleId={featuredArticleId}
                     InfiniteArticleComponent={InfiniteArticle}
                 />
             </div>
