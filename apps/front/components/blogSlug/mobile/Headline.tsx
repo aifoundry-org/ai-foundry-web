@@ -1,5 +1,3 @@
-'use client'
-
 import Link from 'next/link';
 import { getReadTime } from '@/utils/getReadTime';
 import IMGArrowLeft from '@/public/pngs/blogSlug/arrowLeft.png';

@@ -1,15 +1,13 @@
-'use client'
-
 import Link from 'next/link';
 import { getReadTime } from '@/utils/getReadTime';
 import IMGArrowLeft from '@/public/pngs/blogSlug/arrowLeft.png';
 import IMGArrows from '@/public/pngs/blogSlug/arrows.png';
 import IMGPaper from '@/public/pngs/blogSlug/paper.png';
 import SocialShareLink from '@/components/blogSlug/universal/SocialLink';
-import { StrapiTag } from '@/libs/litebox-lib/types/strapi/strapiBlog';
+import { StrapiArticle, StrapiTag } from '@/libs/litebox-lib/types/strapi/strapiBlog';
 
 interface HeadlineProps {
-    article: any
+    article: StrapiArticle;
     postsLists?: any[];
     className?: string;
 }

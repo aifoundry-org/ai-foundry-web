@@ -1,6 +1,6 @@
 import { StrapiDefaultAttributes, StrapiMedia, StrapiMultipleMedia } from './strapi';
 
-export interface StrapiAuthor extends StrapiDefaultAttributes {
+export interface StrapiAuthor {
 	name: string;
 	role?: string;
 	profileImage: StrapiMedia;
@@ -22,9 +22,21 @@ export interface StrapiSeoComponent {
 	twitterCreatorId?: string;
 }
 
+export interface StrapiParagraphContentChildren {
+	type: string;
+	text: string;
+}
+
+export interface StrapiParagraphContent {
+	type: string;
+	children: StrapiParagraphContentChildren[];
+}
+
 export interface StrapiParagraph {
-	content: string;
+	id: number;
+	content: StrapiParagraphContent[];
 	tag: string;
+	alternativeStyle: boolean;
 }
 
 export interface StrapiContentNavigation {
@@ -32,7 +44,7 @@ export interface StrapiContentNavigation {
 	tag: string;
 }
 
-export interface StrapiTag extends StrapiDefaultAttributes {
+export interface StrapiTag {
     id: string;
     name: string;
 }
@@ -44,14 +56,14 @@ export interface StrapiArticle extends StrapiDefaultAttributes {
     seo: StrapiSeoComponent;
     authors: StrapiAuthor[];
     date: string;
-    paragraph: StrapiParagraph[];
+    paragraphs: StrapiParagraph[];
     contentNavigation: StrapiContentNavigation[];
     tags: StrapiTag[];
 }
 
-export interface StrapiBlogDataDeaturedArticle {
+export interface StrapiBlogDataFeaturedArticle {
 	id: number;
 }
 export interface StrapiBlogData {
-	featuredArticle: StrapiBlogDataDeaturedArticle;
+	featuredArticle: StrapiBlogDataFeaturedArticle;
 }
