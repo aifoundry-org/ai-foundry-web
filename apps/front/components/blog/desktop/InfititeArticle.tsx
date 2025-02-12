@@ -1,10 +1,11 @@
 import { MouseEventHandler } from 'react';
 import { StrapiArticle } from '@/libs/litebox-lib/types/strapi/strapiBlog';
+import { StrapiData } from '@/libs/litebox-lib/types/strapi/strapi';
 import Button from '@/libs/litebox-lib/ui/Button/Button';
 import Link from 'next/link';
 
 interface InfiniteArticleProp {
-    sortedArticles: StrapiArticle[],
+    sortedArticles: StrapiData<StrapiArticle[]>,
     hasMoreArticles: boolean,
     showMoreArticles: MouseEventHandler<HTMLButtonElement>,
     featuredArticleId: number
@@ -15,11 +16,11 @@ const InfiniteArticle = ({
     hasMoreArticles, 
     showMoreArticles, 
     featuredArticleId
-}: InfiniteArticleProp) => {
+}: InfiniteArticleProp) => {    
     return (
         <>
             <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-6 gap-y-20'>
-                {sortedArticles.map(article => {
+                {sortedArticles.data.map(article => {
                     const isFeaturedArticle = article.id === featuredArticleId;
                     const { id, title, date, authors, coverImage, slug, tags } = article;
 
@@ -41,7 +42,11 @@ const InfiniteArticle = ({
                                 <p className='font-dharma-gothic-e font-black text-[5vw] md:text-[4vw] lg:text-[2.778vw] xl:text-[2.778vw] 2xl:text-[2.778vw] leading-[4vw] md:leading-[4vw] lg:leading-[2.3vw] xl:leading-[2.3vw] 2xl:leading-[2.3vw] uppercase'>{title}</p>
                             </div>
                             <div className='flex flex-row font-normal text-[3vw] md:text-[2vw] lg:text-[1vw] xl:text-[1vw] 2xl:text-[1vw] leading-[1.5vw] font-host-grotesk'>
-                                {authors[0].name} | {date}
+                                {authors[0].name} | {new Date(date).toLocaleDateString('en-US', {
+                                    year: 'numeric',
+                                    month: 'long',
+                                    day: 'numeric'
+                                })}
                             </div>
                             <div className='flex flex-row justify-start mt-8'>
                                 <Button as={Link} href={`/blog/${slug}`} variant='secondary' content='Read more' />

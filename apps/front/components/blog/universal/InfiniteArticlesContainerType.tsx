@@ -9,4 +9,4 @@ export interface InfiniteArticlesContainerProps {
   InfiniteArticleComponent: any;
 }
 
-export const PAGINATION_LIMIT = 3
+export const PAGINATION_LIMIT = 6

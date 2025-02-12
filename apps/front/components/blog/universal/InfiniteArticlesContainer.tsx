@@ -11,25 +11,27 @@ const InfiniteArticlesContainer = ({
   InfiniteArticleComponent
 }: InfiniteArticlesContainerProps) => {
     const [loading, setLoading] = useState(false);
-    const [articles, setArticles] = useState(initArticles.data);
-    const hasMoreArticles = useMemo(() => {
-        const { start, limit, total } = initArticles.meta.pagination;
-        return (start+limit) < total
-    }, [articles]);
+    const [articles, setArticles] = useState(initArticles);
+    const [hasMoreArticles, setHasMoreArticles] = useState(false);
 
     const showMoreArticles = async () => {
-        const offset = articles.length;
+        const offset = articles.meta.pagination.start+articles.meta.pagination.limit;
         const newArticles = await getArticles(search, tags, offset);
+        const { start, limit, total } = newArticles.meta.pagination;
+        setHasMoreArticles((start+limit) < total)
 
         setArticles(prevArticles => {
-            const uniqueArticles = newArticles.data.filter(newArticle => !prevArticles.some(prevArticle => prevArticle.id === newArticle.id));
-            return [...prevArticles, ...uniqueArticles];
+            const uniqueArticles = newArticles.data.filter(newArticle => !prevArticles.data.some(prevArticle => prevArticle.id === newArticle.id));
+            return {
+                meta: newArticles.meta,
+                data: [...prevArticles.data, ...uniqueArticles]
+            };
         });
     };
 
     const sortedArticles = useMemo(() => {
         if(featuredArticleId){
-            return articles.sort((a, b) => {
+            return articles.data.sort((a, b) => {
                 if (a.id === featuredArticleId) return -1;
                 if (b.id === featuredArticleId) return 1;
                 return 0;
@@ -40,7 +42,9 @@ const InfiniteArticlesContainer = ({
 
     useEffect(() => {
         setLoading(true)
-        setArticles(initArticles.data);
+        setArticles(initArticles);
+        const { start, limit, total } = initArticles.meta.pagination;
+        setHasMoreArticles((start+limit) < total)
         setLoading(false)
     }, [search, tags, initArticles]);
 
@@ -49,7 +53,7 @@ const InfiniteArticlesContainer = ({
             <Spinner /> : 
             <InfiniteArticleComponent 
                 sortedArticles={sortedArticles}
-                hasMoreArticle={hasMoreArticles}
+                hasMoreArticles={hasMoreArticles}
                 showMoreArticles={showMoreArticles}
                 featuredArticleId={featuredArticleId} 
             />

@@ -1,10 +1,11 @@
 import { MouseEventHandler } from 'react';
 import { StrapiArticle } from '@/libs/litebox-lib/types/strapi/strapiBlog';
+import { StrapiData } from '@/libs/litebox-lib/types/strapi/strapi';
 import Button from '@/libs/litebox-lib/ui/Button/Button';
 import Link from 'next/link';
 
 interface InfiniteArticleProp {
-    sortedArticles: StrapiArticle[],
+    sortedArticles: StrapiData<StrapiArticle[]>,
     hasMoreArticles: boolean,
     showMoreArticles: MouseEventHandler<HTMLButtonElement>,
 }
@@ -17,7 +18,7 @@ const InfiniteArticle = ({
     return (
         <>
             <div className='grid grid-cols-1 gap-6'>
-                {sortedArticles.map(article => {
+                {sortedArticles.data.map(article => {
                     const { id ,title, date, authors, coverImage, slug, tags } = article;
 
                     return (
@@ -38,7 +39,11 @@ const InfiniteArticle = ({
                                 <p className='font-dharma-gothic-e text-left font-black text-[8.6vw] leading-[7vw] uppercase'>{title}</p>
                             </div>
                             <div className='flex flex-row font-normal text-[3.2vw] leading-[5.6vw] font-host-grotesk'>
-                                {authors[0].name} | {date}
+                                {authors[0].name} | {new Date(date).toLocaleDateString('en-US', {
+                                    year: 'numeric',
+                                    month: 'long',
+                                    day: 'numeric'
+                                })}
                             </div>
                             <div className='flex flex-row basis-[80%] justify-start mt-7 mb-9'>
                                 <Button as={Link} href={`/blog/${slug}`} variant='secondary' content='Read more' />

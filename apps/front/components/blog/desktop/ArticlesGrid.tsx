@@ -24,7 +24,6 @@ export default function ArticlesGrid({
     const { createQueryString } = useQueryString();
     const searchParams = useSearchParams();
     const tagsParams = searchParams.get('tags');
-
     const hasMoreArticles = useMemo(() => articles.data.length > 0, [articles]);
 
     useEffect(() => {
@@ -37,8 +36,8 @@ export default function ArticlesGrid({
 
     const handleFilterClick = (updatedOption: CheckOption) => {
         const updatedFilters = filtersOptions.map(option => ({
-        ...option,
-        isChecked: option.id === updatedOption.id ? updatedOption.isChecked : option.isChecked,
+            ...option,
+            isChecked: option.id === updatedOption.id ? updatedOption.isChecked : option.isChecked,
         }));
 
         onFilterChange(updatedFilters);

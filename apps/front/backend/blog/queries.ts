@@ -3,7 +3,7 @@ import { PAGINATION_LIMIT } from '@/components/blog/universal/InfiniteArticlesCo
 
 export const getArticlesQueryParams = (search?: string, tags?: string[], offset?: number) => {
     const config = {
-        fields: ['slug', 'title', 'createdAt', 'updatedAt'],
+        fields: ['slug', 'title', 'date', 'createdAt', 'updatedAt'],
         filters: {
             ...(search && {
                 title: {

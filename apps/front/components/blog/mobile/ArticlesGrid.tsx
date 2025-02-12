@@ -24,7 +24,6 @@ export default function ArticlesGrid({
     const { createQueryString } = useQueryString();
     const searchParams = useSearchParams();
     const tagsParams = searchParams.get('tags');
-
     const hasMoreArticles = useMemo(() => articles.data.length > 0, [articles]);
 
     useEffect(() => {
