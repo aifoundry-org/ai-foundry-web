@@ -10,7 +10,7 @@ import Link from 'next/link'
 
 export default function NotFoundPage() {
   return (
-    <div className='flex relative w-full h-full flex-col'>
+    <div className='hidden xs:flex xs:relative xs:w-full xs:h-full xs:flex-col'>
         <div className='flex relative flex-col justify-center text-center align-middle mx-auto mt-[13.9rem] gap-y-[1.6rem]'>
 			<p className='font-dharma-gothic-e font-black text-[16.115vw] leading-[11.9vw]'>404</p>
 			<p className='text-orange font-dharma-gothic-e font-black text-[12.5vw] leading-[9.24vw] uppercase'>page not found</p>
