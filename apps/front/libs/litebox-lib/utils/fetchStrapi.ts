@@ -18,10 +18,10 @@ const ERROR_CODES_MESSAGES: Record<HandledErrorCode, string> = {
  * @returns strapiResponse - The strapi response without parse or anything
  */
 export const fetchStrapi = async <T>(endpoint: string, config?: RequestInit) => {
-    const strapiEndpoint = `${process.env.STRAPI_BASE_URL}/api${endpoint}`;
+    const strapiEndpoint = `${process.env.NEXT_PUBLIC_STRAPI_BASE_URL}/api${endpoint}`;
     const response = await fetch(strapiEndpoint, {...config,
         headers: {
-          'Authorization': 'Bearer '+process.env.STRAPI_API_TOKEN,
+          'Authorization': `Bearer ${process.env.NEXT_PUBLIC_STRAPI_API_TOKEN}`,
         },
     });
 
