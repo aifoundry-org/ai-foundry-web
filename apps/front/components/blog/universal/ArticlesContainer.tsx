@@ -1,15 +1,15 @@
 import { useState, useEffect, useMemo } from 'react';
 import { getArticles } from '@/backend/blog/actions';
-import { InfiniteArticlesContainerProps } from './InfiniteArticlesContainerType';
+import { ArticlesContainerProps } from './ArticlesContainerType';
 import Spinner from '@/components/common/universal/Spinner';
 
-const InfiniteArticlesContainer = ({
+const ArticlesContainer = ({
   search,
   tags,
   initArticles,
   featuredArticleId,
-  InfiniteArticleComponent
-}: InfiniteArticlesContainerProps) => {
+  ArticleComponent
+}: ArticlesContainerProps) => {
     const [loading, setLoading] = useState(false);
     const [articles, setArticles] = useState(initArticles);
     const [hasMoreArticles, setHasMoreArticles] = useState(false);
@@ -51,7 +51,7 @@ const InfiniteArticlesContainer = ({
     return (
         loading ? 
             <Spinner /> : 
-            <InfiniteArticleComponent 
+            <ArticleComponent 
                 sortedArticles={sortedArticles}
                 hasMoreArticles={hasMoreArticles}
                 showMoreArticles={showMoreArticles}
@@ -60,4 +60,4 @@ const InfiniteArticlesContainer = ({
     );
 };
 
-export default InfiniteArticlesContainer;
+export default ArticlesContainer;

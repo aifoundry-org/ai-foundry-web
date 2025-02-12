@@ -4,20 +4,20 @@ import { useMemo, useEffect } from 'react'
 import { useRouter, usePathname, useSearchParams } from 'next/navigation';
 import { useQueryString } from '@/hooks/useQueryString';
 import useDebounce from '@/hooks/useDebounce';
-import InfiniteArticlesContainer from '../universal/InfiniteArticlesContainer';
-import InfiniteArticle from './InfititeArticle';
+import ArticlesContainer from '../universal/ArticlesContainer';
+import Article from './Article';
 import Filters from './Filters';
 import SearchInput from '../universal/SearchInput';
 import { CheckOption } from '../universal/FiltersType';
-import { ArticlesGridProps } from '../universal/ArticlesGridPropsType';
+import { ArticlesListProps } from '../universal/ArticlesListPropsType';
 
-export default function ArticlesGrid({
+export default function ArticlesList({
     articles,
     searchTerm,
     onSearchChange,
     filtersOptions,
     onFilterChange
-}: ArticlesGridProps) {
+}: ArticlesListProps) {
     const debouncedSearchTerm = useDebounce(searchTerm, 300);
     const pathname = usePathname();
     const { replace } = useRouter();
@@ -55,11 +55,11 @@ export default function ArticlesGrid({
             <div>
                 {!hasMoreArticles && <p className='mb-10 text-3xl text-left'>Oops! 😕 We couldn&apos;t find that post</p>}
 
-                <InfiniteArticlesContainer
+                <ArticlesContainer
                     search={debouncedSearchTerm}
                     tags={filtersOptions.filter(option => option.isChecked).map(option => option.id)}
                     initArticles={articles}
-                    InfiniteArticleComponent={InfiniteArticle}
+                    ArticleComponent={Article}
                 />
             </div>
         </div>

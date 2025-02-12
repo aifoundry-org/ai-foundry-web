@@ -59,6 +59,7 @@ export interface StrapiArticle extends StrapiDefaultAttributes {
     paragraphs: StrapiParagraph[];
     contentNavigation: StrapiContentNavigation[];
     tags: StrapiTag[];
+	relatedArticles?: StrapiArticle[];
 }
 
 export interface StrapiBlogDataFeaturedArticle {

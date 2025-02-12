@@ -14,8 +14,8 @@ export default async function Page({ params }: PageProps) {
     return (
         <main>
             <Suspense>
-                <MainDesktop article={article} relatedArticles={[]} />
-                <MainMobile article={article} relatedArticles={[]} />
+                <MainDesktop article={article} />
+                <MainMobile article={article} />
             </Suspense>
         </main>
     );

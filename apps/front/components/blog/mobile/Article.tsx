@@ -4,17 +4,17 @@ import { StrapiData } from '@/libs/litebox-lib/types/strapi/strapi';
 import Button from '@/libs/litebox-lib/ui/Button/Button';
 import Link from 'next/link';
 
-interface InfiniteArticleProp {
+interface ArticleProp {
     sortedArticles: StrapiData<StrapiArticle[]>,
     hasMoreArticles: boolean,
     showMoreArticles: MouseEventHandler<HTMLButtonElement>,
 }
 
-const InfiniteArticle = ({ 
+const Article = ({ 
     sortedArticles, 
     hasMoreArticles, 
     showMoreArticles
-}: InfiniteArticleProp) => {
+}: ArticleProp) => {
     return (
         <>
             <div className='grid grid-cols-1 gap-6'>
@@ -61,4 +61,4 @@ const InfiniteArticle = ({
     )
 }
 
-export default InfiniteArticle;
+export default Article;

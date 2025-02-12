@@ -6,11 +6,10 @@ import RelatedArticles from './RelatedArticles'
 
 interface BlogArticleProps {
     article: StrapiArticle;
-    relatedArticles?: any[];
     className?: string;
 }
 
-export default function BlogArticle({ article, relatedArticles, className }: BlogArticleProps) {
+export default function BlogArticle({ article, className }: BlogArticleProps) {
   return (
     <div className='xs:hidden'>
       <div className={`w-full h-full mx-auto py-[5.5rem] px-[2.4rem] ${className}`}>
@@ -19,7 +18,7 @@ export default function BlogArticle({ article, relatedArticles, className }: Blo
         <Author author={article.authors[0]} />
       </div>
       <div className={`w-full h-full mx-auto bg-peach ${className}`}>
-        <RelatedArticles articles={relatedArticles} />
+        <RelatedArticles articles={article.relatedArticles} />
       </div>
     </div>
   );

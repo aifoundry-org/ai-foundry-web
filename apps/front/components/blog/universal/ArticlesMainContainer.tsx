@@ -1,10 +1,10 @@
 'use client'
 
 import { useState } from 'react';
-import { ArticlesGridProps } from './ArticlesGridContainerType';
+import { ArticlesMainContainerProps } from './ArticlesMainContainerType';
 import { FiltersOption } from './FiltersType';
-import ArticlesGridDesktop from '@/components/blog/desktop/ArticlesGrid'
-import ArticlesGridMobile from '@/components/blog/mobile/ArticlesGrid'
+import ArticlesListDesktop from '@/components/blog/desktop/ArticlesList'
+import ArticlesListMobile from '@/components/blog/mobile/ArticlesList'
 
 const getInitTags = (tags: FiltersOption[], selectedTags: string[]) => {
     const formattedTags = tags.map(tag => ({
@@ -15,7 +15,7 @@ const getInitTags = (tags: FiltersOption[], selectedTags: string[]) => {
     return formattedTags;
 };
 
-export default function ArticlesGridContainer({articles, search, tags, selectedTags, featuredArticleId}: ArticlesGridProps) {
+export default function ArticlesMainContainer({articles, search, tags, selectedTags, featuredArticleId}: ArticlesMainContainerProps) {
     const [searchTerm, setSearchTerm] = useState<string>(search);
     const [filtersOptions, setFiltersOptions] = useState<FiltersOption[]>(getInitTags(tags, selectedTags));
 
@@ -24,7 +24,7 @@ export default function ArticlesGridContainer({articles, search, tags, selectedT
 
     return (
         <>
-            <ArticlesGridDesktop
+            <ArticlesListDesktop
                 articles={articles}
                 searchTerm={searchTerm}
                 onSearchChange={handleSearchChange}
@@ -32,7 +32,7 @@ export default function ArticlesGridContainer({articles, search, tags, selectedT
                 onFilterChange={handleFilterChange}
                 featuredArticleId={featuredArticleId}
             />
-            <ArticlesGridMobile
+            <ArticlesListMobile
                 articles={articles}
                 searchTerm={searchTerm}
                 onSearchChange={handleSearchChange}

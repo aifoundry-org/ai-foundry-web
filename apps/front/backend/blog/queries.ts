@@ -1,5 +1,5 @@
 import qs from 'qs';
-import { PAGINATION_LIMIT } from '@/components/blog/universal/InfiniteArticlesContainerType';
+import { PAGINATION_LIMIT } from '@/components/blog/universal/ArticlesContainerType';
 
 export const getArticlesQueryParams = (search?: string, tags?: string[], offset?: number) => {
     const config = {
@@ -12,7 +12,7 @@ export const getArticlesQueryParams = (search?: string, tags?: string[], offset?
             }),
             ...(tags && tags.length && {
                 tags: {
-                $in: tags,
+                    $in: tags,
                 },
             }),
         },
@@ -28,6 +28,33 @@ export const getArticlesQueryParams = (search?: string, tags?: string[], offset?
         pagination: {
             start: offset,
             limit: PAGINATION_LIMIT,
+        },
+    }
+
+    return qs.stringify(config);
+};
+
+export const getArticlesExcludingSlugQueryParams = (slug: string, limit: number) => {
+    const config = {
+        fields: ['slug', 'title', 'date', 'createdAt', 'updatedAt'],
+        filters: {
+            ...(slug && {
+                slug: {
+                    $ne: slug,
+                }
+            }),
+        },
+        populate: {
+            coverImage: true,
+            seo: true,
+            tags: true,
+            authors: {
+                fields: ['name'],
+            },
+        },
+        sort: ['updatedAt:desc'],
+        pagination: {
+            limit,
         },
     }
 
