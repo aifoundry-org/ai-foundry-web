@@ -47,7 +47,11 @@ export const getArticleQueryParams = (slug: string) => {
             coverImage: true,
             seo: true,
             tags: true,
-            authors: true,
+            authors: {
+                populate: {
+                    profileImage: true,
+                },
+            },
             paragraphs: true,
             contentNavigation: true
         }

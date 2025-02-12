@@ -15,8 +15,8 @@ export default function BlogArticle({ article, relatedArticles, className }: Blo
     <div className='xs:hidden'>
       <div className={`w-full h-full mx-auto py-[5.5rem] px-[2.4rem] ${className}`}>
         <Headline article={article} />
-        <Content article={article} />
-        <Author />
+        <Content paragraphs={article.paragraphs} contentNavigation={article.contentNavigation} />
+        <Author author={article.authors[0]} />
       </div>
       <div className={`w-full h-full mx-auto bg-peach ${className}`}>
         <RelatedArticles articles={relatedArticles} />

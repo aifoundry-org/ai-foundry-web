@@ -16,8 +16,8 @@ export default function BlogArticle({ article, relatedArticles, className }: Blo
       <div className={`max-w-[144rem] lg:max-w-[144rem] xl:max-w-[144rem] 2xl:max-w-[200rem] h-full mx-auto pt-[5.5rem] px-[8.5vw] ${className}`}>
         <Headline article={article} />
         <div className='flex flex-row flex-wrap lg:flex-nowrap gap-x-[8.82vw] mt-[7.2rem]'>
-            <Content article={article} />
-            <Author />
+            <Content paragraphs={article.paragraphs} />
+            <Author author={article.authors[0]} contentNavigation={article.contentNavigation} />
         </div>
       </div>
       <div className={`w-full h-full mx-auto bg-peach ${className}`}>
