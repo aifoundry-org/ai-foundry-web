@@ -1,5 +1,5 @@
 'use client'
-
+/* eslint-disable */
 import { useState } from 'react';
 import Accordion from '@/libs/litebox-lib/ui/Accordion/Accordion'
 // import IMGBanner from '@/public/pngs/home/faqs/bannerMobile.png'

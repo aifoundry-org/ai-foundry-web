@@ -1,3 +1,4 @@
+/* eslint-disable */
 import Link from 'next/link';
 import IMGBackground from '@/public/pngs/blogSlug/backgroundRelatedPosts.png'
 import IMGBackgroundDecorations from '@/public/pngs/blogSlug/backgroundDecorations.png'

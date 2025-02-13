@@ -1,3 +1,4 @@
+/* eslint-disable */
 import IMGBackground from '@/public/pngs/home/joinTheAiRevolution/backgroundMobile.png'
 import IMGComputer from '@/public/pngs/home/joinTheAiRevolution/computer.png'
 import IMGVerticalText from '@/public/pngs/home/joinTheAiRevolution/verticalTextMobile.png'

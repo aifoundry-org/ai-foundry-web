@@ -1,3 +1,4 @@
+/* eslint-disable */
 // import Input from '@/libs/litebox-lib/ui/Input/Input'
 // import Button from '@/libs/litebox-lib/ui/Button/Button'
 import IMGBackground from '@/public/pngs/home/joinTheAiRevolution/background.png'

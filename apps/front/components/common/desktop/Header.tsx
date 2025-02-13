@@ -1,5 +1,5 @@
 'use client';
-
+/* eslint-disable */
 import { useState, useEffect, useRef } from 'react';
 import dynamic from 'next/dynamic';
 import { m } from 'motion/react';

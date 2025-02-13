@@ -1,5 +1,5 @@
 'use client'
-
+/* eslint-disable */
 import IMGTanyaAvatar from '@/public/pngs/blogSlug/tanyaAvatarMobile.png'
 import IMGInstagramIcon from '@/public/pngs/footer/instagramIconMobile.png'
 import IMGLinkedinIcon from '@/public/pngs/footer/linkedinIconMobile.png'

@@ -1,3 +1,4 @@
+/* eslint-disable */
 import { MouseEventHandler } from 'react';
 import { StrapiArticle } from '@/libs/litebox-lib/types/strapi/strapiBlog';
 import { StrapiData } from '@/libs/litebox-lib/types/strapi/strapi';

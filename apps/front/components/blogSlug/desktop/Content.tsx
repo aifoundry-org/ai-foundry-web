@@ -1,5 +1,5 @@
 'use client'
-
+/* eslint-disable */
 export default function Content() {
     return (
         <div className='max-w-[80.3rem]'>

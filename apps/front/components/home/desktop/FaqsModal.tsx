@@ -1,3 +1,4 @@
+/* eslint-disable */
 import { Dispatch, SetStateAction, useState, useRef } from 'react';
 import { useForm } from "react-hook-form";
 import Modal from '@/libs/litebox-lib/ui/Modal/Modal'

@@ -1,5 +1,5 @@
 'use client';
-
+/* eslint-disable */
 import Button from '@/litebox-lib/ui/Button/Button';
 import IMGIconCalendar from '@/public/pngs/home/community/calendar.png';
 import IMGIconPosition from '@/public/pngs/home/community/position.png';

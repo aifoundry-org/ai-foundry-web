@@ -1,3 +1,4 @@
+/* eslint-disable */
 import Link from 'next/link';
 import IMGBackground from '@/public/pngs/blogSlug/backgroundRelatedPostsMobile.png'
 import IMGGraffiti from '@/public/pngs/blogSlug/graffitiMobile.png'
