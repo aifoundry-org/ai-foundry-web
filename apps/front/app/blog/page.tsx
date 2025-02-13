@@ -3,7 +3,7 @@ import { Suspense } from 'react';
 import MainDesktop from '@/components/blog/desktop/Main';
 import MainMobile from '@/components/blog/mobile/Main';
 import { getArticles, getTags, getBlogFeaturedArticle } from '@/backend/blog/actions';
-import ArticlesGridContainer from '@/components/blog/universal/ArticlesGridContainer';
+import ArticlesMainContainer from '@/components/blog/universal/ArticlesMainContainer';
 
 export default async function Page({ searchParams }: { 
   searchParams: Promise<{ [key: string]: string | undefined }>
@@ -20,7 +20,7 @@ export default async function Page({ searchParams }: {
       <MainMobile />
 
       <Suspense>
-        <ArticlesGridContainer articles={articles} featuredArticleId={featuredArticleId} search={search} tags={allTags.data} selectedTags={selectedTags} />
+        <ArticlesMainContainer articles={articles} featuredArticleId={featuredArticleId} search={search} tags={allTags.data} selectedTags={selectedTags} />
       </Suspense>
     </main>
   );

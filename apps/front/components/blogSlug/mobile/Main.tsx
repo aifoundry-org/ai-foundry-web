@@ -1,25 +1,25 @@
 /* eslint-disable */
+import { StrapiArticle } from '@/libs/litebox-lib/types/strapi/strapiBlog';
 import Headline from './Headline';
 import Content from './Content';
 import Author from './Author';
-import RelatedPosts from './RelatedArticles'
+import RelatedArticles from './RelatedArticles'
 
 interface BlogArticleProps {
-    article: any;
-    relatedArticles?: any[];
+    article: StrapiArticle;
     className?: string;
 }
 
-export default function BlogArticle({ article, relatedArticles, className }: BlogArticleProps) {
+export default function BlogArticle({ article, className }: BlogArticleProps) {
   return (
     <div className='xs:hidden'>
       <div className={`w-full h-full mx-auto py-[5.5rem] px-[2.4rem] ${className}`}>
         <Headline article={article} />
-        <Content />
-        <Author />
+        <Content paragraphs={article.paragraphs} contentNavigation={article.contentNavigation} />
+        <Author author={article.authors[0]} />
       </div>
       <div className={`w-full h-full mx-auto bg-peach ${className}`}>
-        <RelatedPosts articles={relatedArticles} />
+        <RelatedArticles articles={article.relatedArticles} />
       </div>
     </div>
   );

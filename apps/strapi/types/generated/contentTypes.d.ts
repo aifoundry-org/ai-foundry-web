@@ -380,7 +380,7 @@ export interface ApiAuthorAuthor extends Struct.CollectionTypeSchema {
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<'oneToMany', 'api::author.author'> & Schema.Attribute.Private;
     name: Schema.Attribute.String & Schema.Attribute.Required;
-    profileImage: Schema.Attribute.Media<'images'>;
+    profileImage: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
     publishedAt: Schema.Attribute.DateTime;
     role: Schema.Attribute.String;
     updatedAt: Schema.Attribute.DateTime;

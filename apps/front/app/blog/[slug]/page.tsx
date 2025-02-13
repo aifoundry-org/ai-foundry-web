@@ -1,25 +1,22 @@
-'use client'
-
-import { useParams } from 'next/navigation'
+import { Suspense } from 'react';
 import MainMobile from '@/components/blogSlug/mobile/Main';
 import MainDesktop from '@/components/blogSlug/desktop/Main';
+import { getArticle } from '@/backend/blog/actions';
 
-// TODO: Remove mock articles after implementing strapi
-import articles from '@/mock/home/latestInsights/data'
-// END TODO
+interface PageProps {
+    params: Promise<{ slug: string }>;
+}
 
-export default function Page() {
-    const params = useParams<{ slug: string }>()
-
-    // TODO: Replace with strapi implementation
-    const article = articles.find(article => article.slug == params.slug);
-    const relatedArticles = [{...articles[0]},{...articles[1]},{...articles[2]}]
-    // END TODO
+export default async function Page({ params }: PageProps) {
+    const { slug } = await params;
+    const article = await getArticle(slug);
 
     return (
         <main>
-            <MainDesktop article={article} relatedArticles={relatedArticles} />
-            <MainMobile article={article} relatedArticles={relatedArticles} />
+            <Suspense>
+                <MainDesktop article={article} />
+                <MainMobile article={article} />
+            </Suspense>
         </main>
     );
 }
