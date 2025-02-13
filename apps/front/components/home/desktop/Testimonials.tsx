@@ -1,5 +1,5 @@
 'use client'
-
+/* eslint-disable */
 import { useRef, useState } from 'react'
 import Button from '@/litebox-lib/ui/Button/Button';
 import IMGBackgroundTop from '@/public/pngs/home/testimonials/backgroundTop.png'

@@ -4,8 +4,7 @@
   "info": {
     "singularName": "tag",
     "pluralName": "tags",
-    "displayName": "Tag",
-    "description": ""
+    "displayName": "Tag"
   },
   "options": {
     "draftAndPublish": true
@@ -14,6 +13,12 @@
   "attributes": {
     "name": {
       "type": "string"
+    },
+    "articles": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::article.article",
+      "mappedBy": "tags"
     }
   }
 }

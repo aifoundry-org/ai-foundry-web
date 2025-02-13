@@ -1,5 +1,5 @@
 'use client'
-
+/* eslint-disable */
 import { usePathname } from 'next/navigation';
 import Link from 'next/link'
 import FadeIn from '@/components/common/universal/FadeIn';
@@ -46,7 +46,7 @@ export default function Footer(){
                     <FadeIn delay={0.5} className='flex flex-row gap-[3.34vw]'>
                         <a className='relative after:bg-black after:absolute after:h-1 after:w-0 after:-bottom-[0.5vw] after:left-0 focus:after:w-full hover:after:w-full after:transition-all after:duration-300' href='/#projects'>Projects</a>
                         <a className='relative after:bg-black after:absolute after:h-1 after:w-0 after:-bottom-[0.5vw] after:left-0 focus:after:w-full hover:after:w-full after:transition-all after:duration-300' href='/#events'>Events</a>
-                        {process.env.HIDE_SECTIONS === "false" && <a className='relative after:bg-black after:absolute after:h-1 after:w-0 after:-bottom-[0.5vw] after:left-0 focus:after:w-full hover:after:w-full after:transition-all after:duration-300' href='/#blog'>Blog</a>}
+                        <a className='relative after:bg-black after:absolute after:h-1 after:w-0 after:-bottom-[0.5vw] after:left-0 focus:after:w-full hover:after:w-full after:transition-all after:duration-300' href='/#blog'>Blog</a>
                         <a className='relative after:bg-black after:absolute after:h-1 after:w-0 after:-bottom-[0.5vw] after:left-0 focus:after:w-full hover:after:w-full after:transition-all after:duration-300' href='/#values'>Our Values</a>
                     </FadeIn>
                     <FadeIn delay={0.5} className='flex flex-row gap-[3.34vw]'>

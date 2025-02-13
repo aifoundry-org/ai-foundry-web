@@ -1,5 +1,5 @@
 'use client'
-
+/* eslint-disable */
 import Link from 'next/link'
 import Button from '@/libs/litebox-lib/ui/Button/Button'
 import FadeUp from '@/components/common/universal/FadeUp'

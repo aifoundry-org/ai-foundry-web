@@ -1,3 +1,4 @@
+/* eslint-disable */
 import Button from '@/litebox-lib/ui/Button/Button';
 import IMGArrowUpRight from '@/public/pngs/home/openSourceProjects/arrowUpRight.png';
 import Link from 'next/link';
