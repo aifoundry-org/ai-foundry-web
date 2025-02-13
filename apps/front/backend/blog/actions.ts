@@ -8,6 +8,12 @@ export const getArticles = async (search?: string, tags?: string[], offset = 0) 
     return articles;
 };
 
+export const getLastArticles = async (limit = 3) => {
+    const articlesQueryParams = getArticlesQueryParams(undefined, undefined, 0, 3);
+    const articles = await fetchStrapi<StrapiArticle[]>(`/articles?${articlesQueryParams}`);
+    return articles;
+};
+
 export const getArticle = async (slug: string) => {
     const articleQueryParams = getArticleQueryParams(slug);
     const article = await fetchStrapi<StrapiArticle[]>(`/articles?${articleQueryParams}`);
