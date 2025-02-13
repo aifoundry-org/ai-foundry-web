@@ -7,6 +7,7 @@ export interface ArticlesGridProps {
     searchTerm: string;
     onSearchChange: (newSearch: string) => void;
     filtersOptions: FiltersOption[];
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     onFilterChange: (updatedFilters: any[]) => void;
     featuredArticleId: number;
 }

@@ -6,6 +6,7 @@ export interface InfiniteArticlesContainerProps {
   tags: string[];
   initArticles: StrapiData<StrapiArticle[]>;
   featuredArticleId?: number;
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   InfiniteArticleComponent: any;
 }
 
