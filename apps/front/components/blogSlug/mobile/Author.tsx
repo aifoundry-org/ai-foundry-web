@@ -18,7 +18,7 @@ export default function Author({author}: AuthorProps) {
         <div>
             <div className='flex flex-row font-host-grotesk items-center gap-x-[2rem] pt-12 border-t-2 border-neutral-900'>
                 <div className='flex w-[6.4rem] h-[6.4rem]'>
-                    <img src={`${process.env.STRAPI_BASE_URL}${profileImage.url}`} />
+                    <img src={`${process.env.NEXT_PUBLIC_STRAPI_BASE_URL}${profileImage.url}`} />
                 </div>
                 <div className='flex flex-col'>
                     <p className='font-bold text-[1.6rem] leading-[2.4rem]'>{name}</p>

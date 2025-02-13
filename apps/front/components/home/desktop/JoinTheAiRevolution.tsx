@@ -9,7 +9,7 @@ import FadeUp from '@/components/common/universal/FadeUp'
 
 export default function JoinTheAiRevolution(){
     return (
-        <div className={`hidden md:flex md:flex-col md:relative md:w-full md:h-[34vw] md:px-[5.6vw] relative ${process.env.HIDE_SECTIONS === "true" && 'mt-[15vw]'}`}>
+        <div className={`hidden md:flex md:flex-col md:relative md:w-full md:h-[34vw] md:px-[5.6vw] relative ${process.env.NEXT_PUBLIC_HIDE_SECTIONS === "true" && 'mt-[15vw]'}`}>
             <div className='absolute w-full h-fit -top-[4.3vw] left-0'>
                 <img src={IMGBackground.src} />
             </div>

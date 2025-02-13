@@ -25,7 +25,7 @@ const Article = ({
                     return (
                         <div key={id} className='flex flex-col w-full h-full'>
                             <div className='flex flex-row items-center justify-between mb-[7vw]'>
-                                <img src={`${process.env.STRAPI_BASE_URL}${coverImage.url}`} className='border-2 border-black rounded-lg' alt="cover" />
+                                <img src={`${process.env.NEXT_PUBLIC_STRAPI_BASE_URL}${coverImage.url}`} className='border-2 border-black rounded-lg' alt="cover" />
                             </div>
                             <div className='flex flex-row items-center mb-[4.275vw] gap-x-[2.15vw]'>
                                 {/* eslint-disable-next-line @typescript-eslint/no-explicit-any */}

@@ -26,7 +26,7 @@ const Headline = ({ article, className }: HeadlineProps) => {
             </Link>
             <div className='mb-[2.225vw] relative w-fit'>
                 <img src={IMGPaper.src} className='absolute w-[25.56vw] -top-[2vw] -right-[2.5vw] -z-[1]' />
-                <img src={`${process.env.STRAPI_BASE_URL}${coverImage.url}`} className='relative w-[80.3rem] border-2 border-black rounded-lg' />
+                <img src={`${process.env.NEXT_PUBLIC_STRAPI_BASE_URL}${coverImage.url}`} className='relative w-[80.3rem] border-2 border-black rounded-lg' />
                 <img src={IMGArrows.src} className='absolute w-[8.345vw] -bottom-[2vw] right-0' />
             </div>
             <div className='flex flex-wrap gap-2 pb-[2.4rem]'>

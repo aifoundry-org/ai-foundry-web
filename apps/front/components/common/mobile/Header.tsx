@@ -120,11 +120,9 @@ export default function Header() {
                             <Link className="uppercase" onClick={() => setShowMenu(false)} href="/#events-mobile">
                                 Events
                             </Link>
-                            {process.env.HIDE_SECTIONS === "false" &&
-                                <Link className="uppercase" onClick={() => setShowMenu(false)} href="/#blog-mobile">
-                                    Blog
-                                </Link>
-                            }
+                            <Link className="uppercase" onClick={() => setShowMenu(false)} href="/#blog-mobile">
+                                Blog
+                            </Link>
                             <Link className="uppercase" onClick={() => setShowMenu(false)} href="/#values-mobile">
                                 Our values
                             </Link>
