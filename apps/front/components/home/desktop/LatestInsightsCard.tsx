@@ -31,7 +31,7 @@ export default function LatestInsightsCard({article = {} as StrapiArticle}) {
                 })}
             </div>
             <div className='flex flex-row basis-[80%] justify-start mt-8'>
-                <Button as={Link} href={`/blog/${slug}`} target="_blank" variant='secondary' content='Read more' />
+                <Button as={Link} href={`/blog/${slug}`} variant='secondary' content='Read more' />
             </div>
         </div>
     )
