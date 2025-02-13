@@ -48,7 +48,7 @@ export default function ArticlesList({
     };
 
     return (
-        <div className='hidden md:block md:max-w-[130rem] md:m-auto md:text-center md:mb-14 md:px-20'>
+        <div className='hidden md:block md:max-w-[130rem] xl:max-w-[130rem] 2xl:max-w-[150rem] md:m-auto md:text-center md:mb-14 md:px-20'>
             <div className='flex flex-row items-start gap-4 mb-20'>
                 <Filters options={filtersOptions} onClick={handleFilterClick} />
                 <SearchInput className='w-[19.9vw]' value={searchTerm} onChange={(e) => onSearchChange(e.target.value)} />

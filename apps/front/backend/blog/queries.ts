@@ -1,7 +1,7 @@
 import qs from 'qs';
 import { PAGINATION_LIMIT } from '@/components/blog/universal/ArticlesContainerType';
 
-export const getArticlesQueryParams = (search?: string, tags?: string[], offset?: number) => {
+export const getArticlesQueryParams = (search?: string, tags?: string[], offset?: number, limit?: number) => {
     const config = {
         fields: ['slug', 'title', 'date', 'createdAt', 'updatedAt'],
         filters: {
@@ -27,7 +27,7 @@ export const getArticlesQueryParams = (search?: string, tags?: string[], offset?
         sort: ['updatedAt:desc'],
         pagination: {
             start: offset,
-            limit: PAGINATION_LIMIT,
+            limit: limit ?? PAGINATION_LIMIT,
         },
     }
 
@@ -66,7 +66,7 @@ export const getArticleQueryParams = (slug: string) => {
         filters: {
             ...(slug && {
                 slug: {
-                    $containsi: slug,
+                    $eq: slug,
                 }
             })
         },

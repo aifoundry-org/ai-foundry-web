@@ -1,4 +1,3 @@
-'use client'
 /* eslint-disable */
 import Link from 'next/link'
 import Button from '@/libs/litebox-lib/ui/Button/Button'
@@ -9,11 +8,11 @@ import LatestInsightsCard from './LatestInsightsCard'
 import IMGBackground from '@/public/pngs/home/latestInsights/background.png'
 import IMGBackgroundTitle from '@/public/pngs/home/latestInsights/backgroundTitle.png'
 
-// TODO: Remove articles from page after implementing strapi
-import articles from '@/mock/home/latestInsights/data'
-// END TODO
+import { getLastArticles } from '@/backend/blog/actions'
 
-export default function LatestInsights() {
+export default async function LatestInsights() {
+    const articles = await getLastArticles();
+
     return (
         <div id='blog' className='hidden xs:flex xs:flex-col xs:pt-[12vw] xs:pb-[7.7vw] xs:relative xs:w-full xs:h-fit xs:px-[7.78vw]'>
             <FadeIn delay={1} className='absolute w-full h-fit -top-[3.5vw] left-0 -z-[1]'>
@@ -30,19 +29,12 @@ export default function LatestInsights() {
                 access to summaries and video replays of prior AI Hack Labs and Podcasts.
             </FadeUp>
             <FadeUp className='w-full h-fit mb-[3.335vw]'>
-                <Button as={Link} href="https://aifoundry.org/blog" target="_blank" variant='primary' content='Visit our blog' />
+                <Button as={Link} href="/blog" variant='primary' content='Visit our blog' />
             </FadeUp>
             <div className='flex flex-col gap-[6vw] md:flex-row xl:flex-row 2xl:flex-row md:gap-[1vw] xl:gap-[1vw] 2xl:gap-[1vw]'>
-                {articles.slice(0, 3).map((card, idx) => (
-                    <FadeUp key={idx} delay={card.delay}>
-                        <LatestInsightsCard 
-                            title={card.title}
-                            tags={card.tags}
-                            author={card.author}
-                            date={card.date}
-                            imageUrl={card.imageUrl}
-                            link={`/blog/${card.slug}`}
-                        />
+                {articles.data.map((article, idx) => (
+                    <FadeUp key={article.id} delay={0.75+(0.15*idx)}>
+                        <LatestInsightsCard article={article} />
                     </FadeUp>
                 ))}
             </div>
