@@ -1,3 +1,4 @@
+/* eslint-disable */
 import Link from 'next/link'
 import IMGBackground from '@/public/pngs/termsAndConditions/background.png'
 

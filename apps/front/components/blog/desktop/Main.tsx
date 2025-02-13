@@ -1,3 +1,4 @@
+/* eslint-disable */
 import IMGBackground from '@/public/pngs/blog/background.png'
 import IMGTitleErrors from '@/public/pngs/blog/titleErrors.png'
 

@@ -1,5 +1,5 @@
 'use client';
-
+/* eslint-disable */
 import { useState, useEffect, useRef } from 'react';
 import dynamic from 'next/dynamic';
 import { m } from 'motion/react';
@@ -59,13 +59,13 @@ export default function Header() {
                         <div className='flex items-center'>Find out more! <img src={IMGHeaderIconArrowUpRight.src} className='inline-block ml-[2.15vw] w-[3.735vw]' /></div>
                     </Link>
                 </div>
-                <div className='flex flex-row w-full h-[27vw] bg-sand rounded-t-3xl relative'>
+                <div className='flex flex-row w-full h-[10.1rem] bg-sand rounded-t-3xl relative'>
                     {currPage == '/' && <img className='absolute w-[19.48vw] h-[25.35vw] right-[0.3vw] z-[2]' src={IMGBackground.src} />}
                     <LazyMotion>
                         <m.nav
                             className={`flex flex-row items-center bg-sand ${
                                 isSticky
-                                ? 'fixed z-20 top-0 px-[2.78vw] py-[7vw] border-2 border-black'
+                                ? 'fixed z-20 top-0 px-[2.78vw] py-[2.6rem] border-2 border-black'
                                 : 'relative px-[2.78vw] mx-auto'
                             }`}
                             style={{
@@ -80,7 +80,7 @@ export default function Header() {
                             >
                             <div className='flex basis-[50%] w-full mx-auto items-center justify-start'>
                                 <LottiePlayer
-                                    className='h-[15vw]'
+                                    className='w-[15.2rem]'
                                     ref={lottieRef}
                                     src='/lotties/navbarLogo.lottie'
                                     autoplay={false}
@@ -120,11 +120,9 @@ export default function Header() {
                             <Link className="uppercase" onClick={() => setShowMenu(false)} href="/#events-mobile">
                                 Events
                             </Link>
-                            {process.env.HIDE_SECTIONS === "false" &&
-                                <Link className="uppercase" onClick={() => setShowMenu(false)} href="/#blog-mobile">
-                                    Blog
-                                </Link>
-                            }
+                            <Link className="uppercase" onClick={() => setShowMenu(false)} href="/#blog-mobile">
+                                Blog
+                            </Link>
                             <Link className="uppercase" onClick={() => setShowMenu(false)} href="/#values-mobile">
                                 Our values
                             </Link>

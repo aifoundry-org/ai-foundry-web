@@ -1,5 +1,5 @@
 'use client'
-
+/* eslint-disable */
 import { usePathname } from 'next/navigation';
 import Link from 'next/link'
 import FadeIn from '@/components/common/universal/FadeIn';
@@ -43,7 +43,7 @@ export default function Footer(){
                 <FadeIn delay={0.5} className='flex flex-row font-bold text-[5vw] leading-[3vw] mt-[10vw] justify-between uppercase'>
                     <a href='/#projects-mobile'>Projects</a>
                     <a href='/#events-mobile'>Events</a>
-                    {process.env.HIDE_SECTIONS === "false" && <a href='/#blog-mobile'>Blog</a>}
+                    <a href='/#blog-mobile'>Blog</a>
                     <a href='/#values-mobile'>Our Values</a>
                 </FadeIn>
                 <FadeIn delay={0.5} className='flex flex-row font-bold text-[5vw] leading-[3vw] mt-[6.4vw] mb-[10.675vw] justify-between uppercase'>

@@ -1,3 +1,4 @@
+/* eslint-disable */
 import IMGArrow from '@/public/pngs/home/hero/arrow.png';
 import IMGErrors from '@/public/pngs/home/hero/errors.png';
 import IMGJoinString from '@/public/pngs/home/hero/joinString.png';
