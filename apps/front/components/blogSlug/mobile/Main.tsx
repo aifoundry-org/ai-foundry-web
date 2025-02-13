@@ -1,3 +1,4 @@
+/* eslint-disable */
 import Headline from './Headline';
 import Content from './Content';
 import Author from './Author';

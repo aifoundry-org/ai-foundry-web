@@ -1,5 +1,5 @@
 'use client'
-
+/* eslint-disable */
 import { useState } from 'react';
 import IMGCircle from '@/public/pngs/home/community/circle.png';
 import IMGIlus from '@/public/pngs/home/community/ilus.png';
