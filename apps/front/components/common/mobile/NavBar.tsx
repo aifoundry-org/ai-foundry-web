@@ -17,9 +17,9 @@ import { usePathname } from 'next/navigation';
 
 const LottiePlayer = dynamic(() => import('@/components/common/universal/LottiePlayer'));
 
-export default function NavBar() {
+export default function NavBar({removeTopBorders = false}) {
     const path = usePathname();
-    const isBlog = path.includes('blog');
+    const removeRoundedBorders = path.includes('blog') || path.includes('terms-and-conditions') || removeTopBorders;
     const lottieRef = useRef<any>(null);
     const [currPage, setCurrPage] = useState('');
     const [showMenu, setShowMenu] = useState(false);
@@ -27,7 +27,7 @@ export default function NavBar() {
 
     const checkIfSticky = () => {
         const { scrollY } = window
-        const stickyState = isBlog ? scrollY > 0 : scrollY > 93;
+        const stickyState = removeRoundedBorders ? scrollY > 0 : scrollY > 93;
 
         setIsSticky(stickyState);
         if(!stickyState){
@@ -53,7 +53,7 @@ export default function NavBar() {
     
     return (
         <>
-            <div className={`flex flex-row w-full h-[10.1rem] bg-sand ${!isBlog && 'rounded-t-3xl'} relative`}>
+            <div className={`flex flex-row w-full h-[10.1rem] bg-sand ${!removeRoundedBorders && 'rounded-t-3xl'} relative`}>
                 {currPage == '/' && <img className='absolute w-[19.48vw] h-[25.35vw] right-[0.3vw] z-[2]' src={IMGBackground.src} />}
                 <LazyMotion>
                     <m.nav

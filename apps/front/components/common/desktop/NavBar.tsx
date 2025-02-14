@@ -11,9 +11,9 @@ import { usePathname } from 'next/navigation';
 
 const LottiePlayer = dynamic(() => import('@/components/common/universal/LottiePlayer'));
 
-export default function NavBar() {
+export default function NavBar({removeTopBorders = false}) {
     const path = usePathname();
-    const isBlog = path.includes('blog');
+    const removeRoundedBorders = path.includes('blog') || path.includes('terms-and-conditions') || removeTopBorders;
     const lottieRef = useRef<any>(null);
     const [isSticky, setIsSticky] = useState(false);
 
@@ -43,7 +43,7 @@ export default function NavBar() {
     },[])
 
     return (
-        <div className={`flex items-center w-full h-[5.56vw] pt-[2.225vw] pb-[0.5vw] bg-sand ${!isBlog && 'rounded-t-lg'}`}>
+        <div className={`flex items-center w-full h-[5.56vw] pt-[2.225vw] pb-[0.5vw] bg-sand ${!removeRoundedBorders && 'rounded-t-lg'}`}>
             <LazyMotion>
                 <m.nav
                     className={`flex flex-col bg-sand ${

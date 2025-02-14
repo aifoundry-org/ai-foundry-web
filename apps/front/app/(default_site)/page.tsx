@@ -31,9 +31,6 @@ import JoinTheAiRevolutionMobile from '@/components/home/mobile/JoinTheAiRevolut
 import FaqsDesktop from '@/components/home/desktop/Faqs'
 import FaqsMobile from '@/components/home/mobile/Faqs'
 
-import FooterMobile from '@/components/common/mobile/Footer';
-import FooterDesktop from '@/components/common/desktop/Footer';
-
 export default function Page() {
   return (
     <>
@@ -74,8 +71,6 @@ export default function Page() {
         <FaqsDesktop />
         <FaqsMobile />
       </main>
-      <FooterMobile />
-      <FooterDesktop />
     </>
   );
 }

@@ -6,7 +6,7 @@ import { usePathname } from 'next/navigation';
 
 export default function Header() {
     const path = usePathname();
-    const hideSelf = path.includes('blog');
+    const hideSelf = path.includes('blog') || path.includes('terms-and-conditions');
 
     return (
         <div className={`${hideSelf && 'hidden'} flex flex-row text-sand justify-center p-4`}>
