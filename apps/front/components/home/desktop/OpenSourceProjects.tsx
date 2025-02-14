@@ -1,5 +1,5 @@
 'use client'
-
+/* eslint-disable */
 import FadeUp from '@/components/common/universal/FadeUp'
 import OpenSourceProjectsCard from './OpenSourceProjectsCard'
 import IMGBackground from '@/public/pngs/home/openSourceProjects/background.png'

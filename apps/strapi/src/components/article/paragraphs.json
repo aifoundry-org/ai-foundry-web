@@ -12,6 +12,10 @@
     },
     "tag": {
       "type": "string"
+    },
+    "alternativeStyle": {
+      "type": "boolean",
+      "default": false
     }
   }
 }

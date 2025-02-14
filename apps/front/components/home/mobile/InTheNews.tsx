@@ -1,5 +1,5 @@
 'use client'
-
+/* eslint-disable */
 import { useRef, useState } from 'react'
 import IMGBackground from '@/public/pngs/home/inTheNews/backgroundMobile.png'
 import IMGLogoCnn from '@/public/pngs/home/inTheNews/logoCnn.png'

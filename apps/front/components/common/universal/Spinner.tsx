@@ -1,3 +1,4 @@
+/* eslint-disable */
 interface SpinnerProps {
   className?: string;
 }

@@ -19,14 +19,6 @@
     "role": {
       "type": "string"
     },
-    "profileImage": {
-      "type": "media",
-      "multiple": false,
-      "required": false,
-      "allowedTypes": [
-        "images"
-      ]
-    },
     "description": {
       "type": "text"
     },
@@ -44,6 +36,16 @@
       "relation": "manyToMany",
       "target": "api::article.article",
       "inversedBy": "authors"
+    },
+    "profileImage": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false
     }
   }
 }

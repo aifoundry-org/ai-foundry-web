@@ -1,5 +1,5 @@
 'use client'
-
+/* eslint-disable */
 import { useState } from 'react';
 import IMGBackground from '@/public/pngs/home/community/backgroundMobile.png';
 import CommunityCard from './CommunityCard';

@@ -50,10 +50,8 @@ export default function Page() {
         <CommunityDesktop />
         <CommunityMobile />
 
-        {process.env.HIDE_SECTIONS === "false" && <>
-          <LatestInsightsDesktop />
-          <LatestInsightsMobile />
-        </>}
+      <LatestInsightsDesktop />
+      <LatestInsightsMobile />
 
         <OurCompanyDividerDesktop />
         <OurCompanyDividerMobile />

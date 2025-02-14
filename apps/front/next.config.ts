@@ -1,9 +1,5 @@
 import type { NextConfig } from "next";
 
-const nextConfig: NextConfig = {
-  env: {
-    HIDE_SECTIONS: "true"
-  },
-};
+const nextConfig: NextConfig = {};
 
 export default nextConfig;

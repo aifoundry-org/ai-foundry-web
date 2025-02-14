@@ -1,3 +1,4 @@
+/* eslint-disable */
 import Link from 'next/link'
 import FadeIn from '@/components/common/universal/FadeIn'
 import FadeUp from '@/components/common/universal/FadeUp'

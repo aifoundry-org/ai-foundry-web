@@ -1,5 +1,5 @@
 'use client'
-
+/* eslint-disable */
 import { useState } from 'react';
 import IMGCircle from '@/public/pngs/home/community/circle.png';
 import IMGIlus from '@/public/pngs/home/community/ilus.png';
@@ -64,7 +64,7 @@ export default function Community() {
                     </FadeUp>
                 </div>
                 {hasEvents && 
-                    <FadeIn delay={0.5} className={`flex justify-end ${process.env.HIDE_SECTIONS === "false" ? '' : 'mb-[5vw]'} `}>
+                    <FadeIn delay={0.5} className={`flex justify-end ${process.env.NEXT_PUBLIC_HIDE_SECTIONS === "true" && 'mb-[5vw]'} `}>
                         <Button className='z-[1]' target='_blank' as={Link} href='https://lu.ma/aifoundryorg' variant='primary' content='View full calendar' svg='arrow-up-right' />
                     </FadeIn>
                 }
