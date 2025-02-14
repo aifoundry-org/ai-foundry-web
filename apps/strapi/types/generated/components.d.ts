@@ -20,6 +20,7 @@ export interface ArticleParagraphs extends Struct.ComponentSchema {
     icon: 'bulletList';
   };
   attributes: {
+    alternativeStyle: Schema.Attribute.Boolean & Schema.Attribute.DefaultTo<false>;
     content: Schema.Attribute.Blocks;
     tag: Schema.Attribute.String;
   };
