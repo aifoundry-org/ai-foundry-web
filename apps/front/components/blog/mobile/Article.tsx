@@ -4,6 +4,7 @@ import { StrapiArticle } from '@/libs/litebox-lib/types/strapi/strapiBlog';
 import { StrapiData } from '@/libs/litebox-lib/types/strapi/strapi';
 import Button from '@/libs/litebox-lib/ui/Button/Button';
 import Link from 'next/link';
+import getStrapiMediaUrl from '@/utils/getStrapiMediaUrl';
 
 interface ArticleProp {
     sortedArticles: StrapiData<StrapiArticle[]>,
@@ -26,7 +27,7 @@ const Article = ({
                         <div key={id} className='flex flex-col w-full h-full'>
                             <div className='flex flex-row items-center justify-between mb-[7vw]'>
                                 {coverImage ? 
-                                    <img src={`${process.env.NEXT_PUBLIC_STRAPI_BASE_URL}${coverImage.url}`} className='border-2 border-black rounded-lg' alt="cover" /> : 
+                                    <img src={getStrapiMediaUrl(coverImage.url)} className='border-2 border-black rounded-lg' alt="cover" /> : 
                                     <div className='flex w-full h-[48vw] border-2 border-black rounded-lg uppercase text-[8vw] justify-center items-center'>No cover image</div>}
                             </div>
                             <div className='flex flex-row items-center mb-[4.275vw] gap-x-[2.15vw]'>

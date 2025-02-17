@@ -3,6 +3,7 @@
 import Link from 'next/link';
 import Button from '@/litebox-lib/ui/Button/Button';
 import { StrapiArticle } from '@/libs/litebox-lib/types/strapi/strapiBlog';
+import getStrapiMediaUrl from '@/utils/getStrapiMediaUrl';
 
 export default function LatestInsightsCard({article = {} as StrapiArticle}) {
     const { title, date, authors, coverImage, tags, slug } = article;
@@ -10,7 +11,7 @@ export default function LatestInsightsCard({article = {} as StrapiArticle}) {
         <div className='flex flex-col w-full h-full'>
             <div className='flex flex-row items-center justify-between mb-[1.675vw]'>
                 {coverImage ? 
-                    <img src={`${process.env.NEXT_PUBLIC_STRAPI_BASE_URL}${coverImage.url}`} className='w-[27.05vw] border-2 border-black rounded-lg' /> : 
+                    <img src={getStrapiMediaUrl(coverImage.url)} className='w-[27.05vw] border-2 border-black rounded-lg' /> : 
                     <div className='flex w-[27.05vw] h-[15vw] border-2 border-black rounded-lg text-center justify-center items-center text-[2vw] uppercase'>No cover image</div>
                 }
             </div>
