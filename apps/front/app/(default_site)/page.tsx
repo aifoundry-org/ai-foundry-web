@@ -33,42 +33,44 @@ import FaqsMobile from '@/components/home/mobile/Faqs'
 
 export default function Page() {
   return (
-    <main>
-      <HeroDesktop />
-      <HeroMobile />
+    <>
+      <main>
+        <HeroDesktop />
+        <HeroMobile />
 
-      <FindOutMoreDesktop />
-      <FindOutMoreMobile />
+        <FindOutMoreDesktop />
+        <FindOutMoreMobile />
 
-      <OpenSourceProjectsDesktop />
-      <OpenSourceProjectsMobile />
+        <OpenSourceProjectsDesktop />
+        <OpenSourceProjectsMobile />
 
-      <CommunityDesktop />
-      <CommunityMobile />
+        <CommunityDesktop />
+        <CommunityMobile />
 
-      <LatestInsightsDesktop />
-      <LatestInsightsMobile />
+        <LatestInsightsDesktop />
+        <LatestInsightsMobile />
 
-      <OurCompanyDividerDesktop />
-      <OurCompanyDividerMobile />
+        <OurCompanyDividerDesktop />
+        <OurCompanyDividerMobile />
 
-      <VisionMissionDesktop />
-      <VisionMissionMobile />
+        <VisionMissionDesktop />
+        <VisionMissionMobile />
 
-      <TestimonialsDesktop />
-      <TestimonialsMobile />
+        <TestimonialsDesktop />
+        <TestimonialsMobile />
 
-      {process.env.HIDE_SECTIONS === "false" && <>
-        <InTheNewsDesktop />
-        <InTheNewsMobile />
-      </>
-      }
+        {process.env.HIDE_SECTIONS === "false" && <>
+          <InTheNewsDesktop />
+          <InTheNewsMobile />
+        </>
+        }
 
-      <JoinTheAiRevolutionDesktop />
-      <JoinTheAiRevolutionMobile />
+        <JoinTheAiRevolutionDesktop />
+        <JoinTheAiRevolutionMobile />
 
-      <FaqsDesktop />
-      <FaqsMobile />
-    </main>
+        <FaqsDesktop />
+        <FaqsMobile />
+      </main>
+    </>
   );
 }
