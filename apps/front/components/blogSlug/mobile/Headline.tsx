@@ -23,7 +23,10 @@ const Headline = ({ article, className }: HeadlineProps) => {
                 <p className='font-dharma-gothic-e font-bold text-[4.8vw] leading-[4.8vw] uppercase'>Go Back to Blog</p>
             </Link>
             <div className='flex flex-row items-center justify-between mb-[7vw]'>
-                <img src={`${process.env.NEXT_PUBLIC_STRAPI_BASE_URL}${coverImage.url}`} className='w-full border-2 border-black rounded-lg' />
+                {coverImage ? 
+                    <img src={`${process.env.NEXT_PUBLIC_STRAPI_BASE_URL}${coverImage.url}`} className='w-full border-2 border-black rounded-lg' /> : 
+                    <div className='flex w-full h-[48.275vw] border-2 border-black rounded-lg text-center justify-center items-center text-[8vw] uppercase'>No cover image</div>
+                }
             </div>
             <div className='flex flex-wrap gap-2 pb-10'>
                 {tags.map((tag: StrapiTag) => (
