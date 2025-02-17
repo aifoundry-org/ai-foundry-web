@@ -30,7 +30,10 @@ export default function RelatedArticles({ articles }: BlogArticleProps) {
                     return (
                         <div key={id} className='flex flex-col w-full h-full'>
                             <div className='flex flex-row items-center mb-[3vw] lg:mb-[1.675vw] xl:mb-[1.675vw] 2xl:mb-[1.675vw]'>
-                                <img src={`${process.env.NEXT_PUBLIC_STRAPI_BASE_URL}${coverImage.url}`} className='border-2 border-black rounded-lg w-full' />
+                               {coverImage ? 
+                                    <img src={`${process.env.NEXT_PUBLIC_STRAPI_BASE_URL}${coverImage.url}`} className='w-[27.05vw] border-2 border-black rounded-lg' /> : 
+                                    <div className='flex w-[27.05vw] h-[15vw] border-2 border-black rounded-lg text-center justify-center items-center text-[2vw] uppercase'>No cover image</div>
+                                }
                             </div>
                             <div className='flex flex-row items-center text-nowrap mb-[5vw] md:mb-[1vw] lg:mb-[1.125vw] xl:mb-[1.125vw] 2xl:mb-[1.125vw] gap-x-[0.575vw]'>
                                 {tags.map((el: StrapiTag) => (

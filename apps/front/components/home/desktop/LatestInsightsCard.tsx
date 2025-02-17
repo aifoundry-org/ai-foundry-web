@@ -9,7 +9,10 @@ export default function LatestInsightsCard({article = {} as StrapiArticle}) {
     return (
         <div className='flex flex-col w-full h-full'>
             <div className='flex flex-row items-center justify-between mb-[1.675vw]'>
-                <img src={`${process.env.NEXT_PUBLIC_STRAPI_BASE_URL}${coverImage.url}`} className='w-[27.05vw] border-2 border-black rounded-lg' />
+                {coverImage ? 
+                    <img src={`${process.env.NEXT_PUBLIC_STRAPI_BASE_URL}${coverImage.url}`} className='w-[27.05vw] border-2 border-black rounded-lg' /> : 
+                    <div className='flex w-[27.05vw] h-[15vw] border-2 border-black rounded-lg text-center justify-center items-center text-[2vw] uppercase'>No cover image</div>
+                }
             </div>
             <div className='flex flex-row items-center mb-[2vw] md:mb-[1.125vw] xl:mb-[1.125vw] 2xl:mb-[1.125vw] gap-x-[0.575vw]'>
                 {tags.map(el => (
