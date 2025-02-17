@@ -25,10 +25,12 @@ const Article = ({
                     return (
                         <div key={id} className='flex flex-col w-full h-full'>
                             <div className='flex flex-row items-center justify-between mb-[7vw]'>
-                                <img src={`${process.env.NEXT_PUBLIC_STRAPI_BASE_URL}${coverImage.url}`} className='border-2 border-black rounded-lg' alt="cover" />
+                                {coverImage ? 
+                                    <img src={`${process.env.NEXT_PUBLIC_STRAPI_BASE_URL}${coverImage.url}`} className='border-2 border-black rounded-lg' alt="cover" /> : 
+                                    <div className='flex w-full h-[48vw] border-2 border-black rounded-lg uppercase text-[8vw] justify-center items-center'>No cover image</div>}
                             </div>
                             <div className='flex flex-row items-center mb-[4.275vw] gap-x-[2.15vw]'>
-                                {/* eslint-disable-next-line @typescript-eslint/no-explicit-any */}
+                                { }
                                 {tags.map((el: any, idx: number) => (
                                     <div key={idx} className='bg-orange rounded-md px-[3.2vw] py-[2.2vw]'>
                                         <p className='font-dharma-gothic-e font-bold text-[4.8vw] leading-[4.8vw] uppercase'>

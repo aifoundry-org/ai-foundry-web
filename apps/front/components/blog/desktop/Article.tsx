@@ -28,7 +28,10 @@ const Article = ({
                     return (
                         <div key={id} className={`flex flex-col w-full h-full ${isFeaturedArticle ? 'sm:col-start-1 sm:col-end-3' : ''}`}>
                             <div className={`flex flex-row items-center justify-between mb-[1.675vw] h-[21.4rem] overflow-hidden`}>
-                                <img src={`${process.env.NEXT_PUBLIC_STRAPI_BASE_URL}${coverImage.url}`} className='w-full h-full border-2 border-black rounded-lg object-cover object-top' alt="cover" />
+                                {coverImage ? 
+                                    <img src={`${process.env.NEXT_PUBLIC_STRAPI_BASE_URL}${coverImage.url}`} className='w-full h-full border-2 border-black rounded-lg object-cover object-top' alt="cover" /> : 
+                                    <div className='flex w-full h-full border-2 border-black rounded-lg items-center justify-center text-[4vw] uppercase'>No cover image</div>
+                                }
                             </div>
                             <div className='flex flex-row items-center mb-[2vw] md:mb-[1.125vw] xl:mb-[1.125vw] 2xl:mb-[1.125vw] gap-x-[0.575vw]'>
                                 {tags.map((el: any, idx: number) => (
