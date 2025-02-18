@@ -34,9 +34,9 @@ const Article = ({
                                     <div className='flex w-full h-full border-2 border-black rounded-lg items-center justify-center text-[4vw] uppercase'>No cover image</div>
                                 }
                             </div>
-                            <div className='flex flex-row items-center mb-[2vw] md:mb-[1.125vw] xl:mb-[1.125vw] 2xl:mb-[1.125vw] gap-x-[0.575vw]'>
+                            <div className='flex flex-row items-center mb-[2vw] overflow-x-auto md:mb-[1.125vw] xl:mb-[1.125vw] 2xl:mb-[1.125vw] gap-x-[0.575vw]'>
                                 {tags.map((el: any, idx: number) => (
-                                    <div key={idx} className='bg-orange rounded-md md:px-[1.2vw] md:py-[1.2vw] lg:px-[1vw] lg:py-[0.7vw] xl:px-[1vw] xl:py-[0.7vw] 2xl:px-[1vw] 2xl:py-[0.7vw]'>
+                                    <div key={idx} className='bg-orange text-nowrap rounded-md md:px-[1.2vw] md:py-[1.2vw] lg:px-[1vw] lg:py-[0.7vw] xl:px-[1vw] xl:py-[0.7vw] 2xl:px-[1vw] 2xl:py-[0.7vw]'>
                                         <p className='font-dharma-gothic-e font-bold md:text-[2.8vw] lg:text-[1.4vw] xl:text-[1.4vw] 2xl:text-[1.4vw] leading-[1.4vw] uppercase'>
                                             {el.name}
                                         </p>
@@ -47,7 +47,7 @@ const Article = ({
                                 <p className='font-dharma-gothic-e font-black text-[5vw] md:text-[4vw] lg:text-[2.778vw] xl:text-[2.778vw] 2xl:text-[2.778vw] leading-[4vw] md:leading-[4vw] lg:leading-[2.3vw] xl:leading-[2.3vw] 2xl:leading-[2.3vw] uppercase'>{title}</p>
                             </div>
                             <div className='flex flex-row font-normal text-[3vw] md:text-[2vw] lg:text-[1vw] xl:text-[1vw] 2xl:text-[1vw] leading-[1.5vw] font-host-grotesk'>
-                                {authors[0].name} | {new Date(date).toLocaleDateString('en-US', {
+                                {authors && authors.length > 0 && `${authors[0].name} | `}{date && new Date(date).toLocaleDateString('en-US', {
                                     year: 'numeric',
                                     month: 'long',
                                     day: 'numeric'

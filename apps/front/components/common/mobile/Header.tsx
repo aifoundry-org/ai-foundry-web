@@ -1,4 +1,3 @@
-/* eslint-disable */
 import NavBar from './NavBar';
 import Announcement from './Announcement';
 

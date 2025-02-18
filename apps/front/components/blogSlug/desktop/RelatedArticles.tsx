@@ -49,7 +49,7 @@ export default function RelatedArticles({ articles }: BlogArticleProps) {
                                 <p className='font-dharma-gothic-e font-black text-[8vw] md:text-[4vw] lg:text-[2.778vw] xl:text-[2.778vw] 2xl:text-[2.3vw] leading-[7vw] lg:leading-[2.3vw] xl:leading-[2.3vw] 2xl:leading-[2.1vw] uppercase'>{title}</p>
                             </div>
                             <div className='flex flex-row font-normal text-[5vw] md:text-[3vw] lg:text-[1vw] xl:text-[1vw] 2xl:text-[1vw] leading-[6vw] lg:leading-[1.5vw] xl:leading-[1.5vw] 2xl:leading-[1.5vw] font-host-grotesk'>
-                                {authors[0].name} | {new Date(date).toLocaleDateString('en-US', {
+                                {authors && authors.length > 0 && `${authors[0].name} | `}{date && new Date(date).toLocaleDateString('en-US', {
                                     year: 'numeric',
                                     month: 'long',
                                     day: 'numeric'

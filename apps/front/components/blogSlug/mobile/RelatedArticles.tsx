@@ -43,7 +43,7 @@ export default function RelatedArticles({ articles }: BlogArticleProps) {
                             <p className='font-dharma-gothic-e text-left font-black text-[8.6vw] leading-[7vw] uppercase'>{title}</p>
                         </div>
                         <div className='flex flex-row font-normal text-[3.2vw] leading-[5.6vw] font-host-grotesk'>
-                            {authors[0].name} | {new Date(date).toLocaleDateString('en-US', {
+                            {authors && authors.length > 0 && `${authors[0].name} | `}{date && new Date(date).toLocaleDateString('en-US', {
                                 year: 'numeric',
                                 month: 'long',
                                 day: 'numeric'
