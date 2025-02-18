@@ -4,11 +4,11 @@ import Button from '@/libs/litebox-lib/ui/Button/Button'
 import FadeUp from '@/components/common/universal/FadeUp'
 import FadeIn from '@/components/common/universal/FadeIn'
 
-import LatestInsightsCard from './LatestInsightsCard'
 import IMGBackground from '@/public/pngs/home/latestInsights/background.png'
 import IMGBackgroundTitle from '@/public/pngs/home/latestInsights/backgroundTitle.png'
 
 import { getLastArticles } from '@/backend/blog/actions'
+import ArticleThumbnail from '@/components/blog/desktop/ArticleThumbnail'
 
 export default async function LatestInsights() {
     const articles = await getLastArticles();
@@ -31,10 +31,10 @@ export default async function LatestInsights() {
             <FadeUp className='w-full h-fit mb-[3.335vw]'>
                 <Button as={Link} href="/blog" variant='primary' content='Visit our blog' />
             </FadeUp>
-            <div className='flex flex-col gap-[6vw] md:flex-row xl:flex-row 2xl:flex-row md:gap-[1vw] xl:gap-[1vw] 2xl:gap-[1vw]'>
+            <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-[2.4rem] gap-y-20'>
                 {articles.data.map((article, idx) => (
                     <FadeUp key={article.id} delay={0.75+(0.15*idx)}>
-                        <LatestInsightsCard article={article} />
+                        <ArticleThumbnail article={article} />
                     </FadeUp>
                 ))}
             </div>

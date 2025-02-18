@@ -20,7 +20,7 @@ const Headline = ({ article, className }: HeadlineProps) => {
     const cleanParagraphsContent = paragraphsContent.replace(/<[^>]*>/g, ' ');
 
     return (
-        <div className={`pb-12 ${className}`}>
+        <div className={className}>
             <Link className='flex items-center gap-4 mb-10' href='/blog' rel='noreferrer'>
                 <img src={IMGArrowLeft.src} className='w-[2.4rem]' />
                 <p className='font-dharma-gothic-e font-bold text-[2rem] leading-[2rem] uppercase'>Go Back to Blog</p>
@@ -43,12 +43,12 @@ const Headline = ({ article, className }: HeadlineProps) => {
                 ))}
             </div>
             <h1 className='font-dharma-gothic-e text-[6.4rem] font-black pb-6 leading-[5.3rem] uppercase'>{title}</h1>
-            <div className='font-host-grotesk border-b-2 border-neutral-900 flex flex-wrap justify-between gap-y-[2rem] pt-[3.2rem] pb-[2.4rem] font-paralucent gap-2'>
-                <div className='flex gap-4 text-neutral-900 items-center font-normal text-[1.6rem] leading-[2.4rem]'>
+            <div className='font-host-grotesk border-b-2 border-black flex flex-wrap justify-between gap-y-[2rem] pt-[3.2rem] pb-[2.4rem] font-paralucent gap-2'>
+                <div className='flex gap-4 text-black items-center font-normal text-[1.6rem] leading-[2.4rem]'>
                     {authors && authors[0] && 
                         <>
                             <span className='flex text-wrap'>{authors[0].name}</span>
-                            <div className='bg-neutral-900 w-[1px] h-6' />
+                            <div className='bg-black w-[1px] h-6' />
                         </>
                     }
                     {date && 
@@ -60,16 +60,16 @@ const Headline = ({ article, className }: HeadlineProps) => {
                             })}
                         </time>
                     }
-                    <div className='bg-neutral-900 w-[1px] h-6' />
+                    <div className='bg-black w-[1px] h-6' />
                     <span className='flex flex-nowrap text-nowrap items-center'>{getReadTime(cleanParagraphsContent)}</span>
                 </div>
-                <div className='flex gap-4 text-neutral-900 items-center justify-start md:justify-end pt-5 md:pt-0 font-normal text-[1.6rem] leading-[2.4rem]'>
+                <div className='flex gap-4 text-black items-center justify-start md:justify-end pt-5 md:pt-0 font-normal text-[1.6rem] leading-[2.4rem]'>
                     <div className='flex items-center gap-4'>
                         <span className='flex mr-[1.67vw]'>Share:</span>
                         <div className='flex flex-row items-center gap-[1.67vw]'>
-                            <SocialShareLink className='w-[2.4rem]' platform='instagram' title={title} articleContent={title} />
-                            <SocialShareLink className='w-[2.4rem]' platform='linkedin' title={title} articleContent={title} />
-                            <SocialShareLink className='w-[2.4rem]' platform='x' title={title} articleContent={title} />
+                            <SocialShareLink className='w-[2.4rem] blogSocialIcon' platform='instagram' title={title} articleContent={title} />
+                            <SocialShareLink className='w-[2.4rem] blogSocialIcon' platform='linkedin' title={title} articleContent={title} />
+                            <SocialShareLink className='w-[2.4rem] blogSocialIcon' platform='x' title={title} articleContent={title} />
                         </div>
                     </div>
                 </div>

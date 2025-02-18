@@ -18,7 +18,7 @@ export default function Author({author}: AuthorProps) {
 
         return (
             <div>
-                <div className='flex flex-row font-host-grotesk items-center gap-x-[2rem] pt-12 border-t-2 border-neutral-900'>
+                <div className='flex flex-row font-host-grotesk items-center gap-x-[2rem] pt-12 border-t-2 border-black'>
                     <div className='flex w-[6.4rem] h-[6.4rem]'>
                         <img src={getStrapiMediaUrl(profileImage.url)} />
                     </div>

@@ -2,6 +2,7 @@ import ArticleTag from '@/components/common/desktop/ArticleTag';
 import { StrapiArticle, StrapiTag } from '@/libs/litebox-lib/types/strapi/strapiBlog';
 import Button from '@/libs/litebox-lib/ui/Button/Button';
 import Link from 'next/link';
+import Image from 'next/image'
 import getStrapiMediaUrl from '@/utils/getStrapiMediaUrl';
 
 interface ArticleThumbnailProps {
@@ -16,7 +17,7 @@ export default function ArticleThumbnail({article, isFeaturedArticle = false}: A
         <div key={id} className={`flex flex-col w-full h-full ${isFeaturedArticle ? 'sm:col-start-1 sm:col-end-3' : ''}`}>
             <div className={`flex flex-row items-center justify-between mb-[1.675vw] h-[21.4rem] overflow-hidden`}>
                 {coverImage ? 
-                    <img width={389} height={214} src={getStrapiMediaUrl(coverImage.url)} className='w-full h-full border-2 border-black rounded-lg object-cover object-top' alt="cover" /> : 
+                    <Image width={389} height={214} src={getStrapiMediaUrl(coverImage.url)} className='w-full h-full border-2 border-black rounded-lg object-cover object-top' alt="cover" /> : 
                     <div className='flex w-full h-full border-2 border-black rounded-lg items-center justify-center text-[4vw] uppercase'>No cover image</div>
                 }
             </div>
