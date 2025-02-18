@@ -48,10 +48,10 @@ export default function ArticlesList({
     };
 
     return (
-        <div className='hidden md:block md:max-w-[130rem] xl:max-w-[130rem] 2xl:max-w-[150rem] md:m-auto md:text-center md:mb-14 md:px-20'>
-            <div className='flex flex-row items-start gap-4 mb-20'>
+        <div className='hidden md:block md:w-[84.45vw] xl:w-[84.394vw] 2xl:w-[84.394vw] md:m-auto md:text-center'>
+            <div className='flex flex-row items-center gap-4 mb-20'>
                 <Filters options={filtersOptions} onClick={handleFilterClick} />
-                <SearchInput className='w-[19.9vw]' value={searchTerm} onChange={(e) => onSearchChange(e.target.value)} />
+                <SearchInput className='w-[19.9vw]' inputClassName='h-[3.37vw] text-[1.6rem]' value={searchTerm} onChange={(e) => onSearchChange(e.target.value)} />
             </div>
             <div>
                 {!hasMoreArticles && <p className='mb-10 font-host-grotesk text-[1.8vw] text-left'>Oops! 😕 We couldn&apos;t find that article</p>}

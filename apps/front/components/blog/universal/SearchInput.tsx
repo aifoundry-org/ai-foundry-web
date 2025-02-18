@@ -8,6 +8,7 @@ export interface SearchInputProps extends React.InputHTMLAttributes<HTMLInputEle
   onCancel?: () => void;
   hasCancelButton?: boolean;
   className?: string;
+  inputClassName?: string;
 }
 
 type Variant = 'plain' | 'outlined';
@@ -52,10 +53,10 @@ const CancelIcon = ({ className, onClick }: { className: string; onClick: () => 
 };
 
 const SearchInput = React.forwardRef<HTMLInputElement, SearchInputProps>(
-  ({ value = '', onCancel, variant = 'plain', hasCancelButton = false, className, ...props }, ref) => {
+  ({ value = '', onCancel, variant = 'plain', hasCancelButton = false, className, inputClassName, ...props }, ref) => {
     return (
       <div className={`relative flex items-center ${className}`}>
-        <Input defaultValue={value} ref={ref} variant={variant} placeholder='Search' className='px-[40px]' {...props} />
+        <Input defaultValue={value} ref={ref} variant={variant} placeholder='Search' className={`px-[40px] !text-[#7B7B7B] ${inputClassName}`} {...props} />
         <SearchIcon className='absolute left-5 h-7 w-7 text-neutral-650' />
         {hasCancelButton && value !== '' && (
           <CancelIcon className='absolute right-3 h-5 w-5 text-gray-400 cursor-pointer' onClick={() => onCancel?.()} />
