@@ -153,3 +153,7 @@ ol {
 .faqsModal input:hover, input:focus{
   border-color: #F9A03F !important;
 }
+
+.blogSocialIcon:hover{
+  filter: saturate(100%) invert(65%) sepia(87%) saturate(6747%) hue-rotate(-8deg) brightness(250%) contrast(101%);
+}

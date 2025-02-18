@@ -16,6 +16,7 @@ import 'swiper/css/navigation';
 import { getLastArticles } from '@/backend/blog/actions';
 import { StrapiArticle } from '@/libs/litebox-lib/types/strapi/strapiBlog';
 import getStrapiMediaUrl from '@/utils/getStrapiMediaUrl';
+import ArticleTag from '@/components/common/mobile/ArticleTag';
 
 export default function LatestInsights() {
     //Add a state that will force a re-render
@@ -77,14 +78,8 @@ export default function LatestInsights() {
                                         <div className='flex w-full h-[49.1vw] border-2 border-black rounded-lg text-center justify-center items-center text-[8vw] uppercase'>No cover image</div>
                                     }
                                 </div>
-                                <div className='fle∂x flex-row items-center mb-[4.275vw] gap-x-[2.15vw]'>
-                                    {article.tags.map((el, idx) => (
-                                        <div key={idx} className='bg-orange rounded-md px-[3.2vw] py-[2.2vw]'>
-                                            <p className='font-dharma-gothic-e font-bold text-[4.8vw] leading-[4.8vw] uppercase'>
-                                                {el.name}
-                                            </p>
-                                        </div>
-                                    ))}
+                                <div className='flex flex-row items-center mb-[4.275vw] gap-x-[2.15vw]'>
+                                    {article.tags.slice(0,3).map(el => ArticleTag({el}))}
                                 </div>
                                 <div className='flex flex-row items-center justify-between mb-[4.275vw]'>
                                     <p className='font-dharma-gothic-e font-black text-[8.6vw] leading-[7vw] uppercase'>{article.title}</p>
