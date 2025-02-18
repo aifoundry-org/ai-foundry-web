@@ -28,7 +28,7 @@ const Headline = ({ article, className }: HeadlineProps) => {
                 <img src={IMGPaper.src} className='absolute w-[25.56vw] -top-[2vw] -right-[2.5vw] -z-[1]' />
                 {coverImage ? 
                     <img src={`${process.env.NEXT_PUBLIC_STRAPI_BASE_URL}${coverImage.url}`} className='relative w-[80.3rem] border-2 border-black rounded-lg' /> : 
-                    <div className='flex w-[80.3rem] h-[44.3rem] border-2 border-black rounded-lg text-center justify-center items-center text-[2vw] uppercase'>No cover image</div>
+                    <div className='flex w-[80.3rem] h-[44.3rem] border-2 border-black bg-sand rounded-lg text-center justify-center items-center text-[2vw] uppercase'>No cover image</div>
                 }
                 <img src={IMGArrows.src} className='absolute w-[8.345vw] -bottom-[2vw] right-0' />
             </div>
@@ -44,15 +44,21 @@ const Headline = ({ article, className }: HeadlineProps) => {
             <h1 className='font-dharma-gothic-e text-[6.4rem] font-black pb-6 leading-[5.3rem] uppercase'>{title}</h1>
             <div className='font-host-grotesk border-b-2 border-neutral-900 flex flex-wrap justify-between gap-y-[2rem] pt-[3.2rem] pb-[2.4rem] font-paralucent gap-2'>
                 <div className='flex gap-4 text-neutral-900 items-center font-normal text-[1.6rem] leading-[2.4rem]'>
-                    <span className='flex text-wrap'>{authors[0].name}</span>
-                    <div className='bg-neutral-900 w-[1px] h-6' />
-                    <time className='flex flex-nowrap text-nowrap' dateTime={date}>
-                        {new Date(date).toLocaleDateString('en-US', {
-                            year: 'numeric',
-                            month: 'long',
-                            day: 'numeric'
-                        })}
-                    </time>
+                    {authors && authors[0] && 
+                        <>
+                            <span className='flex text-wrap'>{authors[0].name}</span>
+                            <div className='bg-neutral-900 w-[1px] h-6' />
+                        </>
+                    }
+                    {date && 
+                        <time className='flex flex-nowrap text-nowrap' dateTime={date}>
+                            {new Date(date).toLocaleDateString('en-US', {
+                                year: 'numeric',
+                                month: 'long',
+                                day: 'numeric'
+                            })}
+                        </time>
+                    }
                     <div className='bg-neutral-900 w-[1px] h-6' />
                     <span className='flex flex-nowrap text-nowrap items-center'>{getReadTime(cleanParagraphsContent)}</span>
                 </div>

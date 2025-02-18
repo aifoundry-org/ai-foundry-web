@@ -27,7 +27,7 @@ export default function LatestInsightsCard({article = {} as StrapiArticle}) {
                 <p className='font-dharma-gothic-e font-black text-[5vw] md:text-[2.778vw] xl:text-[2.778vw] 2xl:text-[2.778vw] leading-[4vw] md:leading-[2.3vw] xl:leading-[2.3vw] 2xl:leading-[2.3vw] uppercase'>{title}</p>
             </div>
             <div className='flex flex-row font-normal text-[3vw] md:text-[1vw] xl:text-[1vw] 2xl:text-[1vw] leading-[1.5vw] font-host-grotesk'>
-                {authors[0].name} | {new Date(date).toLocaleDateString('en-US', {
+                {authors && authors.length > 0 && `${authors[0].name} | `}{date && new Date(date).toLocaleDateString('en-US', {
                     year: 'numeric',
                     month: 'long',
                     day: 'numeric'

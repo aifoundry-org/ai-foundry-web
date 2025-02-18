@@ -89,7 +89,7 @@ export default function LatestInsights() {
                                     <p className='font-dharma-gothic-e font-black text-[8.6vw] leading-[7vw] uppercase'>{article.title}</p>
                                 </div>
                                 <div className='flex flex-row font-normal text-[3.2vw] leading-[5.6vw] font-host-grotesk'>
-                                    {article.authors[0].name} | {new Date(article.date).toLocaleDateString('en-US', {
+                                    {article.authors && article.authors.length > 0 && `${article.authors[0].name} | `}{article.date && new Date(article.date).toLocaleDateString('en-US', {
                                         year: 'numeric',
                                         month: 'long',
                                         day: 'numeric'

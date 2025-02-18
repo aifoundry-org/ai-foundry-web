@@ -1,4 +1,3 @@
-/* eslint-disable */
 import NavBar from '@/components/common/desktop/NavBar';
 
 export default function Header() {
