@@ -5,6 +5,7 @@ import { getReadTime } from '@/utils/getReadTime';
 import IMGArrowLeft from '@/public/pngs/blogSlug/arrowLeft.png';
 import SocialShareLink from '@/components/blogSlug/universal/SocialLink';
 import { StrapiTag } from '@/libs/litebox-lib/types/strapi/strapiBlog';
+import getStrapiMediaUrl from '@/utils/getStrapiMediaUrl';
 
 interface HeadlineProps {
     article: any
@@ -24,7 +25,7 @@ const Headline = ({ article, className }: HeadlineProps) => {
             </Link>
             <div className='flex flex-row items-center justify-between mb-[7vw]'>
                 {coverImage ? 
-                    <img src={`${process.env.NEXT_PUBLIC_STRAPI_BASE_URL}${coverImage.url}`} className='w-full border-2 border-black rounded-lg' /> : 
+                    <img src={getStrapiMediaUrl(coverImage.url)} className='w-full border-2 border-black rounded-lg' /> : 
                     <div className='flex w-full h-[48.275vw] border-2 border-black rounded-lg text-center justify-center items-center text-[8vw] uppercase'>No cover image</div>
                 }
             </div>

@@ -7,6 +7,7 @@ import IMGArrows from '@/public/pngs/blogSlug/arrows.png';
 import IMGPaper from '@/public/pngs/blogSlug/paper.png';
 import SocialShareLink from '@/components/blogSlug/universal/SocialLink';
 import { StrapiArticle, StrapiTag } from '@/libs/litebox-lib/types/strapi/strapiBlog';
+import getStrapiMediaUrl from '@/utils/getStrapiMediaUrl';
 
 interface HeadlineProps {
     article: StrapiArticle;
@@ -27,7 +28,7 @@ const Headline = ({ article, className }: HeadlineProps) => {
             <div className='mb-[2.225vw] relative w-fit'>
                 <img src={IMGPaper.src} className='absolute w-[25.56vw] -top-[2vw] -right-[2.5vw] -z-[1]' />
                 {coverImage ? 
-                    <img src={`${process.env.NEXT_PUBLIC_STRAPI_BASE_URL}${coverImage.url}`} className='relative w-[80.3rem] border-2 border-black rounded-lg' /> : 
+                    <img src={getStrapiMediaUrl(coverImage.url)} className='relative w-[80.3rem] border-2 border-black rounded-lg' /> : 
                     <div className='flex w-[80.3rem] h-[44.3rem] border-2 border-black bg-sand rounded-lg text-center justify-center items-center text-[2vw] uppercase'>No cover image</div>
                 }
                 <img src={IMGArrows.src} className='absolute w-[8.345vw] -bottom-[2vw] right-0' />

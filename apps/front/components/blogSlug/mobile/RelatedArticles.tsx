@@ -5,6 +5,7 @@ import IMGBackground from '@/public/pngs/blogSlug/backgroundRelatedPostsMobile.p
 import IMGGraffiti from '@/public/pngs/blogSlug/graffitiMobile.png'
 import IMGError from '@/public/pngs/blogSlug/errorMobile.png'
 import Button from '@/libs/litebox-lib/ui/Button/Button';
+import getStrapiMediaUrl from '@/utils/getStrapiMediaUrl';
 
 interface BlogArticleProps {
     articles?: StrapiArticle[];
@@ -25,7 +26,7 @@ export default function RelatedArticles({ articles }: BlogArticleProps) {
                     <div key={id} className='flex flex-col w-full h-full'>
                         <div className='flex flex-row items-center justify-between mb-[7vw]'>
                             {coverImage ? 
-                                <img src={`${process.env.NEXT_PUBLIC_STRAPI_BASE_URL}${coverImage.url}`} className='border-2 border-black rounded-lg' /> : 
+                                <img src={getStrapiMediaUrl(coverImage.url)} className='border-2 border-black rounded-lg' /> : 
                                 <div className='flex w-full h-[49.1vw] border-2 border-black rounded-lg text-center justify-center items-center text-[8vw] uppercase'>No cover image</div>
                             }
                         </div>
