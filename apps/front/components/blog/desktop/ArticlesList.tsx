@@ -1,5 +1,6 @@
 'use client'
 
+import Image from 'next/image';
 import { useMemo, useEffect } from 'react'
 import { useRouter, usePathname, useSearchParams } from 'next/navigation';
 import { useQueryString } from '@/hooks/useQueryString';
@@ -10,6 +11,7 @@ import Filters from './Filters';
 import SearchInput from '../universal/SearchInput';
 import { CheckOption } from '../universal/FiltersType';
 import { ArticlesListProps } from '../universal/ArticlesListPropsType';
+import IMGComputer from '@/public/pngs/blog/computer.png'
 
 export default function ArticlesList({
     articles,
@@ -54,7 +56,17 @@ export default function ArticlesList({
                 <SearchInput className='w-[19.9vw]' inputClassName='h-[3.37vw] text-[1.6rem]' value={searchTerm} onChange={(e) => onSearchChange(e.target.value)} />
             </div>
             <div>
-                {!hasMoreArticles && <p className='mb-10 font-host-grotesk text-[1.8vw] text-left'>Oops! 😕 We couldn&apos;t find that article</p>}
+                {!hasMoreArticles && 
+                    <div className='flex flex-col w-full items-center my-[10vw]'>
+                        <p className='font-dharma-gothic-e text-[4rem] text-black font-black uppercase'>
+                            There are no exact matches found
+                        </p>
+                        <p className='font-host-grotesk text-[2rem] text-black font-bold'>
+                            Please, try again!
+                        </p>
+                        <Image className='w-[23.2rem] mt-[3.34vw]' width={232} height={204} src={IMGComputer.src} alt='not-found' />
+                    </div>
+                }
 
                 <ArticlesContainer
                     search={debouncedSearchTerm}

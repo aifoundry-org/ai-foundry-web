@@ -1,5 +1,6 @@
 'use client'
 
+import Image from 'next/image';
 import { useMemo, useEffect } from 'react'
 import { useRouter, usePathname, useSearchParams } from 'next/navigation';
 import { useQueryString } from '@/hooks/useQueryString';
@@ -10,6 +11,7 @@ import Filters from './Filters';
 import SearchInput from '../universal/SearchInput';
 import { CheckOption } from '../universal/FiltersType';
 import { ArticlesListProps } from '../universal/ArticlesListPropsType';
+import IMGComputer from '@/public/pngs/blog/computerMobile.png'
 
 export default function ArticlesList({
     articles,
@@ -50,10 +52,20 @@ export default function ArticlesList({
         <div className='md:hidden m-auto text-center px-[2.4rem] mb-14 pt-2'>
             <div className='flex flex-col items-start gap-4 mb-16'>
                 <Filters options={filtersOptions} onClick={handleFilterClick} />
-                <SearchInput className='w-full mt-5' inputClassName='h-[11vw] text-[1.6rem]' value={searchTerm} onChange={(e) => onSearchChange(e.target.value)} />
+                <SearchInput className='w-full mt-10' inputClassName='h-[11vw] text-[1.6rem]' value={searchTerm} onChange={(e) => onSearchChange(e.target.value)} />
             </div>
             <div>
-                {!hasMoreArticles && <p className='mb-10 text-3xl text-left'>Oops! 😕 We couldn&apos;t find that post</p>}
+                {!hasMoreArticles && 
+                    <div className='flex flex-col w-full items-center mt-[20vw] mb-[10vw]'>
+                        <p className='font-dharma-gothic-e text-[3.2rem] leading-[2.6rem] mb-[1.6rem] text-black font-black uppercase'>
+                            There are no exact<br/>matches found
+                        </p>
+                        <p className='font-host-grotesk text-[1.6rem] text-black font-bold'>
+                            Please, try again!
+                        </p>
+                        <Image className='w-[18.2rem] mt-[3.34vw]' width={232} height={204} src={IMGComputer.src} alt='not-found' />
+                    </div>
+                }
 
                 <ArticlesContainer
                     search={debouncedSearchTerm}
