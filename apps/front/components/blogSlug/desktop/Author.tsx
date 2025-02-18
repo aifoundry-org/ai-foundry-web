@@ -18,9 +18,9 @@ export default function Author({author, contentNavigation}: AuthorProps) {
         return (
             <div className='my-[5rem] lg:my-0 min-w-[28.6rem]'>
                 <div className='flex flex-wrap flex-row font-host-grotesk items-center gap-[2rem]'>
-                    <div className='flex'>
+                    {profileImage && <div className='flex'>
                         <img className='w-[6.4rem] h-[6.4rem]' src={`${process.env.NEXT_PUBLIC_STRAPI_BASE_URL}${profileImage.url}`} />
-                    </div>
+                    </div>}
                     <div className='flex flex-col'>
                         <p className='font-bold text-[2rem] leading-[2.4rem]'>{name}</p>
                         <p className='font-normal text-[1.6rem] leading-[2.1rem['>{role}</p>
