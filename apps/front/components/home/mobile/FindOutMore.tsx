@@ -28,7 +28,7 @@ export default function FindOutMore() {
     return (
         <LazyMotion>
             <div className='xs:hidden flex flex-col mt-[8vw] relative w-full h-[131.75vw]'>
-                <img src={IMGFindOutMoreBackground.src} className='absolute left-0 top-[8.2vw]' />
+                <img src={IMGFindOutMoreBackground.src} className='absolute left-0 top-[8.2vw] w-full' />
                 <img src={IMGCode.src} className='absolute w-[61.1vw] right-0 top-0' />
                 <div className='relative w-full h-full -top-[9vw]'>
                     <img src={IMGFindOutMoreTopGraffiti.src} className='absolute w-[34vw] left-[21.5vw] top-[37.5vw] mix-blend-plus-lighter' />
