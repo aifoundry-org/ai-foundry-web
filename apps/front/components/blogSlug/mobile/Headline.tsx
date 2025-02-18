@@ -40,15 +40,21 @@ const Headline = ({ article, className }: HeadlineProps) => {
             <h1 className='font-dharma-gothic-e text-[12.8vw] font-black pb-6 leading-[10.675vw] uppercase'>{title}</h1>
             <div className='font-host-grotesk border-b-2 border-neutral-900 flex flex-col justify-between py-4 font-paralucent gap-2'>
                 <div className='flex flex-grow gap-4 text-neutral-900 items-center font-normal text-[3.75vw] leading-[5.6vw]'>
-                    <span>{authors[0].name}</span>
-                    <div className='bg-neutral-900 w-[1px] h-6' />
-                    <time dateTime={date}>
-                        {new Date(date).toLocaleDateString('en-US', {
-                            year: 'numeric',
-                            month: 'long',
-                            day: 'numeric'
-                        })}
-                    </time>
+                    {authors && authors[0] && 
+                        <>
+                            <span>{authors[0].name}</span>
+                            <div className='bg-neutral-900 w-[1px] h-6' />
+                        </>
+                    }
+                    {date && 
+                        <time dateTime={date}>
+                            {new Date(date).toLocaleDateString('en-US', {
+                                year: 'numeric',
+                                month: 'long',
+                                day: 'numeric'
+                            })}
+                        </time>
+                    }
                 </div>
                 <div className='flex flex-grow gap-4 text-neutral-900 items-center font-normal text-[3.75vw] leading-[5.6vw] my-[3vw]'>
                     <span className='flex items-center'>{getReadTime(cleanParagraphsContent)}</span>

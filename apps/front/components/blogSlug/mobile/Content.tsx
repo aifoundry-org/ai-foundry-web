@@ -1,5 +1,5 @@
 'use client';
-/* eslint-disable */
+ 
 
 import { useEffect, useState } from 'react';
 import { StrapiContentNavigation, StrapiParagraph } from '@/libs/litebox-lib/types/strapi/strapiBlog';
@@ -24,14 +24,18 @@ export default function Content({ paragraphs, contentNavigation }: ContentProps)
   return (
     <div className='mb-16'>
       <div className='flex flex-col font-normal text-[1.4rem] font-host-grotesk gap-y-[1.6rem] mb-[4rem]'>
-        <p className='font-bold text-[1.6rem]'>Content</p>
-        {contentNavigation.map(el => (
-          <Link href={`#${el.tag}-mobile`} className='cursor-pointer' key={el.tag}>
-            {el.content}
-          </Link>
-        ))}
+      {contentNavigation && contentNavigation.length > 0 && 
+        <>
+          <p className='font-bold text-[1.6rem]'>Content</p>
+          {contentNavigation.map(el => (
+            <Link href={`#${el.tag}-mobile`} className='cursor-pointer' key={el.tag}>
+              {el.content}
+            </Link>
+          ))}
+        </>
+      }
       </div>
-      {paragraphs.map((paragraph: StrapiParagraph) => (
+      {paragraphs && paragraphs.length > 0 && paragraphs.map((paragraph: StrapiParagraph) => (
         <div
           key={`${paragraph.id}-mobile`}
           id={`${paragraph.tag}-mobile`}

@@ -1,4 +1,3 @@
-/* eslint-disable */
 import { StrapiArticle } from '@/libs/litebox-lib/types/strapi/strapiBlog';
 import Headline from './Headline';
 import Content from './Content';

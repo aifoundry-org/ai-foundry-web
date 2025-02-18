@@ -29,10 +29,9 @@ const Article = ({
                                     <img src={`${process.env.NEXT_PUBLIC_STRAPI_BASE_URL}${coverImage.url}`} className='border-2 border-black rounded-lg' alt="cover" /> : 
                                     <div className='flex w-full h-[48vw] border-2 border-black rounded-lg uppercase text-[8vw] justify-center items-center'>No cover image</div>}
                             </div>
-                            <div className='flex flex-row items-center mb-[4.275vw] gap-x-[2.15vw]'>
-                                { }
+                            <div className='flex flex-row items-center mb-[4.275vw] gap-x-[2.15vw] flex-wrap gap-y-[2.15vw]'>
                                 {tags.map((el: any, idx: number) => (
-                                    <div key={idx} className='bg-orange rounded-md px-[3.2vw] py-[2.2vw]'>
+                                    <div key={idx} className='bg-orange text-nowrap rounded-md px-[3.2vw] py-[2.2vw]'>
                                         <p className='font-dharma-gothic-e font-bold text-[4.8vw] leading-[4.8vw] uppercase'>
                                             {el.name}
                                         </p>
@@ -43,7 +42,7 @@ const Article = ({
                                 <p className='font-dharma-gothic-e text-left font-black text-[8.6vw] leading-[7vw] uppercase'>{title}</p>
                             </div>
                             <div className='flex flex-row font-normal text-[3.2vw] leading-[5.6vw] font-host-grotesk'>
-                                {authors[0].name} | {new Date(date).toLocaleDateString('en-US', {
+                                {authors && authors.length > 0 && `${authors[0].name} | `}{date && new Date(date).toLocaleDateString('en-US', {
                                     year: 'numeric',
                                     month: 'long',
                                     day: 'numeric'
