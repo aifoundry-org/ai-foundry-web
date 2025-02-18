@@ -47,10 +47,10 @@ export default function ArticlesList({
     };
 
     return (
-        <div className='md:hidden m-auto text-center px-10 mb-14 pt-2'>
+        <div className='md:hidden m-auto text-center px-[2.4rem] mb-14 pt-2'>
             <div className='flex flex-col items-start gap-4 mb-16'>
-                <Filters options={filtersOptions} onClick={() => handleFilterClick} />
-                <SearchInput className='w-full mt-5' value={searchTerm} onChange={(e) => onSearchChange(e.target.value)} />
+                <Filters options={filtersOptions} onClick={handleFilterClick} />
+                <SearchInput className='w-full mt-5' inputClassName='h-[11vw] text-[1.6rem]' value={searchTerm} onChange={(e) => onSearchChange(e.target.value)} />
             </div>
             <div>
                 {!hasMoreArticles && <p className='mb-10 text-3xl text-left'>Oops! 😕 We couldn&apos;t find that post</p>}
