@@ -1,5 +1,5 @@
 'use client'
-
+/* eslint-disable */
 import { useRef, useState } from 'react'
 import Button from '@/litebox-lib/ui/Button/Button';
 import IMGBackgroundTop from '@/public/pngs/home/testimonials/backgroundTopMobile.png'
@@ -43,12 +43,12 @@ export default function Testimonials() {
     cards[0].companyLogo = IMGCompanyWebflow.src;
 
     return (
-        <FadeUp className='md:hidden flex flex-col pt-[18.35vw] pb-[7.7vw] relative w-full h-fit'>
+        <div className='md:hidden flex flex-col pt-[18.35vw] pb-[7.7vw] relative w-full h-fit'>
             <div className='flex flex-col relative w-full bg-black text-sand rounded-[5.35vw] h-[162.7vw]'>
-                <FadeIn delay={1} className='absolute w-full h-fit -top-[6.75vw] left-0'>
+                <div className='absolute w-full h-fit -top-[6.75vw] left-0'>
                     <img src={IMGBackgroundTop.src} />
-                </FadeIn>
-                <FadeUp delay={1} className='flex flex-col w-full items-center justify-center'>
+                </div>
+                <FadeUp delay={0.5} className='flex flex-col w-full items-center justify-center'>
                     <Swiper
                         className='testimonialsSwiper !flex !flex-col !w-full !h-full'
                         slidesPerView={1}
@@ -102,13 +102,13 @@ export default function Testimonials() {
                         </div>
                     </div>
                 </FadeUp>
-                <FadeIn delay={1} className='absolute w-[83.2vw] -bottom-[31vw] right-[1vw] -z-[1]'>
+                <div className='absolute w-[83.2vw] -bottom-[31vw] right-[1vw] -z-[1]'>
                     <img src={IMGDoodle.src} />
-                </FadeIn>
-                <FadeIn delay={1} className='absolute w-[48vw] -bottom-[8.5vw] right-[9vw] z-[1]'>
+                </div>
+                <div className='absolute w-[48vw] -bottom-[8.5vw] right-[9vw] z-[1]'>
                     <img src={IMGWhatPeopleSay.src} />
-                </FadeIn>
+                </div>
             </div>
-        </FadeUp>
+        </div>
     )
 }

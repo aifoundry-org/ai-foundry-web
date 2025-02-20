@@ -1,9 +1,9 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  env: {
-    HIDE_SECTIONS: "true"
-  },
+    images: {
+        domains: ["127.0.0.1", "localhost", "joyful-treasure-80148038c2.media.strapiapp.com"],
+    }
 };
 
 export default nextConfig;

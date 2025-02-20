@@ -1,0 +1,27 @@
+{
+  "collectionName": "components_seo_metadata",
+  "info": {
+    "displayName": "metadata",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true,
+      "default": "Resolve.ai"
+    },
+    "description": {
+      "type": "text",
+      "required": true
+    },
+    "og_image": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": [
+        "images"
+      ]
+    }
+  }
+}

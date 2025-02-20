@@ -1,21 +1,18 @@
-'use client'
-
+/* eslint-disable */
 import Link from 'next/link'
-import LatestInsightsCard from './LatestInsightsCard'
-import IMGBackground from '@/public/pngs/home/latestInsights/background.png'
-import IMGBackgroundTitle from '@/public/pngs/home/latestInsights/backgroundTitle.png'
-import IMGLLamaEvent from '@/public/pngs/home/latestInsights/llamaEvent.png'
-import IMGPodcast from '@/public/pngs/home/latestInsights/podcast.png'
-import IMGProductionStack from '@/public/pngs/home/latestInsights/productionStack.png'
 import Button from '@/libs/litebox-lib/ui/Button/Button'
-import cards from '@/mock/home/latestInsights/data.json'
 import FadeUp from '@/components/common/universal/FadeUp'
 import FadeIn from '@/components/common/universal/FadeIn'
 
-export default function LatestInsights() {
-    cards[0].imageUrl = IMGLLamaEvent.src;
-    cards[1].imageUrl = IMGPodcast.src;
-    cards[2].imageUrl = IMGProductionStack.src;
+import IMGBackground from '@/public/pngs/home/latestInsights/background.png'
+import IMGBackgroundTitle from '@/public/pngs/home/latestInsights/backgroundTitle.png'
+
+import { getLastArticles } from '@/backend/blog/actions'
+import ArticleThumbnail from '@/components/blog/desktop/ArticleThumbnail'
+
+export default async function LatestInsights() {
+    const articles = await getLastArticles();
+
     return (
         <div id='blog' className='hidden xs:flex xs:flex-col xs:pt-[12vw] xs:pb-[7.7vw] xs:relative xs:w-full xs:h-fit xs:px-[7.78vw]'>
             <FadeIn delay={1} className='absolute w-full h-fit -top-[3.5vw] left-0 -z-[1]'>
@@ -32,19 +29,12 @@ export default function LatestInsights() {
                 access to summaries and video replays of prior AI Hack Labs and Podcasts.
             </FadeUp>
             <FadeUp className='w-full h-fit mb-[3.335vw]'>
-                <Button as={Link} href="https://aifoundry.org/blog" target="_blank" variant='primary' content='Visit our blog' />
+                <Button as={Link} href="/blog" variant='primary' content='Visit our blog' />
             </FadeUp>
-            <div className='flex flex-col gap-[6vw] md:flex-row xl:flex-row 2xl:flex-row md:gap-[1vw] xl:gap-[1vw] 2xl:gap-[1vw]'>
-                {cards.map((card, idx) => (
-                    <FadeUp key={idx} delay={card.delay}>
-                        <LatestInsightsCard 
-                            title={card.title}
-                            tags={card.tags}
-                            author={card.author}
-                            date={card.date}
-                            imageUrl={card.imageUrl}
-                            link={card.link}
-                        />
+            <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-[2.4rem] gap-y-20'>
+                {articles.data.map((article, idx) => (
+                    <FadeUp key={article.id} delay={0.75+(0.15*idx)}>
+                        <ArticleThumbnail article={article} />
                     </FadeUp>
                 ))}
             </div>

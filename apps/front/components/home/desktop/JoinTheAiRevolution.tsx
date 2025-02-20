@@ -1,6 +1,6 @@
-import Input from '@/libs/litebox-lib/ui/Input/Input'
-import Button from '@/libs/litebox-lib/ui/Button/Button'
-import IMGInTheNewsBackground from '@/public/pngs/home/inTheNews/background.png'
+/* eslint-disable */
+// import Input from '@/libs/litebox-lib/ui/Input/Input'
+// import Button from '@/libs/litebox-lib/ui/Button/Button'
 import IMGBackground from '@/public/pngs/home/joinTheAiRevolution/background.png'
 import IMGComputer from '@/public/pngs/home/joinTheAiRevolution/computer.png'
 import IMGArrows from '@/public/pngs/home/joinTheAiRevolution/arrows.png'
@@ -9,12 +9,7 @@ import FadeUp from '@/components/common/universal/FadeUp'
 
 export default function JoinTheAiRevolution(){
     return (
-        <div className={`hidden md:flex md:flex-col md:relative md:w-full md:h-[34vw] md:px-[5.6vw] relative ${process.env.HIDE_SECTIONS === "true" && 'mt-[15vw]'}`}>
-            {process.env.HIDE_SECTIONS === "true" && 
-                <div className='absolute w-full h-fit -top-[25.6vw] left-0 -z-[2]'>
-                    <img src={IMGInTheNewsBackground.src} />
-                </div>
-            }
+        <div className={`hidden md:flex md:flex-col md:relative md:w-full md:h-[34vw] md:px-[5.6vw] relative ${process.env.NEXT_PUBLIC_HIDE_SECTIONS === "true" && 'mt-[15vw]'}`}>
             <div className='absolute w-full h-fit -top-[4.3vw] left-0'>
                 <img src={IMGBackground.src} />
             </div>
@@ -26,10 +21,10 @@ export default function JoinTheAiRevolution(){
                     <img src={IMGVerticalText.src} />
                 </div>
             </FadeUp>
-            <FadeUp className='relative -top-[10.9vw] left-[18.2vw] w-[15.15vw]' delay={0.75} duration={0.75}>
+            <FadeUp className='relative -top-[10.9vw] left-[18.2vw] w-[15.15vw]' delay={0.5} duration={0.75}>
                 <img src={IMGComputer.src} />
             </FadeUp>
-            <FadeUp className='relative bottom-[28.4vw] -right-[60.7vw] flex flex-col w-[26.115vw]' delay={1.15} duration={0.75}>
+            <FadeUp className='relative bottom-[28.4vw] -right-[60.7vw] flex flex-col w-[26.115vw]' delay={0.5} duration={0.75}>
                 <div className='relative w-[12.71vw] -left-[2.1vw]'>
                     <img src={IMGArrows.src} />
                 </div>
