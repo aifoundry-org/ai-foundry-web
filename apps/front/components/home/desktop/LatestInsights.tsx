@@ -31,7 +31,7 @@ export default async function LatestInsights() {
             <FadeUp className='w-full h-fit mb-[3.335vw]'>
                 <Button as={Link} href="/blog" variant='primary' content='Visit our blog' />
             </FadeUp>
-            <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-[2.4rem] gap-y-20'>
+            <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-[2.4rem] gap-y-20 auto-rows-fr'>
                 {articles.data.map((article, idx) => (
                     <FadeUp key={article.id} delay={0.75+(0.15*idx)}>
                         <ArticleThumbnail article={article} />
