@@ -21,7 +21,7 @@ export default function ArticleThumbnail({article, isFeaturedArticle = false}: A
                     <div className='flex w-full h-full border-2 border-black rounded-lg items-center justify-center text-[4vw] uppercase'>No cover image</div>
                 }
             </div>
-            <div className='max-w-[400px] flex flex-row justify-start items-center flex-wrap mb-[2vw] overflow-x-auto md:mb-[1.125vw] xl:mb-[1.125vw] 2xl:mb-[1.125vw] gap-[1vw]  md:gap-[0.575vw] lg:gap-[0.575vw] xl:gap-[0.575vw] 2xl:gap-[0.575vw]'>
+            <div className='max-w-[100%] flex flex-row justify-start items-center flex-wrap mb-[2vw] overflow-x-auto md:mb-[1.125vw] xl:mb-[1.125vw] 2xl:mb-[1.125vw] gap-[1vw]  md:gap-[0.575vw] lg:gap-[0.575vw] xl:gap-[0.575vw] 2xl:gap-[0.575vw]'>
                 {tags.map((el: StrapiTag) => ArticleTag({el})) }
             </div>
             <div className='flex flex-row text-start mb-[2vw] md:mb-[1.25vw] lg:mb-[1.25vw] xl:mb-[1.25vw] 2xl:mb-[1.25vw]'>
