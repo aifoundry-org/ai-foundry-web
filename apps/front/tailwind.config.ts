@@ -11,6 +11,7 @@ export default {
     extend: {
       colors: {
         orange: '#F9A03F',
+        dark: '#171717',
         sand: '#F6EFE4',
         peach: '#FCCE90',
         background: "var(--orange)",
