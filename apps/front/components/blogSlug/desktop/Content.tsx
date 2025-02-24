@@ -21,7 +21,7 @@ export default function Content({paragraphs}: ContentProps) {
     return (
         <div className='max-w-[80.3rem]'>
             {paragraphs && paragraphs.length > 0 && paragraphs.map((paragraph: StrapiParagraph) => (
-                <div key={paragraph.id} id={paragraph.tag} className={`flex flex-col ${paragraph.alternativeStyle ? 'font-black text-[4rem] font-dharma-gothic-e text-orange uppercase leading-[3.3rem]' : 'font-normal text-[1.6rem] font-host-grotesk'} gap-y-[2.4rem] mb-[2.4rem]`} dangerouslySetInnerHTML={{__html: paragraph.content[0].children[0].text}}></div>
+                <div key={paragraph.id} id={paragraph.tag} className={`flex flex-col ${paragraph.alternativeStyle ? 'font-black text-[4rem] font-dharma-gothic-e text-orange uppercase leading-[3.3rem]' : 'font-normal text-[1.6rem] font-host-grotesk text-dark'} gap-y-[2.4rem] mb-[2.4rem]`} dangerouslySetInnerHTML={{__html: paragraph.content[0].children[0].text}}></div>
             ))}
         </div>
     );
