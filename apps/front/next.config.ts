@@ -14,8 +14,10 @@ const nextConfig: NextConfig = {
   experimental: {
     optimizeCss: true,
     scrollRestoration: true,
-    workerThreads: true,
-    cpus: 4,
+  },
+  webpack: (config) => {
+    config.parallelism = 4;
+    return config;
   },
   async headers() {
     return [
