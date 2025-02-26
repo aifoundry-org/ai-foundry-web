@@ -14,6 +14,8 @@ const nextConfig: NextConfig = {
   experimental: {
     optimizeCss: true,
     scrollRestoration: true,
+    workerThreads: true,
+    cpus: 4,
   },
   async headers() {
     return [
