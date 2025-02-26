@@ -8,7 +8,7 @@ import IMGWhatPeopleSaying from '@/public/pngs/home/testimonials/whatPeopleSayin
 import IMGStarFull from '@/public/pngs/home/testimonials/starFull.png'
 import IMGStarEmpty from '@/public/pngs/home/testimonials/starEmpty.png'
 import cards from '@/mock/home/testimonials/data.json';
-import IMGCompanyWebflow from '@/public/pngs/home/testimonials/companyWebflow.png'
+import SVGCompanyWebflow from '@/public/svgs/home/testimonials/companyWebflow'
 import IMGDeveloper1 from '@/public/pngs/home/testimonials/developer1.png'
 
 import { Swiper, SwiperSlide } from 'swiper/react';
@@ -40,7 +40,6 @@ export default function Testimonials() {
     }
     
     cards[0].avatar = IMGDeveloper1.src;
-    cards[0].companyLogo = IMGCompanyWebflow.src;
 
     return (
         <div className='hidden md:flex md:flex-col md:pt-[6vw] md:pb-[7.7vw] md:relative md:w-full md:h-full'>
@@ -90,7 +89,7 @@ export default function Testimonials() {
                                         <div className='font-normal text-[1.115vw] leading-[1.67vw]'>{el.position}</div>
                                     </div>
                                     <div className='w-[21.9vw] pl-[1.5vw]'>
-                                        <img src={el.companyLogo} />
+                                        <SVGCompanyWebflow />
                                     </div>
                                 </div>
                             </SwiperSlide>
