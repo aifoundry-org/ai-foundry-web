@@ -23,7 +23,7 @@ export default function Content({ paragraphs, contentNavigation }: ContentProps)
 
   return (
     <div className='mb-16'>
-      <div className='flex flex-col font-normal text-[1.4rem] font-host-grotesk gap-y-[1.6rem] mb-[4rem]'>
+      <div className='flex flex-col font-normal text-[1.4rem] font-host-grotesk gap-y-[1.6rem] mb-[4rem] text-[#222222]'>
       {contentNavigation && contentNavigation.length > 0 && 
         <>
           <p className='font-bold text-[1.6rem]'>Content</p>

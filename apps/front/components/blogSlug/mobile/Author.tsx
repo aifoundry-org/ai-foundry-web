@@ -23,11 +23,11 @@ export default function Author({author}: AuthorProps) {
                         <img src={getStrapiMediaUrl(profileImage.url)} />
                     </div>}
                     <div className='flex flex-col'>
-                        <p className='font-bold text-[1.6rem] leading-[2.4rem]'>{name}</p>
-                        <p className='font-normal text-[1.4rem] leading-[2.1rem['>{role}</p>
+                        <p className='font-bold text-[1.6rem] leading-[2.4rem] text-[#222222]'>{name}</p>
+                        <p className='font-normal text-[1.4rem] leading-[2.1rem] text-[#222222]'>{role}</p>
                     </div>
                 </div>
-                <p className='font-host-grotesk font-normal text-[1.4rem] leading-[2.1rem] mt-10'>{description}</p>
+                <p className='font-host-grotesk font-normal text-[1.4rem] leading-[2.1rem] mt-10 text-[#222222]'>{description}</p>
                 <div className='flex flex-row gap-[8.55vw] mt-8'>
                     {instagram_link && <Link target='_blank' href={instagram_link}>
                         <img className='w-[6.4vw] h-[6.4vw]' src={IMGInstagramIcon.src} />
