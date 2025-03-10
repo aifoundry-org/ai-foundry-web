@@ -1,0 +1,18 @@
+---
+name: Site Deploy
+on:
+  push:
+    tags:
+      - '*'
+
+jobs:
+  site-build:
+    runs-on: ubuntu-latest
+    container: node:22-alpine
+    steps:
+      - name: Check out repository code
+        uses: actions/checkout@v4
+      - name: Install Yarn Dependencies
+        run: cd apps/front && yarn install
+      - name: Deploy Site
+        run: cd apps/front && npm run deploy:worker
