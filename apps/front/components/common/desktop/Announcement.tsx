@@ -10,8 +10,8 @@ export default function Header() {
 
     return (
         <div className={`${hideSelf && 'hidden'} flex flex-row text-sand justify-center p-4`}>
-            <Link target="_blank" className='flex font-host-grotesk text-[1.6rem]' href="https://aifoundry.org/fosdem-2025-low-level-ai-engineering-hacking-dev-room">
-                <div className='flex'>AIFoundry.org is sponsoring the "Low-Level AI Engineering & Hacking" Dev Room at FOSDEM. Find out more!</div>
+            <Link target="_blank" className='flex font-host-grotesk text-[1.6rem]' href="https://fosdem.org/2025/schedule/track/ai/">
+                <div className='flex'>AIFoundry.org hosted "Low-Level AI Engineering & Hacking" Dev Room at FOSDEM. Click to watch the talks!</div>
                 <div className='flex items-center'><img src={IMGHeaderIconArrowUpRight.src} className='inline-block ml-[0.56vw] w-[1.53vw]' /></div>
             </Link>
         </div>
