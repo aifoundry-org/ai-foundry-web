@@ -9,7 +9,7 @@
  */
 const getStrapiMediaUrl = (image: string) => {
   const path = image;
-  return process.env.NODE_ENV === 'development' ? `${process.env.NEXT_PUBLIC_STRAPI_BASE_URL}${path}` : path;
+  return `${process.env.NEXT_PUBLIC_STRAPI_BASE_URL}${path}`;
 };
 
 export default getStrapiMediaUrl;
