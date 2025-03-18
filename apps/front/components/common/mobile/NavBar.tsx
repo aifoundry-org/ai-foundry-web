@@ -32,11 +32,19 @@ export default function NavBar({removeTopBorders = false}) {
     const [currPage, setCurrPage] = useState('');
     const [showMenu, setShowMenu] = useState(false);
     const [isSticky, setIsSticky] = useState(false);
+    const [playOnce, setPlayOnce] = useState(true);
     const totalFrames = lottieRef.current?.totalFrames;
 
     const checkIfSticky = () => {
         const { scrollY } = window
         const stickyState = removeRoundedBorders ? scrollY > 0 : scrollY > 93;
+
+        if(scrollY > 93 && playOnce){
+            setPlayOnce(false)
+            lottieRef.current?.seek(totalFrames - 10);
+            lottieRef.current?.setDirection(1);
+            lottieRef.current?.play();
+        }
 
         setIsSticky(stickyState);
     }

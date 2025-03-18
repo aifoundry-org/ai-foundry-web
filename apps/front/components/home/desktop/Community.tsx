@@ -2,7 +2,6 @@
 
 import { useState } from 'react';
 import IMGCircle from '@/public/imgs/home/community/circle.webp';
-import IMGIlus from '@/public/imgs/home/community/ilus.webp';
 import IMGError from '@/public/imgs/home/community/error.webp';
 import CommunityCard from './CommunityCard';
 import Button from '@/litebox-lib/ui/Button/Button';
@@ -11,6 +10,9 @@ import events from '@/mock/home/community/data.json';
 import FadeUp from '@/components/common/universal/FadeUp';
 import FadeIn from '@/components/common/universal/FadeIn';
 import ImageWrapper from '@/components/common/universal/ImageWrapper';
+import dynamic from 'next/dynamic';
+
+const LottiePlayer = dynamic(() => import('@/components/common/universal/LottiePlayer'));
 
 export default function Community() {
     const months = Object.keys(events);
@@ -24,8 +26,13 @@ export default function Community() {
                 <div className='absolute w-[33.9vw] left-0 top-0'>
                     <ImageWrapper src={IMGCircle.src} alt="Community circle" />
                 </div>
-                <div className='absolute w-[25.1vw] right-[1.5vw] top-[10vw]'>
-                    <ImageWrapper src={IMGIlus.src} alt="Community ilus" />
+                <div className='absolute w-[25.1vw] right-0 top-[10vw]'>
+                    <LottiePlayer 
+                        className='w-[17.4vw] right-0'
+                        src='/lotties/googles.lottie'
+                        autoplay={true}
+                        loop={true}
+                    />
                 </div>
             </FadeIn>
             <div className='relative px-[7.78vw]'>
