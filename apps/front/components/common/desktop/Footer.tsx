@@ -8,9 +8,9 @@ import IMGErrors from '@/public/imgs/footer/errorsMobile.webp'
 import IMGBucket from '@/public/imgs/footer/bucket.webp'
 import IMGArrows from '@/public/imgs/footer/arrowsMobile.webp'
 import IMGDots from '@/public/imgs/footer/dots.webp'
-import IMGInstagramIcon from '@/public/imgs/footer/instagramIconMobile.webp'
-import IMGLinkedinIcon from '@/public/imgs/footer/linkedinIconMobile.webp'
-import IMGYoutubeIcon from '@/public/imgs/footer/youtubeIconMobile.webp'
+import SVGInstagramIcon from '@/public/svgs/footer/Instagram'
+import SVGLinkedinIcon from '@/public/svgs/footer/Linkedin'
+import SVGYoutubeIcon from '@/public/svgs/footer/Youtube'
 import IMGGraffiti from '@/public/imgs/footer/graffiti.webp'
 import IMGCode from '@/public/imgs/footer/code.webp'
 import ImageWrapper from '../universal/ImageWrapper';
@@ -65,23 +65,17 @@ export default function Footer(){
                     <div className='flex flex-row gap-[2.78vw]'>
                         <FadeIn delay={0.5}>
                             <Link target='_blank' href='https://www.instagram.com/ai.foundry/'>
-                                <div className='w-[1.67vw] h-[1.67vw] hover:mix-blend-soft-light hover:invert hover:duration-100'>
-                                    <ImageWrapper src={IMGInstagramIcon.src} alt='Instagram icon' />
-                                </div>
+                                <SVGInstagramIcon className='w-[1.67vw] h-[1.67vw] instagram-icon' />
                             </Link>
                         </FadeIn>
                         <FadeIn delay={0.5}>
                             <Link target='_blank' href='https://www.linkedin.com/company/aifoundry-org'>
-                                <div className='w-[1.67vw] h-[1.67vw] hover:mix-blend-soft-light hover:invert hover:duration-100'>
-                                    <ImageWrapper src={IMGLinkedinIcon.src} alt='Linkedin icon' />
-                                </div>
+                                <SVGLinkedinIcon className='w-[1.67vw] h-[1.67vw] linkedin-icon' />
                             </Link>
                         </FadeIn>
                         <FadeIn delay={0.5}>
                             <Link target='_blank' href='https://www.youtube.com/channel/UCGktaVJ19Ze8J9auyD5IoDQ'>
-                                <div className='w-[1.67vw] h-[1.67vw] hover:mix-blend-soft-light hover:invert hover:duration-100'>
-                                    <ImageWrapper src={IMGYoutubeIcon.src} alt='Youtube icon' />
-                                </div>
+                                <SVGYoutubeIcon className='w-[1.67vw] h-[1.67vw] youtube-icon' />
                             </Link>
                         </FadeIn>
                     </div>
