@@ -3,7 +3,8 @@ import Button from '@/libs/litebox-lib/ui/Button/Button'
 import FadeUp from '@/components/common/universal/FadeUp'
 import FadeIn from '@/components/common/universal/FadeIn'
 
-import IMGBackground from '@/public/imgs/home/latestInsights/background.webp'
+import IMGGraffitiTop from '@/public/imgs/home/latestInsights/graffitiTop.webp'
+import IMGGraffitiBottom from '@/public/imgs/home/latestInsights/graffitiBottom.webp'
 import IMGBackgroundTitle from '@/public/imgs/home/latestInsights/backgroundTitle.webp'
 
 import { getLastArticles } from '@/backend/blog/actions'
@@ -15,9 +16,17 @@ export default async function LatestInsights() {
 
     return (
         <div id='blog' className='hidden xs:flex xs:flex-col xs:pt-[12vw] xs:pb-[7.7vw] xs:relative xs:w-full xs:h-fit xs:px-[7.78vw]'>
-            <FadeIn delay={1} className='absolute w-full h-fit -top-[3.5vw] left-0 -z-[1]'>
-                <ImageWrapper src={IMGBackground.src} alt="Latest Insights background" />
+            <FadeIn delay={1} className='absolute w-[20vw] h-fit -top-[2.5vw] left-0 -z-[1]'>
+                <ImageWrapper src={IMGGraffitiTop.src} alt="Graffiti Top" />
             </FadeIn>
+            {articles.data.length >= 3 && 
+                <FadeIn delay={1} className='absolute w-[25.95vw] h-fit -z-[1]
+                    top-[calc(50%-80vw)] sm:top-[calc(50%-75vw)] md:top-[calc(50%-60vw)] lg:top-[calc(50%-30vw)] xl:top-[calc(50%-20vw)] 2xl:top-[calc(50%-20vw)] 
+                    right-[calc(50%-48vw)] sm:right-[calc(50%-48vw)] md:right-[calc(50%-48vw)] lg:right-[calc(50%-48vw)] xl:right-[calc(50%-48vw)] 2xl:right-[calc(50%-48vw)] 
+                '>
+                    <ImageWrapper src={IMGGraffitiBottom.src} alt="Graffiti Top" />
+                </FadeIn>
+            }
             <FadeUp className='font-black font-dharma-gothic-e text-[7vw] md:text-[4.45vw] xl:text-[4.45vw] 2xl:text-[4.45vw] leading-[3.7vw] uppercase relative'>
                 Explore Our Latest Insights
                 <div className='absolute flex w-[39.52vw] -z-[1] -top-[7vw] -left-[3.2vw]'>
