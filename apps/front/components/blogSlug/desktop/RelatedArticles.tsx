@@ -1,3 +1,5 @@
+'use client'
+
 import Link from 'next/link';
 import { StrapiArticle } from '@/libs/litebox-lib/types/strapi/strapiBlog';
 import IMGBackground from '@/public/imgs/blogSlug/backgroundRelatedPosts.webp'
@@ -8,11 +10,9 @@ import Button from '@/libs/litebox-lib/ui/Button/Button';
 import ArticleThumbnail from '@/components/blog/desktop/ArticleThumbnail';
 import ImageWrapper from '@/components/common/universal/ImageWrapper';
 
-interface BlogArticleProps {
+export default function RelatedArticles({ articles }: {
     articles?: StrapiArticle[];
-}
-
-export default function RelatedArticles({ articles }: BlogArticleProps) {
+}) {
   return (
     <div className='bg-peach mt-[28vw] relative w-full'>
         <div className='flex w-[45vw] absolute -top-[20.75vw] right-0'>
