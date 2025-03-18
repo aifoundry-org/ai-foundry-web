@@ -11,27 +11,24 @@ import { usePathname } from 'next/navigation';
 
 const LottiePlayer = dynamic(() => import('@/components/common/universal/LottiePlayer'));
 
+import { gsap } from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { useGSAP } from '@gsap/react';
+
+gsap.registerPlugin(useGSAP, ScrollTrigger);
+
 export default function NavBar({removeTopBorders = false}) {
     const path = usePathname();
     const removeRoundedBorders = path.includes('blog') || path.includes('terms-and-conditions') || removeTopBorders;
     const lottieRef = useRef<any>(null);
     const [isSticky, setIsSticky] = useState(false);
+    const totalFrames = lottieRef.current?.totalFrames;
 
     const checkIfSticky = () => {
         const { scrollY } = window
         const stickyState = scrollY > 16;
 
         setIsSticky(stickyState);
-        if(!stickyState){
-            lottieRef.current?.setDirection(1);
-            const totalFrames = lottieRef.current?.totalFrames;
-
-            lottieRef.current?.seek(totalFrames - 10);
-            lottieRef.current?.setDirection(-1);
-        } else {
-            lottieRef.current?.setDirection(1);
-        }
-        lottieRef.current?.play();
     }
 
     useEffect(() => {
@@ -41,6 +38,23 @@ export default function NavBar({removeTopBorders = false}) {
             window.removeEventListener('scroll', checkIfSticky);
         };
     },[])
+
+    useGSAP(() => {
+        ScrollTrigger.create({
+            start: () => 'top+=16px top',
+            end: () => 'top+=16px top',
+            scroller: 'body',
+            onEnter: () => {
+                lottieRef.current?.seek(totalFrames - 10);
+                lottieRef.current?.setDirection(1);
+                lottieRef.current?.play();
+            },
+            onEnterBack: () => {
+                lottieRef.current?.setDirection(-1);
+                lottieRef.current?.play();
+            }
+        })
+    })
 
     return (
         <div className={`flex items-center w-full h-[5.56vw] pt-[2.225vw] pb-[0.5vw] bg-sand ${!removeRoundedBorders && 'rounded-t-lg'}`}>
