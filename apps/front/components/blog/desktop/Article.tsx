@@ -18,8 +18,8 @@ const Article = ({
     featuredArticleId
 }: ArticleProp) => {   
     return (
-        <FadeIn duration={0.5}>
-            <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-[2.4rem] gap-y-20'>
+        <FadeIn duration={0.5} viewport={{once: true, amount: 0}}>
+            <div className={`grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-[2.4rem] gap-y-20 ${!hasMoreArticles && 'mb-[12rem]'}`}>
                 {sortedArticles.data.map(article => {
                     const isFeaturedArticle = article.id === featuredArticleId;
 

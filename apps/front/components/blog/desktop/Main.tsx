@@ -5,7 +5,7 @@ import IMGTitleErrors from '@/public/imgs/blog/titleErrors.webp'
 export default function Main() {
     return (
         <div className='hidden md:flex md:flex-col md:w-full md:h-full'>
-            <div className='flex flex-col w-[87.2vw] h-[41.5vw] mx-auto my-[6vw]'>
+            <div className='flex flex-col w-[87.2vw] h-[24vw] mx-auto my-[6vw]'>
                 <div className='flex flex-col w-full text-center relative'>
                     <div className='absolute top-0 left-0 w-full z-0'>
                         <ImageWrapper src={IMGBackground.src} alt="Background" />
