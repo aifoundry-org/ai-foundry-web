@@ -12,9 +12,9 @@ export default function OpenSourceProjectsCard({title = '', subtitle = '', conte
                     <ImageWrapper src={IMGArrowUpRight.src} alt='Arrow up right' />
                 </div>
             </div>
-            <div className='flex flex-col mt-[3vw] h-full border-b-2 border-black leading-[2.4rem]'>
+            <div className='flex flex-col mt-[1.67vw] h-full border-b-2 border-black leading-[2.4rem]'>
                 <div className={`font-host-grotesk font-bold text-[2rem] md:text-[1.7rem] lg:text-[1.5vw] xl:text-[1.115vw] 2xl:text-[1.115vw] xl:leading-[1.67vw] 2xl:leading-[1.67vw] ${content == '' && 'pb-[3vw] md:pb-0 xl:pb-0 lg:pb-0'}`}>{subtitle}</div>
-                {content !== '' && <div dangerouslySetInnerHTML={{__html: content}} className='font-host-grotesk font-normal text-[2rem] md:text-[1.7rem] lg:text-[1.2vw] xl:text-[1vw] 2xl:text-[1vw] xl:leading-[1.46vw] 2xl:leading-[1.46vw] pt-[1.125vw] pb-[3.5vw] xl:pb-[1.8vw] 2xl:pb-[1.8vw]' />}
+                {content !== '' && <div dangerouslySetInnerHTML={{__html: content}} className='font-host-grotesk font-normal text-[2rem] md:text-[1.7rem] lg:text-[1.2vw] xl:text-[1vw] 2xl:text-[1vw] xl:leading-[1.46vw] 2xl:leading-[1.46vw] pt-[1.125vw] pb-[3.5vw] xl:pb-[1.67vw] 2xl:pb-[1.8vw]' />}
             </div>
             <Button target="_blank" as={Link} href={link} className='mt-8' variant='secondary' content='View repo' svg='github' />
         </div>
