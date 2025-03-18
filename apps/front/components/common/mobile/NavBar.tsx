@@ -1,19 +1,21 @@
 'use client';
 /* eslint-disable */
+
 import { useState, useEffect, useRef } from 'react';
 import dynamic from 'next/dynamic';
 import { m } from 'motion/react';
 import Link from "next/link";
-import IMGIconHamburger from '@/public/pngs/header/hamburger.png';
-import IMGBackground from '@/public/pngs/home/navbar/backgroundMobile.png';
+import IMGIconHamburger from '@/public/imgs/header/hamburger.webp';
+import IMGBackground from '@/public/imgs/home/navbar/backgroundMobile.webp';
 import Button from '@/libs/litebox-lib/ui/Button/Button';
 import LazyMotion from '@/components/common/universal/LazyAnimation'
-import IMGAIFoundyLogoSideMenuMobile from '@/public/pngs/sideMenu/AIFoundryLogoMobile.png'
-import IMGCloseButton from '@/public/pngs/sideMenu/closeButton.png'
-import IMGInstagramIcon from '@/public/pngs/footer/instagramIconMobile.png'
-import IMGLinkedinIcon from '@/public/pngs/footer/linkedinIconMobile.png'
-import IMGYoutubeIcon from '@/public/pngs/footer/youtubeIconMobile.png'
+import IMGAIFoundyLogoSideMenuMobile from '@/public/imgs/sideMenu/AIFoundryLogoMobile.webp'
+import IMGCloseButton from '@/public/imgs/sideMenu/closeButton.webp'
+import IMGInstagramIcon from '@/public/imgs/footer/instagramIconMobile.webp'
+import IMGLinkedinIcon from '@/public/imgs/footer/linkedinIconMobile.webp'
+import IMGYoutubeIcon from '@/public/imgs/footer/youtubeIconMobile.webp'
 import { usePathname } from 'next/navigation';
+import ImageWrapper from '../universal/ImageWrapper';
 
 const LottiePlayer = dynamic(() => import('@/components/common/universal/LottiePlayer'));
 
@@ -54,7 +56,11 @@ export default function NavBar({removeTopBorders = false}) {
     return (
         <>
             <div className={`flex flex-row w-full h-[10.1rem] bg-sand ${!removeRoundedBorders && 'rounded-t-3xl'} relative`}>
-                {currPage == '/' && <img className='absolute w-[19.48vw] h-[25.35vw] right-[0.3vw] z-[2]' src={IMGBackground.src} />}
+                {currPage == '/' && 
+                    <div className='absolute w-[19.48vw] h-[25.35vw] right-[0.3vw] z-[2]'>
+                        <ImageWrapper src={IMGBackground.src} alt='Background' />
+                    </div>
+                }
                 <LazyMotion>
                     <m.nav
                         className={`flex flex-row items-center bg-sand ${
@@ -82,7 +88,9 @@ export default function NavBar({removeTopBorders = false}) {
                             />
                         </div>
                         <div className='flex basis-[50%] w-full justify-end'>
-                            <img src={IMGIconHamburger.src} className='z-[3] w-[6.4vw] xs:w-[5vw]' onClick={() => setShowMenu(true)} />
+                            <div className='z-[3] w-[6.4vw] xs:w-[5vw]' onClick={() => setShowMenu(true)}>
+                                <ImageWrapper src={IMGIconHamburger.src} alt='Hamburger' />
+                            </div>
                         </div>
                     </m.nav>
                 </LazyMotion>
@@ -97,13 +105,17 @@ export default function NavBar({removeTopBorders = false}) {
                     <div className='flex flex-col p-[6vw]'>
                         <div className='flex flex-row w-full items-center justify-between'>
                             <div className='flex justify-start'>
-                                <img onClick={() => {
+                                <div className='w-[40.27vw] xs:w-[30vw]' onClick={() => {
                                     setShowMenu(false);
                                     window.scrollTo(0, 0);
-                                }} className='w-[40.27vw] xs:w-[30vw]' src={IMGAIFoundyLogoSideMenuMobile.src} />
+                                }}>
+                                    <ImageWrapper src={IMGAIFoundyLogoSideMenuMobile.src} alt='Logo side menu mobile' />
+                                </div>
                             </div>
                             <div className='flex justify-end'>
-                                <img onClick={() => setShowMenu(false)} className='w-[6.4vw]' src={IMGCloseButton.src} />
+                                <div className='w-[6.4vw]' onClick={() => setShowMenu(false)}>
+                                    <ImageWrapper src={IMGCloseButton.src} alt='Close button' />
+                                </div>
                             </div>
                         </div>
                         <div className="flex flex-col w-full my-[10.667vw] xs:my-[4vw] font-dharma-gothic-e font-black text-[10.667vw] xs:text-[6.5vw] leading-[8.8vw] gap-[8.8vw] xs:gap-0">
@@ -139,13 +151,19 @@ export default function NavBar({removeTopBorders = false}) {
                         </div>
                         <div className='flex flex-row gap-[8.55vw] xs:gap-[2vw] mt-[12.27vw] xs:mt-[5vw]'>
                             <Link target='_blank' href='https://www.instagram.com/ai.foundry/'>
-                                <img className='w-[6.4vw] h-[6.4vw] xs:w-[5vw] xs:h-[5vw]' src={IMGInstagramIcon.src} />
+                                <div className='w-[6.4vw] h-[6.4vw] xs:w-[5vw] xs:h-[5vw]'>
+                                    <ImageWrapper src={IMGInstagramIcon.src} alt='Instagram icon' />
+                                </div>
                             </Link>
                             <Link target='_blank' href='https://www.linkedin.com/company/aifoundry-org'>
-                                <img className='w-[6.4vw] h-[6.4vw] xs:w-[5vw] xs:h-[5vw]' src={IMGLinkedinIcon.src} />
+                                <div className='w-[6.4vw] h-[6.4vw] xs:w-[5vw] xs:h-[5vw]'>
+                                    <ImageWrapper src={IMGLinkedinIcon.src} alt='Linkedin icon' />
+                                </div>
                             </Link>
                             <Link target='_blank' href='https://www.youtube.com/channel/UCGktaVJ19Ze8J9auyD5IoDQ'>
-                                <img className='w-[6.4vw] h-[6.4vw] xs:w-[5vw] xs:h-[5vw]' src={IMGYoutubeIcon.src} />
+                                <div className='w-[6.4vw] h-[6.4vw] xs:w-[5vw] xs:h-[5vw]'>
+                                    <ImageWrapper src={IMGYoutubeIcon.src} alt='Youtube icon' />
+                                </div>
                             </Link>
                         </div>
                         <div className='font-host-grotesk font-normal text-[3.2vw] xs:text-[2vw] leading-[4.8vw] mt-[4.8vw]'>

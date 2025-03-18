@@ -1,13 +1,14 @@
 'use client'
-/* eslint-disable */
+
 import Link from 'next/link';
 import { getReadTime } from '@/utils/getReadTime';
-import IMGArrowLeft from '@/public/pngs/blogSlug/arrowLeft.png';
-import IMGArrows from '@/public/pngs/blogSlug/arrows.png';
-import IMGPaper from '@/public/pngs/blogSlug/paper.png';
+import IMGArrowLeft from '@/public/imgs/blogSlug/arrowLeft.webp';
+import IMGArrows from '@/public/imgs/blogSlug/arrows.webp';
+import IMGPaper from '@/public/imgs/blogSlug/paper.webp';
 import SocialShareLink from '@/components/blogSlug/universal/SocialLink';
-import { StrapiArticle, StrapiTag } from '@/libs/litebox-lib/types/strapi/strapiBlog';
+import { StrapiArticle, StrapiParagraph, StrapiTag } from '@/libs/litebox-lib/types/strapi/strapiBlog';
 import getStrapiMediaUrl from '@/utils/getStrapiMediaUrl';
+import ImageWrapper from '@/components/common/universal/ImageWrapper';
 
 interface HeadlineProps {
     article: StrapiArticle;
@@ -16,22 +17,30 @@ interface HeadlineProps {
 
 const Headline = ({ article, className }: HeadlineProps) => {
     const { title, date, authors, coverImage, tags, paragraphs } = article;
-    const paragraphsContent = paragraphs.flatMap((el: any) => el.content.flatMap((el: any) => el.children.flatMap((el: any) => el.text))).join(' ');
+    const paragraphsContent = paragraphs.flatMap((el: StrapiParagraph) => el.content.flatMap((el) => el.children.flatMap((el: {type:string, text: string}) => el.text))).join(' ');
     const cleanParagraphsContent = paragraphsContent.replace(/<[^>]*>/g, ' ');
 
     return (
         <div className={className}>
             <Link className='flex items-center gap-4 mb-10' href='/blog' rel='noreferrer'>
-                <img src={IMGArrowLeft.src} className='w-[2.4rem]' />
+                <div className='w-[2.4rem]'>
+                    <ImageWrapper src={IMGArrowLeft.src} alt="Arrow left" />
+                </div>
                 <p className='font-dharma-gothic-e font-bold text-[2rem] leading-[2rem] uppercase'>Go Back to Blog</p>
             </Link>
             <div className='mb-[2.225vw] relative w-fit'>
-                <img src={IMGPaper.src} className='absolute w-[25.56vw] -top-[2vw] -right-[2.5vw] -z-[1]' />
+                <div className='absolute w-[25.56vw] -top-[2vw] -right-[2.5vw] -z-[1]'>
+                    <ImageWrapper src={IMGPaper.src} alt="Paper background" />
+                </div>
                 {coverImage ? 
-                    <img src={getStrapiMediaUrl(coverImage.url)} className='relative w-[80.3rem] border-2 border-black rounded-lg' /> : 
+                    <div className='relative w-[80.3rem] border-2 border-black rounded-lg'>
+                        <ImageWrapper src={getStrapiMediaUrl(coverImage.url)} alt="Cover image" />
+                    </div> : 
                     <div className='flex w-[80.3rem] h-[44.3rem] border-2 border-black bg-sand rounded-lg text-center justify-center items-center text-[2vw] uppercase'>No cover image</div>
                 }
-                <img src={IMGArrows.src} className='absolute w-[8.345vw] -bottom-[2vw] right-0' />
+                <div className='absolute w-[8.345vw] -bottom-[2vw] right-0'>
+                    <ImageWrapper src={IMGArrows.src} alt="Arrows background" />
+                </div>
             </div>
             <div className='flex flex-wrap gap-2 pb-[2.4rem]'>
                 {tags.map((tag: StrapiTag) => (

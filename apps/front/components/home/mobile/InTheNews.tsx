@@ -1,8 +1,8 @@
-'use client'
+'use client';
 /* eslint-disable */
+
 import { useRef, useState } from 'react'
-import IMGBackground from '@/public/pngs/home/inTheNews/backgroundMobile.png'
-import IMGLogoCnn from '@/public/pngs/home/inTheNews/logoCnn.png'
+import IMGLogoCnn from '@/public/imgs/home/inTheNews/logoCnn.webp'
 import Button from '@/litebox-lib/ui/Button/Button'
 import Link from 'next/link';
 import cards from '@/mock/home/inTheNews/data.json'
@@ -14,6 +14,7 @@ import 'swiper/css/navigation';
 import FadeUp from '@/components/common/universal/FadeUp';
 import FadeIn from '@/components/common/universal/FadeIn';
 import {Swiper as SwiperType} from 'swiper'
+import ImageWrapper from '@/components/common/universal/ImageWrapper';
 
 export default function InTheNews() {
     //Add a state that will force a re-render
@@ -24,7 +25,7 @@ export default function InTheNews() {
     const buttonNextRef = useRef(null)
 
     return (
-        <div className='md:hidden flex flex-col pt-[28vw] pb-[7.7vw] relative w-full h-fit px-[5.6vw]'>
+        <div className='md:hidden flex flex-col pt-[15rem] pb-[5rem] relative w-full h-fit px-[5.6vw]'>
             <FadeUp className='font-black font-dharma-gothic-e text-[12.8vw] leading-[10.7vw] uppercase'>
                 AI Foundry<br/>in the News
             </FadeUp>
@@ -51,7 +52,7 @@ export default function InTheNews() {
                                 <div className='flex flex-row items-center mb-[6.4vw] gap-x-[2.15vw]'>
                                     {(card.source == 'cnn' ? IMGLogoCnn.src : '') && 
                                         <div className='flex w-[12.8vw] border-[1px] rounded-[1.1vw] p-[2vw] border-black'>
-                                            <img src={(card.source == 'cnn' ? IMGLogoCnn.src : '')} />
+                                            <ImageWrapper src={(card.source == 'cnn' ? IMGLogoCnn.src : '')} alt='Logo' />
                                         </div>
                                     }
                                     {card.tag && 
@@ -77,9 +78,6 @@ export default function InTheNews() {
                         <Button variant='secondary' svg='scroll-right' />
                     </div>
                 </FadeUp>
-            </div>
-            <div className='absolute -bottom-[27.5vw] left-0 w-full -z-10'>
-                <img className='w-full' src={IMGBackground.src} alt="In the News Background" />
             </div>
         </div>
     )

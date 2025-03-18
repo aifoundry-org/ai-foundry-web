@@ -1,13 +1,14 @@
-'use client'
+'use client';
 /* eslint-disable */
+
 import { useEffect, useRef, useState } from 'react'
 import Link from 'next/link';
 import Button from '@/libs/litebox-lib/ui/Button/Button'
 import FadeUp from '@/components/common/universal/FadeUp'
 import { Swiper as SwiperType } from 'swiper/types';
 
-import IMGBackground from '@/public/pngs/home/latestInsights/backgroundMobile.png'
-import IMGGraffiti from '@/public/pngs/home/latestInsights/graffitiMobile.png'
+import IMGBackground from '@/public/imgs/home/latestInsights/backgroundMobile.webp'
+import IMGGraffiti from '@/public/imgs/home/latestInsights/graffitiMobile.webp'
 
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation } from 'swiper/modules';
@@ -17,6 +18,7 @@ import { getLastArticles } from '@/backend/blog/actions';
 import { StrapiArticle } from '@/libs/litebox-lib/types/strapi/strapiBlog';
 import getStrapiMediaUrl from '@/utils/getStrapiMediaUrl';
 import ArticleTag from '@/components/common/mobile/ArticleTag';
+import ImageWrapper from '@/components/common/universal/ImageWrapper';
 
 export default function LatestInsights() {
     //Add a state that will force a re-render
@@ -38,12 +40,12 @@ export default function LatestInsights() {
     return (
         <div id='blog-mobile' className='xs:hidden flex flex-col pt-[30vw] pb-[7.7vw] relative w-full h-fit px-[5.6vw]'>
             <FadeUp className='absolute w-[24vw] top-[5.5vw] left-0 -z-[1]'>
-                <img src={IMGGraffiti.src} />
+                <ImageWrapper src={IMGGraffiti.src} alt='Graffiti' />
             </FadeUp>
             <FadeUp className='font-black font-dharma-gothic-e text-[12.8vw] leading-[10.7vw] uppercase relative'>
                 Explore Our Latest<br/>Insights
                 <div className='absolute flex -z-[1] -top-[16.5vw] -left-[6vw]'>
-                    <img src={IMGBackground.src} width='100%' alt="Latest Insights background" />
+                    <ImageWrapper src={IMGBackground.src} alt="Latest Insights background" />
                 </div>
             </FadeUp>
             <FadeUp className='font-normal font-host-grotesk text-[3.75vw] leading-[5.6vw] pt-[4.3vw] pb-[4.275vw]'>
@@ -74,7 +76,9 @@ export default function LatestInsights() {
                             <SwiperSlide key={idx} className='flex flex-col w-full h-full'>
                                 <div className='flex flex-row items-center justify-between mb-[7vw]'>
                                     {article.coverImage ? 
-                                        <img src={getStrapiMediaUrl(article.coverImage.url)} className='border-2 border-black rounded-lg' /> : 
+                                        <div className='border-2 border-black rounded-lg'>
+                                            <ImageWrapper src={getStrapiMediaUrl(article.coverImage.url)} alt='Cover image' />
+                                        </div> : 
                                         <div className='flex w-full h-[49.1vw] border-2 border-black rounded-lg text-center justify-center items-center text-[8vw] uppercase'>No cover image</div>
                                     }
                                 </div>

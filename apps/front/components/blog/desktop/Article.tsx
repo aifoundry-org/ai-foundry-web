@@ -4,11 +4,11 @@ import { StrapiData } from '@/libs/litebox-lib/types/strapi/strapi';
 import Button from '@/libs/litebox-lib/ui/Button/Button';
 import ArticleThumbnail from './ArticleThumbnail';
 import FadeIn from '@/components/common/universal/FadeIn';
-interface ArticleProp {
+export interface ArticleProp {
     sortedArticles: StrapiData<StrapiArticle[]>,
     hasMoreArticles: boolean,
     showMoreArticles: MouseEventHandler<HTMLButtonElement>,
-    featuredArticleId: number
+    featuredArticleId?: number
 }
 
 const Article = ({ 

@@ -1,10 +1,10 @@
-/* eslint-disable */
 import { Dispatch, SetStateAction, useState, useRef } from 'react';
 import { useForm } from "react-hook-form";
 import Modal from '@/libs/litebox-lib/ui/Modal/Modal'
 import Input from '@/libs/litebox-lib/ui/Input/Input';
-import IMGCloseButton from '@/public/pngs/sideMenu/closeButton.png'
+import IMGCloseButton from '@/public/imgs/sideMenu/closeButton.webp'
 import Button from '@/libs/litebox-lib/ui/Button/Button'
+import ImageWrapper from '@/components/common/universal/ImageWrapper';
 
 export default function FaqsModal({isModalOpen, setIsModalOpen} : {isModalOpen:boolean, setIsModalOpen: Dispatch<SetStateAction<boolean>>}) {
     const inputRef = useRef<HTMLInputElement>(null);
@@ -32,7 +32,9 @@ export default function FaqsModal({isModalOpen, setIsModalOpen} : {isModalOpen:b
         <Modal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)}>
             <div className='flex flex-col w-[47.25vw] px-[4.45vw] pb-[1vw] justify-between border-black border-2 bg-sand relative'>
                 <button className='absolute top-[2vw] right-[2vw]' type='button' onClick={() => setIsModalOpen(false)} aria-label='Close modal'>
-                    <img src={IMGCloseButton.src} className='w-[2.225vw] h-[2.225vw]' />
+                    <div className='w-[2.225vw] h-[2.225vw]'>
+                        <ImageWrapper src={IMGCloseButton.src} alt='Close button' />
+                    </div>
                 </button>
                 {!showResult && <>
                     <form onSubmit={handleSubmit(onSubmit)} className={`faqsModal relative flex flex-col items-center ${isSending ? 'bg-transparent opacity-50 pointer-events-none' : ''}`}>

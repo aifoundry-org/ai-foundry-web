@@ -1,15 +1,16 @@
-'use client'
+'use client';
 /* eslint-disable */
+
 import { useRef, useState } from 'react'
 import Button from '@/litebox-lib/ui/Button/Button';
-import IMGBackgroundTop from '@/public/pngs/home/testimonials/backgroundTop.png'
-import IMGDoodle from '@/public/pngs/home/testimonials/doodle.png'
-import IMGWhatPeopleSaying from '@/public/pngs/home/testimonials/whatPeopleSaying.png'
-import IMGStarFull from '@/public/pngs/home/testimonials/starFull.png'
-import IMGStarEmpty from '@/public/pngs/home/testimonials/starEmpty.png'
+import IMGBackgroundTop from '@/public/imgs/home/testimonials/backgroundTop.webp'
+import IMGDoodle from '@/public/imgs/home/testimonials/doodle.webp'
+import IMGWhatPeopleSaying from '@/public/imgs/home/testimonials/whatPeopleSaying.webp'
+import IMGStarFull from '@/public/imgs/home/testimonials/starFull.webp'
+import IMGStarEmpty from '@/public/imgs/home/testimonials/starEmpty.webp'
 import cards from '@/mock/home/testimonials/data.json';
 import SVGCompanyWebflow from '@/public/svgs/home/testimonials/companyWebflow'
-import IMGDeveloper1 from '@/public/pngs/home/testimonials/developer1.png'
+import IMGDeveloper1 from '@/public/imgs/home/testimonials/developer1.webp'
 
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Pagination, Navigation } from 'swiper/modules';
@@ -18,7 +19,7 @@ import 'swiper/css/pagination';
 import 'swiper/css/navigation';
 
 import FadeUp from '@/components/common/universal/FadeUp';
-import FadeIn from '@/components/common/universal/FadeIn';
+import ImageWrapper from '@/components/common/universal/ImageWrapper';
 
 export default function Testimonials() {
     //Add a state that will force a re-render
@@ -45,7 +46,7 @@ export default function Testimonials() {
         <div className='hidden md:flex md:flex-col md:pt-[6vw] md:pb-[7.7vw] md:relative md:w-full md:h-full'>
             <div className='flex flex-col relative w-full h-[55vw] bg-black text-sand rounded-[1.4vw]'>
                 <div className='relative w-full h-fit -top-[3.45vw] left-0'>
-                    <img src={IMGBackgroundTop.src} />
+                    <ImageWrapper src={IMGBackgroundTop.src} alt='Background top' />
                 </div>
                 <FadeUp delay={0.5} className='flex flex-row w-full items-center justify-center relative'>
                     <div ref={buttonPrevRef} className='flex basis-[15%] justify-center'>
@@ -74,7 +75,9 @@ export default function Testimonials() {
                             <SwiperSlide className='flex flex-col w-full py-0 px-[5vw] items-center' key={idx}>
                                 <div className='flex flex-row w-full justify-start pb-[2.225vw] gap-[0.15vw]'>
                                     {[...Array(5)].map((i, idx) => (
-                                        <img key={idx} width='19' src={idx <= el.stars ? IMGStarFull.src : IMGStarEmpty.src} />
+                                        <div key={idx} className='w-[1.9rem]'>
+                                            <ImageWrapper src={idx <= el.stars ? IMGStarFull.src : IMGStarEmpty.src} alt='Icon star' />
+                                        </div>
                                     ))}
                                 </div>
                                 <div className='flex h-[22vw] items-center font-dharma-gothic-e font-black text-[4.45vw] leading-[4.45vw] tracking-wide uppercase'>
@@ -82,7 +85,7 @@ export default function Testimonials() {
                                 </div>
                                 <div className='flex flex-row mt-[2.223vw] w-full h-[4.17vw] justify-start items-center'>
                                     <div className='w-[3.84vw]'>
-                                        <img width='55' src={el.avatar} />
+                                        <ImageWrapper src={el.avatar} alt='Avatar' />
                                     </div>
                                     <div className='flex flex-col px-[1.5vw] font-host-grotesk border-r-[1px]'>
                                         <div className='font-bold text-[1.115vw] leading-[1.67vw]'>{el.author}</div>
@@ -101,10 +104,10 @@ export default function Testimonials() {
                     </div>
                 </FadeUp>
                 <div className='relative w-[25.91vw] -bottom-[6.5vw] left-[70vw] -z-[1]'>
-                    <img src={IMGDoodle.src} />
+                    <ImageWrapper src={IMGDoodle.src} alt="Doodle" />
                 </div>
                 <div className='relative w-[12.5vw] bottom-[6.5vw] left-[81.5vw] z-[1]'>
-                    <img src={IMGWhatPeopleSaying.src} />
+                    <ImageWrapper src={IMGWhatPeopleSaying.src} alt="What people saying" />
                 </div>
             </div>
         </div>
