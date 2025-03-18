@@ -48,7 +48,7 @@ export default function NavBar({removeTopBorders = false}) {
                 <m.nav
                     className={`flex flex-col bg-sand ${
                         isSticky
-                        ? 'fixed z-20 top-[2.8vw] px-[2.78vw] py-[1vw] border-2 border-black'
+                        ? 'fixed z-20 top-[2.8vw] px-[2.78vw] py-[0.126vw] border-2 border-black'
                         : 'relative px-[2.78vw] mx-auto'
                     }`}
                         style={{
