@@ -23,10 +23,18 @@ export default function NavBar({removeTopBorders = false}) {
     const lottieRef = useRef<any>(null);
     const [isSticky, setIsSticky] = useState(false);
     const totalFrames = lottieRef.current?.totalFrames;
+    const [playOnce, setPlayOnce] = useState(true);
 
     const checkIfSticky = () => {
         const { scrollY } = window
         const stickyState = scrollY > 16;
+
+        if(stickyState && playOnce){
+            setPlayOnce(false)
+            lottieRef.current?.seek(totalFrames - 10);
+            lottieRef.current?.setDirection(1);
+            lottieRef.current?.play();
+        }
 
         setIsSticky(stickyState);
     }
