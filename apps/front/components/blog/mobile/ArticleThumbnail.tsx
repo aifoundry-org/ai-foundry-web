@@ -1,3 +1,5 @@
+'use client'
+
 import ArticleTag from '@/components/common/mobile/ArticleTag';
 import { StrapiArticle, StrapiTag } from '@/libs/litebox-lib/types/strapi/strapiBlog';
 import Button from '@/libs/litebox-lib/ui/Button/Button';
@@ -13,7 +15,9 @@ export default function ArticleThumbnail({article}: ArticleThumbnailProps) {
     const { id, title, date, authors, coverImage, slug, tags } = article;
 
     return (
-        <div key={id} className='flex flex-col w-full h-full'>
+        <div onClick={() => {
+            window.location.href = `/blog/${slug}`
+        }} key={id} className='flex flex-col w-full h-full'>
             <div className='flex flex-row mb-[7vw]'>
                 {coverImage ? 
                     <Image width={1000} height={214} src={getStrapiMediaUrl(coverImage.url)} className='border-2 border-black rounded-lg w-full h-[57.1vw] object-cover' alt="cover" /> : 

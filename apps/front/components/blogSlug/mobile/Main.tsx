@@ -4,12 +4,10 @@ import Content from './Content';
 import Author from './Author';
 import RelatedArticles from './RelatedArticles'
 
-interface BlogArticleProps {
-    article: StrapiArticle;
-    className?: string;
-}
-
-export default function BlogArticle({ article, className }: BlogArticleProps) {
+export default function BlogArticle({ article, className }: {
+  article: StrapiArticle;
+  className?: string;
+}) {
   return (
     <div className='xs:hidden'>
       <div className={`w-full h-full mx-auto py-[5.5rem] px-[2.4rem] ${className}`}>
