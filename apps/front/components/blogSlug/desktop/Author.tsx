@@ -64,7 +64,7 @@ export default function Author({author, contentNavigation, currentHeaderId, onCu
                                     scrollToElement(el.tag, 140)
                                 }
                                 onCurrentHeaderIdChange(el.tag)
-                            }} className={`cursor-pointer text-[1.6rem] ${currentHeaderId === el.tag ? 'font-bold' : 'font-normal'} `} key={el.tag}>{el.content}</a>
+                            }} className={`cursor-pointer text-[1.6rem] hover:font-bold ${currentHeaderId === el.tag ? 'font-bold' : 'font-normal'} `} key={el.tag}>{el.content}</a>
                         ))}
                     </div>
                 }

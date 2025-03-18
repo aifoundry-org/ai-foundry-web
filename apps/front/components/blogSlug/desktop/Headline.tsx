@@ -35,8 +35,9 @@ const Headline = ({ article, className }: HeadlineProps) => {
                 {coverImage ? 
                     <div className='relative border-2 border-black rounded-lg
                         xs:w-[35.3rem] sm:w-[50.3rem] md:w-[50.3rem] lg:w-[80.3rem] xl:w-[80.3rem] 2xl:w-[80.3rem] 
+                        xs:h-fit sm:h-fit md:h-fit lg:h-[29.8rem] xl:h-[29.8rem] 2xl:h-[29.8rem] 
                     '>
-                        <ImageWrapper src={getStrapiMediaUrl(coverImage.url)} alt="Cover image" />
+                        <ImageWrapper style={{height: '100%', objectFit: 'cover', objectPosition: 'center'}} src={getStrapiMediaUrl(coverImage.url)} alt="Cover image" />
                     </div> : 
                     <div className='flex w-[80.3rem] h-[44.3rem] border-2 border-black bg-sand rounded-lg text-center justify-center items-center text-[2vw] uppercase'>No cover image</div>
                 }
