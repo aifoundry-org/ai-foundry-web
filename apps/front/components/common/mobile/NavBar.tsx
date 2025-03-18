@@ -78,7 +78,9 @@ export default function NavBar({removeTopBorders = false}) {
                         animate={{ width: isSticky ? '100vw' : '90vw' }}
                         transition={{ ease: "easeInOut", duration: 0.5 }}
                         >
-                        <div className='flex basis-[50%] w-full mx-auto items-center justify-start'>
+                        <div onClick={() => {
+                            window.location.href = '/'
+                        }} className='flex basis-[50%] w-full mx-auto items-center justify-start'>
                             <LottiePlayer
                                 className='w-[15.2rem]'
                                 ref={lottieRef}
