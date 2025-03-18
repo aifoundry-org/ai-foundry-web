@@ -184,15 +184,15 @@ export default function Main() {
                 </p>   
                 <div className={`${paragraphStyle} mt-[8.55vw] relative`}>
                     <div id='privacy-policy-mobile' className='absolute left-0 -top-[30vw]' />
-                    <iframe className='w-full h-[35780px] border-2 p-[16px] border-black rounded-[1.115vw]' src='https://app.termly.io/policy-viewer/iframe-content.html?policyUUID=2fd31d37-c2f6-4c3e-9769-c3667f76cb3d' />
+                    <iframe className='w-full h-[12780px] border-2 p-[16px] border-black rounded-[1.115vw]' src='https://app.termly.io/policy-viewer/iframe-content.html?policyUUID=2fd31d37-c2f6-4c3e-9769-c3667f76cb3d' />
                 </div>   
                 <div className={`${paragraphStyle} mt-[8.55vw] relative`}>
                     <div id='terms-of-use-mobile' className='absolute left-0 -top-[30vw]' />
-                    <iframe className='w-full h-[32300px] border-2 p-[16px] border-black rounded-[1.115vw]' src='https://app.termly.io/policy-viewer/iframe-content.html?policyUUID=34285775-1595-400b-b451-a7f993129f0d' />
+                    <iframe className='w-full h-[12300px] border-2 p-[16px] border-black rounded-[1.115vw]' src='https://app.termly.io/policy-viewer/iframe-content.html?policyUUID=34285775-1595-400b-b451-a7f993129f0d' />
                 </div>   
                 <div className={`${paragraphStyle} mt-[8.55vw] mb-[10vw] relative`}>
                     <div id='cookie-policy-mobile' className='absolute left-0 -top-[30vw]' />
-                    <iframe className='w-full h-[13500px] border-2 p-[16px] border-black rounded-[1.115vw]' src='https://app.termly.io/policy-viewer/iframe-content.html?policyUUID=7cb45296-38b6-4722-97b1-df160a8f5fd3' />
+                    <iframe className='w-full h-[2500px] border-2 p-[16px] border-black rounded-[1.115vw]' src='https://app.termly.io/policy-viewer/iframe-content.html?policyUUID=7cb45296-38b6-4722-97b1-df160a8f5fd3' />
                 </div> 
             </div>
         </div>
