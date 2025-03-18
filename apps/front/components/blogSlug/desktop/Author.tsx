@@ -7,13 +7,17 @@ import IMGLinkedinIcon from '@/public/imgs/footer/linkedinIconMobile.webp'
 import IMGYoutubeIcon from '@/public/imgs/footer/youtubeIconMobile.webp'
 import getStrapiMediaUrl from '@/utils/getStrapiMediaUrl';
 import ImageWrapper from '@/components/common/universal/ImageWrapper';
+import { Dispatch, SetStateAction } from 'react';
+import scrollToElement from '@/hooks/useScrollToElement';
 
 interface AuthorProps {
     author: StrapiAuthor;
     contentNavigation: StrapiContentNavigation[];
+    currentHeaderId: string | null; 
+    onCurrentHeaderIdChange: Dispatch<SetStateAction<string | null>>
 }
 
-export default function Author({author, contentNavigation}: AuthorProps) {
+export default function Author({author, contentNavigation, currentHeaderId, onCurrentHeaderIdChange}: AuthorProps) {
     if(author){
         const { name, role, description, instagram_link, youtube_link, linkedin_link, profileImage } = author
         return (
@@ -48,10 +52,19 @@ export default function Author({author, contentNavigation}: AuthorProps) {
                     </Link>}
                 </div>
                 {contentNavigation && contentNavigation.length > 0 &&
-                    <div className='flex flex-col font-normal text-[#222222] font-host-grotesk gap-y-[1.6rem] pt-[4rem]'>
+                    <div className='flex flex-col sticky top-[10rem] font-normal text-[#222222] font-host-grotesk gap-y-[1.6rem] pt-[4rem]'>
                         <p className='font-bold text-[2rem]'>Content</p>
                         {contentNavigation.map(el => (
-                            <Link href={`#${el.tag}`} className='cursor-pointer text-[1.6rem]' key={el.tag}>{el.content}</Link>
+                            <a onClick={() => {
+                                if (window.innerWidth >= 640 && window.innerWidth <= 767) {
+                                    scrollToElement(el.tag, 110)
+                                } else if (window.innerWidth >= 768 && window.innerWidth <= 1219) {
+                                    scrollToElement(el.tag, 130)
+                                } else {
+                                    scrollToElement(el.tag, 140)
+                                }
+                                onCurrentHeaderIdChange(el.tag)
+                            }} className={`cursor-pointer text-[1.6rem] ${currentHeaderId === el.tag ? 'font-bold' : 'font-normal'} `} key={el.tag}>{el.content}</a>
                         ))}
                     </div>
                 }
