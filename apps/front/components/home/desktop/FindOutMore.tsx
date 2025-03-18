@@ -29,7 +29,7 @@ export default function FindOutMore() {
                 <div className='absolute w-[29.1vw] top-[1.5vw] right-0'>
                     <ImageWrapper src={IMGCode.src} alt='Code' />
                 </div>
-                <FadeUp className='absolute text-sand font-dharma-gothic-e uppercase top-[16.5vw] left-[7.6vw] text-[15vw] font-black'>
+                <FadeUp className='absolute text-sand font-dharma-gothic-e uppercase top-[15.5vw] left-[7.6vw] text-[15vw] font-black'>
                     Find
                     <div className='relative w-[21vw] -left-[2.3vw] bottom-[12.8vw]'>
                         <ImageWrapper src={IMGErrors.src} alt='Errors' />
@@ -38,7 +38,7 @@ export default function FindOutMore() {
                         <ImageWrapper src={IMGCursorUp.src} alt='Cursor up' />
                     </div>
                 </FadeUp>
-                <FadeDown delay={0.5} className='absolute w-fit h-fit bg-black text-sand p-[1.3vw] top-[16.5vw] left-[30vw] rounded-lg'>
+                <FadeDown delay={0.5} className='absolute w-fit h-fit bg-black text-sand p-[1.3vw] top-[15.5vw] left-[30vw] rounded-lg'>
                     <div className='relative font-helvetica px-[0.5vw] pt-[2vw] pb-[0.5vw]'>
                         <div className='absolute -top-[2.8vw] left-0 w-[3.4vw] h-[3.4vw]'>
                             <ImageWrapper src={IMGFoundryBadge.src} alt='AIFoundry badge' />
@@ -64,13 +64,13 @@ export default function FindOutMore() {
                         </div>
                     </div>
                 </FadeDown>
-                <FadeUp className='absolute text-sand font-dharma-gothic-e uppercase top-[16.5vw] right-[7.6vw] text-[15vw] font-black'>
+                <FadeUp className='absolute text-sand font-dharma-gothic-e uppercase top-[15.5vw] right-[7.6vw] text-[15vw] font-black'>
                     Out more
                     <div className='relative w-[1.95vw] left-[35.2vw] bottom-[18.2vw]'>
                         <ImageWrapper src={IMGCursorDown.src} alt='Cursor down' />
                     </div>
                 </FadeUp>
-                <FadeDown delay={0.5} className='absolute flex flex-row items-center w-fit h-[3.65vw] p-[0.5vw] rounded-full bg-black top-[15.3vw] right-[25.2vw]'>
+                <FadeDown delay={0.5} className='absolute flex flex-row items-center w-fit h-[3.65vw] p-[0.5vw] rounded-full bg-black top-[14.3vw] right-[25.2vw]'>
                     <div className='flex w-[3.3vw]'>
                         <ImageWrapper src={IMGSusanAvatar.src} alt='Avatar susan' />
                     </div>
@@ -78,7 +78,7 @@ export default function FindOutMore() {
                         Welcome Susan!
                     </div>
                 </FadeDown>
-                <FadeDown delay={0.5} className='absolute flex flex-row items-center w-fit h-[3.65vw] p-[0.5vw] rounded-full bg-black top-[19.8vw] right-[25.2vw]'>
+                <FadeDown delay={0.5} className='absolute flex flex-row items-center w-fit h-[3.65vw] p-[0.5vw] rounded-full bg-black top-[18.8vw] right-[25.2vw]'>
                     <div className='flex w-[3.3vw]'>
                         <ImageWrapper src={IMGMaraAvatar.src} alt='Avatar mara' />
                     </div>
@@ -86,7 +86,7 @@ export default function FindOutMore() {
                         Glad to join this community! 
                     </div>
                 </FadeDown>
-                <FadeUp delay={0.5} className='absolute w-fit h-fit bg-black text-sand px-[0.5vw] py-[0.5vw] bottom-[8.8vw] right-[11.2vw] rounded-lg'>
+                <FadeUp delay={0.5} className='absolute w-fit h-fit bg-black text-sand px-[0.5vw] py-[0.5vw] bottom-[9.8vw] right-[11.2vw] rounded-lg'>
                     <div className='relative font-helvetica'>
                         <div className='flex flex-col font-normal items-middle'>
                             <div className='flex text-[1.12vw] gap-x-[0.7vw] border-b-[0.5px] border-sand m-[1vw] pb-[0.5vw] pr-[0.5vw]'>
@@ -101,7 +101,7 @@ export default function FindOutMore() {
                         </div>
                     </div>
                 </FadeUp>
-                <FadeUp delay={0.5} className='absolute bottom-[5vw] w-full'>
+                <FadeUp delay={0.5} className='absolute bottom-[8vw] w-full'>
                     <div className='relative w-full flex justify-center'>
                         <Button target='_blank' as={Link} href='https://discord.com/invite/WNKvkefkUs' svg='discord' variant='secondary' content='Join our discord' />
                     </div>
