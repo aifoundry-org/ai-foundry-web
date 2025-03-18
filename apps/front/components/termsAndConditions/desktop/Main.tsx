@@ -1,6 +1,6 @@
-/* eslint-disable */
 import Link from 'next/link'
-import IMGBackground from '@/public/pngs/termsAndConditions/background.png'
+import IMGBackground from '@/public/imgs/termsAndConditions/background.webp'
+import ImageWrapper from '@/components/common/universal/ImageWrapper'
 
 const paragraphStyle = 'font-host-grotesk font-normal text-[1.115vw] leading-[1.67vw]'
 
@@ -9,7 +9,9 @@ export default function Main() {
         <div className='hidden md:flex md:flex-col md:w-full md:h-full md:font-dharma-gothic-e'>
             <div className='flex flex-col w-full h-fit mx-auto my-[6vw]'>
                 <div className='flex w-full text-center justify-center relative'>
-                    <img className='absolute top-[0.2vw] left-[27vw] w-[48vw] z-0' src={IMGBackground.src} />
+                    <div className='absolute top-[0.2vw] left-[27vw] w-[48vw] z-0'>
+                        <ImageWrapper src={IMGBackground.src} alt='Background' />
+                    </div>
                     <div className='flex text-[4.45vw] font-black leading-[3.69vw] mt-[3vw] mb-[2.225vw] uppercase z-[1]'>
                         Applicable Terms & Conditions
                     </div> 
@@ -62,7 +64,7 @@ export default function Main() {
                         <li>The use of sexualized language or imagery, and sexual attention or advances of any kind</li>
                         <li>Trolling, insulting or derogatory comments, and personal or political attacks</li>
                         <li>Public or private harassment</li>
-                        <li>Publishing others' private information, such as a physical or email address, without their explicit permission</li>
+                        <li>Publishing others&apos; private information, such as a physical or email address, without their explicit permission</li>
                         <li>Other conduct which could reasonably be considered inappropriate in a professional setting</li>
                     </ul>
                 </div>
@@ -172,7 +174,7 @@ export default function Main() {
                     This Code of Conduct is adapted from the <a className='font-bold' href='https://www.contributor-covenant.org'>Contributor Covenant</a> homepage,
                     version 2.1, available at <a className='font-bold' href='https://www.contributor-covenant.org/version/2/1/code_of_conduct.html'>https://www.contributor-covenant.org/version/2/1/code_of_conduct.html</a>.
                     <br/><br/>
-                    Community Impact Guidelines were inspired by <a className='font-bold' href='https://github.com/mozilla/diversity'>Mozilla's code of conduct enforcement ladder</a>.
+                    Community Impact Guidelines were inspired by <a className='font-bold' href='https://github.com/mozilla/diversity'>Mozilla&apos;s code of conduct enforcement ladder</a>.
                     <br/><br/>
                     For answers to common questions about this code of conduct, see the <a className='font-bold' href='https://www.contributor-covenant.org/faq'>FAQ</a>. Translations are available at <a className='font-bold' href='https://www.contributor-covenant.org/translations'>https://www.contributor-covenant.org/translations</a>.
                 </p>

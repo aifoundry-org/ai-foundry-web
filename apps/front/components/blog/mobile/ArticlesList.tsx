@@ -1,6 +1,5 @@
 'use client'
 
-import Image from 'next/image';
 import { useMemo, useEffect } from 'react'
 import { useRouter, usePathname, useSearchParams } from 'next/navigation';
 import { useQueryString } from '@/hooks/useQueryString';
@@ -11,7 +10,8 @@ import Filters from './Filters';
 import SearchInput from '../universal/SearchInput';
 import { CheckOption } from '../universal/FiltersType';
 import { ArticlesListProps } from '../universal/ArticlesListPropsType';
-import IMGComputer from '@/public/pngs/blog/computerMobile.png'
+import IMGComputer from '@/public/imgs/blog/computerMobile.webp'
+import ImageWrapper from '@/components/common/universal/ImageWrapper';
 
 export default function ArticlesList({
     articles,
@@ -63,7 +63,9 @@ export default function ArticlesList({
                         <p className='font-host-grotesk text-[1.6rem] text-black font-bold'>
                             Please, try again!
                         </p>
-                        <Image className='w-[18.2rem] mt-[3.34vw]' width={232} height={204} src={IMGComputer.src} alt='not-found' />
+                        <div className='w-[18.2rem] mt-[3.34vw]'>
+                            <ImageWrapper src={IMGComputer.src} alt='Computer not found' />
+                        </div>
                     </div>
                 }
 

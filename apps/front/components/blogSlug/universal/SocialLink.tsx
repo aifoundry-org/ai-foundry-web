@@ -1,11 +1,12 @@
 'use client';
-/* eslint-disable */
+
 import React from "react";
 import { usePathname } from 'next/navigation'
 import Link from 'next/link';
-import IMGInstagramIcon from '@/public/pngs/blogSlug/instagramIcon.png'
-import IMGLinkedinIcon from '@/public/pngs/blogSlug/linkedinIcon.png'
-import IMGXIcon from '@/public/pngs/blogSlug/xIcon.png'
+import IMGInstagramIcon from '@/public/imgs/blogSlug/instagramIcon.webp'
+import IMGLinkedinIcon from '@/public/imgs/blogSlug/linkedinIcon.webp'
+import IMGXIcon from '@/public/imgs/blogSlug/xIcon.webp'
+import ImageWrapper from '@/components/common/universal/ImageWrapper';
 
 type SocialNetwork = 'x' | 'linkedin' | 'instagram';
 
@@ -55,9 +56,9 @@ const SocialShareLink = ({ platform, title, articleContent, className }: SocialS
     const shareUrl = createSocialShareUrl(platform, socialParams);
 
     const icons: Record<SocialNetwork, React.ReactNode> = {
-        x: <img className={className} src={IMGXIcon.src} />,
-        linkedin: <img className={className} src={IMGLinkedinIcon.src} />,
-        instagram: <img className={className} src={IMGInstagramIcon.src} />,
+        x: <div className={className}><ImageWrapper src={IMGXIcon.src} alt="X icon" /></div>,
+        linkedin: <div className={className}><ImageWrapper src={IMGLinkedinIcon.src} alt="Linkedin icon" /></div>,
+        instagram: <div className={className}><ImageWrapper src={IMGInstagramIcon.src} alt="Instagram icon" /></div>,
     };
 
     return (

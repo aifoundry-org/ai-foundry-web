@@ -1,15 +1,16 @@
 'use client';
 /* eslint-disable */
+
 import { useRef, useState } from 'react';
 import Button from '@/litebox-lib/ui/Button/Button';
-import IMGBackgroundTop from '@/public/pngs/home/testimonials/backgroundTopMobile.png';
-import IMGDoodle from '@/public/pngs/home/testimonials/doodleMobile.png';
-import IMGWhatPeopleSay from '@/public/pngs/home/testimonials/whatPeopleSayMobile.png';
-import IMGStarFull from '@/public/pngs/home/testimonials/starFull.png';
-import IMGStarEmpty from '@/public/pngs/home/testimonials/starEmpty.png';
+import IMGBackgroundTop from '@/public/imgs/home/testimonials/backgroundTopMobile.webp';
+import IMGDoodle from '@/public/imgs/home/testimonials/doodleMobile.webp';
+import IMGWhatPeopleSay from '@/public/imgs/home/testimonials/whatPeopleSayMobile.webp';
+import IMGStarFull from '@/public/imgs/home/testimonials/starFull.webp';
+import IMGStarEmpty from '@/public/imgs/home/testimonials/starEmpty.webp';
 import cards from '@/mock/home/testimonials/data.json';
 import SVGCompanyWebflow from '@/public/svgs/home/testimonials/companyWebflow';
-import IMGDeveloper1 from '@/public/pngs/home/testimonials/developer1.png';
+import IMGDeveloper1 from '@/public/imgs/home/testimonials/developer1.webp';
 
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Pagination, Navigation } from 'swiper/modules';
@@ -18,7 +19,7 @@ import 'swiper/css/pagination';
 import 'swiper/css/navigation';
 
 import FadeUp from '@/components/common/universal/FadeUp';
-import FadeIn from '@/components/common/universal/FadeIn';
+import ImageWrapper from '@/components/common/universal/ImageWrapper';
 
 export default function Testimonials() {
   //Add a state that will force a re-render
@@ -45,7 +46,7 @@ export default function Testimonials() {
     <div className='md:hidden flex flex-col pt-[18.35vw] pb-[7.7vw] relative w-full h-fit'>
       <div className='flex flex-col relative w-full bg-black text-sand rounded-[5.35vw] h-[162.7vw]'>
         <div className='absolute w-full h-fit -top-[6.75vw] left-0'>
-          <img src={IMGBackgroundTop.src} />
+          <ImageWrapper src={IMGBackgroundTop.src} alt='Background top' />
         </div>
         <FadeUp delay={0.5} className='flex flex-col w-full items-center justify-center'>
           <Swiper
@@ -69,15 +70,17 @@ export default function Testimonials() {
               <SwiperSlide className='flex flex-col w-full px-[8vw] items-center' key={idx}>
                 <div className='flex flex-row mt-[15vw] gap-[0.5vw]'>
                   {[...Array(5)].map((i, idx) => (
-                    <img key={idx} width='13' height='13' src={idx <= el.stars ? IMGStarFull.src : IMGStarEmpty.src} />
+                    <div key={idx} className='w-[1.3rem]'>
+                      <ImageWrapper src={idx <= el.stars ? IMGStarFull.src : IMGStarEmpty.src} alt='Icon star' />
+                    </div>
                   ))}
                 </div>
                 <div className='font-dharma-gothic-e font-black text-[10vw] mt-[9vw] leading-[8.8vw] tracking-wide uppercase'>
                   {processContent(el.content)}
                 </div>
                 <div className='flex flex-row w-full gap-[5.35vw] mt-[9vw] mb-[10.7vw]'>
-                  <div>
-                    <img width='55' src={el.avatar} />
+                  <div className='w-[5.5rem]'>
+                    <ImageWrapper src={el.avatar} alt='Avatar' />
                   </div>
                   <div className='flex flex-col font-host-grotesk w-full'>
                     <div className='font-bold text-[3.75vw] leading-[5.6vw] select-none'>{el.author}</div>
@@ -101,10 +104,10 @@ export default function Testimonials() {
           </div>
         </FadeUp>
         <div className='absolute w-[83.2vw] -bottom-[31vw] right-[1vw] -z-[1]'>
-          <img src={IMGDoodle.src} />
+          <ImageWrapper src={IMGDoodle.src} alt='Doodle' />
         </div>
         <div className='absolute w-[48vw] -bottom-[8.5vw] right-[9vw] z-[1]'>
-          <img src={IMGWhatPeopleSay.src} />
+          <ImageWrapper src={IMGWhatPeopleSay.src} alt='What people say'/>
         </div>
       </div>
     </div>
