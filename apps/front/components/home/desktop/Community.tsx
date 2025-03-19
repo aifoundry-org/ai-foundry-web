@@ -1,15 +1,18 @@
 'use client'
-/* eslint-disable */
+
 import { useState } from 'react';
-import IMGCircle from '@/public/pngs/home/community/circle.png';
-import IMGIlus from '@/public/pngs/home/community/ilus.png';
-import IMGError from '@/public/pngs/home/community/error.png';
+import IMGCircle from '@/public/imgs/home/community/circle.webp';
+import IMGError from '@/public/imgs/home/community/error.webp';
 import CommunityCard from './CommunityCard';
 import Button from '@/litebox-lib/ui/Button/Button';
 import Link from 'next/link';
 import events from '@/mock/home/community/data.json';
 import FadeUp from '@/components/common/universal/FadeUp';
 import FadeIn from '@/components/common/universal/FadeIn';
+import ImageWrapper from '@/components/common/universal/ImageWrapper';
+import dynamic from 'next/dynamic';
+
+const LottiePlayer = dynamic(() => import('@/components/common/universal/LottiePlayer'));
 
 export default function Community() {
     const months = Object.keys(events);
@@ -20,13 +23,24 @@ export default function Community() {
     return (
         <div id='events' className='hidden xs:flex xs:flex-col xs:pt-[7.85vw] xs:relative xs:w-full xs:h-full'>
             <FadeIn delay={0.5} className='relative w-[100vw] h-[10vw]'>
-                <img className='absolute w-[33.9vw] left-0 top-0' src={IMGCircle.src} alt="Community circle" />
-                <img className='absolute w-[25.1vw] right-[1.5vw] top-[10vw]' src={IMGIlus.src} alt="Community ilus" />
+                <div className='absolute w-[33.9vw] left-0 top-0'>
+                    <ImageWrapper src={IMGCircle.src} alt="Community circle" />
+                </div>
+                <div className='absolute w-[25.1vw] right-0 top-[10vw]'>
+                    <LottiePlayer 
+                        className='w-[17.4vw] right-0'
+                        src='/lotties/googles.lottie'
+                        autoplay={true}
+                        loop={true}
+                    />
+                </div>
             </FadeIn>
             <div className='relative px-[7.78vw]'>
                 <FadeIn delay={0.5} className='relative font-black font-dharma-gothic-e text-[6vw] xs:text-[8vw] xl:text-[4.5vw] 2xl:text-[4.5vw] xs:leading-[6.5vw] leading-[5vw] xl:leading-[3.75vw] 2xl:leading-[3.75vw] uppercase'>
-                    What's happening<br/>in the community
-                    <img className='absolute w-[21vw] left-[13vw] -top-[1.7vw] -z-[1]' src={IMGError.src} alt='Community error' />
+                    What&apos;s happening<br/>in the community
+                    <div className='absolute w-[21vw] left-[13vw] -top-[1.7vw] -z-[1]'>
+                        <ImageWrapper src={IMGError.src} alt='Community error' />
+                    </div>
                 </FadeIn>
                 <FadeIn delay={0.5} className='font-normal w-full xs:w-[50vw] sm:w-[50vw] md:w-[50vw] lg:w-[50vw] font-host-grotesk text-[2vw] xs:text-[3vw] sm:text-[2.5vw] md:text-[2vw] lg:text-[2vw] xl:text-[1.12vw] 2xl:text-[1.12vw] leading-[3vw] xl:leading-[1.675vw] 2xl:leading-[1.675vw] pt-[1.675vw] pb-[2.8vw]'>
                     Upcoming podcasts, virtual and physical community events for AI Foundry.

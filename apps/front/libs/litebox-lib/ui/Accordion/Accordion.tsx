@@ -2,7 +2,8 @@
 
 import React, { useState } from 'react';
 import { cn } from '../../utils/cn';
-import IMGChevron from '@/public/pngs/home/faqs/chevron.png'
+import IMGChevron from '@/public/imgs/home/faqs/chevron.webp'
+import ImageWrapper from '@/components/common/universal/ImageWrapper';
 
 interface AccordionProps {
   title: React.ReactNode;
@@ -32,7 +33,9 @@ const Accordion = ({ title, isOpen = false, isDesktop = false, content, classNam
         <label className={`font-host-grotesk justify-between pl-0 pr-[2vw] ${isDesktop ? 'py-[2.4rem]' : 'py-[1.67vw]'} cursor-pointer ${isDesktop ? 'text-[2.4rem]' : 'text-[4.82vw]'} font-bold`} >
           {title}
         </label>
-        <img src={IMGChevron.src} className={`${isDesktop ? 'w-[2.3rem]' : 'w-[6.4vw]'} transform transition-transform duration-200 ${open && 'rotate-180'} pointer-events-none`} />
+        <div className={`${isDesktop ? 'w-[2.3rem]' : 'w-[6.4vw]'} transform transition-transform duration-200 ${open && 'rotate-180'} pointer-events-none`}>
+          <ImageWrapper src={IMGChevron.src} alt='Chevron' />
+        </div>
       </div>
      <div
         className={cn(

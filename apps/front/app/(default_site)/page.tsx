@@ -59,10 +59,11 @@ export default function Page() {
         <TestimonialsDesktop />
         <TestimonialsMobile />
 
-        {process.env.HIDE_SECTIONS === "false" && <>
-          <InTheNewsDesktop />
-          <InTheNewsMobile />
-        </>
+        {process.env.HIDE_SECTIONS === "false" && 
+          <>
+            <InTheNewsDesktop />
+            <InTheNewsMobile />
+          </>
         }
 
         <JoinTheAiRevolutionDesktop />

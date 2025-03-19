@@ -11,27 +11,32 @@ import { usePathname } from 'next/navigation';
 
 const LottiePlayer = dynamic(() => import('@/components/common/universal/LottiePlayer'));
 
+import { gsap } from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { useGSAP } from '@gsap/react';
+
+gsap.registerPlugin(useGSAP, ScrollTrigger);
+
 export default function NavBar({removeTopBorders = false}) {
     const path = usePathname();
     const removeRoundedBorders = path.includes('blog') || path.includes('terms-and-conditions') || removeTopBorders;
     const lottieRef = useRef<any>(null);
     const [isSticky, setIsSticky] = useState(false);
+    const totalFrames = lottieRef.current?.totalFrames;
+    const [playOnce, setPlayOnce] = useState(true);
 
     const checkIfSticky = () => {
         const { scrollY } = window
         const stickyState = scrollY > 16;
 
-        setIsSticky(stickyState);
-        if(!stickyState){
-            lottieRef.current?.setDirection(1);
-            const totalFrames = lottieRef.current?.totalFrames;
-
+        if(stickyState && playOnce){
+            setPlayOnce(false)
             lottieRef.current?.seek(totalFrames - 10);
-            lottieRef.current?.setDirection(-1);
-        } else {
             lottieRef.current?.setDirection(1);
+            lottieRef.current?.play();
         }
-        lottieRef.current?.play();
+
+        setIsSticky(stickyState);
     }
 
     useEffect(() => {
@@ -42,13 +47,30 @@ export default function NavBar({removeTopBorders = false}) {
         };
     },[])
 
+    useGSAP(() => {
+        ScrollTrigger.create({
+            start: () => 'top+=16px top',
+            end: () => 'top+=16px top',
+            scroller: 'body',
+            onEnter: () => {
+                lottieRef.current?.seek(totalFrames - 10);
+                lottieRef.current?.setDirection(1);
+                lottieRef.current?.play();
+            },
+            onEnterBack: () => {
+                lottieRef.current?.setDirection(-1);
+                lottieRef.current?.play();
+            }
+        })
+    })
+
     return (
         <div className={`flex items-center w-full h-[5.56vw] pt-[2.225vw] pb-[0.5vw] bg-sand ${!removeRoundedBorders && 'rounded-t-lg'}`}>
             <LazyMotion>
                 <m.nav
                     className={`flex flex-col bg-sand ${
                         isSticky
-                        ? 'fixed z-20 top-[2.8vw] px-[2.78vw] py-[1vw] border-2 border-black'
+                        ? 'fixed z-20 top-[2.8vw] px-[2.78vw] py-[0.126vw] border-2 border-black'
                         : 'relative px-[2.78vw] mx-auto'
                     }`}
                         style={{
@@ -87,7 +109,9 @@ export default function NavBar({removeTopBorders = false}) {
                                 </div>
                             </m.div>
                         </div>
-                        <div className="flex w-1/3 h-[5vw] md:w-full sm:w-full lg:w-full xl:w-full 2xl:w-full justify-center items-center relative">
+                        <div onClick={() => {
+                            window.location.href = '/'
+                        }} className="flex w-1/3 h-[5vw] md:w-full sm:w-full lg:w-full xl:w-full 2xl:w-full justify-center items-center relative cursor-pointer">
                             <LottiePlayer
                                 className={`h-[4.31vw] absolute mx-auto top-1/2 -translate-y-1/2 ${isSticky ? 'left-[8vw]' : 'left-[9vw]' }`}
                                 ref={lottieRef}

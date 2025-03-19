@@ -1,8 +1,9 @@
-'use client'
+'use client';
 /* eslint-disable */
+
 import { useRef, useState } from 'react'
 import Button from '@/litebox-lib/ui/Button/Button';
-import IMGArrowUpRight from '@/public/pngs/home/openSourceProjects/arrowUpRightMobile.png';
+import IMGArrowUpRight from '@/public/imgs/home/openSourceProjects/arrowUpRightMobile.webp';
 import Link from 'next/link';
 
 import { Swiper, SwiperSlide } from 'swiper/react';
@@ -12,6 +13,7 @@ import 'swiper/css/navigation';
 import FadeUp from '@/components/common/universal/FadeUp';
 import cards from '@/mock/home/openSourceProjects/data.json';
 import { Swiper as SwiperType } from 'swiper/types';
+import ImageWrapper from '@/components/common/universal/ImageWrapper';
 
 export default function OpenSourceProjects() {
     //Add a state that will force a re-render
@@ -51,7 +53,9 @@ export default function OpenSourceProjects() {
                             <div className='flex flex-col w-full h-full'>
                                 <div className='flex flex-row items-center justify-between'>
                                     <p className='font-dharma-gothic-e font-black text-[8.6vw] uppercase'>{card.title}</p>
-                                    <img className='w-[5.87vw]' src={IMGArrowUpRight.src} />
+                                    <div className='w-[5.87vw]'>
+                                        <ImageWrapper src={IMGArrowUpRight.src} alt='Arrow up right' />
+                                    </div>
                                 </div>
                                 <div className='flex flex-col border-y-2 border-black mt-[2vw] py-[6.4vw] h-[70vw] leading-[5.6vw]'>
                                     <div className='font-host-grotesk font-bold text-[4.3vw]'>{card.subtitle}</div>

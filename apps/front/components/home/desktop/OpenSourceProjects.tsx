@@ -1,14 +1,17 @@
 'use client'
-/* eslint-disable */
+
 import FadeUp from '@/components/common/universal/FadeUp'
 import OpenSourceProjectsCard from './OpenSourceProjectsCard'
-import IMGBackground from '@/public/pngs/home/openSourceProjects/background.png'
+import IMGBackground from '@/public/imgs/home/openSourceProjects/background.webp'
 import cards from '@/mock/home/openSourceProjects/data.json';
+import ImageWrapper from '@/components/common/universal/ImageWrapper';
 
 export default function OpenSourceProjects() {
     return (
         <div id='projects' className='hidden xs:flex xs:flex-col xs:pt-[10.95vw] xs:pb-[7.7vw] xs:relative xs:w-full xs:h-fit xs:px-[7.78vw]'>
-            <img className='absolute w-[18vw] -top-[1.1vw] right-0 -z-[1]' src={IMGBackground.src} alt="Open Source Projects background" />
+            <div className='absolute w-[18vw] -top-[1.1vw] right-0 -z-[1]'>
+                <ImageWrapper src={IMGBackground.src} alt='Open Source Projects background' />
+            </div>
             <FadeUp className='font-black font-dharma-gothic-e text-[6.4rem] 2xl:text-[5vw] leading-[5.3rem] 2xl:leading-[4vw] uppercase'>
                 View and join our<br/>open-source projects
             </FadeUp>

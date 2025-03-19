@@ -1,20 +1,22 @@
-/* eslint-disable */
 import Link from 'next/link'
 import FadeIn from '@/components/common/universal/FadeIn'
 import FadeUp from '@/components/common/universal/FadeUp'
 import Button from '@/libs/litebox-lib/ui/Button/Button'
-import IMGCircle from '@/public/pngs/home/visionMission/circle.png'
-import IMGError from '@/public/pngs/home/visionMission/error.png'
-import IMGGraffiti from '@/public/pngs/home/visionMission/graffiti.png'
+import IMGCircle from '@/public/imgs/home/visionMission/circle.webp'
+import IMGError from '@/public/imgs/home/visionMission/error.webp'
+import IMGGraffiti from '@/public/imgs/home/visionMission/graffiti.webp'
 import OurCoreValue from './VisionMissionCard'
 import coreValues from '@/mock/home/visionMission/data.json'
+import ImageWrapper from '@/components/common/universal/ImageWrapper'
 
 export default function VisionMission(){
     return (
         <>
             <div className='hidden md:flex md:flex-row xl:flex-row 2xl:flex-row md:relative md:w-full md:h-fit md:pt-[3vw]'>
                 <FadeIn className='absolute left-0 top-[11vw] w-[100vw] h-fit'>
-                    <img className='w-[33vw]' src={IMGCircle.src} alt="Vision & Mission circle" />
+                    <div className='w-[33vw]'>
+                        <ImageWrapper src={IMGCircle.src} alt="Vision & Mission circle" />
+                    </div>
                 </FadeIn>
                 <div className='flex flex-row relative px-[5.6vw]'>
                     <FadeIn className='relative w-full h-full flex basis-[61%]'>
@@ -22,10 +24,14 @@ export default function VisionMission(){
                             Vision<br/>& Mission
                         </div>
                         <div className='absolute w-fit left-[25.5vw] top-[14.6vw]'>
-                            <img src={IMGError.src} className='w-[18.82vw]' alt="Vision & Mission error" />
+                            <div className='w-[18.82vw]'>
+                                <ImageWrapper src={IMGError.src} alt="Vision & Mission error" />
+                            </div>
                         </div>
                         <div className='absolute w-fit -left-[5.7vw] top-[13.3vw]'>
-                            <img src={IMGGraffiti.src} className='w-[18.82vw]' alt="Vision & Mission graffiti" />
+                            <div className='w-[18.82vw]'>
+                                <ImageWrapper src={IMGGraffiti.src} alt="Vision & Mission graffiti" />
+                            </div>
                         </div>
                     </FadeIn>
                     <FadeUp className='relative w-full h-full xs:pt-[35vw] md:pt-0 xl:pt-0 2xl:pt-0 flex flex-col basis-[39%]'>

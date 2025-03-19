@@ -1,6 +1,6 @@
-/* eslint-disable */
 import Link from 'next/link'
-import IMGBackground from '@/public/pngs/termsAndConditions/backgroundMobile.png'
+import IMGBackground from '@/public/imgs/termsAndConditions/backgroundMobile.webp'
+import ImageWrapper from '@/components/common/universal/ImageWrapper'
 
 const paragraphStyle = 'font-host-grotesk font-normal text-[3.75vw]'
 
@@ -9,7 +9,9 @@ export default function Main() {
         <div className='md:hidden flex flex-col w-full h-full font-dharma-gothic-e'>
             <div className='flex flex-col w-[87.2vw] h-[51.2vw] mx-auto my-[6vw]'>
                 <div className='flex w-full text-center justify-center relative'>
-                    <img className='absolute top-[3vw] left-[4vw] w-[75vw] z-0' src={IMGBackground.src} />
+                    <div className='absolute top-[3vw] left-[4vw] w-[75vw] z-0'>
+                        <ImageWrapper src={IMGBackground.src} alt='Background' />
+                    </div>
                     <div className='flex text-[11.215vw] font-black leading-[10.67vw] uppercase pt-[13vw] pb-[7vw] z-[1]'>
                         Applicable Terms &<br/>Conditions
                     </div> 
@@ -66,7 +68,7 @@ export default function Main() {
                         <li>The use of sexualized language or imagery, and sexual attention or advances of any kind</li>
                         <li>Trolling, insulting or derogatory comments, and personal or political attacks</li>
                         <li>Public or private harassment</li>
-                        <li>Publishing others' private information, such as a physical or email address, without their explicit permission</li>
+                        <li>Publishing others&apos; private information, such as a physical or email address, without their explicit permission</li>
                         <li>Other conduct which could reasonably be considered inappropriate in a professional setting</li>
                     </ul>
                 </div>
@@ -176,21 +178,21 @@ export default function Main() {
                     This Code of Conduct is adapted from the <a className='font-bold' href='https://www.contributor-covenant.org'>Contributor Covenant</a> homepage,
                     version 2.1, available at <a className='font-bold' href='https://www.contributor-covenant.org/version/2/1/code_of_conduct.html'>https://www.contributor-covenant.org/version/2/1/code_of_conduct.html</a>.
                     <br/><br/>
-                    Community Impact Guidelines were inspired by <a className='font-bold' href='https://github.com/mozilla/diversity'>Mozilla's code of conduct enforcement ladder</a>.
+                    Community Impact Guidelines were inspired by <a className='font-bold' href='https://github.com/mozilla/diversity'>Mozilla&apos;s code of conduct enforcement ladder</a>.
                     <br/><br/>
                     For answers to common questions about this code of conduct, see the <a className='font-bold' href='https://www.contributor-covenant.org/faq'>FAQ</a>. Translations are available at <a className='font-bold' href='https://www.contributor-covenant.org/translations'>https://www.contributor-covenant.org/translations</a>.
                 </p>   
                 <div className={`${paragraphStyle} mt-[8.55vw] relative`}>
                     <div id='privacy-policy-mobile' className='absolute left-0 -top-[30vw]' />
-                    <iframe className='w-full h-[35780px] border-2 p-[16px] border-black rounded-[1.115vw]' src='https://app.termly.io/policy-viewer/iframe-content.html?policyUUID=2fd31d37-c2f6-4c3e-9769-c3667f76cb3d' />
+                    <iframe className='w-full h-[12780px] border-2 p-[16px] border-black rounded-[1.115vw]' src='https://app.termly.io/policy-viewer/iframe-content.html?policyUUID=2fd31d37-c2f6-4c3e-9769-c3667f76cb3d' />
                 </div>   
                 <div className={`${paragraphStyle} mt-[8.55vw] relative`}>
                     <div id='terms-of-use-mobile' className='absolute left-0 -top-[30vw]' />
-                    <iframe className='w-full h-[32300px] border-2 p-[16px] border-black rounded-[1.115vw]' src='https://app.termly.io/policy-viewer/iframe-content.html?policyUUID=34285775-1595-400b-b451-a7f993129f0d' />
+                    <iframe className='w-full h-[12300px] border-2 p-[16px] border-black rounded-[1.115vw]' src='https://app.termly.io/policy-viewer/iframe-content.html?policyUUID=34285775-1595-400b-b451-a7f993129f0d' />
                 </div>   
                 <div className={`${paragraphStyle} mt-[8.55vw] mb-[10vw] relative`}>
                     <div id='cookie-policy-mobile' className='absolute left-0 -top-[30vw]' />
-                    <iframe className='w-full h-[13500px] border-2 p-[16px] border-black rounded-[1.115vw]' src='https://app.termly.io/policy-viewer/iframe-content.html?policyUUID=7cb45296-38b6-4722-97b1-df160a8f5fd3' />
+                    <iframe className='w-full h-[2500px] border-2 p-[16px] border-black rounded-[1.115vw]' src='https://app.termly.io/policy-viewer/iframe-content.html?policyUUID=7cb45296-38b6-4722-97b1-df160a8f5fd3' />
                 </div> 
             </div>
         </div>

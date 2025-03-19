@@ -1,12 +1,13 @@
 'use client'
-/* eslint-disable */
+
 import { useState } from 'react';
-import IMGBackground from '@/public/pngs/home/community/backgroundMobile.png';
+import IMGBackground from '@/public/imgs/home/community/backgroundMobile.webp';
 import CommunityCard from './CommunityCard';
 import Button from '@/litebox-lib/ui/Button/Button';
 import Link from 'next/link';
 import events from '@/mock/home/community/data.json';
 import FadeUp from '@/components/common/universal/FadeUp';
+import ImageWrapper from '@/components/common/universal/ImageWrapper';
 
 export default function Community() {
     const months = Object.keys(events);
@@ -17,10 +18,10 @@ export default function Community() {
     return (
         <div id='events-mobile' className='xs:hidden flex flex-col pt-[30vw] pb-[7.7vw] relative w-full h-fit px-[5.6vw]'>
             <FadeUp className='absolute w-[54vw] top-0 left-0 -z-10'>
-                <img src={IMGBackground.src} alt="Community background" />
+                <ImageWrapper src={IMGBackground.src} alt="Community background" />
             </FadeUp>
             <FadeUp delay={0.5} className='font-black font-dharma-gothic-e text-[12.8vw] leading-[10.7vw] uppercase'>
-                What's happening<br/>in the community
+                What&apos;s happening<br/>in the community
             </FadeUp>
             <FadeUp delay={1} className='font-normal font-host-grotesk text-[3.75vw] leading-[5.6vw] pt-[4.3vw] pb-[8.55vw]'>
                 Upcoming podcasts, virtual and physical<br/>community events for AI Foundry.

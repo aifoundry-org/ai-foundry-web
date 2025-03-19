@@ -1,31 +1,36 @@
 'use client'
-/* eslint-disable */
+
 import Link from 'next/link';
 import { getReadTime } from '@/utils/getReadTime';
-import IMGArrowLeft from '@/public/pngs/blogSlug/arrowLeft.png';
+import IMGArrowLeft from '@/public/imgs/blogSlug/arrowLeft.webp';
 import SocialShareLink from '@/components/blogSlug/universal/SocialLink';
-import { StrapiTag } from '@/libs/litebox-lib/types/strapi/strapiBlog';
+import { StrapiArticle, StrapiParagraph, StrapiTag } from '@/libs/litebox-lib/types/strapi/strapiBlog';
 import getStrapiMediaUrl from '@/utils/getStrapiMediaUrl';
+import ImageWrapper from '@/components/common/universal/ImageWrapper';
 
 interface HeadlineProps {
-    article: any
+    article: StrapiArticle;
     className?: string;
 }
 
 const Headline = ({ article, className }: HeadlineProps) => {
     const { title, date, authors, coverImage, tags, paragraphs } = article;
-    const paragraphsContent = paragraphs.flatMap((el: any) => el.content.flatMap((el: any) => el.children.flatMap((el: any) => el.text))).join(' ');
+    const paragraphsContent = paragraphs.flatMap((el: StrapiParagraph) => el.content.flatMap((el) => el.children.flatMap((el: {type:string, text: string}) => el.text))).join(' ');
     const cleanParagraphsContent = paragraphsContent.replace(/<[^>]*>/g, ' ');
 
     return (
         <div className={`pb-12 ${className}`}>
             <Link className='flex items-center gap-4 mb-10' href='/blog' rel='noreferrer'>
-                <img src={IMGArrowLeft.src} className='w-[6vw]' />
+                <div className='w-[6vw]'>
+                    <ImageWrapper src={IMGArrowLeft.src} alt='Arrow left' />
+                </div>
                 <p className='font-dharma-gothic-e font-bold text-[4.8vw] leading-[4.8vw] uppercase'>Go Back to Blog</p>
             </Link>
             <div className='flex flex-row items-center justify-between mb-[7vw]'>
                 {coverImage ? 
-                    <img src={getStrapiMediaUrl(coverImage.url)} className='w-full border-2 border-black rounded-lg' /> : 
+                    <div className='w-full border-2 border-black rounded-lg'>
+                        <ImageWrapper src={getStrapiMediaUrl(coverImage.url)} alt='Cover image' />
+                    </div> : 
                     <div className='flex w-full h-[48.275vw] border-2 border-black rounded-lg text-center justify-center items-center text-[8vw] uppercase'>No cover image</div>
                 }
             </div>

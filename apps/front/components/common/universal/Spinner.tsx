@@ -1,8 +1,3 @@
-/* eslint-disable */
-interface SpinnerProps {
-  className?: string;
-}
-
 /**
  * The `Spinner` component is a simple and ready-to-use spinner that can be used for displaying loading status inside other components, such as Button.
  * Version: 1.0.0
@@ -10,7 +5,7 @@ interface SpinnerProps {
  *
  * @param className - Additional CSS classes that can be passed to customize the styling of the component.
  */
-const Spinner = ({ className }: SpinnerProps) => {
+const Spinner = () => {
   return (
     <svg
       aria-hidden='true'

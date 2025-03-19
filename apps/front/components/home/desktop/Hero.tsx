@@ -1,24 +1,36 @@
-/* eslint-disable */
-import IMGArrow from '@/public/pngs/home/hero/arrow.png';
-import IMGErrors from '@/public/pngs/home/hero/errors.png';
-import IMGJoinString from '@/public/pngs/home/hero/joinString.png';
-import IMGTheNetworkString from '@/public/pngs/home/hero/theNetworkString.png';
-import IMGPunchCard from '@/public/pngs/home/hero/punchCard.png';
-import IMGPluses from '@/public/pngs/home/hero/pluses.png';
-import IMGCircle from '@/public/pngs/home/hero/circle.png';
+import IMGArrow from '@/public/imgs/home/hero/arrow.webp';
+import IMGErrors from '@/public/imgs/home/hero/errors.webp';
+import IMGJoinString from '@/public/imgs/home/hero/joinString.webp';
+import IMGTheNetworkString from '@/public/imgs/home/hero/theNetworkString.webp';
+import IMGPunchCard from '@/public/imgs/home/hero/punchCard.webp';
+import IMGPluses from '@/public/imgs/home/hero/pluses.webp';
+import IMGCircle from '@/public/imgs/home/hero/circle.webp';
 import FadeUp from '@/components/common/universal/FadeUp';
 import FadeIn from '@/components/common/universal/FadeIn';
+import ImageWrapper from '@/components/common/universal/ImageWrapper';
 
 export default function Hero() {
   return (
     <div className='hidden xs:flex xs:flex-col xs:w-full xs:h-full relative mb-[8vw] md:mb-[5vw] lg:mb-0 xl:mb-0'>
       <FadeIn delay={0.75} className='w-[100vw] h-[41vw] relative'>
-        <img className='absolute w-[1.115vw] right-[8vw] bottom-[0.8vw]' src={IMGJoinString.src} />
-        <img className='absolute w-[0.905vw] right-[8.13vw] bottom-[10vw]' src={IMGTheNetworkString.src} />
-        <img className='absolute w-[11.75vw] right-[15.8vw] top-[1.5vw]' src={IMGPunchCard.src} />
-        <img className='absolute w-[7.1vw] right-[26vw] bottom-[7.5vw]' src={IMGArrow.src} />
-        <img className='absolute w-[50.15vw] bottom-[14.5vw] left-[18.5vw]' src={IMGPluses.src} />
-        <img className='absolute w-[40.417vw]' src={IMGCircle.src} />
+        <div className='absolute w-[1.115vw] right-[8vw] bottom-[0.8vw]'>
+          <ImageWrapper src={IMGJoinString.src} alt='Join string'/>
+        </div>
+        <div className='absolute w-[0.905vw] right-[8.13vw] bottom-[10vw]'>
+          <ImageWrapper src={IMGTheNetworkString.src} alt='The network string'/>
+        </div>
+        <div className='absolute w-[11.75vw] right-[15.8vw] top-[1.5vw]'>
+          <ImageWrapper src={IMGPunchCard.src} alt='Punch card'/>
+        </div>
+        <div className='absolute w-[7.1vw] right-[26vw] bottom-[7.5vw]'>
+          <ImageWrapper src={IMGArrow.src} alt='Arrow'/>
+        </div>
+        <div className='absolute w-[50.15vw] bottom-[14.5vw] left-[18.5vw]'>
+          <ImageWrapper src={IMGPluses.src} alt='Pluses'/>
+        </div>
+        <div className='absolute w-[40.417vw]'>
+          <ImageWrapper src={IMGCircle.src} alt='Circle'/>
+        </div>
       </FadeIn>
       <FadeUp
         className='absolute w-full top-[4vw]'
@@ -43,7 +55,7 @@ export default function Hero() {
         </FadeUp>
       </FadeUp>
       <FadeIn delay={0.75} className='absolute left-[61vw] top-[18vw] w-[17.365vw]'>
-        <img src={IMGErrors.src} />
+        <ImageWrapper src={IMGErrors.src} alt='Errors' />
       </FadeIn>
     </div>
   );
