@@ -1,5 +1,4 @@
 'use client';
-/* eslint-disable */
 
 import { forwardRef, lazy, Suspense } from 'react';
 import type { DotLottieCommonPlayer } from '@dotlottie/react-player';

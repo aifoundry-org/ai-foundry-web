@@ -49,7 +49,7 @@ const svgVariants : {[key: string]: FC<SVGProps<SVGSVGElement>>} = {
 const Button: FC<ButtonProps> = ({as: Component = 'button', href = '', variant = 'primary', className = '', svg = '', content = '', noShadow = false, svgProps = '', target = '', ...props }) => {
   // #F6EFE4 = sand color
   const essentialStyles = `flex flex-row items-center align-middle justify-between ${noShadow ? 'shadow-[4px_4px_0_0_#F6EFE4]' : 'shadow-[4px_4px_0_0_black]'} w-fit h-fit text-[black] font-bold uppercase border border-2 whitespace-nowrap rounded-md transition-all ease-in-out focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#22D3EE] disabled:opacity-50 disabled:cursor-not-allowed cursor-pointer select-none`;
-  let styles = `${essentialStyles} ${btnVariants[variant]} ${className}`;
+  let styles = `${essentialStyles} ${btnVariants[variant]}`;
   if(svg !== ''){       // icon present 
     if(content !== ''){ // icon present - content
       styles += ' px-[1.95rem] py-[0.45rem] sm:px-[1.5rem] sm:py-[0.4rem] md:px-[1.5rem] md:py-[0rem] lg:px-[2.51rem] lg:py-[0.7rem] xl:px-[2.51rem] xl:py-[0.7rem] 2xl:px-[2.51rem] 2xl:py-[0.7rem] gap-x-[0.8rem]';
@@ -59,6 +59,8 @@ const Button: FC<ButtonProps> = ({as: Component = 'button', href = '', variant =
   } else {        // no icon present - content
     styles += ' px-[1.95rem] py-[0.45rem] sm:px-[1.5rem] sm:py-[0.4rem] md:px-[1.5rem] md:py-[0rem] lg:px-[2.51rem] lg:py-[0.7rem] xl:px-[2.51rem] xl:py-[0.7rem] 2xl:px-[2.51rem] 2xl:py-[0.7rem]';
   }
+
+  styles += ` ${className}`;
 
   const componentProps = {
     ...props,

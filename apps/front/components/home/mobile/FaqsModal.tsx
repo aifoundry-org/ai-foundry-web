@@ -30,7 +30,7 @@ export default function FaqsModal({isModalOpen, setIsModalOpen} : {isModalOpen:b
 
     return (
         <Modal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)}>
-            <div className='flex flex-col w-[88.3vw] px-[6.4vw] justify-between border-black border-2 bg-sand relative'>
+            <div className={`flex flex-col w-[87.2vw] ${!showResult ? 'h-[158.7vw]' : 'h-[72.6vw]'} px-[6.4vw] justify-center border-black border-2 bg-sand relative`}>
                 <button className='absolute top-[5vw] right-[5vw]' type='button' onClick={() => setIsModalOpen(false)} aria-label='Close modal'>
                     <div className='w-[8.55vw] h-[8.55vw]'>
                         <ImageWrapper src={IMGCloseButton.src} alt='Close button' />
@@ -105,12 +105,12 @@ export default function FaqsModal({isModalOpen, setIsModalOpen} : {isModalOpen:b
                                     {...register("message", { required: true, maxLength: {
                                         value: 500,
                                         message: "Too many characters, 500 chars limit"
-                                    }, pattern: /^[\p{L}\p{N}\s]+\$/u })}
+                                    }})}
                                 />
                                 {errors.message?.type === 'required' &&  <div className={errorStyle}>Message is required</div>}
                             </div>
                         </div>
-                        <Button className='my-[7vw]' content='Send' onClick={() => {
+                        <Button className='my-[7vw] px-[5.05vw]' content='Send' onClick={() => {
                             inputRef.current?.click();
                         }} />
                         <input ref={inputRef} id='submit-contact-us' type='submit' className='hidden'/>
