@@ -111,7 +111,7 @@ export default function NavBar({removeTopBorders = false}) {
                         </div>
                         <div onClick={() => {
                             window.location.href = '/'
-                        }} className="flex w-1/3 h-[5vw] md:w-full sm:w-full lg:w-full xl:w-full 2xl:w-full justify-center items-center relative">
+                        }} className="flex w-1/3 h-[5vw] md:w-full sm:w-full lg:w-full xl:w-full 2xl:w-full justify-center items-center relative cursor-pointer">
                             <LottiePlayer
                                 className={`h-[4.31vw] absolute mx-auto top-1/2 -translate-y-1/2 ${isSticky ? 'left-[8vw]' : 'left-[9vw]' }`}
                                 ref={lottieRef}
