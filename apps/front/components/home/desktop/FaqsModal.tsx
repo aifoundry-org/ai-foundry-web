@@ -26,7 +26,7 @@ export default function FaqsModal({isModalOpen, setIsModalOpen} : {isModalOpen:b
     }
 
     const inputStyles = 'w-full h-[4.45vw] font-host-grotesk text-[1.125vw] border-2 border-black focus:border-orange'
-    const errorStyle = 'text-[0.84vw] text-red-500 font-host-grotesk mt-[0.56vw] uppercase'
+    const errorStyle = 'text-[0.84vw] text-red-500 font-host-grotesk mt-[0.56vw]'
 
     return (
         <Modal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)}>
