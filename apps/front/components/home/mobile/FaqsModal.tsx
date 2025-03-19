@@ -53,6 +53,7 @@ export default function FaqsModal({isModalOpen, setIsModalOpen} : {isModalOpen:b
                                 />
                                 {errors.firstName?.type === 'required' &&  <div className={errorStyle}>First Name is required</div>}
                                 {errors.firstName?.type === 'pattern' &&  <div className={errorStyle}>First Name format invalid</div>}
+                                {errors.firstName?.message && <div className={errorStyle}>{errors.firstName?.message.toString()}</div>}
                             </div>
                             <div className='flex flex-col w-full'>
                                 <Input 
@@ -67,6 +68,7 @@ export default function FaqsModal({isModalOpen, setIsModalOpen} : {isModalOpen:b
                                 />
                                 {errors.lastName?.type === 'required' &&  <div className={errorStyle}>Last Name is required</div>}
                                 {errors.lastName?.type === 'pattern' &&  <div className={errorStyle}>Last Name format invalid</div>}
+                                {errors.lastName?.message && <div className={errorStyle}>{errors.lastName?.message.toString()}</div>}
                             </div>
                             <div className='flex flex-col w-full'>
                                 <Input 
@@ -81,6 +83,7 @@ export default function FaqsModal({isModalOpen, setIsModalOpen} : {isModalOpen:b
                                 />
                                 {errors.companyName?.type === 'required' &&  <div className={errorStyle}>Company Name is required</div>}
                                 {errors.companyName?.type === 'pattern' &&  <div className={errorStyle}>Company Name format invalid</div>}
+                                {errors.companyName?.message && <div className={errorStyle}>{errors.companyName?.message.toString()}</div>}
                             </div>
                             <div className='flex flex-col w-full'>
                                 <Input 
@@ -89,12 +92,13 @@ export default function FaqsModal({isModalOpen, setIsModalOpen} : {isModalOpen:b
                                     placeholder='Email'
                                     className={`${inputStyle} ${errors.email ? 'border-red-600' : ''}`}
                                     {...register("email", { required: true, maxLength: {
-                                        value: 40,
-                                        message: "Too many characters, 40 chars limit"
+                                        value: 30,
+                                        message: "Too many characters, 30 chars limit"
                                     }, pattern: /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/})}
                                 />
                                 {errors.email?.type === 'required' &&  <div className={errorStyle}>Email is required</div>}
                                 {errors.email?.type === 'pattern' &&  <div className={errorStyle}>Email format invalid</div>}
+                                {errors.email?.message && <div className={errorStyle}>{errors.email?.message.toString()}</div>}
                             </div>
                             <div className='flex flex-col w-full'>
                                 <Input 
@@ -103,11 +107,13 @@ export default function FaqsModal({isModalOpen, setIsModalOpen} : {isModalOpen:b
                                     placeholder='Message'
                                     className={`${inputStyle} ${errors.message ? 'border-red-600' : ''}`}
                                     {...register("message", { required: true, maxLength: {
-                                        value: 500,
-                                        message: "Too many characters, 500 chars limit"
+                                        value: 200,
+                                        message: "Too many characters, 200 chars limit"
                                     }})}
                                 />
                                 {errors.message?.type === 'required' &&  <div className={errorStyle}>Message is required</div>}
+                                {errors.message?.type === 'pattern' &&  <div className={errorStyle}>Message format invalid</div>}
+                                {errors.message?.message && <div className={errorStyle}>{errors.message?.message.toString()}</div>}
                             </div>
                         </div>
                         <Button className='my-[7vw] px-[5.05vw]' content='Send' onClick={() => {
