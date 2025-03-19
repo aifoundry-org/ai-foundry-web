@@ -30,7 +30,7 @@ export default function FaqsModal({isModalOpen, setIsModalOpen} : {isModalOpen:b
 
     return (
         <Modal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)}>
-            <div className='flex flex-col w-[47.25vw] px-[4.45vw] pb-[1vw] justify-between border-black border-2 bg-sand relative'>
+            <div className={`flex flex-col ${!showResult ? 'w-[47vw] h-[50.56vw]' : 'w-[40.7vw] h-[24.45vw]'} px-[4.45vw] pb-[1vw] justify-center border-black border-2 bg-sand relative`}>
                 <button className='absolute top-[2vw] right-[2vw]' type='button' onClick={() => setIsModalOpen(false)} aria-label='Close modal'>
                     <div className='w-[2.225vw] h-[2.225vw]'>
                         <ImageWrapper src={IMGCloseButton.src} alt='Close button' />
@@ -106,22 +106,22 @@ export default function FaqsModal({isModalOpen, setIsModalOpen} : {isModalOpen:b
                                     {...register("message", { required: true, maxLength: {
                                         value: 500,
                                         message: "Too many characters, 500 chars limit"
-                                    }, pattern: /^[\p{L}\p{N}\s]+\$/u })}
+                                    }})}
                                 />
                                 {errors.message?.type === 'required' &&  <div className={errorStyle}>Message is required</div>}
                             </div>
                         </div>
-                        <Button className='flex mb-[2vw]' content='Send' onClick={() => {
+                        <Button className='flex mb-[2vw] !px-[1.61vw]' content='Send' onClick={() => {
                             inputRef.current?.click();
                         }} />
                         <input ref={inputRef} id='submit-contact-us' type='submit' className='hidden'/>
                     </form>
                 </>}
                 {showResult && <>
-                    <div className='flex flex-col gap-[1.67vw] pt-[3.34vw] pb-[1.6vw] items-center justify-center w-full'>
+                    <div className='flex flex-col gap-[2.25vw] items-center justify-center w-full'>
                         <p className='text-[3.34vw] font-black uppercase'>Thanks!</p>
                         <p className='text-[1.67vw] font-host-grotesk text-center font-normal leading-[1.81vw]'>The form was<br/>successfully submitted.</p>
-                        <Button content='Ok' onClick={() => setIsModalOpen(false)} />
+                        <Button className='!px-[1.57vw]' content='Ok' onClick={() => setIsModalOpen(false)} />
                     </div>
                 </>}
             </div>

@@ -2,12 +2,12 @@
 
 import { useState } from 'react';
 import Accordion from '@/libs/litebox-lib/ui/Accordion/Accordion'
-// import IMGBanner from '@/public/imgs/home/faqs/banner.webp'
-// import Button from '@/libs/litebox-lib/ui/Button/Button'
+import IMGBanner from '@/public/imgs/home/faqs/banner.webp'
+import Button from '@/libs/litebox-lib/ui/Button/Button'
 import FaqsModal from './FaqsModal'
 import questions from '@/mock/home/faqs/data.json'
 import FadeUp from '@/components/common/universal/FadeUp';
-// import ImageWrapper from '@/components/common/universal/ImageWrapper';
+import ImageWrapper from '@/components/common/universal/ImageWrapper';
 
 export default function Faqs() {
     const [isModalOpen, setIsModalOpen] = useState(false);
@@ -25,18 +25,16 @@ export default function Faqs() {
                     <Accordion isDesktop key={idx} title={el.title} content={el.content} />
                 </FadeUp>
             ))}
-            {/* <FadeUp className='relative flex flex-row justify-between items-center w-full h-[9.45vw] mt-[2.778vw] border-2 border-black rounded-[4px]'>
+            <FadeUp className='relative flex flex-row justify-between items-center w-full h-[9.45vw] mt-[2.778vw] border-2 border-black rounded-[4px]'>
                 <div className='absolute left-0 top-0 w-full h-full -z-10'> 
-                    <div className='w-full h-full'>
-                        <ImageWrapper src={IMGBanner.src} alt='Banner' />
-                    </div>
+                    <ImageWrapper style={{height: '100%'}} src={IMGBanner.src} alt='Banner' />
                 </div>
                 <div className='flex flex-col pl-[2.78vw]'>
                     <p className='flex uppercase font-black text-[3.335vw] leading-[2.8vw]'>Still have questions?</p>
-                    <p className='flex font-host-grotesk font-normal text-[1.115vw] leading-[1.67vw] mt-[0.56vw]'>We're here to help!</p>
+                    <p className='flex font-host-grotesk font-normal text-[1.115vw] leading-[1.67vw] mt-[0.56vw]'>We&apos;re here to help!</p>
                 </div>
                 <Button onClick={() => setIsModalOpen(true)} className='mr-[2.78vw]' variant='primary' content='contact us' />
-            </FadeUp> */}
+            </FadeUp>
             {isModalOpen && <FaqsModal setIsModalOpen={setIsModalOpen} isModalOpen={isModalOpen} />}
         </div>
     )
