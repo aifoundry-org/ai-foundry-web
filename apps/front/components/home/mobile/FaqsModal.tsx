@@ -38,7 +38,7 @@ export default function FaqsModal({isModalOpen, setIsModalOpen} : {isModalOpen:b
                 </button>
                 {!showResult && <>
                     <form onSubmit={handleSubmit(onSubmit)} className={`faqsModal flex flex-col items-center ${isSending ? 'bg-transparent opacity-50 pointer-events-none' : ''}`}>
-                        <div className='flex flex-col gap-[6.675vw] py-[3.34vw] items-center justify-center w-full'>
+                        <div className={`flex flex-col ${errors.message ? 'pb-[3.34vw]' : 'py-[3.34vw] gap-[6.675vw]'} items-center justify-center w-full`}>
                             <p className='text-[8.8vw] font-black uppercase'>Contact us</p>
                             <div className='flex flex-col w-full'>
                                 <Input 
@@ -116,7 +116,7 @@ export default function FaqsModal({isModalOpen, setIsModalOpen} : {isModalOpen:b
                                 {errors.message?.message && <div className={errorStyle}>{errors.message?.message.toString()}</div>}
                             </div>
                         </div>
-                        <Button className='my-[7vw] px-[5.05vw]' content='Send' onClick={() => {
+                        <Button className={`${errors.message ? '' : 'my-[7vw]'} px-[5.05vw]`} content='Send' onClick={() => {
                             inputRef.current?.click();
                         }} />
                         <input ref={inputRef} id='submit-contact-us' type='submit' className='hidden'/>
