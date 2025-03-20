@@ -38,7 +38,7 @@ export default function FaqsModal({isModalOpen, setIsModalOpen} : {isModalOpen:b
                 </button>
                 {!showResult && <>
                     <form onSubmit={handleSubmit(onSubmit)} className={`faqsModal relative flex flex-col items-center ${isSending ? 'bg-transparent opacity-50 pointer-events-none' : ''}`}>
-                        <div className='flex flex-col gap-[1.67vw] py-[3.34vw] items-center justify-center w-full'>
+                        <div className={`flex flex-col gap-[1.67vw] ${errors.message ? 'pt-[2vw]' : 'py-[3.34vw]'} items-center justify-center w-full`}>
                             <p className='text-[3.34vw] font-black uppercase'>Contact us</p>
                             <div className='flex flex-col w-full relative'>
                                 <Input 
