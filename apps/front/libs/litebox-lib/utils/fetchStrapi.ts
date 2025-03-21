@@ -23,6 +23,10 @@ export const fetchStrapi = async <T>(endpoint: string, config?: RequestInit) => 
         headers: {
           'Authorization': `Bearer ${process.env.NEXT_PUBLIC_STRAPI_API_TOKEN}`,
         },
+        next: {
+            revalidate: 0,
+            tags: ['/']
+        }
     });
 
     if (!response.ok) {
