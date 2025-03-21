@@ -5,9 +5,16 @@ const nextConfig: NextConfig = {
   images: {
     domains: ['127.0.0.1', 'localhost', 'strapi.ai-foundry.litebox.dev'],
     formats: ['image/avif', 'image/webp'],
-    minimumCacheTTL: 86400,
+    minimumCacheTTL: 3600,
     deviceSizes: [640, 750, 828, 1080, 1200, 1920],
     imageSizes: [16, 32, 48, 64, 96, 128],
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'strapi.ai-foundry.litebox.dev',
+        pathname: '/uploads/**',
+      }
+    ]
   },
   compress: true,
   swcMinify: true,
@@ -26,10 +33,19 @@ const nextConfig: NextConfig = {
         headers: [
           {
             key: 'Cache-Control',
-            value: 'public, max-age=31536000, immutable',
+            value: 'public, max-age=3600, stale-while-revalidate=60'
           },
         ],
       },
+      {
+        source: '/service-worker.js',
+        headers: [
+          {
+            key: 'Cache-Control',
+            value: 'public, max-age=0, must-revalidate'
+          }
+        ]
+      }
     ];
   },
 };
