@@ -38,20 +38,20 @@ export default function Hero() {
         duration={0.75}
         additionalInitialParams={{ lineHeight: '12vw' }}
         additionalWhileInView={{ lineHeight: '9.935vw' }}>
-        <p className='uppercase text-[13.475vw] text-center font-black'>
+        <h1 className='uppercase text-[13.475vw] text-center font-black'>
           An open AI
           <br />
           community
           <br />
           for all
-        </p>
+        </h1>
         <FadeUp delay={0.75}>
-          <div className='relative font-normal font-host-grotesk text-center text-[1vw] leading-[1.5vw] mt-[4vh]'>
+          <h2 className='relative font-normal font-host-grotesk text-center text-[1vw] leading-[1.5vw] mt-[4vh] normal-case'>
             We are a community of practitioners building an open-source,
             <br /> composable AI ecosystem. Our goal is to reduce the complexity of
             <br /> the AI industry. Join our thriving community and share, collaborate
             <br /> and innovate with us.
-          </div>
+          </h2>
         </FadeUp>
       </FadeUp>
       <FadeIn delay={0.75} className='absolute left-[61vw] top-[18vw] w-[17.365vw]'>

@@ -12,7 +12,7 @@ interface ContentProps {
 export default function Content({paragraphs, onCurrentHeaderIdChange}: ContentProps) {
     const memoParagraphs = useMemo(() => {
         return paragraphs && paragraphs.length > 0 && paragraphs.map((paragraph: StrapiParagraph) => (
-            <div 
+            <p 
                 key={paragraph.id} 
                 id={paragraph.tag} 
                 className={`anchor flex flex-col ${paragraph.alternativeStyle ? 'font-black text-[4rem] font-dharma-gothic-e text-orange uppercase leading-[3.3rem]' : 'font-normal text-[1.6rem] font-host-grotesk text-dark'} gap-y-[2.4rem] mb-[2.4rem]`} 

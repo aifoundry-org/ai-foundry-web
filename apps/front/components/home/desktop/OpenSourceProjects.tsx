@@ -12,12 +12,16 @@ export default function OpenSourceProjects() {
             <div className='absolute w-[18vw] -top-[1.1vw] right-0 -z-[1]'>
                 <ImageWrapper src={IMGBackground.src} alt='Open Source Projects background' />
             </div>
-            <FadeUp className='font-black font-dharma-gothic-e text-[6.4rem] 2xl:text-[5vw] leading-[5.3rem] 2xl:leading-[4vw] uppercase'>
-                View and join our<br/>open-source projects
+            <FadeUp>
+                <h2 className='font-black font-dharma-gothic-e text-[6.4rem] 2xl:text-[5vw] leading-[5.3rem] 2xl:leading-[4vw] uppercase'>
+                    View and join our<br/>open-source projects
+                </h2>
             </FadeUp>
-            <FadeUp className='font-normal font-host-grotesk text-[1.6rem] 2xl:text-[1.25vw] leading-[2.4rem] 2xl:leading-[1.7vw] pt-[1.67vw] pb-[3.9vw]'>
-                AI Foundry open source projects are Apache V2 licensed. View the code on<br/>
-                our Github, and collaborate with project contributors in our Discord Server.
+            <FadeUp>
+                <h3 className='font-normal font-host-grotesk text-[1.6rem] 2xl:text-[1.25vw] leading-[2.4rem] 2xl:leading-[1.7vw] pt-[1.67vw] pb-[3.9vw] normal-case'>
+                    AI Foundry open source projects are Apache V2 licensed. View the code on<br/>
+                    our GitHub, and collaborate with project contributors in our Discord Server.
+                </h3>
             </FadeUp>
             <FadeUp className='flex flex-col md:flex-row justify-between gap-[7rem] mt-[4rem] md:mt-0 lg:mt-0 xl:mt-0 2xl:mt-0 md:gap-[3.34vw] lg:gap-[3.34vw] xl:gap-[3.34vw] 2xl:gap-[3.34vw]'>
                 {cards.map(card => 

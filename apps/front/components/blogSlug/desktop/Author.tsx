@@ -29,11 +29,11 @@ export default function Author({author, contentNavigation, currentHeaderId, onCu
                         </div>
                     </div>}
                     <div className='flex flex-col'>
-                        <p className='font-bold text-[2rem] leading-[2.4rem] text-[#222222]'>{name}</p>
-                        <p className='font-normal text-[1.6rem] leading-[2.1rem['>{role}</p>
+                        <h3 className='normal-case font-bold text-[2rem] leading-[2.4rem] text-[#222222]'>{name}</h3>
+                        <h4 className='normal-case font-normal text-[1.6rem] leading-[2.1rem]'>{role}</h4>
                     </div>
                 </div>
-                <p className='font-host-grotesk font-normal text-[1.4rem] leading-[2.1rem] mt-10 text-[#222222]'>{description}</p>
+                <h3 className='normal-case font-host-grotesk font-normal text-[1.4rem] leading-[2.1rem] mt-10 text-[#222222]'>{description}</h3>
                 <div className='flex flex-row gap-[2.4rem] mt-8 border-black border-b-2 pb-[4rem]'>
                     {instagram_link && <Link target='_blank' href={instagram_link}>
                         <div className='w-[2.4rem] h-[2.4rem] blogSocialIcon'>

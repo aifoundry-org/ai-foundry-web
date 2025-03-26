@@ -54,9 +54,9 @@ const Headline = ({ article, className }: HeadlineProps) => {
                     </div>
                 ))}
             </div>
-            <h1 className='font-dharma-gothic-e text-[6.4rem] font-black pb-6 leading-[5.3rem] uppercase'>{title}</h1>
+            <h3 className='font-dharma-gothic-e text-[6.4rem] font-black pb-6 leading-[5.3rem] uppercase'>{title}</h3>
             <div className='font-host-grotesk border-b-2 border-black flex flex-wrap justify-between gap-y-[2rem] pt-[3.2rem] pb-[2.4rem] font-paralucent gap-2'>
-                <div className='flex gap-4 text-black items-center font-normal text-[1.6rem] leading-[2.4rem]'>
+                <h4 className='normal-case flex gap-4 text-black items-center font-normal text-[1.6rem] leading-[2.4rem]'>
                     {authors && authors[0] && 
                         <>
                             <span className='flex text-wrap'>{authors[0].name}</span>
@@ -74,7 +74,7 @@ const Headline = ({ article, className }: HeadlineProps) => {
                     }
                     <div className='bg-black w-[1px] h-6' />
                     <span className='flex flex-nowrap text-nowrap items-center'>{getReadTime(cleanParagraphsContent)}</span>
-                </div>
+                </h4>
                 <div className='flex gap-4 text-black items-center justify-start md:justify-end pt-5 md:pt-0 font-normal text-[1.6rem] leading-[2.4rem]'>
                     <div className='flex items-center gap-4'>
                         <span className='flex mr-[1.67vw]'>Share:</span>
