@@ -24,19 +24,25 @@ export default function VisionMission(){
                     <ImageWrapper src={IMGGraffiti.src} alt='Graffiti' />
                 </div>
             </FadeUp>
-            <FadeUp delay={0.5} className='mt-[8.55vw] z-0 font-black font-dharma-gothic-e text-[8.6vw] leading-[7vw] uppercase'>
-                Our long-term vision is to help the industry evolve to a structure where model training and deployment for any company are open, transparent, and concise.
+            <FadeUp delay={0.5}>
+                <h2 className='mt-[8.55vw] z-0 font-black font-dharma-gothic-e text-[8.6vw] leading-[7vw] uppercase'>
+                    Our long-term vision is to help the industry evolve to a structure where model training and deployment for any company are open, transparent, and concise.
+                </h2>
             </FadeUp>
-            <FadeUp delay={0.5} className='mt-[8.55vw] font-normal font-host-grotesk text-[3.75vw] leading-[5.6vw]'>
-                We desire to see the industry aligned on the principles of how those systems are structured at<br/>a high level from which every company can<br/>deploy its own engine or system, configured the<br/>way each specific company needs it. This approach will lower risks and improve AI results for all companies and practitioners. Therefore, we foster, build, and support projects that can<br/>become the engineering foundation of such training and deployment systems. We support practitioners willing to benefit from AI in their work and life, specifically models and their fine-tuning and deployment.
-                <br/><br/>
-                We are a community of practitioners building an open-source composable AI ecosystem. By collaborating on standards for everyone, we aim to reduce the complexity of the AI industry. 
+            <FadeUp delay={0.5}>
+                <h3 className='normal-case mt-[8.55vw] font-normal font-host-grotesk text-[3.75vw] leading-[5.6vw]'>
+                    We desire to see the industry aligned on the principles of how those systems are structured at<br/>a high level from which every company can<br/>deploy its own engine or system, configured the<br/>way each specific company needs it. This approach will lower risks and improve AI results for all companies and practitioners. Therefore, we foster, build, and support projects that can<br/>become the engineering foundation of such training and deployment systems. We support practitioners willing to benefit from AI in their work and life, specifically models and their fine-tuning and deployment.
+                    <br/><br/>
+                    We are a community of practitioners building an open-source composable AI ecosystem. By collaborating on standards for everyone, we aim to reduce the complexity of the AI industry. 
+                </h3>
             </FadeUp>
             <FadeUp delay={0.5} id='values-mobile' className='mt-[7.475vw] w-full h-fit'>
                 <Button as={Link} href='/terms-and-conditions' variant='secondary' content='Community code of conduct' svg='arrow-up-right' />
             </FadeUp>
-            <FadeIn delay={0.5} className='mt-[19.2vw] mb-[11.2vw] font-black font-dharma-gothic-e text-[12.8vw] leading-[10.7vw] uppercase'>
-                Our core values
+            <FadeIn delay={0.5}>
+                <h2 className='mt-[19.2vw] mb-[11.2vw] font-black font-dharma-gothic-e text-[12.8vw] leading-[10.7vw] uppercase'>
+                    Our core values
+                </h2>
             </FadeIn>
             {coreValues.map((el, idx) => (
                 <FadeUp key={idx} delay={el.delay} duration={0.5}>

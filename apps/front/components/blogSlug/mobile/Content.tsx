@@ -12,7 +12,7 @@ interface ContentProps {
 export default function Content({ paragraphs, contentNavigation }: ContentProps) {
   const memoParagraphs = useMemo(() => {
     return paragraphs && paragraphs.length > 0 && paragraphs.map((paragraph: StrapiParagraph) => (
-      <div
+      <p
         key={`${paragraph.id}-mobile`}
         id={`${paragraph.tag}-mobile`}
         className={`anchor flex flex-col ${
@@ -20,7 +20,7 @@ export default function Content({ paragraphs, contentNavigation }: ContentProps)
             ? 'font-black text-[3.2rem] font-dharma-gothic-e text-orange uppercase leading-[2.6rem]'
             : 'font-normal text-[1.4rem] font-host-grotesk'
         } gap-y-[1.6rem] mb-[4rem]`}
-        dangerouslySetInnerHTML={{__html: paragraph.content.flatMap((el) => el.children.flatMap((el: {type:string, text: string}) => el.text)).join('')}}></div>
+        dangerouslySetInnerHTML={{__html: paragraph.content.flatMap((el) => el.children.flatMap((el: {type:string, text: string}) => el.text)).join('')}} />
     ))
   }, [paragraphs])
 

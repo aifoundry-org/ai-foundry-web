@@ -42,17 +42,21 @@ export default function LatestInsights() {
             <FadeUp className='absolute w-[24vw] top-[5.5vw] left-0 -z-[1]'>
                 <ImageWrapper src={IMGGraffiti.src} alt='Graffiti' />
             </FadeUp>
-            <FadeUp className='font-black font-dharma-gothic-e text-[12.8vw] leading-[10.7vw] uppercase relative'>
-                Explore Our Latest<br/>Insights
-                <div className='absolute flex -z-[1] -top-[16.5vw] -left-[6vw]'>
-                    <ImageWrapper src={IMGBackground.src} alt="Latest Insights background" />
-                </div>
+            <FadeUp className='relative'>
+                <h2 className='font-black font-dharma-gothic-e text-[12.8vw] leading-[10.7vw] uppercase'>
+                    Explore Our Latest<br/>Insights
+                    <div className='absolute flex -z-[1] -top-[16.5vw] -left-[6vw]'>
+                        <ImageWrapper src={IMGBackground.src} alt="Latest Insights background" />
+                    </div>
+                </h2>
             </FadeUp>
-            <FadeUp className='font-normal font-host-grotesk text-[3.75vw] leading-[5.6vw] pt-[4.3vw] pb-[4.275vw]'>
-                Stay updated with our community-driven content.<br/>
-                Read about past events and access to summaries<br/>
-                and video replays of prior AI Hack Labs and<br/>
-                Podcasts.
+            <FadeUp>
+                <h3 className='font-normal font-host-grotesk text-[3.75vw] leading-[5.6vw] pt-[4.3vw] pb-[4.275vw] normal-case'>
+                    Stay updated with our community-driven content.<br/>
+                    Read about past events and access to summaries<br/>
+                    and video replays of prior AI Hack Labs and<br/>
+                    Podcasts.
+                </h3>
             </FadeUp>
             <FadeUp className='w-full h-fit mb-[8.55vw]'>
                 <Button as={Link} href="/blog" variant='primary' content='Visit our blog' />
@@ -74,7 +78,7 @@ export default function LatestInsights() {
                     >
                         {articles.map((article, idx) => (
                             <SwiperSlide key={idx} className='flex flex-col w-full h-full'>
-                                <div className='flex flex-row items-center justify-between mb-[7vw]'>
+                                <div className='flex flex-row items-center justify-center mb-[7vw]'>
                                     {article.coverImage ? 
                                         <div className='border-2 border-black rounded-lg'>
                                             <ImageWrapper src={getStrapiMediaUrl(article.coverImage.url)} alt='Cover image' />

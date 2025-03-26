@@ -43,9 +43,9 @@ const Headline = ({ article, className }: HeadlineProps) => {
                     </div>
                 ))}
             </div>
-            <h1 className='font-dharma-gothic-e text-[12.8vw] font-black pb-6 leading-[10.675vw] uppercase'>{title}</h1>
+            <h3 className='font-dharma-gothic-e text-[12.8vw] font-black pb-6 leading-[10.675vw] uppercase'>{title}</h3>
             <div className='font-host-grotesk border-b-2 border-black flex flex-col justify-between py-4 font-paralucent gap-2'>
-                <div className='flex flex-grow gap-4 text-black items-center font-normal text-[3.75vw] leading-[5.6vw]'>
+                <h4 className='normal-case flex flex-grow gap-4 text-black items-center font-normal text-[3.75vw] leading-[5.6vw]'>
                     {authors && authors[0] && 
                         <>
                             <span>{authors[0].name}</span>
@@ -61,7 +61,7 @@ const Headline = ({ article, className }: HeadlineProps) => {
                             })}
                         </time>
                     }
-                </div>
+                </h4>
                 <div className='flex flex-grow gap-4 text-black items-center font-normal text-[3.75vw] leading-[5.6vw] my-[3vw]'>
                     <span className='flex items-center'>{getReadTime(cleanParagraphsContent)}</span>
                     <div className='bg-black w-[1px] h-6' />

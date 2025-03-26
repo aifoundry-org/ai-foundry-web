@@ -16,7 +16,7 @@ export default function RelatedArticles({ articles }: { articles?: StrapiArticle
             <ImageWrapper src={IMGBackground.src} alt="Background" />
         </div>
         <div className='flex flex-col mb-[10vw]'>
-            <p className='font-black text-[4.8rem] leading-[4rem] uppercase'>Related posts</p>
+            <h2 className='font-black text-[4.8rem] leading-[4rem] uppercase'>Related posts</h2>
         </div>
         <div className='flex flex-col gap-y-[10vw]'>
             {articles && articles.map((article: StrapiArticle) => ArticleThumbnail({article}))}
