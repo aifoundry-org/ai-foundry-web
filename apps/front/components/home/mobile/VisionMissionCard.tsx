@@ -28,9 +28,9 @@ export default function OurCoreValue({className = '', icon = '', title = '', con
     return (
         <div {...componentProps}>
             {IMGIcon && <IMGIcon className='w-fit mb-[3.75vw]' /> }
-            <div className='font-dharma-gothic-e font-black text-[8.55vw] leading-[7vw] mb-[2.15vw] uppercase'>
+            <h3 className='font-dharma-gothic-e font-black text-[8.55vw] leading-[7vw] mb-[2.15vw] uppercase'>
                 {title}
-            </div>
+            </h3>
             <div className='font-host-grotesk font-normal text-[3.75vw] leading-[5.7vw]'>
                 {content}
             </div>

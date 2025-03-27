@@ -56,7 +56,7 @@ export default function OpenSourceProjects() {
                         <SwiperSlide key={idx} className='flex flex-col w-full h-full'>
                             <div className='flex flex-col w-full h-full'>
                                 <div className='flex flex-row items-center justify-between'>
-                                    <p className='font-dharma-gothic-e font-black text-[8.6vw] uppercase'>{card.title}</p>
+                                    <h3 className='font-dharma-gothic-e font-black text-[8.6vw] uppercase'>{card.title}</h3>
                                     <div className='w-[5.87vw]'>
                                         <ImageWrapper src={IMGArrowUpRight.src} alt='Arrow up right' />
                                     </div>

@@ -15,26 +15,28 @@ export default function VisionMission(){
             <FadeIn className='absolute top-0 right-0 z-[1]'>
                 <ImageWrapper src={IMGCircle.src} alt="Vision & Mission Section" />
             </FadeIn>
-            <FadeUp delay={0.5} className='relative mt-[11vw] z-0 font-black font-dharma-gothic-e text-orange text-[19.2vw] leading-[14.25vw] uppercase'>
-                Vision<br/>& Mission
-                <div className='absolute bottom-[3vw] left-[31vw]'>
+            <FadeUp delay={0.5} className='relative mt-[11vw] z-0'>
+                <h2 className='font-black font-dharma-gothic-e text-orange text-[19.2vw] leading-[14.25vw] uppercase'>
+                    Vision<br/>& Mission
+                </h2>
+                <div className='absolute bottom-[3vw] left-[31vw] w-[17.9rem]'>
                     <ImageWrapper src={IMGError.src} alt='Error' />
                 </div>
-                <div className='absolute -bottom-[4vw] -left-[6.5vw]'>
+                <div className='absolute -bottom-[4vw] -left-[6.5vw] w-[8.4rem]'>
                     <ImageWrapper src={IMGGraffiti.src} alt='Graffiti' />
                 </div>
             </FadeUp>
             <FadeUp delay={0.5}>
-                <h2 className='mt-[8.55vw] z-0 font-black font-dharma-gothic-e text-[8.6vw] leading-[7vw] uppercase'>
+                <h3 className='mt-[8.55vw] z-0 font-black font-dharma-gothic-e text-[8.6vw] leading-[7vw] uppercase'>
                     Our long-term vision is to help the industry evolve to a structure where model training and deployment for any company are open, transparent, and concise.
-                </h2>
+                </h3>
             </FadeUp>
             <FadeUp delay={0.5}>
-                <h3 className='normal-case mt-[8.55vw] font-normal font-host-grotesk text-[3.75vw] leading-[5.6vw]'>
+                <p className='normal-case mt-[8.55vw] font-normal font-host-grotesk text-[3.75vw] leading-[5.6vw]'>
                     We desire to see the industry aligned on the principles of how those systems are structured at<br/>a high level from which every company can<br/>deploy its own engine or system, configured the<br/>way each specific company needs it. This approach will lower risks and improve AI results for all companies and practitioners. Therefore, we foster, build, and support projects that can<br/>become the engineering foundation of such training and deployment systems. We support practitioners willing to benefit from AI in their work and life, specifically models and their fine-tuning and deployment.
                     <br/><br/>
                     We are a community of practitioners building an open-source composable AI ecosystem. By collaborating on standards for everyone, we aim to reduce the complexity of the AI industry. 
-                </h3>
+                </p>
             </FadeUp>
             <FadeUp delay={0.5} id='values-mobile' className='mt-[7.475vw] w-full h-fit'>
                 <Button as={Link} href='/terms-and-conditions' variant='secondary' content='Community code of conduct' svg='arrow-up-right' />
