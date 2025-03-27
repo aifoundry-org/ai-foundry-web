@@ -27,14 +27,16 @@ export default function ArticleThumbnail({article}: ArticleThumbnailProps) {
                 {tags.map((el: StrapiTag) => ArticleTag({el})) }
             </div>
             <div className='flex flex-row items-center justify-between mb-[4.275vw]'>
-                <p className='font-dharma-gothic-e text-left font-black text-[8.6vw] leading-[7vw] uppercase'>{title}</p>
+                <h3 className='font-dharma-gothic-e text-left font-black text-[8.6vw] leading-[7vw] uppercase'>{title}</h3>
             </div>
-            <div className='flex flex-row font-normal text-[3.2vw] leading-[5.6vw] font-host-grotesk'>
-                {authors && authors.length > 0 && `${authors[0].name} | `}{date && new Date(date).toLocaleDateString('en-US', {
-                    year: 'numeric',
-                    month: 'long',
-                    day: 'numeric'
-                })}
+            <div className='flex flex-row'>
+                <h4 className='normal-case font-normal text-[3.2vw] leading-[5.6vw] font-host-grotesk'>
+                    {authors && authors.length > 0 && `${authors[0].name} | `}{date && new Date(date).toLocaleDateString('en-US', {
+                        year: 'numeric',
+                        month: 'long',
+                        day: 'numeric'
+                    })}
+                </h4>
             </div>
             <div className='flex flex-row basis-[80%] justify-start mt-7 mb-9'>
                 <Button as={Link} href={`/blog/${slug}`} variant='secondary' content='Read more' />

@@ -25,14 +25,18 @@ export default function OpenSourceProjects() {
 
     return (
         <div id='projects-mobile' className='xs:hidden flex flex-col pt-[30vw] pb-[7.7vw] relative w-full h-fit px-[5.6vw]'>
-            <FadeUp className='font-black font-dharma-gothic-e text-[12.8vw] leading-[10.7vw] uppercase'>
-                View and join our<br/>open-source<br/>projects
+            <FadeUp>
+                <h2 className='font-black font-dharma-gothic-e text-[12.8vw] leading-[10.7vw] uppercase'>
+                    View and join our<br/>open-source<br/>projects
+                </h2>
             </FadeUp>
-            <FadeUp className='font-normal font-host-grotesk text-[3.75vw] leading-[5.6vw] pt-[4.3vw] pb-[8.55vw]'>
-                AI Foundry open source projects are Apache<br/>
-                V2 licensed. View the code on our Github, and<br/>
-                collaborate with project contributors in our<br/>
-                Discord Server.
+            <FadeUp>
+                <h3 className='font-normal normal-case font-host-grotesk text-[3.75vw] leading-[5.6vw] pt-[4.3vw] pb-[8.55vw]'>
+                    AI Foundry open source projects are Apache<br/>
+                    V2 licensed. View the code on our GitHub, and<br/>
+                    collaborate with project contributors in our<br/>
+                    Discord Server.
+                </h3>
             </FadeUp>
             <FadeUp delay={0.5} className='flex flex-col w-full h-full items-center justify-center'>
                 <Swiper

@@ -29,15 +29,15 @@ export default function Hero() {
                         </div>
                     </FadeIn>
                     <FadeUp delay={0.25} duration={1} additionalInitialParams={{lineHeight: '20vw'}} additionalWhileInView={{lineHeight: '17.4vw'}} className='absolute w-full top-[10vw]'>
-                        <p className='uppercase text-[23.5vw] text-center font-black'>
+                        <h1 className='uppercase text-[23.5vw] text-center font-black'>
                             An open AI<br/>community<br/>for all
-                        </p>
+                        </h1>
                     </FadeUp>
                 </div>
                 <FadeUp delay={0.75} className='relative w-full'>
-                    <p className='text-center text-[1.6rem] px-[2.5rem] font-normal font-host-grotesk'>
+                    <h2 className='text-center text-[1.6rem] px-[2.5rem] font-normal font-host-grotesk normal-case'>
                         We are a community of practitioners building an open-source, composable AI ecosystem. Our goal is to reduce the complexity of the AI industry. Join our thriving community and share, collaborate and innovate with us.
-                    </p>
+                    </h2>
                 </FadeUp>
             </div>
         </div>

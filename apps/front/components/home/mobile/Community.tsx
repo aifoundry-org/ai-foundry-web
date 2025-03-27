@@ -20,11 +20,15 @@ export default function Community() {
             <FadeUp className='absolute w-[54vw] top-0 left-0 -z-10'>
                 <ImageWrapper src={IMGBackground.src} alt="Community background" />
             </FadeUp>
-            <FadeUp delay={0.5} className='font-black font-dharma-gothic-e text-[12.8vw] leading-[10.7vw] uppercase'>
-                What&apos;s happening<br/>in the community
+            <FadeUp delay={0.5}>
+                <h2 className='font-black font-dharma-gothic-e text-[12.8vw] leading-[10.7vw] uppercase'>
+                    What&apos;s happening<br/>in the community
+                </h2>
             </FadeUp>
-            <FadeUp delay={1} className='font-normal font-host-grotesk text-[3.75vw] leading-[5.6vw] pt-[4.3vw] pb-[8.55vw]'>
-                Upcoming podcasts, virtual and physical<br/>community events for AI Foundry.
+            <FadeUp delay={1}>
+                <h3 className='font-normal normal-case font-host-grotesk text-[3.75vw] leading-[5.6vw] pt-[4.3vw] pb-[8.55vw]'>
+                    Upcoming podcasts, virtual and physical<br/>community events for AI Foundry.
+                </h3>
             </FadeUp>
             <FadeUp delay={1} className='flex flex-row gap-x-[2.15vw]'>
                 {months.map((el, idx) => (

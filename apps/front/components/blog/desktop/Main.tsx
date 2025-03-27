@@ -10,14 +10,18 @@ export default function Main() {
                     <div className='absolute top-0 left-0 w-full z-0'>
                         <ImageWrapper src={IMGBackground.src} alt="Background" />
                     </div>
-                    <div className='relative flex text-[16.115vw] w-full justify-center font-black font-dharma-gothic-e leading-[10.67vw] uppercase pt-[3vw] pb-[2.225vw] z-0'>
-                        Our Blog
+                    <div className='relative flex w-full justify-center z-0'>
+                        <h1 className='font-black text-[16.115vw] font-dharma-gothic-e leading-[10.67vw] uppercase pt-[3vw] pb-[2.225vw]'>
+                            Our Blog
+                        </h1>
                     </div> 
                     <div className='absolute top-[8.3vw] left-[14.8vw] w-[20.91vw] z-1'>
                         <ImageWrapper src={IMGTitleErrors.src} alt="Title errors" />
                     </div>
-                    <div className='relative flex w-full justify-center font-host-grotesk text-[1.39vw] text-center mb-[4.275vw]'>
-                        Stay tuned for the latest news, best practices,<br/>and updates from our community.
+                    <div className='relative flex w-full justify-center'>
+                        <h2 className='font-host-grotesk text-[1.39vw] font-normal text-center mb-[4.275vw] normal-case leading-[2.1vw]'>
+                            Stay tuned for the latest news, best practices,<br/>and updates from our community.
+                        </h2>
                     </div>
                 </div>
             </div>

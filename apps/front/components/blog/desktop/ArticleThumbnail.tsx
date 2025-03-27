@@ -29,14 +29,16 @@ export default function ArticleThumbnail({article, isFeaturedArticle = false}: A
                 {tags.map((el: StrapiTag) => ArticleTag({el})) }
             </div>
             <div className='flex flex-row text-start mb-[2vw] md:mb-[1.25vw] lg:mb-[1.25vw] xl:mb-[1.25vw] 2xl:mb-[1.25vw]'>
-                <p className='font-dharma-gothic-e font-black text-[5vw] md:text-[4vw] lg:text-[2.778vw] xl:text-[3.34vw] 2xl:text-[3.34vw] leading-[4vw] md:leading-[4vw] lg:leading-[2.3vw] xl:leading-[2.8vw] 2xl:leading-[2.8vw] uppercase'>{title}</p>
+                <h3 className='font-dharma-gothic-e font-black text-[5vw] md:text-[4vw] lg:text-[2.778vw] xl:text-[3.34vw] 2xl:text-[3.34vw] leading-[4vw] md:leading-[4vw] lg:leading-[2.3vw] xl:leading-[2.8vw] 2xl:leading-[2.8vw] uppercase'>{title}</h3>
             </div>
-            <div className='flex flex-row font-normal text-[3vw] md:text-[2vw] lg:text-[1vw] xl:text-[1vw] 2xl:text-[1vw] sm:leading-[4vw] lg:leading-[1.5vw] xl:leading-[1.5vw] 2xl:leading-[1.5vw] font-host-grotesk mb-8'>
-                {authors && authors.length > 0 && `${authors[0].name} | `}{date && new Date(date).toLocaleDateString('en-US', {
-                    year: 'numeric',
-                    month: 'long',
-                    day: 'numeric'
-                })}
+            <div className='flex flex-row'>
+                <h4 className='normal-case font-normal text-[3vw] md:text-[2vw] lg:text-[1vw] xl:text-[1vw] 2xl:text-[1vw] sm:leading-[4vw] lg:leading-[1.5vw] xl:leading-[1.5vw] 2xl:leading-[1.5vw] font-host-grotesk mb-8'>
+                    {authors && authors.length > 0 && `${authors[0].name} | `}{date && new Date(date).toLocaleDateString('en-US', {
+                        year: 'numeric',
+                        month: 'long',
+                        day: 'numeric'
+                    })}
+                </h4>
             </div>
             <div className='flex flex-row justify-start mt-auto mr-auto mb-0 ml-0'>
                 <Button as={Link} href={`/blog/${slug}`} variant='secondary' content='Read more' />
