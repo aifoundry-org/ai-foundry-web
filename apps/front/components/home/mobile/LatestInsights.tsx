@@ -59,7 +59,7 @@ export default function LatestInsights() {
                 </h3>
             </FadeUp>
             <FadeUp className='w-full h-fit mb-[8.55vw]'>
-                <Button as={Link} href="/blog" variant='primary' content='Visit our blog' />
+                <Button target='_blank' as={Link} href="https://aifoundryorg.substack.com/" variant='primary' content='Visit our blog' />
             </FadeUp>
             <FadeUp className='flex flex-col w-full h-full items-center justify-center'>
                 {articles && articles.length > 0 && <>
