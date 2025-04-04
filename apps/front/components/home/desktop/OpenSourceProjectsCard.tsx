@@ -8,11 +8,13 @@ import Link from 'next/link';
 export default function OpenSourceProjectsCard({title = '', subtitle = '', content = '', link = ''}) {
     return (
         <div className='flex flex-col w-full h-full'>
-            <div onClick={() => {
-                window.location.href = link
-            }} className='flex flex-row h-fit min-h-[7vw] items-center md:items-start xl:items-start 2xl:items-start justify-between border-b-2 border-black'>
-                <h3 className='font-dharma-gothic-e font-black text-[4rem] md:text-[3rem] xl:text-[2.78vw] 2xl:text-[2.78vw] leading-0 md:leading-[2.5vw] xl:leading-[2.5vw] 2xl:leading-[2.5vw] uppercase'>{title}</h3>
-                <div className='w-[3vw] md:w-[2.125vw] xl:w-[2.125vw] 2xl:w-[2.125vw] inline-block'>
+            <div className='flex flex-row h-fit min-h-[7vw] items-center md:items-start xl:items-start 2xl:items-start justify-between border-b-2 border-black'>
+                <h3 onClick={() => {
+                    window.open(link, '_blank')
+                }} className='font-dharma-gothic-e font-black text-[4rem] md:text-[3rem] xl:text-[2.78vw] 2xl:text-[2.78vw] leading-0 md:leading-[2.5vw] xl:leading-[2.5vw] 2xl:leading-[2.5vw] uppercase cursor-pointer'>{title}</h3>
+                <div onClick={() => {
+                    window.open(link, '_blank')
+                }} className='w-[3vw] md:w-[2.125vw] xl:w-[2.125vw] 2xl:w-[2.125vw] inline-block cursor-pointer'>
                     <ImageWrapper src={IMGArrowUpRight.src} alt='Arrow up right' />
                 </div>
             </div>

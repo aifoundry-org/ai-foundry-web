@@ -2,9 +2,9 @@
 
 import ImageWrapper from '@/components/common/universal/ImageWrapper'
 import { StrapiAuthor } from '@/libs/litebox-lib/types/strapi/strapiBlog'
-import IMGInstagramIcon from '@/public/imgs/footer/instagramIconMobile.webp'
-import IMGLinkedinIcon from '@/public/imgs/footer/linkedinIconMobile.webp'
-import IMGYoutubeIcon from '@/public/imgs/footer/youtubeIconMobile.webp'
+import SVGInstagramIcon from '@/public/svgs/common/Instagram'
+import SVGLinkedinIcon from '@/public/svgs/common/Linkedin'
+import SVGYoutubeIcon from '@/public/svgs/common/Youtube'
 import getStrapiMediaUrl from '@/utils/getStrapiMediaUrl'
 import Link from 'next/link'
 
@@ -32,19 +32,13 @@ export default function Author({author}: AuthorProps) {
                 <h3 className='normal-case font-host-grotesk font-normal text-[1.4rem] leading-[2.1rem] mt-10 text-[#222222]'>{description}</h3>
                 <div className='flex flex-row gap-[8.55vw] mt-8'>
                     {instagram_link && <Link target='_blank' href={instagram_link}>
-                        <div className='w-[6.4vw] h-[6.4vw]'>
-                            <ImageWrapper src={IMGInstagramIcon.src} alt='Instagram icon' />
-                        </div>
+                        <SVGInstagramIcon className='w-[6.4vw] h-[6.4vw]' />
                     </Link>}
                     {linkedin_link && <Link target='_blank' href={linkedin_link}>
-                        <div className='w-[6.4vw] h-[6.4vw]'>
-                            <ImageWrapper src={IMGLinkedinIcon.src} alt='Linkedin icon' />
-                        </div>
+                        <SVGLinkedinIcon className='w-[6.4vw] h-[6.4vw]' />
                     </Link>}
                     {youtube_link && <Link target='_blank' href={youtube_link}>
-                        <div className='w-[6.4vw] h-[6.4vw]'>
-                            <ImageWrapper src={IMGYoutubeIcon.src} alt='Youtube icon' />
-                        </div>
+                        <SVGYoutubeIcon className='w-[6.4vw] h-[6.4vw]' />
                     </Link>}
                 </div>
             </div>

@@ -3,8 +3,8 @@
 import React from "react";
 import { usePathname } from 'next/navigation'
 import Link from 'next/link';
-import IMGInstagramIcon from '@/public/imgs/blogSlug/instagramIcon.webp'
-import IMGLinkedinIcon from '@/public/imgs/blogSlug/linkedinIcon.webp'
+import SVGInstagramIcon from '@/public/svgs/common/Instagram'
+import SVGLinkedinIcon from '@/public/svgs/common/Linkedin'
 import IMGXIcon from '@/public/imgs/blogSlug/xIcon.webp'
 import ImageWrapper from '@/components/common/universal/ImageWrapper';
 
@@ -57,8 +57,8 @@ const SocialShareLink = ({ platform, title, articleContent, className }: SocialS
 
     const icons: Record<SocialNetwork, React.ReactNode> = {
         x: <div className={className}><ImageWrapper src={IMGXIcon.src} alt="X icon" /></div>,
-        linkedin: <div className={className}><ImageWrapper src={IMGLinkedinIcon.src} alt="Linkedin icon" /></div>,
-        instagram: <div className={className}><ImageWrapper src={IMGInstagramIcon.src} alt="Instagram icon" /></div>,
+        linkedin: <div className={className}><SVGLinkedinIcon /></div>,
+        instagram: <div className={className}><SVGInstagramIcon /></div>,
     };
 
     return (
