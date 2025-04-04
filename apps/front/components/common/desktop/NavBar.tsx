@@ -70,7 +70,7 @@ export default function NavBar({removeTopBorders = false}) {
                 <m.nav
                     className={`flex flex-col bg-sand ${
                         isSticky
-                        ? 'fixed z-20 top-[2.8vw] px-[2.78vw] py-[0.126vw] border-2 border-black'
+                        ? 'fixed z-20 top-[2.8vw] px-[2.78vw] py-[0.126vw] border-[1px] border-black'
                         : 'relative px-[2.78vw] mx-auto'
                     }`}
                         style={{
@@ -86,24 +86,24 @@ export default function NavBar({removeTopBorders = false}) {
                     <div className={`flex flex-row items-center`}>
                         <div className="flex w-1/3 md:w-full sm:w-full lg:w-full xl:w-full 2xl:w-full justify-start">
                             <m.div
-                                className='flex text-nowrap flex-wrap flex-row font-medium text-[2rem] lg:text-[2rem] xl:text-[2rem] 2xl:text-[2rem]'
+                                className='flex text-nowrap flex-wrap flex-row font-medium text-[0.7rem] sm:text-[1.2rem] md:text-[1.3rem] lg:text-[1.7rem] xl:text-[2rem] 2xl:text-[2rem]'
                                 initial={{ columnGap: '2.78vw'}}
                                 animate={{ columnGap: isSticky ? '1.67vw' : '2.78vw' }}
                                 transition={{ ease: "easeInOut", duration: 0.5 }}
                             >
                                 <div className={`flex flex-wrap gap-[${isSticky ? '1.67vw' : '2.78vw'}]`}>
-                                    <Link className="uppercase relative after:bg-black after:absolute after:h-1 after:w-0 after:bottom-0 after:left-0 focus:after:w-full hover:after:w-full after:transition-all after:duration-300" href="/#projects">
+                                    <Link className="uppercase relative after:bg-black after:absolute after:h-1 after:w-0 after:bottom-0 after:left-0 hover:after:w-full after:transition-all after:duration-300" href="/#projects">
                                         Projects
                                     </Link>
-                                    <Link className="uppercase relative after:bg-black after:absolute after:h-1 after:w-0 after:bottom-0 after:left-0 focus:after:w-full hover:after:w-full after:transition-all after:duration-300" href="/#events">
+                                    <Link className="uppercase relative after:bg-black after:absolute after:h-1 after:w-0 after:bottom-0 after:left-0 hover:after:w-full after:transition-all after:duration-300" href="/#events">
                                         Events
                                     </Link>
                                 </div>
                                 <div className={`flex flex-wrap gap-[${isSticky ? '1.67vw' : '2.78vw'}]`}>
-                                    <Link className="uppercase relative after:bg-black after:absolute after:h-1 after:w-0 after:bottom-0 after:left-0 focus:after:w-full hover:after:w-full after:transition-all after:duration-300" href="/#blog">
+                                    <Link className="uppercase relative after:bg-black after:absolute after:h-1 after:w-0 after:bottom-0 after:left-0 hover:after:w-full after:transition-all after:duration-300" href="/#blog">
                                         Blog
                                     </Link>
-                                    <Link className="uppercase relative after:bg-black after:absolute after:h-1 after:w-0 after:bottom-0 after:left-0 focus:after:w-full hover:after:w-full after:transition-all after:duration-300" href="/#values">
+                                    <Link className="uppercase relative after:bg-black after:absolute after:h-1 after:w-0 after:bottom-0 after:left-0 hover:after:w-full after:transition-all after:duration-300" href="/#values">
                                         Our Values
                                     </Link>
                                 </div>

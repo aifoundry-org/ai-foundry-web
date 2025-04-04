@@ -18,7 +18,7 @@ export default function ArticleThumbnail({article, isFeaturedArticle = false}: A
     return (
         <div onClick={() => {
             window.location.href = `/blog/${slug}`
-        }} key={id} className={`flex flex-col w-full h-full ${isFeaturedArticle ? 'sm:col-start-1 sm:col-end-3' : ''}`}>
+        }} key={id} className={`flex flex-col w-full h-full cursor-pointer ${isFeaturedArticle ? 'sm:col-start-1 sm:col-end-3' : ''}`}>
             <div className={`flex flex-row items-center justify-between mb-[1.675vw] h-[21.4rem] overflow-hidden`}>
                 {coverImage ? 
                     <Image width={389} height={214} src={getStrapiMediaUrl(coverImage.url)} className='w-full h-full border-2 border-black rounded-lg object-cover object-top' alt="cover" /> : 

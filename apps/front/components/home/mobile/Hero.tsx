@@ -15,16 +15,16 @@ export default function Hero() {
             <div className='relative flex flex-col w-full bg-sand'>
                 <div className='relative w-[100vw] h-[72vw] flex flex-col gap-y-[6vw]'>
                     <FadeIn delay={0.75} className='relative w-full h-full'>
-                        <div className='absolute w-fit top-0 left-0'>
+                        <div className='absolute w-[73.05vw] top-0 left-0'>
                             <ImageWrapper src={IMGCircle.src} alt='Circle' />
                         </div>
-                        <div className='absolute w-fit bottom-[13.5vw] left-[9.5vw]'>
+                        <div className='absolute w-[21.1vw] bottom-[13.5vw] left-[9.5vw]'>
                             <ImageWrapper src={IMGPluses.src} alt='Pluses' />
                         </div>
-                        <div className='absolute w-fit top-0 right-0'>
+                        <div className='absolute w-[19.47vw] top-0 right-0'>
                             <ImageWrapper src={IMGPunchCard.src} alt='Punch card' />
                         </div>
-                        <div className='absolute w-fit bottom-[10.5vw] right-[10vw]'>
+                        <div className='absolute w-[11.75vw] bottom-[11vw] right-[10vw]'>
                             <ImageWrapper src={IMGArrow.src} alt='Arrow' />
                         </div>
                     </FadeIn>
