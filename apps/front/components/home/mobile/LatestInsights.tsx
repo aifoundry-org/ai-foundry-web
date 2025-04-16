@@ -16,7 +16,6 @@ import 'swiper/css';
 import 'swiper/css/navigation';
 import { getLastArticles } from '@/backend/blog/actions';
 import { StrapiArticle } from '@/libs/litebox-lib/types/strapi/strapiBlog';
-import getStrapiMediaUrl from '@/utils/getStrapiMediaUrl';
 import ArticleTag from '@/components/common/mobile/ArticleTag';
 import ImageWrapper from '@/components/common/universal/ImageWrapper';
 
@@ -59,7 +58,7 @@ export default function LatestInsights() {
                 </h3>
             </FadeUp>
             <FadeUp className='w-full h-fit mb-[8.55vw]'>
-                <Button as={Link} href="/blog" variant='primary' content='Visit our blog' />
+                <Button target='_blank' as={Link} href="https://aifoundryorg.substack.com/" variant='primary' content='Visit our blog' />
             </FadeUp>
             <FadeUp className='flex flex-col w-full h-full items-center justify-center'>
                 {articles && articles.length > 0 && <>
@@ -81,7 +80,7 @@ export default function LatestInsights() {
                                 <div className='flex flex-row items-center justify-center mb-[7vw]'>
                                     {article.coverImage ? 
                                         <div className='border-2 border-black rounded-lg'>
-                                            <ImageWrapper src={getStrapiMediaUrl(article.coverImage.url)} alt='Cover image' />
+                                            <ImageWrapper src={article.coverImage.url} alt='Cover image' />
                                         </div> : 
                                         <div className='flex w-full h-[49.1vw] border-2 border-black rounded-lg text-center justify-center items-center text-[8vw] uppercase'>No cover image</div>
                                     }
@@ -107,7 +106,7 @@ export default function LatestInsights() {
                             <Button variant='secondary' svg='scroll-left' />
                         </div>
                         <div className='flex basis-[80%] justify-center'>
-                            <Button as={Link} href={`/blog/${articles[currentIndex].slug}`} variant='secondary' content='Read more' />
+                            <Button as={Link} href={`${articles[currentIndex].slug}`} variant='secondary' content='Read more' />
                         </div>
                         <div ref={buttonNextRef} className='flex basis-[10%] justify-end'>
                             <Button variant='secondary' svg='scroll-right' />

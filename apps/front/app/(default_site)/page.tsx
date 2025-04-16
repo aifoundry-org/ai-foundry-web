@@ -13,9 +13,6 @@ import CommunityMobile from '@/components/home/mobile/Community'
 import LatestInsightsDesktop from '@/components/home/desktop/LatestInsights'
 import LatestInsightsMobile from '@/components/home/mobile/LatestInsights'
 
-import OurCompanyDividerDesktop from '@/components/home/desktop/OurCompanyDivider'
-import OurCompanyDividerMobile from '@/components/home/mobile/OurCompanyDivider'
-
 import VisionMissionDesktop from '@/components/home/desktop/VisionMission'
 import VisionMissionMobile from '@/components/home/mobile/VisionMission'
 
@@ -49,9 +46,6 @@ export default function Page() {
 
         <LatestInsightsDesktop />
         <LatestInsightsMobile />
-
-        <OurCompanyDividerDesktop />
-        <OurCompanyDividerMobile />
 
         <VisionMissionDesktop />
         <VisionMissionMobile />

@@ -22,7 +22,7 @@ export const getArticles = async (search?: string, tags?: string[], offset = 0) 
     }
 };
 
-export const getLastArticles = async (limit = 3) => {
+export const getLastArticles2 = async (limit = 3) => {
     try{
         const articlesQueryParams = getArticlesQueryParams(undefined, undefined, 0, limit);
         const articles = await fetchStrapi<StrapiArticle[]>(`/articles?${articlesQueryParams}`);
@@ -32,6 +32,40 @@ export const getLastArticles = async (limit = 3) => {
             data: [] as StrapiArticle[]
         };
     }
+};
+
+export const getLastArticles = async (limit = 3) => {
+    return {
+        data: [
+        {
+            id: 0,
+            slug: 'https://aifoundryorg.substack.com/p/productionizing-ai-three-layers-of',
+            title: 'Three Layers of Models Production Stack',
+            coverImage: {url: "https://substackcdn.com/image/fetch/f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fafe6b616-21d2-42af-8b27-6853fdeee1bd_1260x900.heic"} as StrapiMedia,
+            authors: [{name: "Avi Deitcher"}] as StrapiAuthor[],
+            date: '2025-01-12',
+            tags: [{id:"tag0.0.id", name:"AI Plumbers"}, {id:"tag0.1.id", name:"Open Source"}] as StrapiTag[],
+        },
+        {
+            id: 1,
+            slug: 'https://aifoundryorg.substack.com/p/productionizing-ai-three-layers-of',
+            title: 'Three Layers of Models Production Stack',
+            coverImage: {url: "https://substackcdn.com/image/fetch/f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fafe6b616-21d2-42af-8b27-6853fdeee1bd_1260x900.heic"} as StrapiMedia,
+            authors: [{name: "Avi Deitcher"}] as StrapiAuthor[],
+            date: '2025-01-12',
+            tags: [{id:"tag0.0.id", name:"FOSDEM"}, {id:"tag0.1.id", name:"QUANTIZATION"}] as StrapiTag[],
+        },
+        {
+            id: 2,
+            slug: 'https://aifoundryorg.substack.com/p/productionizing-ai-three-layers-of',
+            title: 'Three Layers of Models Production Stack',
+            coverImage: {url: "https://substackcdn.com/image/fetch/f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fafe6b616-21d2-42af-8b27-6853fdeee1bd_1260x900.heic"} as StrapiMedia,
+            authors: [{name: "Avi Deitcher"}] as StrapiAuthor[],
+            date: '2025-01-12',
+            tags: [{id:"tag0.0.id", name:"HEROES"}] as StrapiTag[],
+        }
+        ] as StrapiArticle[]
+    };
 };
 
 export const getArticle = async (slug: string) => {

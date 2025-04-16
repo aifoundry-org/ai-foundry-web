@@ -10,15 +10,12 @@ export default function Header() {
     const hideSelf = path.includes('blog') || path.includes('terms-and-conditions');
     
     return (
-        <div className={`${hideSelf && 'hidden'} flex text-sand justify-center`}>
-            <Link className='flex text-center my-[1.35vw]' target="_blank" href="https://aifoundry.org/fosdem-2025-low-level-ai-engineering-hacking-dev-room">
-                <div className='flex items-center font-host-grotesk 
-                    xs:flex-row flex-col
-                    xs:gap-1 sm:gap-1 gap-0
-                    xs:text-[1.14vw] text-[3.8vw]
-                '>
-                    <div className='flex'>
-                        AIFoundry.org is sponsoring the &quot;Low-Level AI
+        <div className={`${hideSelf && 'hidden'} flex flex-row text-sand justify-center p-4`}>
+            <Link className='flex flex-col font-host-grotesk text-center items-center my-[1.35vw] text-[1.4rem]' target="_blank" href="https://fosdem.org/2025/schedule/track/ai/">
+                <div className='flex'>AIFoundry.org hosted &quot;Low-Level AI Engineering & Hacking&quot; Dev Room at FOSDEM. Click to watch the talks!</div>
+                <div className='flex items-center'>Find out more! 
+                    <div className='inline-block ml-[2.15vw] w-[3.735vw]'>
+                        <ImageWrapper src={IMGHeaderIconArrowUpRight.src} alt="Arrow up right" />
                     </div>
                     <div className='flex'>
                         Engineering & Hacking&quot; Dev Room at FOSDEM.
