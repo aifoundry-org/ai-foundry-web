@@ -166,6 +166,14 @@ ol {
   fill: #FCCE90;
 }
 
+.github-icon path {
+  fill: black;
+  transition: fill 0.2s;
+}
+.github-icon:hover path {
+  fill: #FCCE90;
+}
+
 .linkedin-icon path {
   fill: black;
   transition: fill 0.2s;

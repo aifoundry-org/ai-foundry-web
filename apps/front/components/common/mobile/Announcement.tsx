@@ -17,6 +17,13 @@ export default function Header() {
                     <div className='inline-block ml-[2.15vw] w-[3.735vw]'>
                         <ImageWrapper src={IMGHeaderIconArrowUpRight.src} alt="Arrow up right" />
                     </div>
+                    <div className='flex'>
+                        Engineering & Hacking&quot; Dev Room at FOSDEM.
+                    </div>
+                    <div className='flex items-center'>
+                        Find out more! 
+                        <ImageWrapper className='ml-[0.56vw] my-auto !w-[4vw]' src={IMGHeaderIconArrowUpRight.src} alt="Arrow up right" />
+                    </div>  
                 </div>
             </Link>
         </div>

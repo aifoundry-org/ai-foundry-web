@@ -38,13 +38,13 @@ export default function LatestInsights() {
 
     return (
         <div id='blog-mobile' className='xs:hidden flex flex-col pt-[30vw] pb-[7.7vw] relative w-full h-fit px-[5.6vw]'>
-            <FadeUp className='absolute w-[24vw] top-[5.5vw] left-0 -z-[1]'>
+            <FadeUp className='absolute w-[9rem] top-[5.5vw] left-0 -z-[1]'>
                 <ImageWrapper src={IMGGraffiti.src} alt='Graffiti' />
             </FadeUp>
             <FadeUp className='relative'>
                 <h2 className='font-black font-dharma-gothic-e text-[12.8vw] leading-[10.7vw] uppercase'>
                     Explore Our Latest<br/>Insights
-                    <div className='absolute flex -z-[1] -top-[16.5vw] -left-[6vw]'>
+                    <div className='absolute flex -z-[1] -top-[16.5vw] -left-[6vw] w-[35.5rem]'>
                         <ImageWrapper src={IMGBackground.src} alt="Latest Insights background" />
                     </div>
                 </h2>
