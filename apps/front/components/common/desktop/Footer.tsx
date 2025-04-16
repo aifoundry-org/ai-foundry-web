@@ -8,9 +8,9 @@ import IMGErrors from '@/public/imgs/footer/errorsMobile.webp'
 import IMGBucket from '@/public/imgs/footer/bucket.webp'
 import IMGArrows from '@/public/imgs/footer/arrowsMobile.webp'
 import IMGDots from '@/public/imgs/footer/dots.webp'
-import SVGInstagramIcon from '@/public/svgs/footer/Instagram'
-import SVGLinkedinIcon from '@/public/svgs/footer/Linkedin'
-import SVGYoutubeIcon from '@/public/svgs/footer/Youtube'
+import SVGGithubIcon from '@/public/svgs/common/Github'
+import SVGLinkedinIcon from '@/public/svgs/common/Linkedin'
+import SVGYoutubeIcon from '@/public/svgs/common/Youtube'
 import IMGGraffiti from '@/public/imgs/footer/graffiti.webp'
 import IMGCode from '@/public/imgs/footer/code.webp'
 import ImageWrapper from '../universal/ImageWrapper';
@@ -51,21 +51,21 @@ export default function Footer(){
                 </FadeIn>
                 <div className='flex flex-row font-bold mt-[3.89vw] mb-[2.78vw] text-[1.395vw] leading-[1.395vw] uppercase justify-between'>
                     <FadeIn delay={0.5} className='flex flex-row gap-[3.34vw]'>
-                        <Link className='relative after:bg-black after:absolute after:h-1 after:w-0 after:-bottom-[0.5vw] after:left-0 focus:after:w-full hover:after:w-full after:transition-all after:duration-300' href='/#projects'>Projects</Link>
-                        <Link className='relative after:bg-black after:absolute after:h-1 after:w-0 after:-bottom-[0.5vw] after:left-0 focus:after:w-full hover:after:w-full after:transition-all after:duration-300' href='/#events'>Events</Link>
-                        <Link className='relative after:bg-black after:absolute after:h-1 after:w-0 after:-bottom-[0.5vw] after:left-0 focus:after:w-full hover:after:w-full after:transition-all after:duration-300' href='/#blog'>Blog</Link>
-                        <Link className='relative after:bg-black after:absolute after:h-1 after:w-0 after:-bottom-[0.5vw] after:left-0 focus:after:w-full hover:after:w-full after:transition-all after:duration-300' href='/#values'>Our Values</Link>
+                        <Link className='relative after:bg-black after:absolute after:h-1 after:w-0 after:-bottom-[0.5vw] after:left-0 hover:after:w-full after:transition-all after:duration-300' href='/#projects'>Projects</Link>
+                        <Link className='relative after:bg-black after:absolute after:h-1 after:w-0 after:-bottom-[0.5vw] after:left-0 hover:after:w-full after:transition-all after:duration-300' href='/#events'>Events</Link>
+                        <Link className='relative after:bg-black after:absolute after:h-1 after:w-0 after:-bottom-[0.5vw] after:left-0 hover:after:w-full after:transition-all after:duration-300' href='/#blog'>Blog</Link>
+                        <Link className='relative after:bg-black after:absolute after:h-1 after:w-0 after:-bottom-[0.5vw] after:left-0 hover:after:w-full after:transition-all after:duration-300' href='/#values'>Our Values</Link>
                     </FadeIn>
                     <FadeIn delay={0.5} className='flex flex-row gap-[3.34vw]'>
-                        <Link className='relative after:bg-black after:absolute after:h-1 after:w-0 after:-bottom-[0.5vw] after:left-0 focus:after:w-full hover:after:w-full after:transition-all after:duration-300 z-[1]' href='/terms-and-conditions#privacy-policy'>Privacy Policy</Link>
-                        <Link className='relative after:bg-black after:absolute after:h-1 after:w-0 after:-bottom-[0.5vw] after:left-0 focus:after:w-full hover:after:w-full after:transition-all after:duration-300' href='/terms-and-conditions'>Terms Of Service</Link>
+                        <Link className='relative after:bg-black after:absolute after:h-1 after:w-0 after:-bottom-[0.5vw] after:left-0 hover:after:w-full after:transition-all after:duration-300 z-[1]' href='/terms-and-conditions#privacy-policy'>Privacy Policy</Link>
+                        <Link className='relative after:bg-black after:absolute after:h-1 after:w-0 after:-bottom-[0.5vw] after:left-0 hover:after:w-full after:transition-all after:duration-300' href='/terms-and-conditions'>Terms Of Service</Link>
                     </FadeIn>
                 </div>
                 <div className='relative flex flex-row justify-between pb-[6.67vw]'>
                     <div className='flex flex-row gap-[2.78vw]'>
                         <FadeIn delay={0.5}>
-                            <Link target='_blank' href='https://www.instagram.com/ai.foundry/'>
-                                <SVGInstagramIcon className='w-[1.67vw] h-[1.67vw] instagram-icon' />
+                            <Link target='_blank' href='https://github.com/aifoundry-org'>
+                                <SVGGithubIcon className='w-[1.67vw] h-[1.67vw] github-icon' />
                             </Link>
                         </FadeIn>
                         <FadeIn delay={0.5}>

@@ -11,9 +11,9 @@ import Button from '@/libs/litebox-lib/ui/Button/Button';
 import LazyMotion from '@/components/common/universal/LazyAnimation'
 import IMGAIFoundyLogoSideMenuMobile from '@/public/imgs/sideMenu/AIFoundryLogoMobile.webp'
 import IMGCloseButton from '@/public/imgs/sideMenu/closeButton.webp'
-import IMGInstagramIcon from '@/public/imgs/footer/instagramIconMobile.webp'
-import IMGLinkedinIcon from '@/public/imgs/footer/linkedinIconMobile.webp'
-import IMGYoutubeIcon from '@/public/imgs/footer/youtubeIconMobile.webp'
+import SVGGithubIcon from '@/public/svgs/common/Github'
+import SVGLinkedinIcon from '@/public/svgs/common/Linkedin'
+import SVGYoutubeIcon from '@/public/svgs/common/Youtube'
 import { usePathname } from 'next/navigation';
 import ImageWrapper from '../universal/ImageWrapper';
 
@@ -174,20 +174,14 @@ export default function NavBar({removeTopBorders = false}) {
                             <Button target='_blank' as={Link} href='https://discord.com/invite/WNKvkefkUs' variant='primary' content='Join our discord' svg='discord' />
                         </div>
                         <div className='flex flex-row gap-[8.55vw] xs:gap-[2vw] mt-[12.27vw] xs:mt-[5vw]'>
-                            <Link target='_blank' href='https://www.instagram.com/ai.foundry/'>
-                                <div className='w-[6.4vw] h-[6.4vw] xs:w-[5vw] xs:h-[5vw]'>
-                                    <ImageWrapper src={IMGInstagramIcon.src} alt='Instagram icon' />
-                                </div>
+                            <Link target='_blank' href='https://github.com/aifoundry-org'>
+                                <SVGGithubIcon className='w-[6.4vw] h-[6.4vw] xs:w-[5vw] xs:h-[5vw]' />
                             </Link>
                             <Link target='_blank' href='https://www.linkedin.com/company/aifoundry-org'>
-                                <div className='w-[6.4vw] h-[6.4vw] xs:w-[5vw] xs:h-[5vw]'>
-                                    <ImageWrapper src={IMGLinkedinIcon.src} alt='Linkedin icon' />
-                                </div>
+                                <SVGLinkedinIcon className='w-[6.4vw] h-[6.4vw] xs:w-[5vw] xs:h-[5vw]' />
                             </Link>
                             <Link target='_blank' href='https://www.youtube.com/channel/UCGktaVJ19Ze8J9auyD5IoDQ'>
-                                <div className='w-[6.4vw] h-[6.4vw] xs:w-[5vw] xs:h-[5vw]'>
-                                    <ImageWrapper src={IMGYoutubeIcon.src} alt='Youtube icon' />
-                                </div>
+                                <SVGYoutubeIcon className='w-[6.4vw] h-[6.4vw] xs:w-[5vw] xs:h-[5vw]' />
                             </Link>
                         </div>
                         <div className='font-host-grotesk font-normal text-[3.2vw] xs:text-[2vw] leading-[4.8vw] mt-[4.8vw]'>

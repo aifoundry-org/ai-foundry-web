@@ -21,8 +21,8 @@ export interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
 }
 
 const btnVariants: {[key: string]: string } = {
-  primary: 'bg-orange border-black hover:shadow-none hover:translate-x-[4px] hover:translate-y-[4px] focus:shadow-none focus:translate-x-[4px] focus:translate-y-[4px]',
-  secondary: 'bg-sand border-black hover:shadow-none hover:translate-x-[4px] hover:translate-y-[4px] focus:shadow-none focus:translate-x-[4px] focus:translate-y-[4px]',
+  primary: 'bg-orange border-black hover:shadow-none hover:translate-x-[4px] hover:translate-y-[4px]',
+  secondary: 'bg-sand border-black hover:shadow-none hover:translate-x-[4px] hover:translate-y-[4px]',
 };
 
 const svgVariants : {[key: string]: FC<SVGProps<SVGSVGElement>>} = {
@@ -46,18 +46,18 @@ const svgVariants : {[key: string]: FC<SVGProps<SVGSVGElement>>} = {
  * @param svg - Optionally adding a predetermined svg, available svg: 'plus', 'discord', 'github', 'arrow-up-right'
  * @param content - Content of the button
  */
-const Button: FC<ButtonProps> = ({as: Component = 'button', href = '', variant = 'primary', className = '', svg = '', content = '', noShadow = false, svgProps = '', target = '', ...props }) => {
+const Button: FC<ButtonProps> = ({as: Component = 'button', href = '', variant = 'primary', className = '', svg = '', content = '', noShadow = false, target = '', ...props }) => {
   // #F6EFE4 = sand color
-  const essentialStyles = `flex flex-row items-center align-middle justify-between ${noShadow ? 'shadow-[4px_4px_0_0_#F6EFE4]' : 'shadow-[4px_4px_0_0_black]'} w-fit h-fit text-[black] font-bold uppercase border border-2 whitespace-nowrap rounded-md transition-all ease-in-out focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#22D3EE] disabled:opacity-50 disabled:cursor-not-allowed cursor-pointer select-none`;
+  const essentialStyles = `flex flex-row items-center align-middle justify-between ${noShadow ? 'shadow-[0.4rem_0.4rem_0_0_#F6EFE4]' : 'shadow-[0.4rem_0.4rem_0_0_black]'} w-fit h-fit text-[black] font-bold uppercase border border-[0.2vw] xs:border-[0.15vw] whitespace-nowrap rounded-md transition-all ease-in-out focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#22D3EE] disabled:opacity-50 disabled:cursor-not-allowed cursor-pointer select-none`;
   let styles = `${essentialStyles} ${btnVariants[variant]}`;
   if(svg !== ''){       // icon present 
     if(content !== ''){ // icon present - content
-      styles += ' px-[1.95rem] py-[0.45rem] sm:px-[1.5rem] sm:py-[0.4rem] md:px-[1.5rem] md:py-[0rem] lg:px-[2.51rem] lg:py-[0.7rem] xl:px-[2.51rem] xl:py-[0.7rem] 2xl:px-[2.51rem] 2xl:py-[0.7rem] gap-x-[0.8rem]';
+      styles += ' px-[5.075vw] py-[1.2vw] xs:px-[1.3vw] xs:py-[0.1vw] sm:px-[1.75vw] sm:py-[0.49vw] md:px-[1.75vw] md:py-[0.49vw] lg:px-[1.75vw] lg:py-[0.49vw] xl:px-[1.75vw] xl:py-[0.49vw] 2xl:px-[1.75vw] 2xl:py-[0.49vw] gap-x-[0.8rem]';
     } else {            // icon present - no content
-      styles += ' p-[0.7rem]';
+      styles += ' p-[0.3rem]';
     }
   } else {        // no icon present - content
-    styles += ' px-[1.95rem] py-[0.45rem] sm:px-[1.5rem] sm:py-[0.4rem] md:px-[1.5rem] md:py-[0rem] lg:px-[2.51rem] lg:py-[0.7rem] xl:px-[2.51rem] xl:py-[0.7rem] 2xl:px-[2.51rem] 2xl:py-[0.7rem]';
+    styles += ' px-[1.95rem] py-[0.45rem] xs:px-[1.75vw] xs:py-[0.49vw] sm:px-[1.75vw] sm:py-[0.49vw] md:px-[1.75vw] md:py-[0.49vw] lg:px-[1.75vw] lg:py-[0.49vw] xl:px-[1.75vw] xl:py-[0.49vw] 2xl:px-[1.75vw] 2xl:py-[0.49vw] gap-x-[0.8rem]';
   }
 
   styles += ` ${className}`;
@@ -75,12 +75,18 @@ const Button: FC<ButtonProps> = ({as: Component = 'button', href = '', variant =
     SVGIcon = svgVariants[svg];
   }
 
-  const labelStyle = `flex text-[1.8rem] xs:text-[1.8rem] sm:text-[2rem] md:text-[2rem] lg:text-[2rem] xl:text-[2rem] 2xl:text-[2rem] items-center justify-center`
-
+  const labelStyle = `flex text-[1.8rem] xs:text-[1.6vw] sm:text-[1.4vw] md:text-[1.45vw] lg:text-[1.45vw] xl:text-[1.45vw] 2xl:text-[1.45vw] items-center justify-center`
+  
   return (
     <Component {...componentProps}>
-      {content !== '' &&  <div className={labelStyle} dangerouslySetInnerHTML={{__html: content}} /> }
-      {SVGIcon && <div className='flex w-full justify-center items-center'><SVGIcon /></div>}
+      {content !== '' &&  <p className={labelStyle} dangerouslySetInnerHTML={{__html: content}} /> }
+      {SVGIcon && 
+        <div className='flex justify-center items-center
+          xs:w-[2.5vw] sm:w-[1.71vw] w-[8vw]
+          xs:h-[2.5vw] sm:h-[1.71vw] h-[8vw]
+        '>
+          <SVGIcon />
+        </div>}
     </Component>
   );
 };

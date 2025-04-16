@@ -12,7 +12,7 @@ import ImageWrapper from '@/components/common/universal/ImageWrapper'
 export default function VisionMission(){
     return (
         <div className='md:hidden flex flex-col relative w-full h-fit my-[14.2vw] px-[5.6vw]'>
-            <FadeIn className='absolute top-0 right-0 z-[1]'>
+            <FadeIn className='absolute top-0 right-0 z-[1] w-[11rem]'>
                 <ImageWrapper src={IMGCircle.src} alt="Vision & Mission Section" />
             </FadeIn>
             <FadeUp delay={0.5} className='relative mt-[11vw] z-0'>

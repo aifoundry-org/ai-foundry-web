@@ -2,9 +2,9 @@
 
 import Link from 'next/link'
 import { StrapiAuthor, StrapiContentNavigation } from '@/libs/litebox-lib/types/strapi/strapiBlog';
-import IMGInstagramIcon from '@/public/imgs/footer/instagramIconMobile.webp'
-import IMGLinkedinIcon from '@/public/imgs/footer/linkedinIconMobile.webp'
-import IMGYoutubeIcon from '@/public/imgs/footer/youtubeIconMobile.webp'
+import SVGInstagramIcon from '@/public/svgs/common/Instagram'
+import SVGLinkedinIcon from '@/public/svgs/common/Linkedin'
+import SVGYoutubeIcon from '@/public/svgs/common/Youtube'
 import getStrapiMediaUrl from '@/utils/getStrapiMediaUrl';
 import ImageWrapper from '@/components/common/universal/ImageWrapper';
 import { Dispatch, SetStateAction } from 'react';
@@ -36,19 +36,13 @@ export default function Author({author, contentNavigation, currentHeaderId, onCu
                 <h3 className='normal-case font-host-grotesk font-normal text-[1.4rem] leading-[2.1rem] mt-10 text-[#222222]'>{description}</h3>
                 <div className='flex flex-row gap-[2.4rem] mt-8 border-black border-b-2 pb-[4rem]'>
                     {instagram_link && <Link target='_blank' href={instagram_link}>
-                        <div className='w-[2.4rem] h-[2.4rem] blogSocialIcon'>
-                            <ImageWrapper src={IMGInstagramIcon.src} alt='Instagram icon' />
-                        </div>
+                        <SVGInstagramIcon className='w-[2.4rem] h-[2.4rem] blogSocialIcon' />
                     </Link>}
                     {linkedin_link && <Link target='_blank' href={linkedin_link}>
-                        <div className='w-[2.4rem] h-[2.4rem] blogSocialIcon'>
-                            <ImageWrapper src={IMGLinkedinIcon.src} alt='Linkedin icon' />
-                        </div>
+                        <SVGLinkedinIcon className='w-[2.4rem] h-[2.4rem] blogSocialIcon' />
                     </Link>}
                     {youtube_link && <Link target='_blank' href={youtube_link}>
-                        <div className='w-[2.4rem] h-[2.4rem] blogSocialIcon'>
-                            <ImageWrapper src={IMGYoutubeIcon.src} alt='Youtube icon' />
-                        </div>
+                        <SVGYoutubeIcon className='w-[2.4rem] h-[2.4rem] blogSocialIcon' />
                     </Link>}
                 </div>
                 {contentNavigation && contentNavigation.length > 0 &&

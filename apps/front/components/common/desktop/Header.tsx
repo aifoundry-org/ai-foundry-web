@@ -3,7 +3,7 @@ import Announcement from './Announcement';
 
 export default function Header() {
     return (
-        <header className='hidden md:block'>
+        <header className='xs:block hidden'>
             <div className='flex flex-col w-full bg-black'>
                 <Announcement />
                 <NavBar />

@@ -7,9 +7,9 @@ import IMGLogo from '@/public/imgs/footer/logoMobile.webp'
 import IMGErrors from '@/public/imgs/footer/errorsMobile.webp'
 import IMGBucket from '@/public/imgs/footer/bucketMobile.webp'
 import IMGArrows from '@/public/imgs/footer/arrowsMobile.webp'
-import IMGInstagramIcon from '@/public/imgs/footer/instagramIconMobile.webp'
-import IMGLinkedinIcon from '@/public/imgs/footer/linkedinIconMobile.webp'
-import IMGYoutubeIcon from '@/public/imgs/footer/youtubeIconMobile.webp'
+import SVGGithubIcon from '@/public/svgs/common/Github'
+import SVGLinkedinIcon from '@/public/svgs/common/Linkedin'
+import SVGYoutubeIcon from '@/public/svgs/common/Youtube'
 import IMGGraffiti from '@/public/imgs/footer/graffitiMobile.webp'
 import IMGCode from '@/public/imgs/footer/codeMobile.webp'
 import ImageWrapper from '../universal/ImageWrapper';
@@ -54,24 +54,18 @@ export default function Footer(){
                 <div className='relative flex flex-row justify-between pb-[21vw]'>
                     <div className='flex flex-row gap-[8.55vw]'>
                         <FadeIn delay={0.5}>
-                            <Link target='_blank' href='https://www.instagram.com/ai.foundry/'>
-                                <div className='w-[6.4vw] h-[6.4vw]'>
-                                    <ImageWrapper src={IMGInstagramIcon.src} alt='Instagram icon' />
-                                </div>
+                            <Link target='_blank' href='https://github.com/aifoundry-org'>
+                                <SVGGithubIcon className='w-[6.4vw] h-[6.4vw]' />
                             </Link>
                         </FadeIn>
                         <FadeIn delay={0.5}>
                             <Link target='_blank' href='https://www.linkedin.com/company/aifoundry-org'>
-                                <div className='w-[6.4vw] h-[6.4vw]'>
-                                    <ImageWrapper src={IMGLinkedinIcon.src} alt='Linkedin icon' />
-                                </div>
+                                <SVGLinkedinIcon className='w-[6.4vw] h-[6.4vw]' />
                             </Link>
                         </FadeIn>
                         <FadeIn delay={0.5}>
                             <Link target='_blank' href='https://www.youtube.com/channel/UCGktaVJ19Ze8J9auyD5IoDQ'>
-                                <div className='w-[6.4vw] h-[6.4vw]'>
-                                    <ImageWrapper src={IMGYoutubeIcon.src} alt='Youtube icon' />
-                                </div>
+                                <SVGYoutubeIcon className='w-[6.4vw] h-[6.4vw]' />
                             </Link>
                         </FadeIn>
                     </div>
