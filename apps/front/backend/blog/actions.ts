@@ -40,11 +40,11 @@ export const getLastArticles = async (limit = 3) => {
         {
             id: 0,
             slug: 'https://aifoundryorg.substack.com/p/roman-shaposhnik-attention-transformers',
-            title: ' ̶A̶t̶t̶e̶n̶t̶i̶o̶n̶ T̶r̶a̶n̶s̶f̶o̶r̶m̶e̶r̶s̶ ̶ llama.cpp is all you need',
+            title: 'llama.cpp is all you need?',
             coverImage: {url: "https://substackcdn.com/image/fetch/w_1100,h_618,c_fill,f_auto,q_auto:good,fl_progressive:steep/l_play_button_usfui2,w_144,e_colorize:0/https%3A%2F%2Fsubstack-video.s3.amazonaws.com%2Fvideo_upload%2Fpost%2F161295964%2Fb2c7213f-fb5b-4992-8846-de95e2dc7245%2Ftranscoded-1744972290.png"} as StrapiMedia,
             authors: [{name: "Roman Shaposhnik"}] as StrapiAuthor[],
             date: '2025-04-21',
-            tags: [{id:"tag0.0.id", name:"AI Plumbers"}, {id:"tag0.1.id", name:"Open Source"}, {id:"tag0.2.id", name:"HW"}] as StrapiTag[],
+            tags: [{id:"tag0.0.id", name:"AI Plumbers"}, {id:"tag0.1.id", name:"Community"}, {id:"tag0.2.id", name:"HW"}] as StrapiTag[],
         },
         {
             id: 1,
