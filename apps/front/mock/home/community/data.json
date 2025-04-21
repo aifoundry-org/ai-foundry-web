@@ -1,5 +1,5 @@
 {
-    "february": [{
+    "Past": [{
         "title": "FOSDEM fringe:<br/>AI plumbers conference",
         "author": "Tanya Dadasheva & Roman Shaposhnik",
         "date": "Feb 3, 2025 Monday",
@@ -7,6 +7,20 @@
         "location": "Gent, Belgium",
         "href": "https://lu.ma/fx9kupug"
     }],
-    "march": [],
-    "april": []
+    "Upcoming": [{
+        "title": "Berlin Buzzwords:<br/>AI plumbers conference",
+        "author": "Tanya Dadasheva & Roman Shaposhnik",
+        "date": "June 15, 2025 Sunday",
+        "time": "9:00 AM - 5:00 PM GMT+1",
+        "location": "Berlin, Germany",
+        "href": "https://lu.ma/vqx423ct"
+    }],
+    "Compiling": [{
+        "title": "Community Over Code:<br/>AI plumbers conference",
+        "author": "Tanya Dadasheva & Roman Shaposhnik",
+        "date": "September 13, 2025 Saturday",
+        "time": "9:00 AM - 5:00 PM GMT-6",
+        "location": "Minneapolis, Minnesota, USA",
+        "href": "https://communityovercode.org/call-for-presentations/"
+    }]
 }
