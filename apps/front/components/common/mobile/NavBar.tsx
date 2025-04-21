@@ -185,7 +185,7 @@ export default function NavBar({removeTopBorders = false}) {
                             </Link>
                         </div>
                         <div className='font-host-grotesk font-normal text-[3.2vw] xs:text-[2vw] leading-[4.8vw] mt-[4.8vw]'>
-                            © 2024 AI Foundry. All rights reserved.
+                            © 2025 AI Foundry. All rights reserved.
                         </div>
                     </div>
                 </m.div>

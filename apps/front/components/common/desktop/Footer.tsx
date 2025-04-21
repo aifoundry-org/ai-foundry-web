@@ -80,7 +80,7 @@ export default function Footer(){
                         </FadeIn>
                     </div>
                     <FadeIn delay={0.5} className='text-end font-host-grotesk font-normal text-[0.84vw] leading-[1.25vw]'>
-                        © 2024 AI Foundry. All rights reserved.
+                        © 2025 AI Foundry. All rights reserved.
                     </FadeIn>
                     <FadeIn delay={0.5} className='mix-blend-plus-lighter absolute w-[54.725vw] bottom-0 z-0 left-[24vw]'>
                         <ImageWrapper src={IMGGraffiti.src} alt='Graffiti' />

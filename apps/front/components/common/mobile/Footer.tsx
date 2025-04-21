@@ -70,7 +70,7 @@ export default function Footer(){
                         </FadeIn>
                     </div>
                     <FadeIn delay={0.5} className='flex flex-row text-end font-host-grotesk font-normal text-[3.2vw] leading-[4.8vw]'>
-                        © 2024 AI Foundry.<br/>
+                        © 2025 AI Foundry.<br/>
                         All rights reserved.
                     </FadeIn>
                     <FadeIn delay={0.5} className='mix-blend-plus-lighter absolute w-[83.2vw] bottom-0 left-[4.5vw]'>
