@@ -10,7 +10,8 @@ import IMGStarFull from '@/public/imgs/home/testimonials/starFull.webp';
 import IMGStarEmpty from '@/public/imgs/home/testimonials/starEmpty.webp';
 import cards from '@/mock/home/testimonials/data.json';
 import SVGCompanyWebflow from '@/public/svgs/home/testimonials/companyWebflow';
-import IMGDeveloper1 from '@/public/imgs/home/testimonials/developer1.webp';
+import IMGDeveloper1 from '@/public/imgs/home/testimonials/sergy.webp'
+import companyLogo from '@/public/imgs/home/testimonials/cybergyzer.webp'
 
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Pagination, Navigation } from 'swiper/modules';
@@ -41,6 +42,7 @@ export default function Testimonials() {
   };
 
   cards[0].avatar = IMGDeveloper1.src;
+  cards[0].companyLogo = companyLogo.src;
 
   return (
     <div className='md:hidden flex flex-col pt-[18.35vw] pb-[7.7vw] relative w-full h-fit'>
@@ -85,8 +87,8 @@ export default function Testimonials() {
                   <div className='flex flex-col font-host-grotesk w-full'>
                     <div className='font-bold text-[3.75vw] leading-[5.6vw] select-none'>{el.author}</div>
                     <div className='font-normal text-[3.75vw] leading-[5.6vw] select-none'>{el.position}</div>
-                    <div className='w-[21.9vw] h-[8.6vw] select-none'>
-                      <SVGCompanyWebflow />
+                    <div className='w-[5.5rem]'>
+                       <ImageWrapper src={el.companyLogo} alt='Logo' />
                     </div>
                   </div>
                 </div>
