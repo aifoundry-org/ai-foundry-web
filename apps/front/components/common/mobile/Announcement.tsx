@@ -10,7 +10,7 @@ export default function Header() {
     return (
         <div className={`${hideSelf && 'hidden'} flex flex-row text-sand justify-center p-4`}>
             <Link className='flex flex-col font-host-grotesk text-center items-center my-[1.35vw] text-[1.4rem]' target="_blank" href="https://fosdem.org/2025/schedule/track/ai/">
-                <div className='flex'>AIFoundry.org hosted &quot;Low-Level AI Engineering & Hacking&quot; Dev Room at FOSDEM. Click to watch the talks!</div>
+                <div className='flex'>AI Plumbers Devroom has been accepted for FOSDEM 2026! Submit your talk now before November 31st!</div>
             </Link>
         </div>
     )
