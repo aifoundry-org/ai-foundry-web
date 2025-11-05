@@ -16,6 +16,11 @@ const nextConfig: NextConfig = {
       },
       {
         protocol: 'https',
+        hostname: 'blog.aifoundry.org',
+        pathname: '/**',
+      },
+      {
+        protocol: 'https',
         hostname: 'substackcdn.com',
         pathname: '/**',
       },

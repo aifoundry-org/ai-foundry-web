@@ -43,7 +43,7 @@ export default function LatestInsights() {
             </FadeUp>
             <FadeUp className='relative'>
                 <h2 className='font-black font-dharma-gothic-e text-[12.8vw] leading-[10.7vw] uppercase'>
-                    Explore Our Latest<br/>Insights
+                    Explore AI Plumbers<br/>Insights
                     <div className='absolute flex -z-[1] -top-[16.5vw] -left-[6vw] w-[35.5rem]'>
                         <ImageWrapper src={IMGBackground.src} alt="Latest Insights background" />
                     </div>
@@ -53,7 +53,7 @@ export default function LatestInsights() {
                 <h3 className='font-normal font-host-grotesk text-[3.75vw] leading-[5.6vw] pt-[4.3vw] pb-[4.275vw] normal-case'>
                     Stay updated with our community-driven content.<br/>
                     Read about past events and access to summaries<br/>
-                    and video replays of prior AI Hack Labs and<br/>
+                    and video replays of prior AI Plumbers Events and<br/>
                     Podcasts.
                 </h3>
             </FadeUp>
