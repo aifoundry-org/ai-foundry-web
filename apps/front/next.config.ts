@@ -2,7 +2,10 @@ import type { NextConfig } from 'next';
 import withBundleAnalyzer from '@next/bundle-analyzer';
 
 const nextConfig: NextConfig = {
+  output: 'export',
+  trailingSlash: true,
   images: {
+    unoptimized: true,
     domains: ['127.0.0.1', 'localhost', 'strapi.ai-foundry.litebox.dev', 'substackcdn.com'],
     formats: ['image/avif', 'image/webp'],
     minimumCacheTTL: 3600,
@@ -36,28 +39,6 @@ const nextConfig: NextConfig = {
   webpack: (config) => {
     config.parallelism = 4;
     return config;
-  },
-  async headers() {
-    return [
-      {
-        source: '/(.*)',
-        headers: [
-          {
-            key: 'Cache-Control',
-            value: 'public, max-age=3600, stale-while-revalidate=60'
-          },
-        ],
-      },
-      {
-        source: '/service-worker.js',
-        headers: [
-          {
-            key: 'Cache-Control',
-            value: 'public, max-age=0, must-revalidate'
-          }
-        ]
-      }
-    ];
   },
 };
 

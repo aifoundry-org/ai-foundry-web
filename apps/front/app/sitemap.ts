@@ -1,6 +1,8 @@
- 
+
 import type { MetadataRoute } from 'next';
 import { getArticles } from '@/backend/blog/actions';
+
+export const dynamic = 'force-static'
 
 const BASE_URL = 'https://aifoundry.org';
 
