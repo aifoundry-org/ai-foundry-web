@@ -15,7 +15,7 @@ import ImageWrapper from '@/components/common/universal/ImageWrapper';
 
 export default function FindOutMore() {
     return (
-        <div className='hidden xs:flex xs:flex-col xs:relative xs:w-full xs:h-[90vw] xs:pt-[4.95vw] overflow-hidden'>
+        <div id='fosdem' className='hidden xs:flex xs:flex-col xs:relative xs:w-full xs:h-[90vw] xs:pt-[4.95vw] overflow-hidden'>
             <LazyMotion>
                 <div className='w-full h-full'>
                     <div className='w-full h-full bg-cover bg-bottom bg-no-repeat' style={{backgroundImage: `url(${IMGBackground.src})`}} />
