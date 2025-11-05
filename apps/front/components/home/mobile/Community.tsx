@@ -44,7 +44,6 @@ export default function Community() {
                                 <CommunityCard 
                                     key={idx}
                                     title={el.title as string}
-                                    author={el.author as string}
                                     date={el.date as string}
                                     time={el.time as string}
                                     location={el.location as string}
