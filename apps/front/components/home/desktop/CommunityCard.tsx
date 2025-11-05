@@ -9,7 +9,6 @@ import ImageWrapper from '@/components/common/universal/ImageWrapper';
 
 export default function CommunityCard({
     title = '',
-    author = '',
     date = '',
     time = '',
     location = '',
