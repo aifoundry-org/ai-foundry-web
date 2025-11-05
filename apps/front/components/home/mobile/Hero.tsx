@@ -36,7 +36,7 @@ export default function Hero() {
                 </div>
                 <FadeUp delay={0.75} className='relative w-full'>
                     <h2 className='text-center text-[1.6rem] px-[2.5rem] font-normal font-host-grotesk normal-case leading-10'>
-                        We are a community of practitioners building an open-source, composable AI ecosystem. Our goal is to reduce the complexity of the AI industry. Join our thriving community and share, collaborate and innovate with us.
+                       Hi there 👋 -- we are a community of practitioners working on open-source shareable building blocks (from silicon to open models) empowering humanity to own its own AI. We bring together hackers in the fields of computer architecture, ASIC design, advanced systems, and neural network compilers. Join our thriving community and share, collaborate and innovate with us!
                     </h2>
                 </FadeUp>
             </div>

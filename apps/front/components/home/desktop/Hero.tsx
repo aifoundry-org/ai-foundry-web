@@ -47,10 +47,12 @@ export default function Hero() {
         </h1>
         <FadeUp delay={0.75}>
           <h2 className='relative font-normal font-host-grotesk text-center text-[1vw] leading-[1.5vw] mt-[4vh] normal-case'>
-            We are a community of practitioners building an open-source,
-            <br /> composable AI ecosystem. Our goal is to reduce the complexity of
-            <br /> the AI industry. Join our thriving community and share, collaborate
-            <br /> and innovate with us.
+            Hi there 👋 -- we are a community of practitioners working on
+            <br /> open-source shareable building blocks (from silicon to open models)
+            <br /> empowering humanity to own its own AI.
+            <br /> We bring together hackers in the fields of computer architecture,
+            <br /> ASIC design, advanced systems, and neural network compilers.
+            <br /> Join our thriving community and share, collaborate and innovate with us!
           </h2>
         </FadeUp>
       </FadeUp>
