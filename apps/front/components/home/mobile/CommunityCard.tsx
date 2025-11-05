@@ -30,11 +30,8 @@ export default function CommunityCard({
     
     return (
         <div className='flex flex-col w-full h-full'>
-            <div className='flex flex-row items-start pb-[2.15vw]'>
+            <div className='flex flex-row items-start pb-[6.45vw]'>
                 <p className='font-dharma-gothic-e font-black leading-[7vw] text-[8.6vw] uppercase'dangerouslySetInnerHTML={{__html:title}} />
-            </div>
-            <div className='flex flex-row items-start pb-[4.3vw]'>
-                <p className='font-host-grotesk font-normal leading-[4.8vw] text-[3.2vw]'>By {author}</p>
             </div>
             <div className='flex flex-row pb-[5.35vw]'>
                 <div className='flex flex-col basis-1/2 font-host-grotesk font-normal'>

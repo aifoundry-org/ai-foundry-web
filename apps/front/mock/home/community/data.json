@@ -1,8 +1,14 @@
 {
     "Past": [
         {
+            "title": "Al Plumbers Unconference:<br/>San Francisco Edition",
+            "date": "October 25, 2025 Saturday",
+            "time": "9:00 AM - 5:00 PM PST",
+            "location": "SF, USA",
+            "href": "https://luma.com/it0fskb9"
+        },
+        {
             "title": "Berlin Buzzwords:<br/>AI plumbers conference",
-            "author": "Tanya Dadasheva & Roman Shaposhnik",
             "date": "June 15, 2025 Sunday",
             "time": "9:00 AM - 5:00 PM GMT+1",
             "location": "Berlin, Germany",
@@ -10,7 +16,6 @@
         },
         {
             "title": "FOSDEM fringe:<br/>AI plumbers conference",
-            "author": "Tanya Dadasheva & Roman Shaposhnik",
             "date": "Feb 3, 2025 Monday",
             "time": "9:00 AM - 5:00 PM GMT+1",
             "location": "Gent, Belgium",
