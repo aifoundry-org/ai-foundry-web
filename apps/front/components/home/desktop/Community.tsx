@@ -22,7 +22,7 @@ export default function Community() {
 
     return (
         <div id='events' className='hidden xs:flex xs:flex-col xs:pt-[7.85vw] xs:relative xs:w-full xs:h-full'>
-            <FadeIn delay={0.5} className='relative w-[100vw] h-[10vw]'>
+            <FadeIn delay={0.5} className='relative w-full h-[10vw]'>
                 <div className='absolute w-[33.9vw] left-0 top-0'>
                     <ImageWrapper src={IMGCircle.src} alt="Community circle" />
                 </div>
