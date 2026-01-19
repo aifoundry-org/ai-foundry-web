@@ -64,6 +64,15 @@ const nextConfig: NextConfig = {
       }
     ];
   },
+  async redirects() {
+    return [
+      {
+        source: '/terms-conditions',
+        destination: '/terms-and-conditions',
+        permanent: true,
+      }
+    ]
+  }
 };
 
 export default process.env.ANALYZE ? withBundleAnalyzer({ enabled: true })(nextConfig) : nextConfig;
