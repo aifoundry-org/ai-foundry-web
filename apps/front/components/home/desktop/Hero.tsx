@@ -12,7 +12,7 @@ import ImageWrapper from '@/components/common/universal/ImageWrapper';
 export default function Hero() {
   return (
     <div className='hidden xs:flex xs:flex-col xs:w-full xs:h-full relative mb-[8vw] md:mb-[5vw] lg:mb-0 xl:mb-0'>
-      <FadeIn delay={0.75} className='w-[100vw] h-[41vw] relative'>
+      <FadeIn delay={0.75} className='w-full h-[41vw] relative'>
         <div className='absolute w-[1.115vw] right-[8vw] bottom-[0.8vw]'>
           <ImageWrapper src={IMGJoinString.src} alt='Join string'/>
         </div>

@@ -13,7 +13,7 @@ export default function Hero() {
     return (
         <div className='xs:hidden block relative bg-black'>
             <div className='relative flex flex-col w-full bg-sand'>
-                <div className='relative w-[100vw] h-[72vw] flex flex-col gap-y-[6vw]'>
+                <div className='relative w-full h-[72vw] flex flex-col gap-y-[6vw]'>
                     <FadeIn delay={0.75} className='relative w-full h-full'>
                         <div className='absolute w-[73.05vw] top-0 left-0'>
                             <ImageWrapper src={IMGCircle.src} alt='Circle' />

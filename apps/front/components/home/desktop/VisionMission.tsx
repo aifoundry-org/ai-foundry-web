@@ -13,7 +13,7 @@ export default function VisionMission(){
     return (
         <>
             <div className='hidden md:flex md:flex-row xl:flex-row 2xl:flex-row md:relative md:w-full md:h-fit md:pt-[3vw]'>
-                <FadeIn className='absolute left-0 top-[11vw] w-[100vw] h-fit'>
+                <FadeIn className='absolute left-0 top-[11vw] w-full h-fit'>
                     <div className='w-[33vw]'>
                         <ImageWrapper src={IMGCircle.src} alt="Vision & Mission circle" />
                     </div>
