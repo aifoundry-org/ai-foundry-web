@@ -17,10 +17,10 @@ export default function Main() {
                     </div> 
                 </div>
                 <div className='flex flex-row w-full h-full justify-center gap-[2.225vw]'>
-                    <Link href='#coc' className='text-[1.395vw] leading-[1.395vw] font-bold uppercase'>Community code of conduct</Link>
-                    <Link href='#privacy-policy' className='text-[1.395vw] leading-[1.395vw] font-bold uppercase'>Privacy policy</Link>
-                    <Link href='#terms-of-use' className='text-[1.395vw] leading-[1.395vw] font-bold uppercase'>Terms of use</Link>
-                    <Link href='#cookie-policy' className='text-[1.395vw] leading-[1.395vw] font-bold uppercase'>Cookie policy</Link>
+                    <Link href='#coc' className='text-[1.395vw] leading-[1.395vw] font-bold uppercase'>Community Code of Conduct</Link>
+                    <Link href='#privacy-policy' className='text-[1.395vw] leading-[1.395vw] font-bold uppercase'>Privacy Policy</Link>
+                    <Link href='#terms-of-use' className='text-[1.395vw] leading-[1.395vw] font-bold uppercase'>Terms of Use</Link>
+                    <Link href='#cookie-policy' className='text-[1.395vw] leading-[1.395vw] font-bold uppercase'>Cookie Policy</Link>
                 </div>
             </div>
             <div className='flex flex-col w-[55.7vw] mx-auto my-[4.825vw]'>
