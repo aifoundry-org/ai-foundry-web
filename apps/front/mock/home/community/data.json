@@ -1,26 +1,41 @@
 {
     "Past": [
         {
-            "title": "Al Plumbers Unconference:<br/>San Francisco Edition",
+            "title": "AI Plumbers Unconference:<br/>San Francisco Edition",
             "date": "October 25, 2025 Saturday",
-            "time": "9:00 AM - 5:00 PM PST",
-            "location": "SF, USA",
+            "time": "9:00 AM - 5:00 PM PDT",
+            "location": "San Francisco, USA",
             "href": "https://luma.com/it0fskb9"
         },
         {
-            "title": "Berlin Buzzwords:<br/>AI plumbers conference",
+            "title": "Berlin Buzzwords:<br/>AI Plumbers Conference",
             "date": "June 15, 2025 Sunday",
-            "time": "9:00 AM - 5:00 PM GMT+1",
+            "time": "9:00 AM - 5:00 PM CEST",
             "location": "Berlin, Germany",
-            "href": "https://lu.ma/vqx423ct"
+            "href": "https://luma.com/vqx423ct"
         },
         {
-            "title": "FOSDEM fringe:<br/>AI plumbers conference",
-            "date": "Feb 3, 2025 Monday",
-            "time": "9:00 AM - 5:00 PM GMT+1",
+            "title": "FOSDEM Fringe:<br/>AI Plumbers Conference",
+            "date": "February 3, 2025 Monday",
+            "time": "9:00 AM - 5:00 PM CET",
             "location": "Gent, Belgium",
-            "href": "https://lu.ma/fx9kupug"
+            "href": "https://luma.com/fx9kupug"
         }
     ],
-    "Upcoming": []
+    "Upcoming": [
+        {
+            "title": "FOSDEM&#8217;26:<br/>AI Plumbers Devroom",
+            "date": "January 31, 2026 Saturday",
+            "time": "10:30 AM - 7:00 PM CET",
+            "location": "Brussels, Belgium",
+            "href": "https://fosdem.org/2026/schedule/track/ai/"
+        },
+        {
+            "title": "FOSDEM&#8217;26 Fringe:<br/>AI Plumbers (Un)conference",
+            "date": "February 2, 2026 Monday",
+            "time": "9:00 AM - 5:00 PM CET",
+            "location": "Brussels, Belgium",
+            "href": "https://luma.com/3nc5qaje"
+        }
+    ]
 }
