@@ -90,22 +90,22 @@ export default function FindOutMore() {
                                 KEY DATES AND LOGISTICS
                             </div>
                             <div className='flex text-[0.8vw] gap-x-[0.7vw] border-b-[0.5px] border-sand m-[1vw] mt-0 pb-[0.5vw] pr-[0.5vw]'>
-                                Conference dates: 31st of January & 1st of February 2026
+                                Conference dates: January 31 & February 1, 2026
                             </div>
                             <div className='flex text-[0.8vw] gap-x-[0.7vw] border-b-[0.5px] border-sand m-[1vw] mt-0 pb-[0.5vw] pr-[0.5vw]'>
-                                AI Plumbers Devroom: Saturday January 31st, 2026 (whole day)
+                                AAI Plumbers Devroom: January 31, 2026 (whole day)
                             </div>
                             <div className='flex text-[0.8vw] gap-x-[0.7vw] border-b-[0.5px] border-sand m-[1vw] mt-0 pb-[0.5vw] pr-[0.5vw]'>
-                                Submission deadline: December 1st, 2025
+                                Submission deadline: December 1, 2025
                             </div>
                             <div className='flex text-[0.8vw] gap-x-[0.7vw] border-b-[0.5px] border-sand m-[1vw] mt-0 pb-[0.5vw] pr-[0.5vw]'>
-                                Announcement of selected talks: December, 15th 2025
+                                Announcement of selected talks: December 15, 2025
                             </div>
                             <div className='flex text-[0.8vw] gap-x-[0.7vw] border-b-[0.5px] border-sand m-[1vw] mt-0 pb-[0.5vw] pr-[0.5vw]'>
-                                Where: FOSDEM 2025, ULB Campus Solbosch, Brussels, Belgium
+                                Where: FOSDEM 2026, ULB Campus Solbosch, Brussels, Belgium
                             </div>
                             <div className='flex text-[0.8vw] gap-x-[0.7vw] m-[1vw] pr-[0.5vw] mt-0'>
-                                Format: Single track, 10 - 20 minute technical session
+                                Format: Single track, 10&ndash;20 minute technical session
                             </div>
                         </div>
                     </div>
