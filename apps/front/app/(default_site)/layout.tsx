@@ -11,17 +11,17 @@ import IMGOGHome from '@/public/imgs/og/og_home.png'
 
 export async function generateMetadata(): Promise<Metadata> {
   return {
-    title: "AiFoundry",
+    title: "AI Foundry",
     description: "We are a community of practitioners building an open-source composable AI ecosystem. By collaborating on standards for everyone, we aim to reduce the complexity of the AI industry.",
     openGraph: {
-      title: "AiFoundry",
+      title: "AI Foundry",
       description: "We are a community of practitioners building an open-source composable AI ecosystem. By collaborating on standards for everyone, we aim to reduce the complexity of the AI industry.",
       images: [IMGOGHome.src],
       type: 'website',
     },
     twitter: {
       card: 'summary_large_image',
-      title: "AiFoundry",
+      title: "AI Foundry",
       description: "We are a community of practitioners building an open-source composable AI ecosystem. By collaborating on standards for everyone, we aim to reduce the complexity of the AI industry.",
       images: [IMGOGHome.src],
     },
