@@ -38,7 +38,7 @@ export default function FindOutMore() {
                 </div>
 
                 {/* Sequential content blocks */}
-                <div className='relative z-20 flex flex-col w-full px-[7.5vw] pt-[15vw]'>
+                <div className='relative flex flex-col w-full px-[7.5vw] pt-[15vw]'>
 
                     {/* 1. Title: Join the "AI Plumbers" Dev Room */}
                     <FadeUp className='mb-[12vw]'>
