@@ -12,15 +12,12 @@ import IMGFindOutMoreTopGraffiti from '@/public/imgs/home/findOutMore/topGraffit
 import IMGFindOutMoreBottomGraffiti from '@/public/imgs/home/findOutMore/bottomGraffitiMobile.webp'
 import IMGCursorDown from '@/public/imgs/home/findOutMore/cursorDownMobile.webp'
 import IMGCursorUp from '@/public/imgs/home/findOutMore/cursorUpMobile.webp'
-import IMGFoundryBadge from '@/public/imgs/home/findOutMore/badgeMobile.webp'
-
-import SVGProjectArrowDown from '@/public/svgs/findOutMore/ProjectArrowDown'
 import ImageWrapper from '@/components/common/universal/ImageWrapper'
 
 export default function FindOutMore() {
     return (
         <LazyMotion>
-            <div className='xs:hidden flex flex-col mt-[8vw] relative w-full min-h-[400vw] overflow-hidden'>
+            <div className='xs:hidden flex flex-col mt-[8vw] relative w-full pb-[20vw] overflow-hidden'>
                 {/* Background */}
                 <div className='absolute left-0 top-0 w-full h-full bg-cover bg-bottom bg-no-repeat' style={{backgroundImage: `url(${IMGFindOutMoreBackground.src})`}} />
 
@@ -67,57 +64,7 @@ export default function FindOutMore() {
                         </div>
                     </FadeDown>
 
-                    {/* 3. Projects dropdown block */}
-                    <FadeDown delay={0.5} className='mb-[12vw]'>
-                        <div className='bg-black text-sand p-[3vw] rounded-lg font-helvetica'>
-                            <div className='relative pt-[4.65vw] pb-[1vw]'>
-                                <div className='absolute -top-[4vw] left-0 w-[6.35vw] h-[6.35vw]'>
-                                    <ImageWrapper src={IMGFoundryBadge.src} alt='' />
-                                </div>
-                                <div className='text-[2vw] mb-[2vw] font-normal leading-[2.5vw]'>
-                                    If you&apos;re hacking on any of these project<br/>and would like to share your experience,<br/>please submit a talk:
-                                </div>
-                                <div className='flex flex-col gap-[1.2vw]'>
-                                    <div className='uppercase text-[1.65vw] font-bold'>
-                                        <SVGProjectArrowDown className='inline-block w-[2vw] mr-[1vw]' />
-                                        Projects
-                                    </div>
-                                    <div className='font-light ml-[0.55vw] text-[1.9vw]'>
-                                        # ggml/llama.cpp
-                                    </div>
-                                    <div className='font-light ml-[0.55vw] text-[1.9vw]'>
-                                        # tinygrad
-                                    </div>
-                                    <div className='font-light ml-[0.55vw] text-[1.9vw]'>
-                                        # zml
-                                    </div>
-                                    <div className='font-light ml-[0.55vw] text-[1.9vw]'>
-                                        # Apache Airflow
-                                    </div>
-                                    <div className='font-light ml-[0.55vw] text-[1.9vw]'>
-                                        # RISC-V based open source AI accelerator hardware
-                                    </div>
-                                    <div className='font-light ml-[0.55vw] text-[1.9vw]'>
-                                        # Inference Servers (Triton, Docker model runner)
-                                    </div>
-                                    <div className='font-light ml-[0.55vw] text-[1.9vw]'>
-                                        # Hugging Face
-                                    </div>
-                                    <div className='font-light ml-[0.55vw] text-[1.9vw]'>
-                                        # Bielik Project
-                                    </div>
-                                    <div className='font-light ml-[0.55vw] text-[1.9vw]'>
-                                        # AIFoundry
-                                    </div>
-                                </div>
-                                <div className='flex justify-center mt-[3vw]'>
-                                    <Button target='_blank' as={Link} href='https://pretalx.fosdem.org/fosdem-2026/cfp' variant='secondary' content='Submit a talk' className='!font-dharma-gothic-e !font-bold !text-black !uppercase' />
-                                </div>
-                            </div>
-                        </div>
-                    </FadeDown>
-
-                    {/* 4. KEY DATES AND LOGISTICS block */}
+                    {/* 3. KEY DATES AND LOGISTICS block */}
                     <FadeUp delay={0.6} className='mb-[12vw]'>
                         <div className='bg-black text-sand p-[3vw] rounded-lg font-helvetica'>
                             <div className='flex flex-col gap-[2vw] font-light'>
@@ -146,7 +93,7 @@ export default function FindOutMore() {
                         </div>
                     </FadeUp>
 
-                    {/* 5. ABOUT FOSDEM text block with 2 buttons */}
+                    {/* 4. ABOUT FOSDEM text block with 2 buttons */}
                     <FadeDown delay={0.7} className='mb-[8vw]'>
                         <div className='text-black space-y-[2.5vw]'>
                             <h3 className='uppercase font-black font-dharma-gothic-e text-[8.6vw] leading-[7vw]'>ABOUT FOSDEM</h3>
