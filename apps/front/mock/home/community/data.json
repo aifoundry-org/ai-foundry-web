@@ -22,7 +22,7 @@
             "href": "https://luma.com/fx9kupug"
         }
     ],
-    "Upcoming": [
+    "Active": [
         {
             "title": "FOSDEM&#8217;26:<br/>AI Plumbers Devroom",
             "date": "January 31, 2026 Saturday",
@@ -37,5 +37,7 @@
             "location": "Brussels, Belgium",
             "href": "https://luma.com/3nc5qaje"
         }
+    ],
+    "Upcoming": [
     ]
 }
