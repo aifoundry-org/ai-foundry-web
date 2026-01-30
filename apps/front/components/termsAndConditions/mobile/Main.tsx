@@ -18,12 +18,12 @@ export default function Main() {
                 </div>
                 <div className='flex flex-col w-full h-full gap-[3vw]'>
                     <div className='flex flex-row w-full h-full gap-[8.55vw] justify-center'>
-                        <Link href='#coc-mobile' className='text-[5.35vw] leading-[5.35vw] font-bold uppercase'>Community code of conduct</Link>
-                        <Link href='#privacy-policy-mobile' className='text-[5.35vw] leading-[5.35vw] font-bold uppercase'>Privacy policy</Link>
+                        <Link href='#coc-mobile' className='text-[5.35vw] leading-[5.35vw] font-bold uppercase'>Community Code of Conduct</Link>
+                        <Link href='#privacy-policy-mobile' className='text-[5.35vw] leading-[5.35vw] font-bold uppercase'>Privacy Policy</Link>
                     </div>
                     <div className='flex flex-row w-full h-full gap-[8.55vw] justify-center'>
-                        <Link href='#terms-of-use-mobile' className='text-[5.35vw] leading-[5.35vw] font-bold uppercase'>Terms of use</Link>
-                        <Link href='#cookie-policy-mobile' className='text-[5.35vw] leading-[5.35vw] font-bold uppercase'>Cookie policy</Link>
+                        <Link href='#terms-of-use-mobile' className='text-[5.35vw] leading-[5.35vw] font-bold uppercase'>Terms of Use</Link>
+                        <Link href='#cookie-policy-mobile' className='text-[5.35vw] leading-[5.35vw] font-bold uppercase'>Cookie Policy</Link>
                     </div>
                 </div>
             </div>
@@ -32,153 +32,150 @@ export default function Main() {
                     <div className='absolute left-0 -top-[30vw]' id='coc-mobile' />
                     Community Code of Conduct
                 </h2>
-                <p className={`${paragraphStyle} mt-[4.27vw]`}>Last updated June 2, 2024</p>
+                <p className={`${paragraphStyle} mt-[4.27vw]`}>Contributor Covenant 3.0, adopted January 30, 2026</p>
                 <h3 className='mt-[8.55vw]'>Our Pledge</h3>
                 <p className={`${paragraphStyle} mt-[4.27vw]`}>
-                    We as members, contributors, and leaders pledge to make participation in our
-                    community a harassment-free experience for everyone, regardless of age, body
-                    size, visible or invisible disability, ethnicity, sex characteristics, gender
-                    identity and expression, level of experience, education, socio-economic status,
-                    nationality, personal appearance, race, caste, color, religion, or sexual
-                    identity and orientation.
-                    <br/>
-                    <br/>
-                    We pledge to act and interact in ways that contribute to an open, welcoming,
-                    diverse, inclusive, and healthy community.
+                    We pledge to make our community welcoming, safe, and equitable for all.
+                    <br/><br/>
+                    We are committed to fostering an environment that respects and promotes the 
+                    dignity, rights, and contributions of all individuals, regardless of characteristics 
+                    including race, ethnicity, caste, color, age, physical characteristics, neurodiversity, 
+                    disability, sex or gender, gender identity or expression, sexual orientation, language, 
+                    philosophy or religion, national or social origin, socio-economic position, level of 
+                    education, or other status.
+                    <br/><br/>
+                    The same privileges of participation are extended to everyone who participates in good 
+                    faith and in accordance with this Covenant.
                 </p>
-                <h3 className='mt-[8.55vw]'>
-                    Our Standards
-                </h3>
+
+                <h3 className='mt-[8.55vw]'>Encouraged Behaviors</h3>
                 <div className={`${paragraphStyle} mt-[8.55vw] relative`}>
-                    Examples of behavior that contributes to a positive environment for our
-                    community include:
-                    <br/>
-                    <br/>
-                    <ul>
-                        <li>Demonstrating empathy and kindness toward other people</li>
-                        <li>Being respectful of differing opinions, viewpoints, and experiences</li>
-                        <li>Giving and gracefully accepting constructive feedback</li>
-                        <li>Accepting responsibility and apologizing to those affected by our mistakes, and learning from the experience</li>
-                        <li>Focusing on what is best not just for us as individuals, but for the overall community.</li>
-                    </ul>
-                    <br/>
-                    Examples of unacceptable behavior include:<br/>
-                    <br/>
-                    <ul>
-                        <li>The use of sexualized language or imagery, and sexual attention or advances of any kind</li>
-                        <li>Trolling, insulting or derogatory comments, and personal or political attacks</li>
-                        <li>Public or private harassment</li>
-                        <li>Publishing others&apos; private information, such as a physical or email address, without their explicit permission</li>
-                        <li>Other conduct which could reasonably be considered inappropriate in a professional setting</li>
+                    While acknowledging differences in social norms, we all strive to meet our community&apos;s 
+                    expectations for positive behavior. We also understand that our words and actions may be 
+                    interpreted differently than we intend based on culture, background, or native language.
+                    <br/><br/>
+                    With these considerations in mind, we agree to behave mindfully toward each other and 
+                    act in ways that center our shared values, including:
+                    <br/><br/>
+                    <ul className='list-disc pl-[4vw]'>
+                        <li>Respecting the purpose of our community, our activities, and our ways of gathering.</li>
+                        <li>Engaging kindly and honestly with others.</li>
+                        <li>Respecting different viewpoints and experiences.</li>
+                        <li>Taking responsibility for our actions and contributions.</li>
+                        <li>Gracefully giving and accepting constructive feedback.</li>
+                        <li>Committing to repairing harm when it occurs.</li>
+                        <li>Behaving in other ways that promote and sustain the well-being of our community.</li>
                     </ul>
                 </div>
-                <h3 className='mt-[8.55vw]'>
-                    Enforcement Responsibilities
-                </h3>
+
+                <h3 className='mt-[8.55vw]'>Restricted Behaviors</h3>
+                <div className={`${paragraphStyle} mt-[8.55vw] relative`}>
+                    We agree to restrict the following behaviors in our community. Instances, threats, and 
+                    promotion of these behaviors are violations of this Code of Conduct.
+                    <br/><br/>
+                    <ul className='list-disc pl-[4vw] gap-y-[2vw] flex flex-col'>
+                        <li><b>Harassment.</b> Violating explicitly expressed boundaries or engaging in unnecessary personal attention after any clear request to stop.</li>
+                        <li><b>Character attacks.</b> Making insulting, demeaning, or pejorative comments directed at a community member or group of people.</li>
+                        <li><b>Stereotyping or discrimination.</b> Characterizing anyone&apos;s personality or behavior on the basis of immutable identities or traits.</li>
+                        <li><b>Sexualization.</b> Behaving in a way that would generally be considered inappropriately intimate in the context or purpose of the community.</li>
+                        <li><b>Violating confidentiality.</b> Sharing or acting on someone&apos;s personal or private information without their permission.</li>
+                        <li><b>Endangerment.</b> Causing, encouraging, or threatening violence or other harm toward any person or group.</li>
+                    </ul>
+                    <br/>
+                    Behaving in other ways that threaten the well-being of our community is also prohibited.
+                </div>
+
+                <h3 className='mt-[8.55vw]'>Other Restrictions</h3>
+                <div className={`${paragraphStyle} mt-[8.55vw] relative`}>
+                    <ul className='list-disc pl-[4vw] gap-y-[2vw] flex flex-col'>
+                        <li><b>Misleading identity.</b> Impersonating someone else for any reason, or pretending to be someone else to evade enforcement actions.</li>
+                        <li><b>Failing to credit sources.</b> Not properly crediting the sources of content you contribute.</li>
+                        <li><b>Promotional materials.</b> Sharing marketing or other commercial content in a way that is outside the norms of the community.</li>
+                        <li><b>Irresponsible communication.</b> Failing to responsibly present content which includes, links or describes any other restricted behaviors.</li>
+                    </ul>
+                </div>
+
+                <h3 className='mt-[8.55vw]'>Reporting an Issue</h3>
                 <p className={`${paragraphStyle} mt-[4.27vw]`}>
-                    Community leaders are responsible for clarifying and enforcing our standards of
-                    acceptable behavior and will take appropriate and fair corrective action in
-                    response to any behavior that they deem inappropriate, threatening, offensive,
-                    or harmful.
-                    <br/>
-                    <br/>
-                    Community leaders have the right and responsibility to remove, edit, or reject
-                    comments, commits, code, wiki edits, issues, and other contributions that are
-                    not aligned to this Code of Conduct, and will communicate reasons for moderation
-                    decisions when appropriate.
+                    Tensions can occur between community members even when they are trying their best to collaborate. 
+                    Not every conflict represents a code of conduct violation, and this Code of Conduct reinforces 
+                    encouraged behaviors and norms that can help avoid conflicts and minimize harm.
+                    <br/><br/>
+                    When an incident does occur, it is important to report it promptly. To report a possible violation, 
+                    please use the general contact form at www.aifoundry.org, or email tamao@aifoundry.org.
+                    <br/><br/>
+                    Community Moderators take reports of violations seriously and will make every effort to respond 
+                    in a timely manner. They will investigate all reports of code of conduct violations, reviewing 
+                    messages, logs, and recordings, or interviewing witnesses and other participants.
+                    <br/><br/>
+                    Community Moderators will keep investigation and enforcement actions as transparent as possible 
+                    while prioritizing safety and confidentiality. In order to honor these values, enforcement 
+                    actions are carried out in private with the involved parties, but communicating to the whole 
+                    community may be part of a mutually agreed upon resolution.
                 </p>
-                <h3 className='mt-[8.55vw]'>
-                    Scope
-                </h3>
-                <p className={`${paragraphStyle} mt-[4.27vw]`}>
-                    This Code of Conduct applies within all digital and in person community spaces and events, 
-                    and also applies when an individual is officially representing the community in public spaces.
-                    Examples of representing our community include using an official email address,
-                    posting via an official social media account, or acting as a
-                    representative at an online or offline event.
-                </p>
-                <h3 className='mt-[8.55vw]'>
-                    Enforcement
-                </h3>
-                <p className={`${paragraphStyle} mt-[4.27vw]`}>
-                    Instances of abusive, harassing, or otherwise unacceptable behavior may be
-                    reported to the community leaders responsible for enforcement at
-                    the general contact form at www.aifoundry.org, or via email to tamao@aifoundry.org.
-                    <br/>
-                    <br/>
-                    All complaints will be reviewed and investigated promptly and fairly.
-                    <br/>
-                    <br/>
-                    All community leaders are obligated to respect the privacy and security of the
-                    reporter of any incident.
-                </p>
-                <h3 className='mt-[8.55vw]'>
-                    Enforcement Guidelines
-                </h3>
+
+                <h3 className='mt-[8.55vw]'>Addressing and Repairing Harm</h3>
                 <div className={`${paragraphStyle} mt-[1.115vw]`}>
-                    Community leaders will follow these Community Impact Guidelines in determining
-                    the consequences for any action they deem in violation of this Code of Conduct:
-                    <br/>
-                    <br/>
+                    If an investigation by the Community Moderators finds that this Code of Conduct has been violated, 
+                    the following enforcement ladder may be used to determine how best to repair harm, based on the 
+                    incident&apos;s impact on the individuals involved and the community as a whole.
+                    <br/><br/>
                     <ol className='-ml-[0.5vw]'>
                         <li>
-                            <b>Correction</b><br/>
-                            <b>Community Impact:</b> Use of inappropriate language or other behavior deemed
-                            unprofessional or unwelcome in the community.
-                            <br/>
-                            <br/>
-                            <b>Consequence:</b> A private, written warning from community leaders, providing
-                            clarity around the nature of the violation and an explanation of why the
-                            behavior was inappropriate. A public apology may be requested.
-                        </li>
-                        <br/>
-                        <li>
                             <b>Warning</b><br/>
-                            <b>Community Impact:</b> A violation through a single incident or series of
-                            actions.
+                            <b>Event:</b> A violation involving a single incident or series of incidents.
                             <br/>
+                            <b>Consequence:</b> A private, written warning from the Community Moderators.
                             <br/>
-                            <b>Consequence:</b> A warning with consequences for continued behavior. No
-                            interaction with the people involved, including unsolicited interaction with
-                            those enforcing the Code of Conduct, for a specified period of time. This
-                            includes avoiding interactions in community spaces as well as external channels
-                            like social media. Violating these terms may lead to a temporary or permanent
-                            ban.
+                            <b>Repair:</b> Examples of repair include a private written apology, acknowledgement of responsibility, and seeking clarification on expectations.
                         </li>
                         <br/>
                         <li>
-                            <b>Temporary Ban</b><br/>
-                            <b>Community Impact:</b> A serious violation of community standards, including
-                            sustained inappropriate behavior.
+                            <b>Temporarily Limited Activities</b><br/>
+                            <b>Event:</b> A repeated incidence of a violation that previously resulted in a warning, or the first incidence of a more serious violation.
                             <br/>
+                            <b>Consequence:</b> A private, written warning with a time-limited cooldown period. The cooldown period may be limited to particular communication channels or interactions with particular community members.
                             <br/>
-                            <b>Consequence:</b> A temporary ban from any sort of interaction or public
-                            communication with the community for a specified period of time. No public or
-                            private interaction with the people involved, including unsolicited interaction
-                            with those enforcing the Code of Conduct, is allowed during this period.
-                            Violating these terms may lead to a permanent ban.
+                            <b>Repair:</b> Examples of repair may include making an apology, using the cooldown period to reflect on actions and impact, and being thoughtful about re-entering community spaces after the period is over.
+                        </li>
+                        <br/>
+                        <li>
+                            <b>Temporary Suspension</b><br/>
+                            <b>Event:</b> A pattern of repeated violation which the Community Moderators have tried to address with warnings, or a single serious violation.
+                            <br/>
+                            <b>Consequence:</b> A private written warning with conditions for return from suspension.
+                            <br/>
+                            <b>Repair:</b> Examples of repair include respecting the spirit of the suspension, meeting the specified conditions for return, and being thoughtful about how to reintegrate with the community when the suspension is lifted.
                         </li>
                         <br/>
                         <li>
                             <b>Permanent Ban</b><br/>
-                            <b>Community Impact:</b> Demonstrating a pattern of violation of community
-                            standards, including sustained inappropriate behavior, harassment of an
-                            individual, or aggression toward or disparagement of classes of individuals.
+                            <b>Event:</b> A pattern of repeated code of conduct violations that other steps on the ladder have failed to resolve, or a violation so serious that the Community Moderators determine there is no way to keep the community safe with this person as a member.
                             <br/>
+                            <b>Consequence:</b> Access to all community spaces, tools, and communication channels is removed.
                             <br/>
-                            <b>Consequence:</b> A permanent ban from any sort of public interaction within the
-                            community.
+                            <b>Repair:</b> There is no possible repair in cases of this severity.
                         </li>
                     </ol>
+                    <br/>
+                    This enforcement ladder is intended as a guideline. It does not limit the ability of Community Moderators to use their discretion and judgment, in keeping with the best interests of our community.
                 </div>
-                <h3 className='mt-[8.55vw]'>
-                    Attribution
-                </h3>
+
+                <h3 className='mt-[8.55vw]'>Scope</h3>
+                <p className={`${paragraphStyle} mt-[4.27vw]`}>
+                    This Code of Conduct applies within all community spaces, and also applies when an 
+                    individual is officially representing the community in public or other spaces. 
+                    Examples of representing our community include using an official email address, 
+                    posting via an official social media account, or acting as an appointed 
+                    representative at an online or offline event.
+                </p>
+
+                <h3 className='mt-[8.55vw]'>Attribution</h3>
                 <p className={`${paragraphStyle} mt-[4.27vw]`}>
                     This Code of Conduct is adapted from the <a className='font-bold' href='https://www.contributor-covenant.org'>Contributor Covenant</a> homepage,
-                    version 2.1, available at <a className='font-bold' href='https://www.contributor-covenant.org/version/2/1/code_of_conduct.html'>https://www.contributor-covenant.org/version/2/1/code_of_conduct.html</a>.
+                    version 3.0, available at <a className='font-bold' href='https://www.contributor-covenant.org/version/3/0/code_of_conduct/'>https://www.contributor-covenant.org/version/3/0/code_of_conduct/</a>.
                     <br/><br/>
-                    Community Impact Guidelines were inspired by <a className='font-bold' href='https://github.com/mozilla/diversity'>Mozilla&apos;s code of conduct enforcement ladder</a>.
+                    Contributor Covenant is stewarded by the <a className='font-bold' href='https://ethicalsource.dev/'>Organization for Ethical Source</a> and licensed under <a className='font-bold' href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a>.
                     <br/><br/>
                     For answers to common questions about this code of conduct, see the <a className='font-bold' href='https://www.contributor-covenant.org/faq'>FAQ</a>. Translations are available at <a className='font-bold' href='https://www.contributor-covenant.org/translations'>https://www.contributor-covenant.org/translations</a>.
                 </p>   
