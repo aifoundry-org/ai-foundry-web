@@ -11,7 +11,7 @@ import ImageWrapper from '@/components/common/universal/ImageWrapper';
 
 export default function Community() {
     const months = Object.keys(events);
-    const [selectedMonth, setSelectedMonth] = useState(months[1]);
+    const [selectedMonth, setSelectedMonth] = useState(months[0]);
     const _events = events as {[key: string]: Array<{[key: string]: string | number}>};
     const hasEvents = _events[selectedMonth].length > 0;
 

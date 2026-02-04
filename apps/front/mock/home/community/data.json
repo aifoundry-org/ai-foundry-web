@@ -1,28 +1,12 @@
 {
     "Past": [
         {
-            "title": "AI Plumbers Unconference:<br/>San Francisco Edition",
-            "date": "October 25, 2025 Saturday",
-            "time": "9:00 AM - 5:00 PM PDT",
-            "location": "San Francisco, USA",
-            "href": "https://luma.com/it0fskb9"
-        },
-        {
-            "title": "Berlin Buzzwords:<br/>AI Plumbers Conference",
-            "date": "June 15, 2025 Sunday",
-            "time": "9:00 AM - 5:00 PM CEST",
-            "location": "Berlin, Germany",
-            "href": "https://luma.com/vqx423ct"
-        },
-        {
-            "title": "FOSDEM Fringe:<br/>AI Plumbers Conference",
-            "date": "February 3, 2025 Monday",
+            "title": "FOSDEM&#8217;26 Fringe:<br/>AI Plumbers (Un)conference",
+            "date": "February 2, 2026 Monday",
             "time": "9:00 AM - 5:00 PM CET",
-            "location": "Gent, Belgium",
-            "href": "https://luma.com/fx9kupug"
-        }
-    ],
-    "Active": [
+            "location": "Brussels, Belgium",
+            "href": "https://luma.com/3nc5qaje"
+        },
         {
             "title": "FOSDEM&#8217;26:<br/>AI Plumbers Devroom",
             "date": "January 31, 2026 Saturday",
@@ -31,11 +15,11 @@
             "href": "https://fosdem.org/2026/schedule/track/ai/"
         },
         {
-            "title": "FOSDEM&#8217;26 Fringe:<br/>AI Plumbers (Un)conference",
-            "date": "February 2, 2026 Monday",
-            "time": "9:00 AM - 5:00 PM CET",
-            "location": "Brussels, Belgium",
-            "href": "https://luma.com/3nc5qaje"
+            "title": "AI Plumbers Unconference:<br/>San Francisco Edition",
+            "date": "October 25, 2025 Saturday",
+            "time": "9:00 AM - 5:00 PM PDT",
+            "location": "San Francisco, USA",
+            "href": "https://luma.com/it0fskb9"
         }
     ],
     "Upcoming": [
