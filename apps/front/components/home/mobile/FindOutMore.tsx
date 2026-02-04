@@ -6,110 +6,92 @@ import FadeDown from '@/components/common/universal/FadeDown'
 import FadeIn from '@/components/common/universal/FadeIn'
 import Button from '@/libs/litebox-lib/ui/Button/Button'
 
-import IMGFindOutMoreBackground from '@/public/imgs/home/findOutMore/backgroundMobile_new.webp'
+import IMGFindOutMoreBackground from '@/public/imgs/home/findOutMore/backgroundMobile.webp'
 import IMGCode from '@/public/imgs/home/findOutMore/codeMobile.webp'
 import IMGFindOutMoreTopGraffiti from '@/public/imgs/home/findOutMore/topGraffitiMobile.webp'
 import IMGFindOutMoreBottomGraffiti from '@/public/imgs/home/findOutMore/bottomGraffitiMobile.webp'
+import IMGIcons from '@/public/imgs/home/findOutMore/iconsMobile.webp'
+import IMGErrors from '@/public/imgs/home/findOutMore/errorsMobile.webp'
+import IMGStar from '@/public/imgs/home/findOutMore/starMobile.webp'
 import IMGCursorDown from '@/public/imgs/home/findOutMore/cursorDownMobile.webp'
 import IMGCursorUp from '@/public/imgs/home/findOutMore/cursorUpMobile.webp'
+import IMGFoundryBadge from '@/public/imgs/home/findOutMore/badgeMobile.webp'
+import SVGArrowDown from '@/public/svgs/findOutMore/ArrowDown'
+import SVGProjectArrowDown from '@/public/svgs/findOutMore/ProjectArrowDown'
 import ImageWrapper from '@/components/common/universal/ImageWrapper'
 
 export default function FindOutMore() {
     return (
         <LazyMotion>
-            <div className='xs:hidden flex flex-col mt-[8vw] relative w-full pb-[20vw] overflow-hidden'>
-                {/* Background */}
-                <div className='absolute left-0 top-0 w-full h-full bg-cover bg-bottom bg-no-repeat' style={{backgroundImage: `url(${IMGFindOutMoreBackground.src})`}} />
-
-                {/* Code image */}
-                <div className='absolute w-[61.1vw] right-0 top-0 z-10'>
+            <div className='xs:hidden flex flex-col mt-[8vw] relative w-full h-[131.75vw]'>
+                <div className='absolute left-0 top-[8.2vw] w-full'>
+                    <ImageWrapper src={IMGFindOutMoreBackground.src} alt='' />
+                </div>
+                <div className='absolute w-[61.1vw] right-0 top-0'>
                     <ImageWrapper src={IMGCode.src} alt='' />
                 </div>
-
-                {/* Graffiti decorations */}
-                <div className='absolute w-[34vw] left-[21.5vw] top-[28vw] mix-blend-plus-lighter z-10'>
-                    <ImageWrapper src={IMGFindOutMoreTopGraffiti.src} alt='' />
+                <div className='relative w-full h-full -top-[9vw]'>
+                    <div className='absolute w-[34vw] left-[20vw] top-[37.5vw] mix-blend-plus-lighter'>
+                        <ImageWrapper src={IMGFindOutMoreTopGraffiti.src} alt='' />
+                    </div>
+                    <div className='absolute w-[44.3vw] left-[30vw] top-[85vw] mix-blend-plus-lighter'>
+                        <ImageWrapper src={IMGFindOutMoreBottomGraffiti.src} alt='' />
+                    </div>
+                    <div className='relative w-[9.6vw] left-[10vw] top-[32vw]'>
+                        <ImageWrapper src={IMGIcons.src} alt='' />
+                    </div>
                 </div>
-                <div className='absolute w-[44.3vw] left-[52vw] top-[56vw] mix-blend-plus-lighter z-10'>
-                    <ImageWrapper src={IMGFindOutMoreBottomGraffiti.src} alt='' />
-                </div>
-
-                {/* Sequential content blocks */}
-                <div className='relative flex flex-col w-full px-[7.5vw] pt-[15vw]'>
-
-                    {/* 1. Title: Join the "AI Plumbers" Dev Room */}
-                    <FadeUp className='mb-[12vw]'>
-                        <div className='text-center'>
-                            <p className='uppercase font-dharma-gothic-e font-black text-[9vw] leading-[7vw] text-white mb-[4vw]'>
-                                Join the &quot;AI Plumbers&quot; Dev Room
-                            </p>
-                            <div className='flex justify-between items-center px-[15vw]'>
-                                <div className='w-[3.75vw]'>
-                                    <ImageWrapper src={IMGCursorDown.src} alt='' />
-                                </div>
-                                <div className='w-[3.75vw]'>
-                                    <ImageWrapper src={IMGCursorUp.src} alt='' />
-                                </div>
+                <FadeUp className='absolute w-full h-full -top-[12vw]'>
+                    <p className='relative uppercase w-2/3 left-2/3 -translate-x-1/2 top-[50vw] text-center font-dharma-gothic-e font-black text-[23.5vw] leading-[17.4vw] text-white'>
+                        Find<br/>out<br/>more
+                    </p> 
+                    <div className='relative w-[3vw] left-[87vw] top-[55vw]'>
+                        <ImageWrapper src={IMGStar.src} alt='' />
+                    </div>
+                    <div className='relative w-[32.3vw] left-[10vw] top-[38vw]'>
+                        <ImageWrapper src={IMGErrors.src} alt='' />
+                    </div>
+                    <div className='relative w-[3.75vw] left-[49vw] -top-[13vw]'>
+                        <ImageWrapper src={IMGCursorDown.src} alt='' />
+                    </div>
+                    <div className='relative w-[3.75vw] left-[82vw] top-[33vw]'>
+                        <ImageWrapper src={IMGCursorUp.src} alt='' />
+                    </div>
+                </FadeUp>
+                <FadeIn delay={0.5} className='absolute bottom-[15vw] w-full'>
+                    <div className='relative w-full flex justify-center'>
+                        <Button target='_blank' as={Link} href='https://discord.com/invite/WNKvkefkUs' svg='discord' variant='secondary' content='Join our discord' />
+                    </div>
+                </FadeIn>
+                <FadeDown delay={0.5} className='absolute bg-black text-sand p-[1.5vw] top-[40vw] left-[9.5vw] rounded-lg'>
+                    <div className='relative font-helvetica px-[2vw] pt-[4.65vw] pb-[1vw]'>
+                        <div className='absolute -top-[4vw] left-0 w-[6.35vw] h-[6.35vw]'>
+                            <ImageWrapper src={IMGFoundryBadge.src} alt='' />
+                        </div>
+                        <div className='text-[2.675vw] mb-[2vw] font-bold'>
+                            AIFoundry.org
+                            <SVGArrowDown className='inline-block w-[2vw] ml-[2.5vw]' />
+                        </div>
+                        <div className='flex flex-col gap-[1.2vw]'>
+                            <div className='uppercase text-[1.65vw] font-bold'>
+                                <SVGProjectArrowDown className='inline-block w-[2vw] mr-[1vw]' />
+                                Discussions
+                            </div>
+                            <div className='font-light ml-[0.55vw] text-[2.1vw]'>
+                                # et-platform
+                            </div>
+                            <div className='font-light ml-[0.55vw] text-[2.1vw]'>
+                                # quantization
+                            </div>
+                            <div className='font-light ml-[0.55vw] text-[2.1vw]'>
+                                # compilers
+                            </div>
+                            <div className='font-light ml-[0.55vw] text-[2.1vw]'>
+                                # open-llms
                             </div>
                         </div>
-                    </FadeUp>
-
-                    {/* 2. This DevRoom is... text block */}
-                    <FadeDown delay={0.3} className='mb-[12vw]'>
-                        <div className='text-black space-y-[2.5vw]'>
-                            <p className='font-host-grotesk text-[3.2vw] leading-[4.5vw] font-normal'>This DevRoom is a celebration of Open Source Low-level AI projects of all types and sizes – the &quot;plumbing&quot; of the AI industry</p>
-                            <h3 className='uppercase font-black font-dharma-gothic-e text-[8.6vw] leading-[7vw]'>We aspire for this DevRoom to become as important to the AI community as the Linux Plumbers Conference is to the Linux community.</h3>
-                            <p className='font-host-grotesk text-[3.2vw] leading-[4.5vw] font-normal'>We are bringing together the top developers working on the essential &quot;plumbing&quot; of the AI industry: hardware accelerators, math kernel libraries, model quantization techniques, low-level inference, fine-tuning engines, distributed and rack-scale computing, and more. Together, we will spend the day discussing core designs and collaborating to solve governance problems.</p>
-                            <p className='font-host-grotesk text-[3.2vw] leading-[4.5vw] font-normal'>We are looking for low-level AI core open source project maintainers and committers (such as ggml, llama.cpp and tinygrad, zml, etc.), downstream projects building on top of these (for example, Triton and Dynamo Inference Servers and Docker model runner), as well as end-users of AI stacks to speak about their work and expertise.</p>
-                        </div>
-                    </FadeDown>
-
-                    {/* 3. KEY DATES AND LOGISTICS block */}
-                    <FadeUp delay={0.6} className='mb-[12vw]'>
-                        <div className='bg-black text-sand p-[3vw] rounded-lg font-helvetica'>
-                            <div className='flex flex-col gap-[2vw] font-light'>
-                                <div className='ml-[0.55vw] text-[1.8vw] border-b-[0.5px] border-sand p-[1vw] font-bold'>
-                                    KEY DATES AND LOGISTICS
-                                </div>
-                                <div className='ml-[0.55vw] text-[1.6vw] border-b-[0.5px] border-sand p-[1vw]'>
-                                    Conference dates: January 31 & February 1, 2026
-                                </div>
-                                <div className='ml-[0.55vw] text-[1.6vw] border-b-[0.5px] border-sand p-[1vw]'>
-                                    AI Plumbers Devroom: January 31, 2026 (whole day)
-                                </div>
-                                <div className='ml-[0.55vw] text-[1.6vw] border-b-[0.5px] border-sand p-[1vw]'>
-                                    Submission deadline: December 1, 2025
-                                </div>
-                                <div className='ml-[0.55vw] text-[1.6vw] border-b-[0.5px] border-sand p-[1vw]'>
-                                    Announcement of selected talks: December 15, 2025
-                                </div>
-                                <div className='ml-[0.55vw] text-[1.6vw] border-b-[0.5px] border-sand p-[1vw]'>
-                                    Where: FOSDEM 2026, ULB Campus Solbosch, Brussels, Belgium
-                                </div>
-                                <div className='ml-[0.55vw] text-[1.6vw] p-[1vw]'>
-                                    Format: Single track, 10&ndash;20 minute technical session
-                                </div>
-                            </div>
-                        </div>
-                    </FadeUp>
-
-                    {/* 4. ABOUT FOSDEM text block with 2 buttons */}
-                    <FadeDown delay={0.7} className='mb-[8vw]'>
-                        <div className='text-black space-y-[2.5vw]'>
-                            <h3 className='uppercase font-black font-dharma-gothic-e text-[8.6vw] leading-[7vw]'>ABOUT FOSDEM</h3>
-                            <p className='font-host-grotesk text-[3.2vw] leading-[4.5vw] font-normal'>FOSDEM is a non-commercial event organized by the community for the community. It will take place on the weekend of 31st of January & 1st of February 2026, in Brussels, Belgium. Participation is free and open to everyone. Last year, attendance exceeded 8,000 participants.</p>
-                            <p className='font-host-grotesk text-[3.2vw] leading-[4.5vw] font-normal'>FOSDEM is free to attend. There is no registration.</p>
-                        </div>
-                    </FadeDown>
-
-                    <FadeIn delay={0.8} className='mb-[8vw]'>
-                        <div className='flex flex-col items-center gap-[3vw]'>
-                            <Button target='_blank' as={Link} href='https://fosdem.org/2026/' variant='secondary' content='FOSDEM 2026 website' />
-                            <Button target='_blank' as={Link} href='https://github.com/aifoundry-org/fosdem/blob/main/CfP-2026-long.md' variant='secondary' content='More details' />
-                        </div>
-                    </FadeIn>
-
-                </div>
+                    </div>
+                </FadeDown>
             </div>
         </LazyMotion>
     )
