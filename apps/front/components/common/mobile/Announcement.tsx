@@ -9,8 +9,8 @@ export default function Header() {
     
     return (
         <div className={`${hideSelf && 'hidden'} flex flex-row text-sand justify-center p-4`}>
-            <Link className='flex flex-col font-host-grotesk text-center items-center my-[1.35vw] text-[1.4rem]' target="_blank" href="/#fosdem">
-                <div className='flex'>AI Plumbers Devroom has been accepted for FOSDEM 2026! Make your plans for January 31!</div>
+            <Link className='flex flex-col font-host-grotesk text-center items-center my-[1.35vw] text-[1.4rem]' target="_blank" href="https://fosdem.org/2026/schedule/track/ai/">
+                <div className='flex'>AI Plumbers had a blast at FOSDEM&#8217;26! Click here to catch up!</div>
             </Link>
         </div>
     )
