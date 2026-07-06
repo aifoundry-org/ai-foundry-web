@@ -1,4 +1,12 @@
 {
+    "july": [{
+        "title": "AIFoundry + OpenHW<br/>CORE-ET Hackathon",
+        "author": "AIFoundry, OpenHW & Hugging Face",
+        "date": "Jul 6, 2026 Monday",
+        "time": "Ongoing online hackathon",
+        "location": "Virtual",
+        "href": "https://huggingface.co/AIFoundry-hackathon/hf-hackathon"
+    }],
     "february": [{
         "title": "FOSDEM fringe:<br/>AI plumbers conference",
         "author": "Tanya Dadasheva & Roman Shaposhnik",
