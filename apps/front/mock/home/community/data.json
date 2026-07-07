@@ -1,4 +1,13 @@
 {
+    "Upcoming": [
+        {
+            "title": "AIFoundry + OpenHW + Hugging Face<br/>CORE-ET Hackathon",
+            "date": "Jul 6, 2026 Monday",
+            "time": "Ongoing online hackathon",
+            "location": "Virtual",
+            "href": "https://huggingface.co/AIFoundry-hackathon/hf-hackathon"
+        }
+    ],
     "Past": [
         {
             "title": "FOSDEM&#8217;26 Fringe:<br/>AI Plumbers (Un)conference",
@@ -21,7 +30,5 @@
             "location": "San Francisco, USA",
             "href": "https://luma.com/it0fskb9"
         }
-    ],
-    "Upcoming": [
     ]
 }
