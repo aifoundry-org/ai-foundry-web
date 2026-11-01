@@ -72,6 +72,16 @@ const nextConfig: NextConfig = {
         permanent: true,
       },
       {
+        source: '/fosdem-2027-ai-plumbers-dev-room',
+        destination: '/#fosdem',
+        permanent: false,
+      },
+      {
+        source: '/fosdem-2026-ai-plumbers-dev-room',
+        destination: 'https://fosdem.org/2026/schedule/track/ai/',
+        permanent: true,
+      },
+      {
         source: '/shelley',
         destination:
           'https://exe.dev/new?prompt=Once%20the%20VM%20is%20up%20and%20running%2C%20make%20sure%20to%20replace%20the%20default%20Shelley%20that%20is%20running%20there%20with%20the%20latest%20version%20of%20Shelley%20available%20from%20https%3A%2F%2Faifoundry-org.github.io%2Fshelley%2F',
