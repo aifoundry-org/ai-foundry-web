@@ -1,14 +1,21 @@
 {
     "Upcoming": [
         {
-            "title": "AIFoundry + OpenHW + Hugging Face<br/>CORE-ET Hackathon",
-            "date": "Jul 6, 2026 Monday",
-            "time": "Ongoing online hackathon",
-            "location": "Virtual",
-            "href": "https://huggingface.co/AIFoundry-hackathon/hf-hackathon"
+            "title": "FOSDEM&#8217;27:<br/>AI Plumbers Devroom",
+            "date": "January 31, 2027 Sunday",
+            "time": "Full day, schedule TBA",
+            "location": "Brussels, Belgium",
+            "href": "/#fosdem"
         }
     ],
     "Past": [
+        {
+            "title": "AIFoundry + OpenHW + Hugging Face<br/>CORE-ET Hackathon",
+            "date": "Jul 6, 2026 Monday",
+            "time": "Online hackathon",
+            "location": "Virtual",
+            "href": "https://huggingface.co/AIFoundry-hackathon/hf-hackathon"
+        },
         {
             "title": "FOSDEM&#8217;26 Fringe:<br/>AI Plumbers (Un)conference",
             "date": "February 2, 2026 Monday",
