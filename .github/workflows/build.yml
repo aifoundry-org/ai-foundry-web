@@ -12,6 +12,6 @@ jobs:
       - name: Check out repository code
         uses: actions/checkout@v4
       - name: Install Yarn Dependencies
-        run: cd apps/front && yarn install
+        run: cd apps/front && yarn install --frozen-lockfile
       - name: Build Site
         run: cd apps/front && npm run build:worker
