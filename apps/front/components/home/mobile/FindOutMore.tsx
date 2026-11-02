@@ -20,7 +20,7 @@ import ImageWrapper from '@/components/common/universal/ImageWrapper'
 export default function FindOutMore() {
     return (
         <LazyMotion>
-            <div className='xs:hidden flex flex-col mt-[8vw] relative w-full min-h-[400vw] overflow-hidden'>
+            <div id='fosdem-mobile' className='scroll-mt-[18vw] xs:hidden flex flex-col mt-[8vw] relative w-full min-h-[400vw] overflow-hidden'>
                 {/* Background */}
                 <div className='absolute left-0 top-0 w-full h-full bg-cover bg-bottom bg-no-repeat' style={{backgroundImage: `url(${IMGFindOutMoreBackground.src})`}} />
 

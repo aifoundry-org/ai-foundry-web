@@ -7,6 +7,8 @@ import HeaderMobile from '@/components/common/mobile/Header';
 import FooterMobile from '@/components/common/mobile/Footer';
 import FooterDesktop from '@/components/common/desktop/Footer';
 
+import HashScroll from '@/components/common/universal/HashScroll';
+
 import IMGOGHome from '@/public/imgs/og/og_home.png'
 
 export async function generateMetadata(): Promise<Metadata> {
@@ -54,6 +56,7 @@ export default function RootLayout({
         {children}
         <FooterMobile />
         <FooterDesktop />
+        <HashScroll />
       </body>
     </html>
   );
