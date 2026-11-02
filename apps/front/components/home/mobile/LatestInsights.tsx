@@ -80,7 +80,7 @@ export default function LatestInsights() {
                                 <div className='flex flex-row items-center justify-center mb-[7vw]'>
                                     {article.coverImage ? 
                                         <div className='border-2 border-black rounded-lg'>
-                                            <ImageWrapper src={article.coverImage.url} alt='Cover image' />
+                                            <ImageWrapper src={article.coverImage.url} alt='Cover image' unoptimized={article.coverImage.url?.startsWith('/')} />
                                         </div> : 
                                         <div className='flex w-full h-[49.1vw] border-2 border-black rounded-lg text-center justify-center items-center text-[8vw] uppercase'>No cover image</div>
                                     }

@@ -19,7 +19,7 @@ export default function ArticleThumbnail({article}: ArticleThumbnailProps) {
         }} key={id} className='flex flex-col w-full h-full'>
             <div className='flex flex-row mb-[7vw]'>
                 {coverImage ? 
-                    <Image width={1000} height={214} src={coverImage.url} className='border-2 border-black rounded-lg w-full h-[57.1vw] object-cover' alt="cover" /> : 
+                    <Image width={1000} height={214} src={coverImage.url} unoptimized={coverImage.url?.startsWith("/")} className='border-2 border-black rounded-lg w-full h-[57.1vw] object-cover' alt="cover" /> : 
                     <div className='flex w-full h-[48vw] border-2 border-black rounded-lg uppercase text-[8vw] justify-center items-center'>No cover image</div>}
             </div>
             <div className='flex flex-row items-center mb-[4.275vw] gap-x-[2.15vw] flex-wrap gap-y-[2.15vw]'>
